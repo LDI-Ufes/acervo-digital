@@ -19,8 +19,8 @@
                 <div class="panel-heading">Livros</div>
 
                 <div class="panel-body">
-			<a href="#" role="button" class="btn btn-primary">Adicionar</a>
-			<a href="#" role="button" class="btn btn-primary">Listar</a> 
+			<a href="{{ route('books.create') }}" role="button" class="btn btn-primary">Adicionar</a>
+			<a href="{{ route('books.index') }}" role="button" class="btn btn-primary">Listar</a>		
                 </div>
             </div>
        </div>

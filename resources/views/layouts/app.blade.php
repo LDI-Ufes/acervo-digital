@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,80 +8,129 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Estante Virtual') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/theme/css/AdminLTE.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/dist/css/skin-ldi.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/dist/css/style.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
+      window.Laravel = {!! json_encode([
+              'csrfToken' => csrf_token(),
+      ]) !!};
     </script>
-</head>
-<body>
+  </head>
+  <body class="skin-ldi">
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
+      <!-- WRAPPER -->
+      <div class="wrapper">
+        <!-- HEADER -->
+        <header class="main-header">
+          <!-- LOGO -->
+          <a href="" class="logo">Estante Virtual</a>
+          <!-- NAVEGAÇÃO -->
+          <nav class="navbar navbar-static-top" role="navigation">
+            <!-- BOTÃO DE NAVEGAÇÃO (ESQUERDA)-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+              <span class="sr-only">Toggle navigation</span>
+            </a>
+            <!-- INFORMAÇÕES DO USUÁRIO (DIREITA) -->
+            <div class="navbar-custom-menu">
+              <ul class="nav navbar-nav">
+                <!-- MENU DO USUÁRIO -->
+                <li class="dropdown user user-menu">
+                  <!-- BOTÃO -->
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <!-- NOME -->
+                    {{ Auth::user()->name }}
+                  </a>
+                  <!-- DROPDOWN -->
+                  <ul class="dropdown-menu" style="width:auto;right:0;">
+                    <!-- AVATAR, NOME E ATUAÇÃO -->
+                    <li class="user-header" style="height:auto;">
+                      <p>
+                        <a href="">rdelpupo</a> <br> renatodelpupo@designinstrucional.org
+                      </p>
+                    </li>
+                    <!-- ALTERAR DADOS E SAIR -->
+                    <li class="user-footer" style="border-bottom-left-radius:4px;border-bottom-right-radius:4px;">
+                      <div class="pull-left">
+                        <a href="" class="btn btn-success btn-flat"> <i class="fa fa-fw fa-gear"></i> Alterar senha</a>
+                      </div>
+                      <div class="pull-right">
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-danger btn-flat"> <i class="fa fa-fw fa-sign-out"></i> Sair</a>
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
-                </div>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          {{ csrf_field() }}
+                        </form>
+                        </form>
+                      </div>
+                    </li><!-- FIM ALTERAR DADOS E SAIR -->
+                  </ul><!-- FIM DROPDOWN -->
+                </li><!-- FIM MENU DO URSUÁRIO -->
+              </ul>
             </div>
-        </nav>
+          </nav><!-- FIM NAVEGAÇÃO -->
+        </header>
 
-        @yield('content')
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+          <section class="sidebar">
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu">
+              <li class="header">LIVROS</li>
+              <li><a href="{!! url('/books') !!}"><i class="fa fa-book"></i> Listagem</a></li>
+              <li><a href="{!! url('/books/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar</a></li>
+              <li class="header">CURSOS</li>
+              <li><a href="{!! url('/courses') !!}"><i class="fa fa-university"></i> Listagem</a></li>
+              <li><a href="{!! url('/courses/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar</a></li>
+            </ul><!-- /.sidebar-menu -->
+
+            <!-- Horarios -->
+            <div class="small-box bg-ldi">
+              <div class="small-box">
+                <div class="inner">
+                  <h3>12h30min</h3>
+                  <p>Fev 2016: 84h</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-clock"></i>
+                </div>
+                <div class="small-box-footer">
+                  Saldo total: +4h
+                </div>
+              </div>
+            </div>
+
+          </section>
+          <!-- /.sidebar -->
+        </aside>
+
+        <div class="content-wrapper">
+          @yield('content')
+        </div>
+      </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-</body>
+    <!-- Scripts original-->
+    <!--<script src="{{ asset('js/app.js') }}"></script>-->
+
+    <!-- jQuery 2.1.3 -->
+    <script src="{{ asset('assets/plugins/jQuery/jQuery-2.1.3.min.js') }}"></script>
+
+    <!-- Bootstrap 3.3.2 JS -->
+    <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
+
+    <!-- AdminLTE App -->
+    <script src="{{ asset('assets/theme/js/app.min.js') }}" type="text/javascript"></script>
+
+    <!-- Personalizado -->
+    <script src="{{ asset('assets/dist/js/ldi.js') }}" type="text/javascript"></script> <!-- NOVO -->
+  </body>
 </html>

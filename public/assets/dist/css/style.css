@@ -1,0 +1,307 @@
+/* IDENTIDADE DO LDI */
+/*
+
+1) GERAL
+1.1) LOGIN
+1.2) SIDEBAR
+1.3) FORMULARIOS
+
+2) GERENCIAR USUARIOS
+2.1) CRIAR USUARIO
+
+3) GERENCIAR PROJETOS
+
+*/
+/* 1) GERAL */
+.box-ldi {
+  border-top-color: #4a6c82;
+}
+.box-ldi .panel {
+  border-radius: 0;
+}
+.box-ldi a h3,
+.box-ldi .box-header:after {
+  color: #4a6c82 !important;
+}
+.box-header.panel-heading {
+  background-color: #fff;
+  /*        &:after {
+                content: "\f078";
+                display: inline-block;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                transform: translate(0, 0);
+                float: right;
+            }*/
+}
+.box-header.panel-heading a,
+.box-header.panel-heading a:hover,
+.box-header.panel-heading a:active,
+.box-header.panel-heading a:focus {
+  color: #4a6c82;
+}
+.box-body {
+  padding: 20px;
+}
+.box-body.no-padding {
+  margin: 10px auto;
+  float: left;
+  background-color: white;
+  width: 100%;
+}
+.box-body table thead {
+  /*background-color: #efefef;*/
+  background-color: #4a6c82;
+  /*border-top: 1px solid #d4d4d4;*/
+  color: white;
+}
+.box-body table thead th {
+  border-color: #d4d4d4;
+  border-bottom-width: 1px;
+}
+.box-body table i[title="Diagramação"],
+.box-body table i[title="Ilustração"],
+.box-body table i[title="Vídeo"],
+.box-body table i[title="Web"] {
+  margin: 0 2px;
+}
+.box-body table tr.panel-collapse {
+  background-color: #efefef !important;
+}
+.box-body table tr.shown {
+  background-color: #efefef;
+}
+.box-body table.dataTable thead .sorting {
+  padding-right: 27px;
+}
+.user-menu .user-header a {
+  color: white;
+}
+.user-menu .user-header a:hover {
+  text-decoration: underline;
+}
+.user-menu .user-footer {
+  background-color: #383838 !important;
+  background-image: url("../../theme/img/grid-pattern.png");
+  background-repeat: repeat;
+}
+.user-menu .user-footer .btn {
+  border-radius: 4px;
+}
+/* 1.1) LOGIN */
+.login-box-body .col-md-12 {
+  margin: 5px 0;
+}
+/* 1.2) SIDEBAR */
+.sidebar-menu {
+  margin: 10px 0px;
+}
+.box-horario {
+  color: #fff;
+  background-color: #333;
+  border-radius: 0;
+  border-top: 5px solid #333;
+  overflow: hidden;
+}
+.relogio-ico {
+  color: rgba(255, 255, 255, 0.1);
+  width: 120px;
+  height: 120px;
+  font-size: 120px;
+  line-height: 120px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.total-hora {
+  height: 60px!important;
+}
+.total-hora p {
+  margin-bottom: 5px!important;
+  font-size: 13px!important;
+}
+.total-hora h4 {
+  margin: 5px 0 0 0!important;
+  font-size: 20px!important;
+}
+/* 1.3) FORMULARIOS */
+.composicaoProjeto hr {
+  margin: 10px 0px 20px 0px;
+}
+.composicaoProjeto .checkbox {
+  margin-top: 0 !important;
+  margin-bottom: 15px;
+}
+.composicaoProjeto .checkbox label {
+  font-weight: bold;
+  padding-left: 0;
+}
+.composicaoProjeto .checkbox input {
+  float: right;
+  position: relative;
+}
+.modal .modal-dialog .modal-body form .row .checkbox,
+.modal .modal-dialog .modal-body form .row .input-group {
+  margin: 0;
+  margin-bottom: 10px;
+}
+.modal .modal-dialog .modal-body form .row hr {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+textarea {
+  max-width: 100%;
+}
+.modal-body,
+.modal-footer {
+  float: left;
+  width: 100%;
+  background: white;
+}
+#livroImpresso div form div.row {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+form input[type="number"] {
+  float: left;
+  width: 50px;
+  height: auto;
+  padding: 0;
+  padding-left: 5px;
+  margin-right: 5px;
+}
+form .checkbox {
+  float: left;
+  width: 100%;
+  margin-top: 0;
+  padding: 6px 12px;
+  border: 1px solid #d2d6de;
+}
+form .checkbox div {
+  padding: 0;
+}
+form .checkbox label {
+  float: left;
+  width: 100%;
+  display: block;
+}
+/* 2) GERENCIAR USUARIOS */
+button[form="desativarUsuario"].btn-warning:before {
+  content: 'Desativar';
+}
+button[form="desativarUsuario"].btn-primary:before {
+  content: 'Ativar';
+}
+/* 2.1) CRIAR USUARIO */
+.form-group.horarioUsuario .input-group {
+  margin-bottom: 10px;
+}
+.form-group.horarioUsuario .input-group .input-group-addon {
+  width: 50px;
+}
+/* 3) GERENCIAR PROJETOS */
+.box-header .acoes {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+.box-header .acoes.form-group {
+  margin-bottom: 0px;
+}
+.box-header .acoes .rotulo {
+  display: inline-block;
+  margin-right: 5px;
+}
+.box-header .acoes select {
+  display: inline-block;
+  width: auto;
+}
+.nav-filter .left,
+.nav-filter .right {
+  margin-bottom: 20px;
+}
+@media (max-width: 992px) {
+  .nav-filter .left button.btn {
+    width: 48%;
+    float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .nav-filter .left button.btn {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .nav-filter .right {
+    text-align: right;
+  }
+}
+.icone {
+  width: 30px;
+  text-align: center;
+  font-size: 16px;
+}
+.icone a:active,
+.icone a:focus {
+  color: #3c8dbc;
+}
+form h5 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 0;
+}
+form span.select2-container {
+  width: 100% !important;
+  height: auto;
+}
+form span.select2-container .select2-selection {
+  border-radius: 0;
+  border-color: #d2d6de;
+  min-height: 34px;
+}
+form span.select2-container .select2-selection:focus {
+  border-color: #3c8dbc !important;
+  box-shadow: none;
+}
+form .select2-container--default.select2-container--focus .select2-selection--multiple {
+  border-color: #3c8dbc !important;
+}
+form .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: inherit;
+  padding: 6px 12px;
+}
+form .select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 34px;
+}
+/* Personalizado - Estante Virtual */
+body {
+  /* Geral */
+  /* Acesso */
+  /* Arquitetura do painel */
+}
+body .form-horizontal .control-label {
+  text-align: left;
+}
+body .login-box .login-box-body {
+  float: left;
+  min-width: 360px;
+}
+@media (max-width: 768px) {
+  body .login-box {
+    margin: 0 5%;
+  }
+  body .login-box .login-box-body {
+    min-width: initial;
+    width: 100%;
+  }
+}
+body .content-wrapper {
+  min-height: calc(100vh - 50px);
+}

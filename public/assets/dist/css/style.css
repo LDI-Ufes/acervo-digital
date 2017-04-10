@@ -1,4 +1,308 @@
 /* IDENTIDADE DO LDI */
+/* CORES DOS CURSOS */
+/* COR DO CURSO NO BACKGROUND + COR PARA TEXTO */
+.tag-art {
+  background-color: #c94259;
+  color: #FFF;
+}
+.tag-bio {
+  background-color: #eecc77;
+  color: #000;
+}
+.tag-cco {
+  background-color: #ea8b62;
+  color: #000;
+}
+.tag-hum {
+  background-color: #fabfb7;
+  color: #000;
+}
+.tag-edh {
+  background-color: #663;
+  color: #FFF;
+}
+.tag-edf {
+  background-color: #d4d0b3;
+  color: #000;
+}
+.tag-edc {
+  background-color: #060;
+  color: #FFF;
+}
+.tag-fil {
+  background-color: #9fd18b;
+  color: #000;
+}
+.tag-fis {
+  background-color: #116554;
+  color: #fff;
+}
+.tag-his {
+  background-color: #016075;
+  color: #fff;
+}
+.tag-ldi {
+  background-color: #555;
+  color: #FFF;
+}
+.tag-maised {
+  background-color: #147fad;
+  color: #FFF;
+}
+.tag-mat {
+  background-color: #009977;
+  color: #FFF;
+}
+.tag-outro {
+  background-color: #aaa;
+  color: #000;
+}
+.tag-qui {
+  background-color: #55ccdd;
+  color: #000;
+}
+.tag-ped {
+  background-color: #505e93;
+  color: #fff;
+}
+/* APLICAÇÃO: CABEÇALHO */
+.box-curso.art {
+  border-top-color: #c94259;
+}
+.box-curso.art .box-header {
+  background-color: #c94259;
+  color: #FFF;
+  padding: 10px 20px;
+}
+.box-curso.bio {
+  border-top-color: #eecc77;
+}
+.box-curso.bio .box-header {
+  background-color: #eecc77;
+  color: #000;
+  padding: 10px 20px;
+}
+.box-curso.hum {
+  border-top-color: #fabfb7;
+}
+.box-curso.hum .box-header {
+  background-color: #fabfb7;
+  color: #000;
+  padding: 10px 20px;
+}
+.box-curso.edh {
+  border-top-color: #663;
+}
+.box-curso.edh .box-header {
+  background-color: #663;
+  color: #FFF;
+  padding: 10px 20px;
+}
+.box-curso.edf {
+  border-top-color: #d4d0b3;
+}
+.box-curso.edf .box-header {
+  background-color: #d4d0b3;
+  color: #000;
+  padding: 10px 20px;
+}
+.box-curso.edc {
+  border-top-color: #060;
+}
+.box-curso.edc .box-header {
+  background-color: #060;
+  color: #FFF;
+  padding: 10px 20px;
+}
+.box-curso.fil {
+  border-top-color: #9fd18b;
+}
+.box-curso.fil .box-header {
+  background-color: #9fd18b;
+  color: #000;
+  padding: 10px 20px;
+}
+.box-curso.fis {
+  border-top-color: #116554;
+}
+.box-curso.fis .box-header {
+  background-color: #116554;
+  color: #fff;
+  padding: 10px 20px;
+}
+.box-curso.his {
+  border-top-color: #016075;
+}
+.box-curso.his .box-header {
+  background-color: #016075;
+  color: #fff;
+  padding: 10px 20px;
+}
+.box-curso.ldi {
+  border-top-color: #555;
+}
+.box-curso.ldi .box-header {
+  background-color: #555;
+  color: #FFF;
+  padding: 10px 20px;
+}
+.box-curso.maised {
+  border-top-color: #147fad;
+}
+.box-curso.maised .box-header {
+  background-color: #147fad;
+  color: #FFF;
+  padding: 10px 20px;
+}
+.box-curso.mat {
+  border-top-color: #009977;
+}
+.box-curso.mat .box-header {
+  background-color: #009977;
+  color: #FFF;
+  padding: 10px 20px;
+}
+.box-curso.outro {
+  border-top-color: #aaa;
+}
+.box-curso.outro .box-header {
+  background-color: #aaa;
+  color: #000;
+  padding: 10px 20px;
+}
+.box-curso.qui {
+  border-top-color: #55ccdd;
+}
+.box-curso.qui .box-header {
+  background-color: #55ccdd;
+  color: #000;
+  padding: 10px 20px;
+}
+.box-curso.ped {
+  border-top-color: #505e93;
+}
+.box-curso.ped .box-header {
+  background-color: #505e93;
+  color: #fff;
+  padding: 10px 20px;
+}
+/* APLICAÇÃO: TABELA DE PROJETOS */
+.listaLivros td.box-curso {
+  width: 60px;
+  text-align: center;
+}
+.listaLivros td.box-curso[title="Artes Visuais"] {
+  background-color: #c94259;
+  color: #FFF;
+}
+.listaLivros td.box-curso[title="Artes Visuais"]:before {
+  content: "Art";
+}
+.listaLivros td.box-curso[title="Biologia"] {
+  background-color: #eecc77;
+  color: #000;
+}
+.listaLivros td.box-curso[title="Biologia"]:before {
+  content: "Bio";
+}
+.listaLivros td.box-curso[title="Ciências Contábeis"] {
+  background-color: #ea8b62;
+  color: #000;
+}
+.listaLivros td.box-curso[title="Ciências Contábeis"]:before {
+  content: "CCo";
+}
+.listaLivros td.box-curso[title="Dimensões da Humanização"] {
+  background-color: #fabfb7;
+  color: #000;
+}
+.listaLivros td.box-curso[title="Dimensões da Humanização"]:before {
+  content: "Hum";
+}
+.listaLivros td.box-curso.edh {
+  background-color: #663;
+  color: #FFF;
+}
+.listaLivros td.box-curso.edh:before {
+  content: "EDH";
+}
+.listaLivros td.box-curso[title="Educação Física"] {
+  background-color: #d4d0b3;
+  color: #000;
+}
+.listaLivros td.box-curso[title="Educação Física"]:before {
+  content: "EdF";
+}
+.listaLivros td.box-curso.edc {
+  background-color: #060;
+  color: #FFF;
+}
+.listaLivros td.box-curso.edc:before {
+  content: "EdC";
+}
+.listaLivros td.box-curso[title="Filosofia"] {
+  background-color: #9fd18b;
+  color: #000;
+}
+.listaLivros td.box-curso[title="Filosofia"]:before {
+  content: "Fil";
+}
+.listaLivros td.box-curso[title="Física"] {
+  background-color: #116554;
+  color: #fff;
+}
+.listaLivros td.box-curso[title="Física"]:before {
+  content: "Fis";
+}
+.listaLivros td.box-curso[title="História"] {
+  background-color: #016075;
+  color: #fff;
+}
+.listaLivros td.box-curso[title="História"]:before {
+  content: "His";
+}
+.listaLivros td.box-curso.ldi {
+  background-color: #555;
+  color: #FFF;
+}
+.listaLivros td.box-curso.ldi:before {
+  content: "LDI";
+}
+.listaLivros td.box-curso.maised {
+  background-color: #147fad;
+  color: #FFF;
+}
+.listaLivros td.box-curso.maised:before {
+  content: "+Ed";
+}
+.listaLivros td.box-curso.mat {
+  background-color: #009977;
+  color: #FFF;
+}
+.listaLivros td.box-curso.mat:before {
+  content: "Mat";
+}
+.listaLivros td.box-curso.outro {
+  background-color: #aaa;
+  color: #000;
+}
+.listaLivros td.box-curso.outro:before {
+  content: "Out";
+}
+.listaLivros td.box-curso[title="Pedagogia"] {
+  background-color: #505e93;
+  color: #fff;
+}
+.listaLivros td.box-curso[title="Pedagogia"]:before {
+  content: "Ped";
+}
+.listaLivros td.box-curso[title="Química"] {
+  background-color: #55ccdd;
+  color: #000;
+}
+.listaLivros td.box-curso[title="Química"]:before {
+  content: "Qui";
+}
 /*
 
 1) GERAL

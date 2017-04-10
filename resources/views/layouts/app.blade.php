@@ -85,25 +85,22 @@
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
               <li class="header">LIVROS</li>
-              <li><a href="{!! url('/books') !!}"><i class="fa fa-book"></i> Listagem</a></li>
-              <li><a href="{!! url('/books/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar</a></li>
+              <li><a href="{!! url('/books') !!}"><i class="fa fa-book"></i> Listagem de livros</a></li>
+              <li><a href="{!! url('/books/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar livro</a></li>
               <li class="header">CURSOS</li>
-              <li><a href="{!! url('/courses') !!}"><i class="fa fa-university"></i> Listagem</a></li>
-              <li><a href="{!! url('/courses/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar</a></li>
+              <li><a href="{!! url('/courses') !!}"><i class="fa fa-university"></i> Listagem de cursos</a></li>
+              <li><a href="{!! url('/courses/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar curso</a></li>
             </ul><!-- /.sidebar-menu -->
 
             <!-- Horarios -->
-            <div class="small-box bg-ldi">
+            <div class="small-box bg-ldi" style="margin-top: 50px;">
               <div class="small-box">
                 <div class="inner">
-                  <h3>12h30min</h3>
-                  <p>Fev 2016: 84h</p>
+                  <p style="margin:0;">Desenvolvido por</p>
+                  <h3 style="margin:0;">LDI</h3>
                 </div>
-                <div class="icon">
-                  <i class="ion ion-clock"></i>
-                </div>
-                <div class="small-box-footer">
-                  Saldo total: +4h
+                <div class="small-box-footer" style="text-align:left; padding:3px 15px;">
+                  <a href="http://ldi.eadufes.org" target="_blank">ldi.eadufes.org</a>
                 </div>
               </div>
             </div>

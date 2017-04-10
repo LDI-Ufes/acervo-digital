@@ -34,6 +34,7 @@
                             <tr>
                                 <th>Curso</th>
                                 <th>Livro</th>
+                                <th>Autor</th>
                                 <th class="icone"></th>
                                 <th class="icone"></th>
                             </tr>
@@ -43,6 +44,7 @@
                           <tr>
                             <td class="box-curso" title="{{$book->course->name }}"></td>
                             <td>{{ $book->title }}</td>
+                            <td>{{ $book->author }}</td>
                             <td><a href="{{ route('books.show', $book->id) }}"><i class="fa fa-eye"></i></a></td>
                             <td><a href="{{ route('books.edit', $book->id) }}"><i class="fa fa-edit"></i></a></td>
                           </tr>

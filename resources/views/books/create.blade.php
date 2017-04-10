@@ -15,7 +15,7 @@
 </section>
 <!-- FIM CABEÇALHO -->
 
-<!-- ADICIONAR USUÁRIO -->
+<!-- ADICIONAR LIVRO -->
 <section class="content">
   <div class="row">
     <section class="col-md-12">
@@ -37,6 +37,6 @@
       </div>
     </section>
   </div>
-</section> <!-- FIM ADICIONAR USUÁRIO -->
+</section> <!-- FIM ADICIONAR LIVRO -->
 
 @endsection

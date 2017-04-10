@@ -395,7 +395,7 @@ body {
 
     .login-box {
       margin: 0 5%;
-      
+
       .login-box-body {
         min-width: initial;
         width: 100%;
@@ -415,6 +415,50 @@ body {
   }
 
   .content-wrapper {
-    min-height: ~"calc(100vh - 50px)";    
+    min-height: ~"calc(100vh - 50px)";
+
+    section.visualizarLivro {
+
+      .box-body {
+
+        .miniatura {
+          float: left;
+          padding: 15px;
+
+          .img {
+            width: 220px;
+            height: 220px;
+            border: 1px solid darkgray;
+            position: relative;
+            background-color: lightgray;
+
+            span {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%,-50%);
+            }
+          }
+        }
+        
+        .ficha {
+          float: left;
+          padding: 15px;
+          
+          ul {
+            list-style: none;
+            padding: 0;
+            
+            li {
+              margin: 3px 0;
+              
+              &:last-child {
+                margin-top: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

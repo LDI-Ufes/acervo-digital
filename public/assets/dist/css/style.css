@@ -11,7 +11,7 @@
 }
 .tag-cco {
   background-color: #ea8b62;
-  color: #000;
+  color: #fff;
 }
 .tag-hum {
   background-color: #fabfb7;
@@ -187,121 +187,225 @@
   padding: 10px 20px;
 }
 /* APLICAÇÃO: TABELA DE PROJETOS */
-.listaLivros td.box-curso {
+.listaLivros td.box-curso,
+.listaCursos td.box-curso {
   width: 60px;
   text-align: center;
 }
-.listaLivros td.box-curso[title="Artes Visuais"] {
+.listaLivros td.box-curso[title="Artes Visuais"],
+.listaCursos td.box-curso[title="Artes Visuais"] {
   background-color: #c94259;
   color: #FFF;
 }
-.listaLivros td.box-curso[title="Artes Visuais"]:before {
+.listaLivros td.box-curso[title="Artes Visuais"]:before,
+.listaCursos td.box-curso[title="Artes Visuais"]:before {
   content: "Art";
 }
-.listaLivros td.box-curso[title="Biologia"] {
+.listaLivros td.box-curso[title="Biologia"],
+.listaCursos td.box-curso[title="Biologia"] {
   background-color: #eecc77;
   color: #000;
 }
-.listaLivros td.box-curso[title="Biologia"]:before {
+.listaLivros td.box-curso[title="Biologia"]:before,
+.listaCursos td.box-curso[title="Biologia"]:before {
   content: "Bio";
 }
-.listaLivros td.box-curso[title="Ciências Contábeis"] {
+.listaLivros td.box-curso[title="Ciências Contábeis"],
+.listaCursos td.box-curso[title="Ciências Contábeis"] {
   background-color: #ea8b62;
-  color: #000;
+  color: #fff;
 }
-.listaLivros td.box-curso[title="Ciências Contábeis"]:before {
+.listaLivros td.box-curso[title="Ciências Contábeis"]:before,
+.listaCursos td.box-curso[title="Ciências Contábeis"]:before {
   content: "CCo";
 }
-.listaLivros td.box-curso[title="Dimensões da Humanização"] {
+.listaLivros td.box-curso[title="Dimensões da Humanização"],
+.listaCursos td.box-curso[title="Dimensões da Humanização"] {
   background-color: #fabfb7;
   color: #000;
 }
-.listaLivros td.box-curso[title="Dimensões da Humanização"]:before {
+.listaLivros td.box-curso[title="Dimensões da Humanização"]:before,
+.listaCursos td.box-curso[title="Dimensões da Humanização"]:before {
   content: "Hum";
 }
-.listaLivros td.box-curso.edh {
+.listaLivros td.box-curso.edh,
+.listaCursos td.box-curso.edh {
   background-color: #663;
   color: #FFF;
 }
-.listaLivros td.box-curso.edh:before {
+.listaLivros td.box-curso.edh:before,
+.listaCursos td.box-curso.edh:before {
   content: "EDH";
 }
-.listaLivros td.box-curso[title="Educação Física"] {
+.listaLivros td.box-curso[title="Educação Física"],
+.listaCursos td.box-curso[title="Educação Física"] {
   background-color: #d4d0b3;
   color: #000;
 }
-.listaLivros td.box-curso[title="Educação Física"]:before {
+.listaLivros td.box-curso[title="Educação Física"]:before,
+.listaCursos td.box-curso[title="Educação Física"]:before {
   content: "EdF";
 }
-.listaLivros td.box-curso.edc {
+.listaLivros td.box-curso.edc,
+.listaCursos td.box-curso.edc {
   background-color: #060;
   color: #FFF;
 }
-.listaLivros td.box-curso.edc:before {
+.listaLivros td.box-curso.edc:before,
+.listaCursos td.box-curso.edc:before {
   content: "EdC";
 }
-.listaLivros td.box-curso[title="Filosofia"] {
+.listaLivros td.box-curso[title="Filosofia"],
+.listaCursos td.box-curso[title="Filosofia"] {
   background-color: #9fd18b;
   color: #000;
 }
-.listaLivros td.box-curso[title="Filosofia"]:before {
+.listaLivros td.box-curso[title="Filosofia"]:before,
+.listaCursos td.box-curso[title="Filosofia"]:before {
   content: "Fil";
 }
-.listaLivros td.box-curso[title="Física"] {
+.listaLivros td.box-curso[title="Física"],
+.listaCursos td.box-curso[title="Física"] {
   background-color: #116554;
   color: #fff;
 }
-.listaLivros td.box-curso[title="Física"]:before {
+.listaLivros td.box-curso[title="Física"]:before,
+.listaCursos td.box-curso[title="Física"]:before {
   content: "Fis";
 }
-.listaLivros td.box-curso[title="História"] {
+.listaLivros td.box-curso[title="História"],
+.listaCursos td.box-curso[title="História"] {
   background-color: #016075;
   color: #fff;
 }
-.listaLivros td.box-curso[title="História"]:before {
+.listaLivros td.box-curso[title="História"]:before,
+.listaCursos td.box-curso[title="História"]:before {
   content: "His";
 }
-.listaLivros td.box-curso.ldi {
+.listaLivros td.box-curso.ldi,
+.listaCursos td.box-curso.ldi {
   background-color: #555;
   color: #FFF;
 }
-.listaLivros td.box-curso.ldi:before {
+.listaLivros td.box-curso.ldi:before,
+.listaCursos td.box-curso.ldi:before {
   content: "LDI";
 }
-.listaLivros td.box-curso.maised {
+.listaLivros td.box-curso.maised,
+.listaCursos td.box-curso.maised {
   background-color: #147fad;
   color: #FFF;
 }
-.listaLivros td.box-curso.maised:before {
+.listaLivros td.box-curso.maised:before,
+.listaCursos td.box-curso.maised:before {
   content: "+Ed";
 }
-.listaLivros td.box-curso.mat {
+.listaLivros td.box-curso.mat,
+.listaCursos td.box-curso.mat {
   background-color: #009977;
   color: #FFF;
 }
-.listaLivros td.box-curso.mat:before {
+.listaLivros td.box-curso.mat:before,
+.listaCursos td.box-curso.mat:before {
   content: "Mat";
 }
-.listaLivros td.box-curso.outro {
+.listaLivros td.box-curso.outro,
+.listaCursos td.box-curso.outro {
   background-color: #aaa;
   color: #000;
 }
-.listaLivros td.box-curso.outro:before {
+.listaLivros td.box-curso.outro:before,
+.listaCursos td.box-curso.outro:before {
   content: "Out";
 }
-.listaLivros td.box-curso[title="Pedagogia"] {
+.listaLivros td.box-curso[title="Pedagogia"],
+.listaCursos td.box-curso[title="Pedagogia"] {
   background-color: #505e93;
   color: #fff;
 }
-.listaLivros td.box-curso[title="Pedagogia"]:before {
+.listaLivros td.box-curso[title="Pedagogia"]:before,
+.listaCursos td.box-curso[title="Pedagogia"]:before {
   content: "Ped";
 }
-.listaLivros td.box-curso[title="Química"] {
+.listaLivros td.box-curso[title="Química"],
+.listaCursos td.box-curso[title="Química"] {
   background-color: #55ccdd;
   color: #000;
 }
-.listaLivros td.box-curso[title="Química"]:before {
+.listaLivros td.box-curso[title="Química"]:before,
+.listaCursos td.box-curso[title="Química"]:before {
   content: "Qui";
+}
+/* Personalizado - Estante Virtual */
+.box-ldi[title="Artes Visuais"] {
+  border-top-color: #c94259;
+}
+.box-ldi[title="Artes Visuais"] .box-header {
+  background-color: #c94259;
+  color: #FFF;
+}
+.box-ldi[title="Biologia"] {
+  border-top-color: #eecc77;
+}
+.box-ldi[title="Biologia"] .box-header {
+  background-color: #eecc77;
+  color: #000;
+}
+.box-ldi[title="Ciências Contábeis"] {
+  border-top-color: #ea8b62;
+}
+.box-ldi[title="Ciências Contábeis"] .box-header {
+  background-color: #ea8b62;
+  color: #fff;
+}
+.box-ldi[title="Dimensões da Humanização"] {
+  border-top-color: #fabfb7;
+}
+.box-ldi[title="Dimensões da Humanização"] .box-header {
+  background-color: #fabfb7;
+  color: #000;
+}
+.box-ldi[title="Educação Física"] {
+  border-top-color: #d4d0b3;
+}
+.box-ldi[title="Educação Física"] .box-header {
+  background-color: #d4d0b3;
+  color: #000;
+}
+.box-ldi[title="Filosofia"] {
+  border-top-color: #9fd18b;
+}
+.box-ldi[title="Filosofia"] .box-header {
+  background-color: #9fd18b;
+  color: #000;
+}
+.box-ldi[title="Física"] {
+  border-top-color: #116554;
+}
+.box-ldi[title="Física"] .box-header {
+  background-color: #116554;
+  color: #fff;
+}
+.box-ldi[title="História"] {
+  border-top-color: #016075;
+}
+.box-ldi[title="História"] .box-header {
+  background-color: #016075;
+  color: #fff;
+}
+.box-ldi[title="Pedagogia"] {
+  border-top-color: #505e93;
+}
+.box-ldi[title="Pedagogia"] .box-header {
+  background-color: #505e93;
+  color: #fff;
+}
+.box-ldi[title="Química"] {
+  border-top-color: #55ccdd;
+}
+.box-ldi[title="Química"] .box-header {
+  background-color: #55ccdd;
+  color: #000;
 }
 /*
 
@@ -608,4 +712,35 @@ body .login-box .login-box-body {
 }
 body .content-wrapper {
   min-height: calc(100vh - 50px);
+}
+body .content-wrapper section.visualizarLivro .box-body .miniatura {
+  float: left;
+  padding: 15px;
+}
+body .content-wrapper section.visualizarLivro .box-body .miniatura .img {
+  width: 220px;
+  height: 220px;
+  border: 1px solid darkgray;
+  position: relative;
+  background-color: lightgray;
+}
+body .content-wrapper section.visualizarLivro .box-body .miniatura .img span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+body .content-wrapper section.visualizarLivro .box-body .ficha {
+  float: left;
+  padding: 15px;
+}
+body .content-wrapper section.visualizarLivro .box-body .ficha ul {
+  list-style: none;
+  padding: 0;
+}
+body .content-wrapper section.visualizarLivro .box-body .ficha ul li {
+  margin: 3px 0;
+}
+body .content-wrapper section.visualizarLivro .box-body .ficha ul li:last-child {
+  margin-top: 30px;
 }

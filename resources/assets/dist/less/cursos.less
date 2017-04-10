@@ -33,7 +33,7 @@
 
 .tag-cco {
   background-color: @cor-cco;
-  color:#000;
+  color: #fff;
 }
 
 .tag-hum {
@@ -245,135 +245,221 @@
 
 /* APLICAÇÃO: TABELA DE PROJETOS */
 
-.listaLivros td.box-curso {
-  width: 60px;
-  text-align: center;    
+.listaLivros, .listaCursos {
 
-  &[title="Artes Visuais"] {
+  td.box-curso {
+    width: 60px;
+    text-align: center;    
+
+    &[title="Artes Visuais"] {
+      .tag-art;
+
+      &:before {
+        content: "Art";
+      }
+    }
+
+    &[title="Biologia"] {
+      .tag-bio;
+
+      &:before {
+        content: "Bio";
+      }
+    }
+
+    &[title="Ciências Contábeis"] {
+      .tag-cco;
+
+      &:before {
+        content: "CCo";
+      }
+    }
+
+    &[title="Dimensões da Humanização"] {
+      .tag-hum;
+
+      &:before {
+        content: "Hum";
+      }
+    }
+
+    &.edh {
+      .tag-edh;
+
+      &:before {
+        content: "EDH";
+      }
+    }
+
+    &[title="Educação Física"] {
+      .tag-edf;
+
+      &:before {
+        content: "EdF";
+      }
+    }
+
+    &.edc {
+      .tag-edc;
+
+      &:before {
+        content: "EdC";
+      }
+    }
+
+    &[title="Filosofia"] {
+      .tag-fil;
+
+      &:before {
+        content: "Fil";
+      }
+    }
+
+    &[title="Física"] {
+      .tag-fis; 
+
+      &:before {
+        content: "Fis";
+      }
+    }
+
+    &[title="História"] {
+      .tag-his;
+
+      &:before {
+        content: "His";
+      }
+    } 
+
+    &.ldi {
+      .tag-ldi;
+
+      &:before {
+        content: "LDI";
+      }
+    }
+
+    &.maised {
+      .tag-maised;
+
+      &:before {
+        content: "+Ed";
+      }
+    }
+
+    &.mat {
+      .tag-mat;
+
+      &:before {
+        content: "Mat";
+      }
+    }
+
+    &.outro {
+      .tag-outro;
+
+      &:before {
+        content: "Out";
+      }
+    }
+
+    &[title="Pedagogia"] {
+      .tag-ped;
+
+      &:before {
+        content: "Ped";
+      }
+    }
+
+    &[title="Química"] {
+      .tag-qui;
+
+      &:before {
+        content: "Qui";
+      }
+    }
+  }
+}
+
+
+/* Personalizado - Estante Virtual */
+
+.box-ldi[title="Artes Visuais"] {
+  border-top-color: @cor-art;
+  
+  .box-header {
     .tag-art;
-
-    &:before {
-      content: "Art";
-    }
   }
+}
 
-  &[title="Biologia"] {
+.box-ldi[title="Biologia"] {
+  border-top-color: @cor-bio;
+  
+  .box-header {
     .tag-bio;
-
-    &:before {
-      content: "Bio";
-    }
   }
+}
 
-  &[title="Ciências Contábeis"] {
+.box-ldi[title="Ciências Contábeis"] {
+  border-top-color: @cor-cco;
+  
+  .box-header {
     .tag-cco;
-
-    &:before {
-      content: "CCo";
-    }
   }
+}
 
-  &[title="Dimensões da Humanização"] {
+.box-ldi[title="Dimensões da Humanização"] {
+  border-top-color: @cor-hum;
+  
+  .box-header {
     .tag-hum;
-
-    &:before {
-      content: "Hum";
-    }
   }
+}
 
-  &.edh {
-    .tag-edh;
-
-    &:before {
-      content: "EDH";
-    }
-  }
-
-  &[title="Educação Física"] {
+.box-ldi[title="Educação Física"] {
+  border-top-color: @cor-edf;
+  
+  .box-header {
     .tag-edf;
-
-    &:before {
-      content: "EdF";
-    }
   }
+}
 
-  &.edc {
-    .tag-edc;
-
-    &:before {
-      content: "EdC";
-    }
-  }
-
-  &[title="Filosofia"] {
+.box-ldi[title="Filosofia"] {
+  border-top-color: @cor-fil;
+  
+  .box-header {
     .tag-fil;
-
-    &:before {
-      content: "Fil";
-    }
   }
+}
 
-  &[title="Física"] {
-    .tag-fis; 
-
-    &:before {
-      content: "Fis";
-    }
+.box-ldi[title="Física"] {
+  border-top-color: @cor-fis;
+  
+  .box-header {
+    .tag-fis;
   }
+}
 
-  &[title="História"] {
+.box-ldi[title="História"] {
+  border-top-color: @cor-his;
+  
+  .box-header {
     .tag-his;
-
-    &:before {
-      content: "His";
-    }
-  } 
-
-  &.ldi {
-    .tag-ldi;
-
-    &:before {
-      content: "LDI";
-    }
   }
+}
 
-  &.maised {
-    .tag-maised;
-
-    &:before {
-      content: "+Ed";
-    }
-  }
-
-  &.mat {
-    .tag-mat;
-
-    &:before {
-      content: "Mat";
-    }
-  }
-
-  &.outro {
-    .tag-outro;
-
-    &:before {
-      content: "Out";
-    }
-  }
-
-  &[title="Pedagogia"] {
+.box-ldi[title="Pedagogia"] {
+  border-top-color: @cor-ped;
+  
+  .box-header {
     .tag-ped;
-
-    &:before {
-      content: "Ped";
-    }
   }
+}
 
-  &[title="Química"] {
+.box-ldi[title="Química"] {
+  border-top-color: @cor-qui;
+  
+  .box-header {
     .tag-qui;
-
-    &:before {
-      content: "Qui";
-    }
   }
 }

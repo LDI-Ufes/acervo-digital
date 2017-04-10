@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 
 <!-- CABEÇALHO -->
@@ -18,7 +17,7 @@
 <!-- TABELA - LISTA DE USUÁRIOS -->
 <section class="content">
     <div class="row">
-        <section class="col-md-6 offset-md-6 connectedSortable ui-sortable">
+        <section class="listaCursos col-md-12 connectedSortable ui-sortable">
             <div class="box box-ldi">
                 <div class="box-header">
                     <div>
@@ -32,18 +31,18 @@
                     <table class="table table-bordered table-hover table-striped" width="100%">
                         <thead>
                             <tr>
+                                <th style="text-align:center;">Tag</th>
                                 <th>Curso</th>
                                 <th>Módulos</th>
-                                <th class="icone"></th>
                                 <th class="icone"></th>
                             </tr>
                         </thead>
                         <tbody>
                           @foreach( $all_courses as $course)
                           <tr>
+                            <td class="box-curso" title="{{ $course->name }}"></td>
                             <td>{{ $course->name }}</td>
                             <td>{{$course->modules}}</td>
-                            <td><a href="{{ route('courses.show', $course->id) }}"><i class="fa fa-eye"></i></a></td>
                             <td><a href="{{ route('courses.edit', $course->id) }}"><i class="fa fa-edit"></i></a></td>
                           </tr>
                            @endforeach

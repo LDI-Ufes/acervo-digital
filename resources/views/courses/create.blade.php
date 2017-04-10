@@ -20,7 +20,7 @@
 <!-- ADICIONAR USUÁRIO -->
 <section class="content">
   <div class="row">
-    <section class="col-md-12">
+    <section class="col-md-4 offset-md-8">
       <div class="box box-ldi">
         <div class="box-body">
           @if ($errors->any())

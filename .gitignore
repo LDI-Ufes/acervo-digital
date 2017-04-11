@@ -11,3 +11,4 @@ Homestead.yaml
 *.swp
 *.swo
 *~
+/nbproject/private/

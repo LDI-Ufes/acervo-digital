@@ -1,35 +1,42 @@
 @extends('layouts.app')
-
 @section('content')
 
-	<div class="panel panel-default">
+<!-- CABEÇALHO -->
+<section class="content-header">
+  <h1>
+    Livros
+    <small>Cadastrar</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><i class="fa fa-book"></i> Livros</li>
+    <li><a href="{{ route('books.index') }}"><i class="fa fa-list"></i> Listagem</a></li>
+    <li class="active"><i class="fa fa-plus-circle"></i> Cadastrar</li>
+  </ol>
+</section>
+<!-- FIM CABEÇALHO -->
 
-		<div class="panel-heading clearfix">
-			<span class="pull-left">Inserir Livro</span>
+<!-- ADICIONAR LIVRO -->
+<section class="content">
+  <div class="row">
+    <section class="col-md-12">
+      <div class="box box-ldi">
+        <div class="box-body">
+          @if ($errors->any())
+          <ul class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+            <li> {{ $error }} </li>
+            @endforeach
+          </ul>
+          @endif
 
-			<div class="btn-group btn-group-xs pull-right" role="group">
-				<a href="{{ route('books.index') }}" class="btn btn-primary" title="Listar Livros">
-					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-				</a>
-			</div>
-		</div>
-
-		<div class="panel-body">
-			@if ($errors->any())
-				<ul class="alert alert-danger">
-					@foreach ($errors->all() as $error)
-						<li> {{ $error }} </li>
-					@endforeach
-				</ul>
-			@endif
-
-			<form method="POST" action="{{ route('books.store') }}" accept-charset="UTF-8" class="form-horizontal">
-				{{ csrf_field() }}
-				@include ('books/form')
-			</form>
-
-		</div>
-
-	</div>
+          <form method="POST" action="{{ route('books.store') }}" accept-charset="UTF-8" class="form-horizontal">
+            {{ csrf_field() }}
+            @include ('books/form')
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</section> <!-- FIM ADICIONAR LIVRO -->
 
 @endsection

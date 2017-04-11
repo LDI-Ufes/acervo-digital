@@ -54,7 +54,7 @@
                     <!-- AVATAR, NOME E ATUAÇÃO -->
                     <li class="user-header" style="height:auto;">
                       <p>
-                        <a href="">rdelpupo</a> <br> renatodelpupo@designinstrucional.org
+                        <a href="">{{ Auth::user()->name }}</a> <br>{{ Auth::user()->email }}
                       </p>
                     </li>
                     <!-- ALTERAR DADOS E SAIR -->

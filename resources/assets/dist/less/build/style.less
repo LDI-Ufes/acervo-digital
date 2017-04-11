@@ -410,8 +410,11 @@ body {
 
   }
 
-  aside {
+  aside.main-sidebar {
 
+    .sidebar-menu .treeview-menu > li {
+      padding: 5px 0;
+    }
   }
 
   .content-wrapper {
@@ -419,41 +422,47 @@ body {
 
     section.visualizarLivro {
 
-      .box-body {
+      .box {
+        border-width: 1px;
+        border-style: solid;
+        box-shadow: none;
 
-        .miniatura {
-          float: left;
-          padding: 15px;
+        .box-body {
 
-          .img {
-            width: 220px;
-            height: 220px;
-            border: 1px solid darkgray;
-            position: relative;
-            background-color: lightgray;
+          .miniatura {
+            float: left;
+            padding: 15px;
 
-            span {
-              position: absolute;
-              left: 50%;
-              top: 50%;
-              transform: translate(-50%,-50%);
+            .img {
+              width: 220px;
+              height: 220px;
+              border: 1px solid darkgray;
+              position: relative;
+              background-color: lightgray;
+
+              span {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+              }
             }
           }
-        }
-        
-        .ficha {
-          float: left;
-          padding: 15px;
-          
-          ul {
-            list-style: none;
-            padding: 0;
-            
-            li {
-              margin: 3px 0;
-              
-              &:last-child {
-                margin-top: 30px;
+
+          .ficha {
+            float: left;
+            padding: 15px;
+
+            ul {
+              list-style: none;
+              padding: 0;
+
+              li {
+                margin: 3px 0;
+
+                &:last-child {
+                  margin-top: 30px;
+                }
               }
             }
           }

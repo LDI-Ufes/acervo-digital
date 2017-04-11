@@ -338,70 +338,70 @@
 }
 /* Personalizado - Estante Virtual */
 .box-ldi[title="Artes Visuais"] {
-  border-top-color: #c94259;
+  border-color: #c94259;
 }
 .box-ldi[title="Artes Visuais"] .box-header {
   background-color: #c94259;
   color: #FFF;
 }
 .box-ldi[title="Biologia"] {
-  border-top-color: #eecc77;
+  border-color: #eecc77;
 }
 .box-ldi[title="Biologia"] .box-header {
   background-color: #eecc77;
   color: #000;
 }
 .box-ldi[title="Ciências Contábeis"] {
-  border-top-color: #ea8b62;
+  border-color: #ea8b62;
 }
 .box-ldi[title="Ciências Contábeis"] .box-header {
   background-color: #ea8b62;
   color: #fff;
 }
 .box-ldi[title="Dimensões da Humanização"] {
-  border-top-color: #fabfb7;
+  border-color: #fabfb7;
 }
 .box-ldi[title="Dimensões da Humanização"] .box-header {
   background-color: #fabfb7;
   color: #000;
 }
 .box-ldi[title="Educação Física"] {
-  border-top-color: #d4d0b3;
+  border-color: #d4d0b3;
 }
 .box-ldi[title="Educação Física"] .box-header {
   background-color: #d4d0b3;
   color: #000;
 }
 .box-ldi[title="Filosofia"] {
-  border-top-color: #9fd18b;
+  border-color: #9fd18b;
 }
 .box-ldi[title="Filosofia"] .box-header {
   background-color: #9fd18b;
   color: #000;
 }
 .box-ldi[title="Física"] {
-  border-top-color: #116554;
+  border-color: #116554;
 }
 .box-ldi[title="Física"] .box-header {
   background-color: #116554;
   color: #fff;
 }
 .box-ldi[title="História"] {
-  border-top-color: #016075;
+  border-color: #016075;
 }
 .box-ldi[title="História"] .box-header {
   background-color: #016075;
   color: #fff;
 }
 .box-ldi[title="Pedagogia"] {
-  border-top-color: #505e93;
+  border-color: #505e93;
 }
 .box-ldi[title="Pedagogia"] .box-header {
   background-color: #505e93;
   color: #fff;
 }
 .box-ldi[title="Química"] {
-  border-top-color: #55ccdd;
+  border-color: #55ccdd;
 }
 .box-ldi[title="Química"] .box-header {
   background-color: #55ccdd;
@@ -710,37 +710,45 @@ body .login-box .login-box-body {
     width: 100%;
   }
 }
+body aside.main-sidebar .sidebar-menu .treeview-menu > li {
+  padding: 5px 0;
+}
 body .content-wrapper {
   min-height: calc(100vh - 50px);
 }
-body .content-wrapper section.visualizarLivro .box-body .miniatura {
+body .content-wrapper section.visualizarLivro .box {
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: none;
+}
+body .content-wrapper section.visualizarLivro .box .box-body .miniatura {
   float: left;
   padding: 15px;
 }
-body .content-wrapper section.visualizarLivro .box-body .miniatura .img {
+body .content-wrapper section.visualizarLivro .box .box-body .miniatura .img {
   width: 220px;
   height: 220px;
   border: 1px solid darkgray;
   position: relative;
   background-color: lightgray;
 }
-body .content-wrapper section.visualizarLivro .box-body .miniatura .img span {
+body .content-wrapper section.visualizarLivro .box .box-body .miniatura .img span {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-body .content-wrapper section.visualizarLivro .box-body .ficha {
+body .content-wrapper section.visualizarLivro .box .box-body .ficha {
   float: left;
   padding: 15px;
 }
-body .content-wrapper section.visualizarLivro .box-body .ficha ul {
+body .content-wrapper section.visualizarLivro .box .box-body .ficha ul {
   list-style: none;
   padding: 0;
 }
-body .content-wrapper section.visualizarLivro .box-body .ficha ul li {
+body .content-wrapper section.visualizarLivro .box .box-body .ficha ul li {
   margin: 3px 0;
 }
-body .content-wrapper section.visualizarLivro .box-body .ficha ul li:last-child {
+body .content-wrapper section.visualizarLivro .box .box-body .ficha ul li:last-child {
   margin-top: 30px;
 }

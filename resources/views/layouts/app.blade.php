@@ -93,8 +93,8 @@
             </ul><!-- /.sidebar-menu -->
 
             <!-- Horarios -->
-            <div class="small-box bg-ldi" style="margin-top: 50px;">
-              <div class="small-box">
+            <div class="small-box bg-ldi" style="margin-top:50px;color:white;">
+              <div class="small-box" style="text-align:left;">
                 <div class="inner">
                   <p style="margin:0;">Desenvolvido por</p>
                   <h3 style="margin:0;">LDI</h3>

@@ -1,0 +1,160 @@
+/*
+ * Skin: LDI
+ * ----------
+ */
+/* IDENTIDADE DO LDI */
+body.login-page {
+  background-color: #4a6c82;
+}
+.skin-ldi .main-header .navbar {
+  background-color: #4a6c82;
+}
+.skin-ldi .main-header .navbar .nav > li > a {
+  color: #fff;
+}
+.skin-ldi .main-header .navbar .nav > li > a:hover,
+.skin-ldi .main-header .navbar .nav > li > a:active,
+.skin-ldi .main-header .navbar .nav > li > a:focus,
+.skin-ldi .main-header .navbar .nav .open > a,
+.skin-ldi .main-header .navbar .nav .open > a:hover,
+.skin-ldi .main-header .navbar .nav .open > a:focus {
+  background: rgba(0, 0, 0, 0.1);
+  color: #f6f6f6;
+}
+.skin-ldi .main-header .navbar .navbar-custom-menu > .nav {
+  margin-right: 10px;
+}
+.skin-ldi .main-header .navbar .sidebar-toggle {
+  color: #fff;
+}
+.skin-ldi .main-header .navbar .sidebar-toggle:hover {
+  color: #f6f6f6;
+  background: rgba(0, 0, 0, 0.1);
+}
+.skin-ldi .main-header .navbar .sidebar-toggle {
+  color: #fff;
+}
+.skin-ldi .main-header .navbar .sidebar-toggle:hover {
+  background-color: #415f72;
+}
+@media (max-width: 767px) {
+  .skin-ldi .main-header .navbar .dropdown-menu li.divider {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .skin-ldi .main-header .navbar .dropdown-menu li a {
+    color: #fff;
+  }
+  .skin-ldi .main-header .navbar .dropdown-menu li a:hover {
+    background: #415f72;
+  }
+}
+.skin-ldi .main-header .logo {
+  background-color: #415f72;
+  color: #fff;
+  border-bottom: 0px solid transparent;
+}
+.skin-ldi .main-header .logo > a {
+  color: #fff;
+}
+.skin-ldi .main-header .logo:hover {
+  background: #3f5c6f;
+}
+.skin-ldi .main-header li.user-header {
+  background-color: #4a6c82;
+}
+.skin-ldi .content-header {
+  background: transparent;
+}
+.skin-ldi .user-panel > .info,
+.skin-ldi .user-panel > .info > a {
+  color: #fff;
+}
+.skin-ldi .sidebar-menu > li.header {
+  color: #6b6b6b;
+  background: #2e2e2e;
+}
+.skin-ldi .sidebar-menu > li > a {
+  border-left: 3px solid transparent;
+  margin-right: 1px;
+}
+.skin-ldi .sidebar-menu > li > a:hover,
+.skin-ldi .sidebar-menu > li.active > a {
+  color: #fff;
+  background: #333333;
+  border-left-color: #4a6c82;
+}
+.skin-ldi .sidebar-menu > li > .treeview-menu {
+  margin: 0 1px;
+  background: #454545;
+}
+.skin-ldi .wrapper,
+.skin-ldi .main-sidebar,
+.skin-ldi .left-side {
+  background-color: #383838;
+  background-image: url("../../theme/img/grid-pattern.png");
+  background-repeat: repeat;
+}
+.skin-ldi .sidebar a {
+  color: #d1d1d1;
+}
+.skin-ldi .sidebar a:hover {
+  text-decoration: none;
+}
+.skin-ldi .treeview-menu > li > a {
+  color: #ababab;
+}
+.skin-ldi .treeview-menu > li.active > a,
+.skin-ldi .treeview-menu > li > a:hover {
+  color: #fff;
+}
+.skin-ldi .sidebar-form {
+  border-radius: 3px;
+  border: 1px solid #525252;
+  margin: 10px 10px;
+}
+.skin-ldi .sidebar-form input[type="text"],
+.skin-ldi .sidebar-form .btn {
+  box-shadow: none;
+  background-color: #525252;
+  border: 1px solid transparent;
+  height: 35px;
+  -webkit-transition: all 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  -o-transition: all 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+  transition: all 0.3s cubic-bezier(0.32, 1.25, 0.375, 1.15);
+}
+.skin-ldi .sidebar-form input[type="text"] {
+  color: #666;
+  border-top-left-radius: 2px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 2px !important;
+}
+.skin-ldi .sidebar-form input[type="text"]:focus,
+.skin-ldi .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+  background-color: #fff;
+  color: #666;
+}
+.skin-ldi .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+  border-left-color: #fff;
+}
+.skin-ldi .sidebar-form .btn {
+  color: #999;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 2px !important;
+  border-bottom-right-radius: 2px !important;
+  border-bottom-left-radius: 0 !important;
+}
+.skin-ldi.layout-top-nav .main-header > .logo {
+  background-color: #4a6c82;
+  color: #fff;
+  border-bottom: 0px solid transparent;
+}
+.skin-ldi.layout-top-nav .main-header > .logo > a {
+  color: #fff;
+}
+.skin-ldi.layout-top-nav .main-header > .logo:hover {
+  background: #48697f;
+}
+.bg-ldi {
+  background-color: #4a6c82 !important;
+}

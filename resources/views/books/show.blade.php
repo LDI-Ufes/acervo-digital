@@ -38,6 +38,7 @@
           <div class="row">
             <div class="miniatura">
               <div class="img">
+		<img src="/covers/{{ $book->cover }}">
                 <span>{{ $book->cover }}</span>
               </div>
             </div>

@@ -51,6 +51,11 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+	    //$this->validate($request, [
+		//    'cover' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+	    //]);
+
+	   
 	    $book = new Book;
 
 	    $book->title = $request->title;
@@ -62,9 +67,22 @@ class BookController extends Controller
 	    // checar se o módulo não é maior do que os que o curso oferece
 	    $book->module = $request->module;
 
-	    // falta fazer o upload, checagem e resize do arquivo de capa...
-	    //$book->cover = $request->cover 
+
+	    //checar se a imagem tem o tamanho necessário (219x219) 
+	    //e dar resize se não tiver
 	    //
+	    if ($request->hasFile('cover')){
+		    $image = $request->file('cover');
+		    $input['cover'] = time().'.'.$image->extension();
+
+		    $destinationPath = public_path('/covers');
+		    $image->move($destinationPath, $input['cover']);
+
+		    $book->cover = $input['cover'];
+
+	    } else {
+	    	$book->cover = "default.jpg";
+	    }
 
 	    $book->save();
 

@@ -29,7 +29,7 @@
           </ul>
           @endif
 
-          <form method="POST" action="{{ route('books.store') }}" accept-charset="UTF-8" class="form-horizontal">
+          <form method="POST" action="{{ route('books.store') }}" accept-charset="UTF-8" enctype="multipart/form-data" class="form-horizontal">
             {{ csrf_field() }}
             @include ('books/form')
           </form>

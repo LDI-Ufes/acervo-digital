@@ -27,7 +27,7 @@
 <div class="form-group {{ $errors->has('cover') ? 'has-error' : ''}}">
  	<label for="cover" class="col-md-2 control-label">Escolha Capa</label>
 	<div class="col-md-10">
-		<input class="btn btn-default btn-file" name="cover" type="file" id="cover">
+		<input class="btn btn-default btn-file" name="cover" type="file" id="cover" value="{{ old('cover', isset($book) ? $book->cover : null) }}">
 		{!! $errors->first('cover', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>

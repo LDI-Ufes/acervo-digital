@@ -15,6 +15,30 @@
 	</div>
 </div>
 
+<div class="form-group {{ $errors->has('bg_color') ? 'has-error' : ''}}">
+	<label for="bg_color" class="col-md-2 control-label">Cor de fundo</label>
+	<div class="col-md-10">
+		<input class="form-control" name="bg_color" type="text" id="bg_color" value="{{ old('bg_color', isset($course) ? $course->bg_color : null) }}" maxlength="7">
+		{!! $errors->first('bg_color', '<p class="help-block">:message</p>') !!}
+	</div>
+</div>
+
+<div class="form-group {{ $errors->has('fg_color') ? 'has-error' : ''}}">
+	<label for="fg_color" class="col-md-2 control-label">Cor da fonte</label>
+	<div class="col-md-10">
+		<input class="form-control" name="fg_color" type="text" id="fg_color" value="{{ old('fg_color', isset($course) ? $course->fg_color : null) }}" maxlength="7">
+		{!! $errors->first('fg_color', '<p class="help-block">:message</p>') !!}
+	</div>
+</div>
+
+
+<div class="form-group {{ $errors->has('acronym') ? 'has-error' : ''}}">
+	<label for="acronym" class="col-md-2 control-label">Abreviação</label>
+	<div class="col-md-10">
+		<input class="form-control" name="acronym" type="text" id="acronym" value="{{ old('acronym', isset($course) ? $course->acronym : null) }}" maxlength="3">
+		{!! $errors->first('acronym', '<p class="help-block">:message</p>') !!}
+	</div>
+</div>
 
 <div class="form-group">
 	<div class="col-md-offset-2 col-md-10">

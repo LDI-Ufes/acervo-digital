@@ -53,6 +53,9 @@ class CourseController extends Controller
 
 	    $course->name = $request->name;
 	    $course->modules = $request->modules;
+	    $course->bg_color = $request->bg_color;
+	    $course->fg_color = $request->fg_color;
+	    $course->acronym = $request->acronym;
 
 	    $course->save();
 
@@ -99,6 +102,9 @@ class CourseController extends Controller
 
 	    $course->name = $request->name;
 	    $course->modules = $request->modules;
+	    $course->bg_color = $request->bg_color;
+	    $course->fg_color = $request->fg_color;
+	    $course->acronym = $request->acronym;
 
 	    $course->save();
 

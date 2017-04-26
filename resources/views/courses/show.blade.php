@@ -33,6 +33,12 @@
 			<dd>{{ $course->name }}</dd>
 			<dt>Número de Módulos</dt>
 			<dd>{{ $course->modules }}</dd>
+			<dt>Cor de Fund</dt>
+			<dd>{{ $course->bg_color }}</dd>
+			<dt>Cor da Frente</dt>
+			<dd>{{ $course->fg_color }}</dd>
+			<dt>Abreviação</dt>
+			<dd>{{ $course->acronym }}</dd>
 		</dl>
 
 

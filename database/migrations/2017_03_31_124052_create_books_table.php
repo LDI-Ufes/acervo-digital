@@ -13,20 +13,22 @@ class CreateBooksTable extends Migration
      */
     public function up()
     {
-	Schema::create('books', function(Blueprint $table){
-		$table->increments('id');
+    	if (!Schema::hasTable('books')) {
+		Schema::create('books', function(Blueprint $table){
+			$table->increments('id');
 
-		$table->integer('course_id')->unsigned();
-		$table->foreign('course_id')->reference('id')->on('courses');
+			$table->integer('course_id')->unsigned();
+			$table->foreign('course_id')->reference('id')->on('courses');
 
-		$table->string('title');
-		$table->string('author');		
-		$table->text('summary');
-		$table->string('cover')->default('default.jpg'); //criar essa default aqui
-		$table->string('pdf'); // vai ser só o link, uploado ou os dois??
-		$table->integer('module');
-		$table->timestamps();
-	});
+			$table->string('title');
+			$table->string('author');		
+			$table->text('summary');
+			$table->string('cover')->default('default.jpg'); //criar essa default aqui
+			$table->string('pdf'); // vai ser só o link, uploado ou os dois??
+			$table->integer('module');
+			$table->timestamps();
+		});
+	}
     }
 
     /**
@@ -36,6 +38,6 @@ class CreateBooksTable extends Migration
      */
     public function down()
     {
-        Schema::drop('books');
+        Schema::dropIfExists('books');
     }
 }

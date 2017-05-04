@@ -19,6 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/shelf', 'ShelfController@index');
+
 Route::resource('/courses', 'CourseController');
 
 Route::resource('/books', 'BookController');
+

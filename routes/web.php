@@ -21,6 +21,8 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/shelf', 'ShelfController@index');
 
+Route::post('/shelf/search', 'ShelfController@search');
+
 Route::resource('/courses', 'CourseController');
 
 Route::resource('/books', 'BookController');

@@ -27,7 +27,8 @@ class BookController extends Controller
      */
     public function index()
     {
-	    $all_books = Book::all();
+	    $all_books = Book::orderBy('title', 'asc')->paginate(50);
+	    //$all_books = DB::table('books')->orderBy('title')->paginate(30);
 	    return view('books.index', compact('all_books'));        
     }
 

@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/shelf', 'ShelfController@index');
+Route::get('/shelf/course/{course}/module/{module}/type/{type}', 'ShelfController@index');
 
 Route::post('/shelf/search', 'ShelfController@search');
 

@@ -8,8 +8,8 @@
     <small>Editar</small>
   </h1>
   <ol class="breadcrumb">
-    <li><i class="fa fa-book"></i> Livros</li>
-    <li><a href="{{ route('books.index') }}"><i class="fa fa-list"></i> Listagem</a></li>
+    <li><i class="fa fa-learning_object"></i> Livros</li>
+    <li><a href="{{ route('learning_objects.index') }}"><i class="fa fa-list"></i> Listagem</a></li>
     <li class="active"><i class="fa fa-edit"></i> Editar</li>
   </ol>
 </section>
@@ -29,12 +29,12 @@
           </ul>
           @endif
 
-          <form method="POST" action="{{ route('books.update', $book->id) }}" accept-charset="UTF-8" class="form-horizontal">
+          <form method="POST" action="{{ route('learning_objects.update', $learning_object->id) }}" accept-charset="UTF-8" class="form-horizontal">
             {{ csrf_field() }}
             <input name="_method" type="hidden" value="PUT">
-            @include ('books/form', [
+            @include ('learning_objects/form', [
             'submitButtonLabel' => 'Atualizar',
-            'book' => $book,				
+            'learning_object' => $learning_object,				
             ])
           </form>
         </div>

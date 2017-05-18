@@ -8,8 +8,8 @@
     <small>Cadastrar</small>
   </h1>
   <ol class="breadcrumb">
-    <li><i class="fa fa-book"></i> Livros</li>
-    <li><a href="{{ route('books.index') }}"><i class="fa fa-list"></i> Listagem</a></li>
+    <li><i class="fa fa-learning_object"></i> Livros</li>
+    <li><a href="{{ route('learning_objects.index') }}"><i class="fa fa-list"></i> Listagem</a></li>
     <li class="active"><i class="fa fa-plus-circle"></i> Cadastrar</li>
   </ol>
 </section>
@@ -29,9 +29,9 @@
           </ul>
           @endif
 
-          <form method="POST" action="{{ route('books.store') }}" accept-charset="UTF-8" enctype="multipart/form-data" class="form-horizontal">
+          <form method="POST" action="{{ route('learning_objects.store') }}" accept-charset="UTF-8" enctype="multipart/form-data" class="form-horizontal">
             {{ csrf_field() }}
-            @include ('books/form')
+            @include ('learning_objects/form')
           </form>
         </div>
       </div>

@@ -2,7 +2,7 @@
 <div class="form-group {{ $errors->has('title') ? 'has-error' : ''}}">
 	<label for="title" class="col-md-2 control-label">Título</label>
 	<div class="col-md-10">
-		<input class="form-control" name="title" type="text" id="title" value="{{ old('title', isset($book) ? $book->title : null) }}" maxlength="160">
+		<input class="form-control" name="title" type="text" id="title" value="{{ old('title', isset($learning_object) ? $learning_object->title : null) }}" maxlength="160">
 		{!! $errors->first('title', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>
@@ -10,7 +10,7 @@
 <div class="form-group {{ $errors->has('author') ? 'has-error' : ''}}">
 	<label for="author" class="col-md-2 control-label">Autor(a)</label>
 	<div class="col-md-10">
-		<input class="form-control" name="author" type="text" id="author" value="{{ old('author', isset($book) ? $book->author : null) }}" maxlength="160">
+		<input class="form-control" name="author" type="text" id="author" value="{{ old('author', isset($learning_object) ? $learning_object->author : null) }}" maxlength="160">
 		{!! $errors->first('author', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>
@@ -19,7 +19,7 @@
 <div class="form-group {{ $errors->has('summary') ? 'has-error' : ''}}">
 	<label for="summary" class="col-md-2 control-label">Resumo</label>
 	<div class="col-md-10">
-		<textarea class="form-control" name="summary" id="summary" maxlength="2000"rows="3">{{ old('summary', isset($book) ? $book->summary : null) }}</textarea>
+		<textarea class="form-control" name="summary" id="summary" maxlength="2000"rows="3">{{ old('summary', isset($learning_object) ? $learning_object->summary : null) }}</textarea>
 		{!! $errors->first('summary', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>
@@ -27,7 +27,7 @@
 <div class="form-group {{ $errors->has('cover') ? 'has-error' : ''}}">
  	<label for="cover" class="col-md-2 control-label">Escolha Capa</label>
 	<div class="col-md-10">
-		<input class="btn btn-default btn-file" name="cover" type="file" id="cover" value="{{ old('cover', isset($book) ? $book->cover : null) }}">
+		<input class="btn btn-default btn-file" name="cover" type="file" id="cover" value="{{ old('cover', isset($learning_object) ? $learning_object->cover : null) }}">
 		{!! $errors->first('cover', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>
@@ -35,7 +35,7 @@
 <div class="form-group {{ $errors->has('pdf') ? 'has-error' : ''}}">
 	<label for="pdf" class="col-md-2 control-label">Link do Livro</label>
 	<div class="col-md-10">
-		<input class="form-control" name="pdf" type="text" id="pdf" value="{{ old('pdf', isset($book) ? $book->pdf : null) }}" maxlength="160">
+		<input class="form-control" name="pdf" type="text" id="pdf" value="{{ old('pdf', isset($learning_object) ? $learning_object->pdf : null) }}" maxlength="160">
 		{!! $errors->first('pdf', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>

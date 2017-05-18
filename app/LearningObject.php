@@ -4,8 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Book extends Model
+class LearningObject extends Model
 {
+	protected $table = "learning_objects";
+
 	public function course()
 	{
 		return $this->belongsTo('App\Course');

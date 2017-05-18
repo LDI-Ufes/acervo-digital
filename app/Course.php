@@ -6,9 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-	public function books()
+	protected $table = "courses";
+
+	public function learning_objects()
 	{
-		return $this->hasMany('App\Book');
+		return $this->hasMany('App\LearningObject');
+	}
+
+	public function course_type()
+	{
+		return $this->belongsTo('App\CourseType');
 	}
 
 }

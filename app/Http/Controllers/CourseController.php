@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use App\CourseType;
 
 
 class CourseController extends Controller
 {
-
 
     /**
      * Create a new controller instance.
@@ -27,7 +27,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-	    $all_courses = Course::all();
+	    $all_courses = Course::orderBy('name','asc')->get();
 	    return view('courses.index', compact('all_courses'));        
     }
 
@@ -38,7 +38,8 @@ class CourseController extends Controller
      */
     public function create()
     {
-	    return view('courses.create');
+	    $all_course_types = CourseType::orderBy('name','asc')->get();
+	    return view('courses.create', compact('all_course_types'));
     }
 
     /**
@@ -52,10 +53,12 @@ class CourseController extends Controller
 	    $course = new Course;
 
 	    $course->name = $request->name;
+	    $course->type_id = $request->type_id;
 	    $course->modules = $request->modules;
 	    $course->bg_color = $request->bg_color;
 	    $course->fg_color = $request->fg_color;
-	    $course->acronym = $request->acronym;
+	    $course->aux_color = $request->aux_color;
+	    $course->short = $request->short;
 
 	    $course->save();
 
@@ -77,16 +80,17 @@ class CourseController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for creating a new resource.
      *
-     * @param  int  $id
+     * @return \Illuminate\Http\Response
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
 	    $course = Course::findOrFail($id);
+	    $all_course_types = CourseType::orderBy('name', 'asc')->get();
 
-	    return view('courses.edit', compact('course')); 
+	    return view('courses.edit', compact('course', 'all_course_types')); 
     }
 
     /**
@@ -101,10 +105,12 @@ class CourseController extends Controller
 	    $course = Course::findOrFail($id);
 
 	    $course->name = $request->name;
+	    $course->type_id = $request->type_id;
 	    $course->modules = $request->modules;
 	    $course->bg_color = $request->bg_color;
 	    $course->fg_color = $request->fg_color;
-	    $course->acronym = $request->acronym;
+	    $course->aux_color = $request->aux_color;
+	    $course->short = $request->short;
 
 	    $course->save();
 

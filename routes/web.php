@@ -25,5 +25,8 @@ Route::post('/shelf/search', 'ShelfController@search');
 
 Route::resource('/courses', 'CourseController');
 
-Route::resource('/books', 'BookController');
+Route::resource('/learning_objects', 'LearningObjectController');
 
+Route::resource('/course_types', 'CourseTypeController');
+
+Route::resource('/object_types', 'ObjectTypeController');

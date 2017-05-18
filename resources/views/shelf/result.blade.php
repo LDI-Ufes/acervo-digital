@@ -3,8 +3,8 @@
 
 	<section class="content-header">
 		<h1>
-			Estante Dummy
-			<small>os livros e cursos aparecem aqui, falta criar a estante real agora</small>
+			Acervo Dummy	
+			<small> {{ $current->course }} / Módulo #{{ $current->module }} / Tipo {{ $current->type }}</small>
 		</h1>
 	</section>
 
@@ -20,17 +20,19 @@
 	--}}
 
 	<section class="content">
+		<a href="/shelf/course/0/module/0/type/0">Todos os Cursos</a>
+
 		@forelse($courses as $course)
-			<div>Curso: {{$course->name}} (possui {{$course->modules}} módulos)</div>
+			/ <a href="/shelf/course/{{$course->id}}/module/0/type/0">{{$course->name}}</a> 
 		@empty
-		<div>Curso não encontrado</div>
-	@endforelse
+			<div>Não há cursos cadastrados.</div>
+		@endforelse
 
 	<hr>
 	<div id="books" class="annotated-list">
 		<input class="search" placeholder="Pesquisar" />
 		<button class="sort" data-sort="title">Título</button>
-		<button class="sort" data-sort="course">Curso</button>
+		<!-- button class="sort" data-sort="course">Curso</button -->
 		<button class="sort" data-sort="module">Modulo</button>
 
 		<ul class="list">
@@ -43,7 +45,7 @@
 					<!-- img src="/covers/{{ $book->cover }}"-->
 				</li>
 			@empty
-				<div>Livro não encontrado</div>
+				<div>Não há livros nessa categoria.</div>
 			@endforelse
 		</ul>
 		<ul class="pagination"></ul>

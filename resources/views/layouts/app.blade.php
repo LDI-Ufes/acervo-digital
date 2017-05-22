@@ -141,5 +141,10 @@
 
     <!-- Personalizado -->
     <script src="{{ asset('assets/dist/js/ldi.js') }}" type="text/javascript"></script> <!-- NOVO -->
+
+
+    @yield('scripts')
+
+
   </body>
 </html>

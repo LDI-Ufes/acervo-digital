@@ -33,7 +33,7 @@
                         <thead>
                             <tr>
                                 <th>Curso</th>
-                                <th>Livro</th>
+                                <th>Objeto</th>
                                 <th>Autor</th>
                                 <th class="icone"></th>
                                 <th class="icone"></th>
@@ -52,7 +52,6 @@
                         </tbody>
                     </table>
 
-		    {{ $all_learning_objects->links() }}
                 </div>
             </div>
         </section>

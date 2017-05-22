@@ -32,11 +32,11 @@
 	</div>
 </div>
 
-<div class="form-group {{ $errors->has('pdf') ? 'has-error' : ''}}">
-	<label for="pdf" class="col-md-2 control-label">Link do Livro</label>
+<div class="form-group {{ $errors->has('link') ? 'has-error' : ''}}">
+	<label for="link" class="col-md-2 control-label">Link do Objeto</label>
 	<div class="col-md-10">
-		<input class="form-control" name="pdf" type="text" id="pdf" value="{{ old('pdf', isset($learning_object) ? $learning_object->pdf : null) }}" maxlength="160">
-		{!! $errors->first('pdf', '<p class="help-block">:message</p>') !!}
+		<input class="form-control" name="link" type="text" id="link" value="{{ old('link', isset($learning_object) ? $learning_object->link : null) }}" maxlength="160">
+		{!! $errors->first('link', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>
 
@@ -46,7 +46,11 @@
 
 		<select class="form-control" name="course_id" id="course_id">
 			@foreach($courses  as $course)
-				<option value="{{$course->id}}">{{$course->name}}</option>
+				@if (isset($learning_object) and ($learning_object->course_id == $course->id))
+					<option value="{{$course->id}}" data-module-number="{{$course->modules}}" selected>{{$course->name}}</option>
+				@else
+					<option value="{{$course->id}}"  data-module-number="{{$course->modules}}">{{$course->name}}</option>
+				@endif
 			@endforeach
 		</select>
 
@@ -60,13 +64,36 @@
 
 		<select class="form-control" name="module" id="module">
 			@for ($i = 1; $i <= $courses->max('modules'); $i++)
-	          		<option value="{{ $i }}">{{ $i }}</option>
+				@if(isset($learning_object) and ($learning_object->module == $i))
+		          		<option value="{{ $i }}" selected>{{ $i }}</option>
+				@else
+		          		<option value="{{ $i }}">{{ $i }}</option>
+				@endif
 		      	@endfor 
 		</select>
 
 		{!! $errors->first('module', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>
+
+<div class="form-group {{ $errors->has('type_id') ? 'has-error' : ''}}">
+	<label for="type" class="col-md-2 control-label">Tipo de Objeto de Aprendizagem</label>
+	<div class="col-md-10">
+
+		<select class="form-control" name="type_id" id="type_id">
+			@foreach ($all_types as $type)
+				@if(isset($learning_object) and ($learning_object->type_id == $type->id))
+					<option value="{{ $type->id }}" selected>{{ $type->name }}</option>
+				@else
+					<option value="{{ $type->id }}">{{ $type->name }}</option>
+				@endif
+		      	@endforeach 
+		</select>
+
+		{!! $errors->first('type_id', '<p class="help-block">:message</p>') !!}
+	</div>
+</div>
+
 
 <div class="form-group">
 	<div class="col-md-offset-2 col-md-10">

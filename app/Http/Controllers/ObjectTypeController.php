@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Course;
-use App\CourseType;
+use App\ObjectType;
 
 
-class CourseController extends Controller
+class ObjectTypeController extends Controller
 {
+
 
     /**
      * Create a new controller instance.
@@ -27,8 +27,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-	    $all_courses = Course::orderBy('name','asc')->get();
-	    return view('courses.index', compact('all_courses'));        
+	    $all_object_types = ObjectType::all();
+	    return view('object_types.index', compact('all_object_types'));        
     }
 
     /**
@@ -38,8 +38,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-	    $all_course_types = CourseType::orderBy('name','asc')->get();
-	    return view('courses.create', compact('all_course_types'));
+	    return view('object_types.create');
     }
 
     /**
@@ -50,20 +49,13 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-	    $course = new Course;
+	    $object_type = new ObjectType;
 
-	    $course->name = $request->name;
-	    $course->type_id = $request->type_id;
-	    $course->modules = $request->modules;
-	    $course->bg_color = $request->bg_color;
-	    $course->fg_color = $request->fg_color;
-	    $course->aux_color = $request->aux_color;
-	    $course->short = $request->short;
+	    $object_type->name = $request->name;
 
-	    $course->save();
+	    $object_type->save();
 
-	    return redirect(route('courses.index'));
-       
+	    return redirect(route('object_types.index'));
     }
 
     /**
@@ -74,9 +66,9 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-	    $course = Course::findOrFail($id);
+	    $object_type = ObjectType::findOrFail($id);
 
-	    return view('courses.show', compact('course'));
+	    return view('object_types.show', compact('object_type'));
     }
 
     /**
@@ -87,10 +79,9 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-	    $course = Course::findOrFail($id);
-	    $all_course_types = CourseType::orderBy('name', 'asc')->get();
+	    $object_type = ObjectType::findOrFail($id);
 
-	    return view('courses.edit', compact('course', 'all_course_types')); 
+	    return view('object_types.edit', compact('object_type')); 
     }
 
     /**
@@ -102,19 +93,13 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-	    $course = Course::findOrFail($id);
+	    $object_type = ObjectType::findOrFail($id);
 
-	    $course->name = $request->name;
-	    $course->type_id = $request->type_id;
-	    $course->modules = $request->modules;
-	    $course->bg_color = $request->bg_color;
-	    $course->fg_color = $request->fg_color;
-	    $course->aux_color = $request->aux_color;
-	    $course->short = $request->short;
+	    $object_type->name = $request->name;
 
-	    $course->save();
+	    $object_type->save();
 
-	    return redirect(route('courses.show', $id));
+	    return redirect(route('object_types.show', $id));
         
     }
 
@@ -126,9 +111,9 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-	    $course = Course::findOrFail($id);
-	    $course->delete();
+	    $object_type = ObjectType::findOrFail($id);
+	    $object_type->delete();
 	    
-	    return redirect(route('courses.index'));
+	    return redirect(route('object_types.index'));
     }
 }

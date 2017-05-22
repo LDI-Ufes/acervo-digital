@@ -8,8 +8,8 @@
     <small>Cadastrar</small>
   </h1>
   <ol class="breadcrumb">
-    <li><i class="fa fa-university"></i> Cursos</li>
-    <li><a href="{!! url('/courses') !!}"><i class="fa fa-list"></i> Listagem</a></li>
+    <li><i class="fa fa-university"></i> Tipos de Objetos de Aprendizagem</li>
+    <li><a href="{!! url('/object_types') !!}"><i class="fa fa-list"></i> Listagem</a></li>
     <li class="active"><i class="fa fa-plus-circle"></i> Cadastrar</li>
   </ol>
 </section>
@@ -30,9 +30,9 @@
           </ul>
           @endif
 
-          <form method="POST" action="{{ route('courses.store') }}" accept-charset="UTF-8" class="form-horizontal">
+          <form method="POST" action="{{ route('object_types.store') }}" accept-charset="UTF-8" class="form-horizontal">
             {{ csrf_field() }}
-            @include ('courses/form')
+            @include ('object_types/form')
           </form>
 
         </div>
@@ -42,4 +42,3 @@
 </section>
 
 @endsection
-

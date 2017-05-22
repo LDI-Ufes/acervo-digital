@@ -7,6 +7,25 @@
 	</div>
 </div>
 
+<div class="form-group {{ $errors->has('type_id') ? 'has-error' : ''}}">
+	<label for="type_id" class="col-md-2 control-label">Tipo de Curso</label>
+	<div class="col-md-10">
+
+		<select class="form-control" name="type_id" id="type_id">
+			@foreach($all_course_types  as $course_type)
+				@if (isset($course) and ($course->type_id == $course_type->id))
+					<option value="{{$course_type->id}}" selected>{{$course_type->name}}</option>
+				@else
+					<option value="{{$course_type->id}}">{{$course_type->name}}</option>
+				@endif
+			@endforeach
+		</select>
+
+		{!! $errors->first('type_id', '<p class="help-block">:message</p>') !!}
+	</div>
+</div>
+
+
 <div class="form-group {{ $errors->has('modules') ? 'has-error' : ''}}">
 	<label for="modules" class="col-md-2 control-label">Módulos</label>
 	<div class="col-md-10">
@@ -31,12 +50,19 @@
 	</div>
 </div>
 
-
-<div class="form-group {{ $errors->has('acronym') ? 'has-error' : ''}}">
-	<label for="acronym" class="col-md-2 control-label">Abreviação</label>
+<div class="form-group {{ $errors->has('aux_color') ? 'has-error' : ''}}">
+	<label for="aux_color" class="col-md-2 control-label">Cor auxiliar</label>
 	<div class="col-md-10">
-		<input class="form-control" name="acronym" type="text" id="acronym" value="{{ old('acronym', isset($course) ? $course->acronym : null) }}" maxlength="3">
-		{!! $errors->first('acronym', '<p class="help-block">:message</p>') !!}
+		<input class="form-control" name="aux_color" type="text" id="aux_color" value="{{ old('aux_color', isset($course) ? $course->aux_color : null) }}" maxlength="7">
+		{!! $errors->first('aux_color', '<p class="help-block">:message</p>') !!}
+	</div>
+</div>
+
+<div class="form-group {{ $errors->has('short') ? 'has-error' : ''}}">
+	<label for="short" class="col-md-2 control-label">Abreviação</label>
+	<div class="col-md-10">
+		<input class="form-control" name="short" type="text" id="short" value="{{ old('short', isset($course) ? $course->short : null) }}" maxlength="3">
+		{!! $errors->first('short', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>
 

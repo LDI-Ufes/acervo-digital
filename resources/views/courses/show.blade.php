@@ -31,14 +31,18 @@
 			<dd>{{ $course->id }}</dd>
 			<dt>Nome</dt>
 			<dd>{{ $course->name }}</dd>
+			<dt>Tipo de Curso</dt>
+			<dd>{{ $course->type->name}}</dd>
 			<dt>Número de Módulos</dt>
 			<dd>{{ $course->modules }}</dd>
-			<dt>Cor de Fund</dt>
+			<dt>Cor de Fundo</dt>
 			<dd>{{ $course->bg_color }}</dd>
 			<dt>Cor da Frente</dt>
 			<dd>{{ $course->fg_color }}</dd>
+			<dt>Cor auxiliar</dt>
+			<dd>{{ $course->aux_color}}</dd>
 			<dt>Abreviação</dt>
-			<dd>{{ $course->acronym }}</dd>
+			<dd>{{ $course->short }}</dd>
 		</dl>
 
 

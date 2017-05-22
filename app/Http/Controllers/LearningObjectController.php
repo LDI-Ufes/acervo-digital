@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
-use App\Book;
+use App\ObjectType;
+use App\LearningObject;
 
-class BookController extends Controller
+class LearningObjectController extends Controller
 {
 
     /**
@@ -27,8 +28,9 @@ class BookController extends Controller
      */
     public function index()
     {
-	    $all_books = Book::all();
-	    return view('books.index', compact('all_books'));        
+	    $all_learning_objects = LearningObject::orderBy('title', 'asc')->get();
+
+	    return view('learning_objects.index', compact('all_learning_objects'));        
     }
 
     /**
@@ -38,9 +40,10 @@ class BookController extends Controller
      */
     public function create()
     {
-	    $courses = Course::all();
+	    $courses = Course::orderBy('name', 'asc')->get();
+	    $all_types = ObjectType::orderBy('name', 'asc')->get();
 
-	    return view('books.create', compact('courses'));
+	    return view('learning_objects.create', compact('courses', 'all_types'));
     }
 
     /**
@@ -56,16 +59,17 @@ class BookController extends Controller
 	    //]);
 
 	   
-	    $book = new Book;
+	    $learning_object = new LearningObject;
 
-	    $book->title = $request->title;
-	    $book->author = $request->author;
-	    $book->summary = $request->summary;
-	    $book->pdf = $request->pdf;
-	    $book->course_id = $request->course_id;	
+	    $learning_object->title = $request->title;
+	    $learning_object->author = $request->author;
+	    $learning_object->summary = $request->summary;
+	    $learning_object->link = $request->link;
+	    $learning_object->course_id = $request->course_id;	
+	    $learning_object->type_id = $request->type_id;
 
 	    // checar se o módulo não é maior do que os que o curso oferece
-	    $book->module = $request->module;
+	    $learning_object->module = $request->module;
 
 
 	    //checar se a imagem tem o tamanho necessário (219x219) 
@@ -78,15 +82,15 @@ class BookController extends Controller
 		    $destinationPath = public_path('/covers');
 		    $image->move($destinationPath, $input['cover']);
 
-		    $book->cover = $input['cover'];
+		    $learning_object->cover = $input['cover'];
 
 	    } else {
-	    	$book->cover = "default.jpg";
+	    	$learning_object->cover = "default.jpg";
 	    }
 
-	    $book->save();
+	    $learning_object->save();
 
-	    return redirect(route('books.index'));        
+	    return redirect(route('learning_objects.index'));        
     }
 
     /**
@@ -97,9 +101,9 @@ class BookController extends Controller
      */
     public function show($id)
     {
-	    $book = Book::findOrFail($id);
+	    $learning_object = LearningObject::findOrFail($id);
 
-	    return view('books.show', compact('book'));
+	    return view('learning_objects.show', compact('learning_object'));
     }
 
     /**
@@ -110,10 +114,11 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-	    $book = Book::findOrFail($id);
-	    $courses = Course::all();
+	    $learning_object = LearningObject::findOrFail($id);
+	    $courses = Course::orderBy('name', 'asc')->get();
+	    $all_types = ObjectType::orderBy('name', 'asc')->get();
 
-	    return view('books.edit', compact('book', 'courses'));
+	    return view('learning_objects.edit', compact('learning_object', 'courses', 'all_types'));
     }
 
     /**
@@ -126,24 +131,26 @@ class BookController extends Controller
     public function update(Request $request, $id)
     {
 
-	    $book = Book::findOrFail($id);
+	    $learning_object = LearningObject::findOrFail($id);
 
-	    $book->title = $request->title;
-	    $book->author = $request->author;
-	    $book->summary = $request->summary;
-	    $book->pdf = $request->pdf;
-	    $book->course_id = $request->course_id;	
+	    $learning_object->title = $request->title;
+	    $learning_object->author = $request->author;
+	    $learning_object->summary = $request->summary;
+	    $learning_object->link = $request->link;
+	    $learning_object->course_id = $request->course_id;
+	    $learning_object->type_id = $request->type_id;
+   		    
 
 	    // checar se o módulo não é maior do que os que o curso oferece
-	    $book->module = $request->module;
+	    $learning_object->module = $request->module;
 
 	    // falta fazer o upload, checagem e resize do arquivo de capa...
-	    //$book->cover = $request->cover 
+	    //$learning_object->cover = $request->cover 
 	    //
 
-	    $book->save();
+	    $learning_object->save();
 
-	    return redirect(route('books.show', $id));
+	    return redirect(route('learning_objects.show', $id));
     }
 
     /**
@@ -154,9 +161,9 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-	    $book = Book::findOrFail($id);
-	    $book->delete();
+	    $learning_object = LearningObject::findOrFail($id);
+	    $learning_object->delete();
 	    
-	    return redirect(route('books.index'));
+	    return redirect(route('learning_objects.index'));
     }
 }

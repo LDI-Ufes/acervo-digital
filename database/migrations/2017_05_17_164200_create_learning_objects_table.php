@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBooksTable extends Migration
+class CreateLearningObjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,24 @@ class CreateBooksTable extends Migration
      */
     public function up()
     {
-    	if (!Schema::hasTable('books')) {
-		Schema::create('books', function(Blueprint $table){
+    	if (!Schema::hasTable('learning_objects')) {
+		Schema::create('learning_objects', function(Blueprint $table){
 			$table->increments('id');
 
 			$table->integer('course_id')->unsigned();
 			$table->foreign('course_id')->reference('id')->on('courses');
 
+			$table->integer('type_id')->unsigned();
+			$table->foreign('type_id')->reference('id')->on('object_types');
+
+			$table->integer('module');
+
 			$table->string('title');
 			$table->string('author');		
 			$table->text('summary');
 			$table->string('cover')->default('default.jpg'); //criar essa default aqui
-			$table->string('pdf'); // vai ser só o link, uploado ou os dois??
-			$table->integer('module');
+			$table->string('link'); // vai ser só o link, uploado ou os dois??
+
 			$table->timestamps();
 		});
 	}
@@ -38,6 +43,6 @@ class CreateBooksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('books');
+        Schema::dropIfExists('learning_objects');
     }
 }

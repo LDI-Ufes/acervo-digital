@@ -4,18 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class ObjectType extends Model
 {
-	protected $table = "courses";
-
+	protected $table = "object_types";
 	public function learning_objects()
 	{
 		return $this->hasMany('App\LearningObject');
-	}
-
-	public function type()
-	{
-		return $this->belongsTo('App\CourseType');
 	}
 
 }

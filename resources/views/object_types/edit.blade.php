@@ -4,21 +4,21 @@
 <!-- CABEÇALHO -->
 <section class="content-header">
   <h1>
-    Livros
+    Tipos de Objetos de Aprendizagem
     <small>Editar</small>
   </h1>
   <ol class="breadcrumb">
-    <li><i class="fa fa-book"></i> Livros</li>
-    <li><a href="{{ route('books.index') }}"><i class="fa fa-list"></i> Listagem</a></li>
-    <li class="active"><i class="fa fa-edit"></i> Editar</li>
+    <li><i class="fa fa-university"></i> Cursos</li>
+    <li><a href="{!! url('/object_types') !!}"><i class="fa fa-list"></i> Listagem</a></li>
+    <li class="active"><i class="fa fa-plus-circle"></i> Editar</li>
   </ol>
 </section>
 <!-- FIM CABEÇALHO -->
 
-<!-- EDITAR LIVRO -->
+<!-- ADICIONAR USUÁRIO -->
 <section class="content">
   <div class="row">
-    <section class="col-md-12">
+    <section class="col-md-4 offset-md-8">
       <div class="box box-ldi">
         <div class="box-body">
           @if ($errors->any())
@@ -29,18 +29,19 @@
           </ul>
           @endif
 
-          <form method="POST" action="{{ route('books.update', $book->id) }}" accept-charset="UTF-8" class="form-horizontal">
+          <form method="POST" action="{{ route('object_types.update', $object_type->id) }}" accept-charset="UTF-8" class="form-horizontal">
             {{ csrf_field() }}
             <input name="_method" type="hidden" value="PUT">
-            @include ('books/form', [
+            @include ('object_types/form', [
             'submitButtonLabel' => 'Atualizar',
-            'book' => $book,				
+            'object_type' => $object_type,				
             ])
           </form>
+
         </div>
       </div>
     </section>
   </div>
-</section> <!-- FIM EDITAR LIVRO -->
+</section>
 
 @endsection

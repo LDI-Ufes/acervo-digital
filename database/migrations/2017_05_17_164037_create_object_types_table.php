@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColorsAndAcronymToCourses extends Migration
+class CreateObjectTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class AddColorsAndAcronymToCourses extends Migration
      */
     public function up()
     {
-	    Schema::table('courses', function (Blueprint $table) {
-		    $table->string('bg_color');
-		    $table->string('fg_color');
-		    $table->char('acronym', 3);
-            //
+        Schema::create('object_types', function (Blueprint $table) {
+		$table->increments('id');
+		$table->string('name');	
+
+		$table->timestamps();
         });
     }
 
@@ -28,8 +28,6 @@ class AddColorsAndAcronymToCourses extends Migration
      */
     public function down()
     {
-        Schema::table('courses', function (Blueprint $table) {
-		$table->dropColumn(['bg_color','fg_color','acronym']);
-        });
+	Schema::dropIfExists('object_types');
     }
 }

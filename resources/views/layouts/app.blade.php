@@ -84,12 +84,24 @@
 
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
-              <li class="header">LIVROS</li>
-              <li><a href="{!! url('/books') !!}"><i class="fa fa-book"></i> Listagem de livros</a></li>
-              <li><a href="{!! url('/books/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar livro</a></li>
-              <li class="header">CURSOS</li>
-              <li><a href="{!! url('/courses') !!}"><i class="fa fa-university"></i> Listagem de cursos</a></li>
-              <li><a href="{!! url('/courses/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar curso</a></li>
+
+              <li class="header">TIPOS DE CURSO</li>
+              <li><a href="{!! url('/course_types') !!}"><i class="fa fa-university"></i> Listagem de Tipos de Curso</a></li>
+              <li><a href="{!! url('/course_types/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar Tipo de Curso</a></li>
+	      
+	      <li class="header">TIPOS DE OBJETO</li>
+              <li><a href="{!! url('/object_types') !!}"><i class="fa fa-university"></i> Listagem de Tipo de Objetos</a></li>
+              <li><a href="{!! url('/object_types/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar Tipo de Objeto</a></li>
+
+	      <li class="header">CURSOS</li>
+              <li><a href="{!! url('/courses') !!}"><i class="fa fa-university"></i> Listagem de Cursos</a></li>
+              <li><a href="{!! url('/courses/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar Curso</a></li>
+
+	      <li class="header">OBJETOS DE APRENDIZAGEM</li>
+              <li><a href="{!! url('/learning_objects') !!}"><i class="fa fa-book"></i> Listagem de Objetos</a></li>
+              <li><a href="{!! url('/learning_objects/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar Objetos</a></li>
+
+      
             </ul><!-- /.sidebar-menu -->
 
             <!-- Horarios -->
@@ -129,5 +141,10 @@
 
     <!-- Personalizado -->
     <script src="{{ asset('assets/dist/js/ldi.js') }}" type="text/javascript"></script> <!-- NOVO -->
+
+
+    @yield('scripts')
+
+
   </body>
 </html>

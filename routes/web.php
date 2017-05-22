@@ -19,9 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/shelf', 'ShelfController@index');
+Route::get('/shelf/course/{course}/module/{module}/type/{type}', 'ShelfController@index');
+
+Route::post('/shelf/search', 'ShelfController@search');
 
 Route::resource('/courses', 'CourseController');
 
-Route::resource('/books', 'BookController');
+Route::resource('/learning_objects', 'LearningObjectController');
 
+Route::resource('/course_types', 'CourseTypeController');
+
+Route::resource('/object_types', 'ObjectTypeController');

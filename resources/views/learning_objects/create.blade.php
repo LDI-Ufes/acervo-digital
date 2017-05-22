@@ -40,3 +40,18 @@
 </section> <!-- FIM ADICIONAR LIVRO -->
 
 @endsection
+
+
+@section('scripts')
+	<script type="text/javascript">
+		 $('#course_id').on('change', function(e){
+			 $('#module').empty();
+		 	 for (var i=0; i< this.options[this.selectedIndex].getAttribute('data-module-number'); i++){
+				$('#module').append($('<option/>', { 
+					'value': (i+1),
+					'text': (i+1) 
+				}));
+			 }
+		 });
+	</script>
+@endsection

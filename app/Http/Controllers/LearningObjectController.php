@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use App\ObjectType;
 use App\LearningObject;
 
 class LearningObjectController extends Controller
@@ -27,8 +28,8 @@ class LearningObjectController extends Controller
      */
     public function index()
     {
-	    $all_learning_objects = LearningObject::orderBy('title', 'asc')->paginate(50);
-	    //$all_learning_objects = DB::table('learning_objects')->orderBy('title')->paginate(30);
+	    $all_learning_objects = LearningObject::orderBy('title', 'asc')->get();
+
 	    return view('learning_objects.index', compact('all_learning_objects'));        
     }
 
@@ -39,9 +40,10 @@ class LearningObjectController extends Controller
      */
     public function create()
     {
-	    $courses = Course::sortBy('name', 'asc')->get();
+	    $courses = Course::orderBy('name', 'asc')->get();
+	    $all_types = ObjectType::orderBy('name', 'asc')->get();
 
-	    return view('learning_objects.create', compact('courses'));
+	    return view('learning_objects.create', compact('courses', 'all_types'));
     }
 
     /**
@@ -62,8 +64,9 @@ class LearningObjectController extends Controller
 	    $learning_object->title = $request->title;
 	    $learning_object->author = $request->author;
 	    $learning_object->summary = $request->summary;
-	    $learning_object->pdf = $request->pdf;
+	    $learning_object->link = $request->link;
 	    $learning_object->course_id = $request->course_id;	
+	    $learning_object->type_id = $request->type_id;
 
 	    // checar se o módulo não é maior do que os que o curso oferece
 	    $learning_object->module = $request->module;
@@ -112,9 +115,10 @@ class LearningObjectController extends Controller
     public function edit($id)
     {
 	    $learning_object = LearningObject::findOrFail($id);
-	    $courses = Course::sortBy('name', 'asc')->get();
+	    $courses = Course::orderBy('name', 'asc')->get();
+	    $all_types = ObjectType::orderBy('name', 'asc')->get();
 
-	    return view('learning_objects.edit', compact('learning_object', 'courses'));
+	    return view('learning_objects.edit', compact('learning_object', 'courses', 'all_types'));
     }
 
     /**
@@ -132,8 +136,10 @@ class LearningObjectController extends Controller
 	    $learning_object->title = $request->title;
 	    $learning_object->author = $request->author;
 	    $learning_object->summary = $request->summary;
-	    $learning_object->pdf = $request->pdf;
-	    $learning_object->course_id = $request->course_id;	
+	    $learning_object->link = $request->link;
+	    $learning_object->course_id = $request->course_id;
+	    $learning_object->type_id = $request->type_id;
+   		    
 
 	    // checar se o módulo não é maior do que os que o curso oferece
 	    $learning_object->module = $request->module;

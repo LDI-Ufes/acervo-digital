@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\CourseType;
 use App\Course;
+use App\ObjectType;
 use App\LearningObject;
 
 
@@ -16,28 +18,39 @@ class ShelfController extends Controller
 
 		$query = LearningObject::orderBy('title', 'asc');
 
+		$current = (object)Array(
+			'course' => "Todos os Cursos",
+			'module' => "Todos os Módulos",
+			'type' => "Todos os Tipos"
+		);
+
 		// seletor de objetos por curso
 		if ($course != 0){
 			$query->where('course_id', '=', $course);
+			$current->course = Course::findOrFail($course)->name;
 		}
 
 		if ($module != 0){
 			$query->where('module', '=', $module);
+			$current->module = 'Módulo #'. $module; // this s just fucking dumb.
 		}
 
 		if ($type != 0){
-			$query->where('type', '=', $type);
+			$query->where('type_id', '=', $type);
+			$current->type = ObjectType::findOrFail($type)->name;
 		}
+
+		$learning_objects = $query->get();
 
 		//seletor de objetos por modulo
 
 		//seletor de objetos por tipo
 
-		$current->module = 0;
-		$current->type = 0;
+		//$current->module = 0;
+		//$current->type = 0;
 
 		// retornar variavel com selecoes atuais?
-		return view('shelf.result', compact('courses', 'learning_objects')); //, 'current'));
+		return view('shelf.result', compact('courses', 'learning_objects', 'current'));
 
 	}
 

@@ -4,7 +4,7 @@
 	<section class="content-header">
 		<h1>
 			Acervo Dummy	
-			<small> {{ $current->course }} / Módulo #{{ $current->module }} / Tipo {{ $current->type }}</small>
+			<small> {{$current->course}} / {{$current->module}} / {{$current->type}} </small>
 		</h1>
 	</section>
 
@@ -29,20 +29,20 @@
 		@endforelse
 
 	<hr>
-	<div id="books" class="annotated-list">
+	<div id="learning_objects" class="annotated-list">
 		<input class="search" placeholder="Pesquisar" />
 		<button class="sort" data-sort="title">Título</button>
 		<!-- button class="sort" data-sort="course">Curso</button -->
 		<button class="sort" data-sort="module">Modulo</button>
 
 		<ul class="list">
-			@forelse($books as $book)
+			@forelse($learning_objects as $learning_object)
 				<li>
-					<!-- strong>Livro:</strong --><h3 class="title">{{$book->title}}</h3> (#{{$book->id}})   
-					<strong>Curso:</strong> <span class="course">{{$book->course->name}}</span>;
-					<strong>Modulo:</strong> <span class="module">{{$book->module}}</span>;
-					<strong>Resumo:</strong> <span class="summary">{{$book->summary}}</span>.
-					<!-- img src="/covers/{{ $book->cover }}"-->
+					<!-- strong>Livro:</strong --><h3 class="title">{{$learning_object->title}}</h3> (#{{$learning_object->id}})   
+					<strong>Curso:</strong> <span class="course">{{$learning_object->course->name}}</span>;
+					<strong>Modulo:</strong> <span class="module">{{$learning_object->module}}</span>;
+					<strong>Resumo:</strong> <span class="summary">{{$learning_object->summary}}</span>.
+					<!-- img src="/covers/{{ $learning_object->cover }}"-->
 				</li>
 			@empty
 				<div>Não há livros nessa categoria.</div>
@@ -59,6 +59,6 @@
 		pagination: true
 	};
 
-	var bookList = new List('books', options);
+	var learning_objectList = new List('learning_objects', options);
 </script>
 @endsection

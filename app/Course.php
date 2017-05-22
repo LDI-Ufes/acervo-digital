@@ -13,7 +13,7 @@ class Course extends Model
 		return $this->hasMany('App\LearningObject');
 	}
 
-	public function course_type()
+	public function type()
 	{
 		return $this->belongsTo('App\CourseType');
 	}

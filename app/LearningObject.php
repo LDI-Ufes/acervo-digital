@@ -12,4 +12,9 @@ class LearningObject extends Model
 	{
 		return $this->belongsTo('App\Course');
 	}
+
+	public function type()
+	{
+		return $this->belongsTo('App\ObjectType');
+	}
 }

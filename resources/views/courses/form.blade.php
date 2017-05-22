@@ -13,7 +13,7 @@
 
 		<select class="form-control" name="type_id" id="type_id">
 			@foreach($all_course_types  as $course_type)
-				@if ($course->type_id == $course_type->id)
+				@if (isset($course) and ($course->type_id == $course_type->id))
 					<option value="{{$course_type->id}}" selected>{{$course_type->name}}</option>
 				@else
 					<option value="{{$course_type->id}}">{{$course_type->name}}</option>

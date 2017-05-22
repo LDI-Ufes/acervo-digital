@@ -32,7 +32,7 @@
 			<dt>Nome</dt>
 			<dd>{{ $course->name }}</dd>
 			<dt>Tipo de Curso</dt>
-			<dd>{{ $course->course_type->name}}</dd>
+			<dd>{{ $course->type->name}}</dd>
 			<dt>Número de Módulos</dt>
 			<dd>{{ $course->modules }}</dd>
 			<dt>Cor de Fundo</dt>

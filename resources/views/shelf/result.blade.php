@@ -19,16 +19,6 @@
 	</section>
 	--}}
 
-	<section class="content">
-		<a href="/shelf/course/0/module/0/type/0">Todos os Cursos</a>
-
-		@forelse($courses as $course)
-			/ <a href="/shelf/course/{{$course->id}}/module/0/type/0">{{$course->name}}</a> 
-		@empty
-			<div>Não há cursos cadastrados.</div>
-		@endforelse
-
-	<hr>
 	<div id="learning_objects" class="annotated-list">
 		<input class="search" placeholder="Pesquisar" />
 		<button class="sort" data-sort="title">Título</button>
@@ -43,6 +33,11 @@
 					<strong>Modulo:</strong> <span class="module">{{$learning_object->module}}</span>;
 					<strong>Resumo:</strong> <span class="summary">{{$learning_object->summary}}</span>.
 					<!-- img src="/covers/{{ $learning_object->cover }}"-->
+
+					@if (Auth::check())
+						<a href="/learning_objects/{{$learning_object->id}}/edit">[editar]</a>
+					@endif
+
 				</li>
 			@empty
 				<div>Não há livros nessa categoria.</div>

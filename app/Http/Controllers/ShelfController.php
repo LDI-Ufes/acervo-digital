@@ -30,11 +30,13 @@ class ShelfController extends Controller
 			$current->course = Course::findOrFail($course)->name;
 		}
 
+		//seletor de objetos por modulo
 		if ($module != 0){
 			$query->where('module', '=', $module);
-			$current->module = 'Módulo #'. $module; // this s just fucking dumb.
+			$current->module = 'Módulo #'. $module; // this is just fucking dumb.
 		}
 
+		//seletor de objetos por tipo
 		if ($type != 0){
 			$query->where('type_id', '=', $type);
 			$current->type = ObjectType::findOrFail($type)->name;
@@ -42,24 +44,14 @@ class ShelfController extends Controller
 
 		$learning_objects = $query->get();
 
-		//seletor de objetos por modulo
-
-		//seletor de objetos por tipo
-
-		//$current->module = 0;
-		//$current->type = 0;
-
-		// retornar variavel com selecoes atuais?
 		return view('shelf.result', compact('courses', 'learning_objects', 'current'));
 
 	}
 
-	public function search(Request $request)
+	public function courses()
 	{
-		//dd($request);
-
-		//$all_learning_objects = LearningObject::all();
-		//$all_courses = Course::all();
-		return $request; //view('shelf.result', compact('all_learning_objects', 'all_courses'));
+		$courses = Course::orderBy('name', 'asc')->get()->groupBy('type_id');
+		
+		return view('shelf.courses', compact('courses'));
 	}
 }

@@ -10,16 +10,29 @@
 
     <title>{{ config('app.name', 'Estante Virtual') }}</title>
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Font PT Sans -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+    
+    <link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 
-    <!-- Scripts -->
+ 
+
+    <!-- Books CSS -->
+    <link href="{{asset("css/shelf.css")}}" rel="stylesheet">
+
+   <!-- Font Awesome -->
+   <!-- link rel="stylesheet" href="css/font-awesome.css" -->
+
+   <!-- Bootstrap Select -->
+   <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css"-->
+
+   <!-- Scripts -->
     <script>
       window.Laravel = {!! json_encode([
               'csrfToken' => csrf_token(),
       ]) !!};
     </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
   </head>
   <body class="skin-ldi">
     <div id="app">
@@ -32,6 +45,9 @@
 
     <!-- Scripts original-->
     <!--<script src="{{ asset('js/app.js') }}"></script>-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="{{ asset('assets/plugins/jQuery/jQuery-2.1.3.min.js') }}"></script>
+
 
   </body>
 </html>

@@ -1,15 +1,12 @@
 @extends('layouts.shelf')
 @section('content')
 
-	<section class="content-header">
-		<h1>
-			Acervo UAB/SEAD/UFES 
-		</h1>
-	</section>
+	<div class="container">
+		<div class="page-header">
+			<h2>Acervo UAB/SEAD/UFES</h2>
+		</div>
 
-	<section class="content">
-		<a href="/shelf/course/0/module/0/type/0">Todos os Cursos</a>
-		<hr>
+
 
 		@forelse($courses as $group)
 			<div class="page-header">
@@ -33,7 +30,9 @@
 		@empty
 			<div>Não há cursos cadastrados.</div>
 		@endforelse
-	<hr>
-	</section>
+		<hr>
+
+		{{-- <a href="/shelf/course/0/module/0/type/0">Todos os Cursos</a> --}}
+	</div>
 
 @endsection

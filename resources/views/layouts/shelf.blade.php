@@ -15,7 +15,7 @@
     
     <link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/bootstrap-theme.css') }}" rel="stylesheet">
  
 
     <!-- Books CSS -->

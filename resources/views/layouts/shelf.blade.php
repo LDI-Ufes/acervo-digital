@@ -11,9 +11,9 @@
     <title>{{ config('app.name', 'Estante Virtual') }}</title>
 
     <!-- Font PT Sans -->
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
     
-    <link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet">
+
     <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-theme.css') }}" rel="stylesheet">
  
@@ -22,10 +22,11 @@
     <link href="{{asset("css/shelf.css")}}" rel="stylesheet">
 
    <!-- Font Awesome -->
-   <!-- link rel="stylesheet" href="css/font-awesome.css" -->
+   {{-- <link rel="stylesheet" href="{{asset('assets/css/font-awesome.css')}}"> --}}
+   <link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet">
 
    <!-- Bootstrap Select -->
-   <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css"-->
+   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 
    <!-- Scripts -->
     <script>
@@ -34,20 +35,23 @@
       ]) !!};
     </script>
   </head>
-  <body class="skin-ldi">
-    <div id="app">
+  <body>
+   {{--
+   <div id="app">
       <div class="wrapper">
         <div class="content-wrapper">
-          @yield('content')
-        </div>
+--}}
+	@yield('content')
+{{--
+	</div>
       </div>
     </div>
-
+--}}
     <!-- Scripts original-->
-    <!--<script src="{{ asset('js/app.js') }}"></script>-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-    <script src="{{ asset('assets/plugins/jQuery/jQuery-2.1.3.min.js') }}"></script>
+{{--	    <script src="{{ asset('public/js/app.js') }}"></script> --}}
+{{--	    <script src="{{ asset('assets/plugins/jQuery/jQuery-2.1.3.min.js') }}"></script> --}}
 
+	    @yield('scripts')
 
   </body>
 </html>

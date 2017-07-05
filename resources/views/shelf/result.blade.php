@@ -77,7 +77,7 @@
 		<ul class="row list">
 			@forelse($learning_objects as $learning_object)
 				<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-					<div class="thumbnail no-shadow" type="button" data-toggle="modal" data-target="#myModal">
+					<div class="thumbnail no-shadow" type="button" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
 						<span class="label label-default">
 							<div class="icon"></div>
 							{{ $learning_object->type->name }}
@@ -95,7 +95,7 @@
 					</div>
 				
 				
-					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
@@ -121,7 +121,8 @@
 				<div>Não há materiais nessa categoria.</div>
 			@endforelse
 		</ul>
-		<ul class="pagination"></ul>
+
+		<ul class="pagination"></ul><upper>pages motherfucka</upper>
 	</div>
 	<div><small> {{$current->course}} / {{$current->module}} / {{$current->type}} </small></div>
 </div>
@@ -150,13 +151,10 @@
 		document.location.href = '/shelf/course/'+ params[5] +'/module/'+ params[7] +'/type/'+ this.value;
 	});
 
-//	$('#select-type').
-	
-
 
 	var options = {
-		valueNames: ['modal-title', 'modal-body'],
-		page: 9,
+		valueNames: ['modal-title.p', 'modal-body.p'],
+		page: 6,
 		pagination: true
 	};
 

@@ -2,9 +2,9 @@
 @section('content')
 
 	<div class="container">
-		<div class="page-header">
+		<!--<div class="page-header">
 			<h2>Acervo UAB/SEAD/UFES</h2>
-		</div>
+		</div>-->
 
 
 

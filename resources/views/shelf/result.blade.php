@@ -2,15 +2,15 @@
 @section('content')
 
 <div class="container">
-	<div class="page-header">
+	{{--<div class="page-header">
 		<h2>{{$current->course}}</h2>
-	</div>
+	</div>--}}
 
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
 
-				<a class="btn btn-default navbar-text" href="{{ url('shelf/courses') }}">Voltar</a>
+				{{--<a class="btn btn-default navbar-text" href="{{ url('shelf/courses') }}">Voltar</a>--}}
 
 				<button type="button" class="navbar-toggle collapsed navbar-text" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 				    <span class="sr-only">Toggle navigation</span>
@@ -22,6 +22,7 @@
 			
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-text">
+					<!--
 					<li>
 				 		<p>Módulo</p>
 						<select class="selectpicker" id="select-module">
@@ -35,9 +36,11 @@
 							@endfor
 						</select>
 					</li>
+					-->
 					<li>
-						<p>Objeto</p>
+						<!--<p>Tipo de Objeto</p>-->
 						<select class="selectpicker" id="select-type">
+							<option selected disabled="">Tipo de Objeto</option>
 							<option value="0">Todos</option>
 							@foreach ($current->object_types as $type)								
 								@if ($current->type_id == $type->id)
@@ -63,7 +66,7 @@
 						--}}
 
 						<div class="input-group-btn">
-							<button class="btn btn-default" type="submit">
+							<button type="submit">
 								<i class="fa fa-search" aria-hidden="true"></i>
 							</button>
 						</div>
@@ -79,7 +82,10 @@
 				<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 					<div class="thumbnail no-shadow" type="button" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
 						<span class="label label-default">
-							<div class="icon"></div>
+							<div class="icon"></div>              
+
+							<!-- Chamar o icone pelo nome do objeto  ex: Objeto-Interativo.svg        -->
+							
 							{{ $learning_object->type->name }}
 						</span>
 						<div class="wrap-image">
@@ -99,15 +105,15 @@
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>        <!--Chamar fechar.svg -->
 									<img class="modal-image" src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
 									<div class="modal-caption">
 										<h3 class="modal-title">{{ $learning_object->title }}</h3>
 										<p class="modal-author">{{ $learning_object->author }}</p>
+										<a class="btn-download" href="{{ $learning_object->link }}" role="button">Abrir</a>     <!--Chamar baixar.svg -->
 									</div>
 								</div>
 								<div class="modal-body">
-									<a class="btn btn-default" href="{{ $learning_object->link }}" role="button">Abrir</a>
 									<p><strong>Resumo:</strong><br>
 										{{ $learning_object->summary }}
 									</p>

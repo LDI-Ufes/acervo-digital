@@ -13,6 +13,9 @@ ul {
   padding-left: 0;
 }
 
+a, a:hover, a:active, a:focus {
+  text-decoration: none !important;
+}
 
 /* Perfect Fourth Scale */
 /* 12px - 16px - 21.328px - 28.430px - 37.897px */
@@ -25,6 +28,7 @@ h1 {
 h2 {
   font-size: 28.430px;
   line-height: 37.897px;
+  color:#656565;
 }
 
 h3 {
@@ -73,6 +77,55 @@ p {
   display: inline-block;
 }
 
+.navbar{
+  margin-top: 30px;
+}
+
+button[type="submit"]{
+  height: inherit;
+  background-color: #656565;
+  border:none;
+  box-shadow: none;
+  height: 34px;
+  width: 34px;
+  padding: 0;
+}
+
+button img{
+  height: inherit;
+}
+
+.btn{
+  text-decoration: none;
+  background-image: none;
+  width: inherit !important;
+}
+
+.btn:hover .btn:focus{
+  text-decoration: none;
+  background-image: none;
+  background-color: #eaeaea;
+}
+
+.btn:click{
+  text-decoration: none;
+  background-image: none;
+  background-color: #fff;
+}
+
+.dropdown-menu{
+  width: inherit !important;
+}
+
+.selectpicker{
+    box-shadow: none;
+    padding: 2px;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    color: #656565;
+}
 
 /* ========= PANEL ========= */
 .panel {
@@ -80,11 +133,11 @@ p {
   border-radius: 0;
   box-shadow: none;
   min-height: 72px;
-  background-color: #fafafa;
-  border-left: 5px solid #000;
+  background-color: #ffffff;
+  border:1px solid #eaeaea;
 }
   .panel:hover {
-    background-color: #ddd;
+    background-color: #eaeaea;
   }
 
 .panel-body {
@@ -122,9 +175,11 @@ p {
   height: 84px;
   max-height: 100%;
   overflow: hidden;
+  background-color: #f5f5f5
 }
   .caption h3 {
     margin: 5px 0;
+    color: #656565;
   }
 
 
@@ -143,14 +198,14 @@ p {
 }
   .label-default {
     background-color: #fff;
-    color: #000;
+    color: #656565;
   }
   .icon {
     display: inline-block;
     vertical-align: middle;
     height: 24px;
     width: 24px;
-    background-color: #ddd;
+    background-color: #656565;
   }
 
 .thumbnail .fa {
@@ -162,6 +217,7 @@ p {
 /* ========= MODAL ========= */
 .modal-header {
   padding: 0;
+  background-color: #f5f5f5;
   /*border-bottom: none;*/
 }
   .modal-header .close {
@@ -170,8 +226,9 @@ p {
     right: 15px;
     width: 25px;
     height: 25px;
-    background-color: #fff;
+    background-color: #656565;
     opacity: 1;
+
   }
   .modal-image {
     max-width: 100%;
@@ -179,6 +236,7 @@ p {
   }
   .modal-caption {
     padding: 15px;
+    color:#656565;
   }
   .modal-title {
     margin: 0;
@@ -190,12 +248,38 @@ p {
     color: gray;
   }
 
-.modal-body .btn {
-  position: absolute;
-  top: -18px;
+.btn-download {
   right: 15px;
+  padding: 5px 10px 5px 2px;
+  border: none;
   font-size: 16px;
   line-height: 21.328px;
+  color: #fff;
+  float: right;
+  margin-bottom: 10px;
+  text-decoration: none;
+  background-color: #656565;
+}
+
+.btn-download:hover{
+  color: #fff;
+}
+
+.btn-download img {
+  vertical-align: -7px;
+  margin-right: 5px;
+  height: 25px;
+  width: 25px;
+}
+
+
+/* ======= CURSOS INATIVOS =======*/
+
+/*  podemos chamar por $curso-inativo .panel{} (não sei como seria)     */
+
+.inativo{
+  color:#656565;
+  border-left: 7px solid #656565;
 }
 
 

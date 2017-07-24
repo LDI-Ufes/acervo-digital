@@ -22,7 +22,7 @@
 			
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-text">
-					<!--
+					{{--
 					<li>
 				 		<p>Módulo</p>
 						<select class="selectpicker" id="select-module">
@@ -36,7 +36,7 @@
 							@endfor
 						</select>
 					</li>
-					-->
+					--}}
 					<li>
 						<!--<p>Tipo de Objeto</p>-->
 						<select class="selectpicker" id="select-type">
@@ -128,7 +128,7 @@
 			@endforelse
 		</ul>
 
-		<ul class="pagination"></ul><upper>pages motherfucka</upper>
+		<ul class="pagination"></ul>
 	</div>
 	<div><small> {{$current->course}} / {{$current->module}} / {{$current->type}} </small></div>
 </div>

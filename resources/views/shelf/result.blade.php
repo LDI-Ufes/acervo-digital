@@ -4,11 +4,6 @@
 
   <style>
   
-    .panel {
-	border-left: 7px solid {{ $learning_objects->first()->course->bg_color }}; 	/*  chamar cor primaria */   
-      	color: {{ $learning_objects->first()->course->fg_color }}; 			/*  chamar cor da fonte */
-    }
-
     .btn-download {
       background-color: {{  $learning_objects->first()->course->bg_color }}; 	/* chamar cor primaria   } */
     }

@@ -1,4 +1,5 @@
 @extends('layouts.shelf')
+
 @section('content')
 
 	<div class="container">
@@ -16,14 +17,15 @@
 			<ul class="row">
 				@foreach($group as $course)
 					<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<a href="/shelf/course/{{$course->id}}/module/0/type/0">{{$course->name}}</a>
-								@if (Auth::check())
-									<a href="/courses/{{$course->id}}/edit">[editar]</a>
-								@endif
+						<a href="/shelf/course/{{$course->id}}/module/0/type/0">
+							<div class="panel panel-default" style=" border-left: 7px solid {{ $course->bg_color }}; color: {{ $course->fg_color }}">
+								<div class="panel-body">
+									<p>{{$course->name}}</p>
+									{{--@if (Auth::check())
+										<a href="/courses/{{$course->id}}/edit">[editar]</a> --}}
+								</div>
 							</div>
-						</div>
+						</a>
 					</li>	
 				@endforeach
 			</ul>

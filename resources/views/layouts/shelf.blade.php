@@ -28,26 +28,8 @@
    <!-- Bootstrap Select -->
    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 
+	@yield('styles')
 
-{{--  Aguardando comunicação com o banco de dados 
-
-  <style>
-  
-    .panel{
-      border-left: 7px solid {{  chamar cor primaria  }};   
-      color: {{  chamar cor da fonte   }};                        
-    }
-
-    .btn-download {
-      background-color: {{   chamar cor primaria   }}
-    }
-
-    .btn-download:hover {
-      background-color: {{   chamar cor auxiliar   }}
-    }
-
-  </style>
---}}
 
    <!-- Scripts -->
     <script>

@@ -1,4 +1,27 @@
 @extends('layouts.shelf')
+
+@section('styles')
+
+  <style>
+  
+    .panel {
+	border-left: 7px solid {{ $learning_objects->first()->course->bg_color }}; 	/*  chamar cor primaria */   
+      	color: {{ $learning_objects->first()->course->fg_color }}; 			/*  chamar cor da fonte */
+    }
+
+    .btn-download {
+      background-color: {{  $learning_objects->first()->course->bg_color }}; 	/* chamar cor primaria   } */
+    }
+
+    .btn-download:hover {
+      background-color: {{  $learning_objects->first()->course->aux_color }}; 	/* chamar cor auxiliar   }} */
+    }
+
+  </style>
+
+@endsection
+
+
 @section('content')
 
 <div class="container">
@@ -147,19 +170,21 @@
 		$('#myInput').focus();
 	});
 
+	{{--
 	$('#select-module').on('change', function(){
 		params = document.location.href.split('/');
 		document.location.href = '/shelf/course/'+ params[5] +'/module/'+ this.value +'/type/'+ params[9];
 	});
+	--}}
 
 	$('#select-type').on('change', function(){
 		params = document.location.href.split('/');
 		document.location.href = '/shelf/course/'+ params[5] +'/module/'+ params[7] +'/type/'+ this.value;
 	});
-
+	
 
 	var options = {
-		valueNames: ['modal-title.p', 'modal-body.p'],
+		valueNames: ['modal-title', 'modal-body'],
 		page: 6,
 		pagination: true
 	};

@@ -85,6 +85,7 @@
 
 						<div class="input-group-btn">
 							<button type="submit">
+								<img src="{{asset("/icons/buscar.svg")}}">
 								<i class="fa fa-search" aria-hidden="true"></i>
 							</button>
 						</div>
@@ -100,9 +101,9 @@
 				<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 					<div class="thumbnail no-shadow" type="button" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
 						<span class="label label-default">
-							<div class="icon"></div>              
-
-							<!-- Chamar o icone pelo nome do objeto  ex: Objeto-Interativo.svg        -->
+							<div class="icon">
+								<img src="{{asset("/icons/". $learning_object->type->id .".svg")}}">
+							</div> 
 							
 							{{ $learning_object->type->name }}
 						</span>
@@ -123,12 +124,18 @@
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>        <!--Chamar fechar.svg -->
+									<button type="button" class="fechar" data-dismiss="modal" aria-label="Close">
+									<img src="{{asset("icons/fechar.svg")}}">
+									</button> 
+
 									<img class="modal-image" src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
 									<div class="modal-caption">
 										<h3 class="modal-title">{{ $learning_object->title }}</h3>
 										<p class="modal-author">{{ $learning_object->author }}</p>
-										<a class="btn-download" href="{{ $learning_object->link }}" role="button">Abrir</a>     <!--Chamar baixar.svg -->
+										<a class="btn-download" href="{{ $learning_object->link }}" role="button">
+											<img src="{{asset("/icons/baixar.svg")}}">
+										Abrir
+										</a> 
 									</div>
 								</div>
 								<div class="modal-body">

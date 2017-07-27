@@ -43,6 +43,13 @@
 			<dd>{{ $course->aux_color}}</dd>
 			<dt>Abreviação</dt>
 			<dd>{{ $course->short }}</dd>
+			<dt>Ativo</dt>
+			@if ($course->active)
+				<dd>Sim, ativo.</dd>
+			@else
+				<dd>Não, desativado.</dd>
+			@endif
+			
 		</dl>
 
 

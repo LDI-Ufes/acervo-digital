@@ -66,6 +66,18 @@
 	</div>
 </div>
 
+<div class="form-group {{ $errors->has('active') ? 'has-error' : ''}}">
+	<label for="active" class="col-md-2 control-label">Ativo</label>
+	<div class="col-md-2">
+		@if (isset($course) and $course->active)
+			<input name="active" type="checkbox" id="active" checked>
+		@else	
+			<input name="active" type="checkbox" id="active">
+		@endif
+		{!! $errors->first('active', '<p class="help-block">:message</p>') !!}
+	</div>
+</div>
+
 <div class="form-group">
 	<div class="col-md-offset-2 col-md-10">
 		<input class="btn btn-success" type="submit" value="{{ isset($submitButtonLabel) ? $submitButtonLabel : "Adicionar" }}">

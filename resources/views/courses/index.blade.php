@@ -34,6 +34,7 @@
                                 <th style="text-align:center;">Tag</th>
                                 <th>Curso</th>
                                 <th>Módulos</th>
+	                        <th>Situaçao</th>
                                 <th class="icone"></th>
                             </tr>
                         </thead>
@@ -43,6 +44,7 @@
 					  <td class="box-curso" style="background-color:{{$course->bg_color}}"title="{{ $course->name }}">{{$course->short}}</td>
 					<td>{{ $course->name }}</td>
 					<td>{{$course->modules}}</td>
+					<td>{{ ($course->active) ? "Ativo" : "Inativo" }}</td>
 					<td><a href="{{ route('courses.edit', $course->id) }}"><i class="fa fa-edit"></i></a></td>
 				  </tr>
                            @endforeach

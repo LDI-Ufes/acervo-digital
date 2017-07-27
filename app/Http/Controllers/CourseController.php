@@ -59,6 +59,7 @@ class CourseController extends Controller
 	    $course->fg_color = $request->fg_color;
 	    $course->aux_color = $request->aux_color;
 	    $course->short = $request->short;
+	    $course->active = ($request->active == 'on');
 
 	    $course->save();
 
@@ -111,6 +112,7 @@ class CourseController extends Controller
 	    $course->fg_color = $request->fg_color;
 	    $course->aux_color = $request->aux_color;
 	    $course->short = $request->short;
+	    $course->active = ($request->active == 'on');
 
 	    $course->save();
 

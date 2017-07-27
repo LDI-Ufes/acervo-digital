@@ -15,6 +15,13 @@
 	</div>
 </div>
 
+<div class="form-group {{ $errors->has('year') ? 'has-error' : ''}}">
+	<label for="year" class="col-md-2 control-label">Ano</label>
+	<div class="col-md-10">
+		<input class="form-control" name="year" type="text" id="year" value="{{ old('year', isset($learning_object) ? $learning_object->year : null) }}" maxlength="4">
+		{!! $errors->first('year', '<p class="help-block">:message</p>') !!}
+	</div>
+</div>
 
 <div class="form-group {{ $errors->has('summary') ? 'has-error' : ''}}">
 	<label for="summary" class="col-md-2 control-label">Resumo</label>

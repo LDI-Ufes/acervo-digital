@@ -37,7 +37,7 @@
           </div>
           <div class="row">
             <div class="miniatura">
-              <div class="img">
+		    <div class="img" style="overflow:hidden">
 		<img src="/covers/{{ $learning_object->cover }}">
                 <span>{{ $learning_object->cover }}</span>
               </div>
@@ -48,7 +48,8 @@
                 <li><b>Módulo:</b> {{ $learning_object->module }}</li>
                 <li><b>Título:</b> {{ $learning_object->title }}</li>
                 <li><b>Autor:</b> {{ $learning_object->author }}</li>
-                <li><b>Endereço:</b> {{ $learning_object->pdf }}</li>
+		<li><b>Ano:</b> {{ $learning_object->year }}</li>
+                <li><b>Endereço:</b> {{ $learning_object->link }}</li>
                 <li>
                   <b>Resumo</b> <br>
                   {{ $learning_object->summary }}

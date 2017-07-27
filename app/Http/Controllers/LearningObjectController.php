@@ -63,6 +63,7 @@ class LearningObjectController extends Controller
 
 	    $learning_object->title = $request->title;
 	    $learning_object->author = $request->author;
+	    $learning_object->year = $request->year;
 	    $learning_object->summary = $request->summary;
 	    $learning_object->link = $request->link;
 	    $learning_object->course_id = $request->course_id;	
@@ -135,11 +136,11 @@ class LearningObjectController extends Controller
 
 	    $learning_object->title = $request->title;
 	    $learning_object->author = $request->author;
+	    $learning_object->year = $request->year;
 	    $learning_object->summary = $request->summary;
 	    $learning_object->link = $request->link;
 	    $learning_object->course_id = $request->course_id;
 	    $learning_object->type_id = $request->type_id;
-   		    
 
 	    // checar se o módulo não é maior do que os que o curso oferece
 	    $learning_object->module = $request->module;

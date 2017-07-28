@@ -58,7 +58,7 @@ p {
 /* ========= NAVBAR ========= */
 
 .btn-group.bootstrap-select {
-    max-width: 104px;
+    width: inherit !important;
 }
 .navbar-text {
   margin-left: 0;
@@ -142,7 +142,7 @@ button img{
 
 .panel-body {
   position: absolute;
-  top: 50%;
+  top: 56%;
   transform: translateY(-50%);
   font-weight: 700;
 }
@@ -256,6 +256,13 @@ button img{
     color: gray;
   }
 
+  .modal-year{
+  	display: inline-block;
+  	margin: 5px 0 0;
+    font-weight: 400;
+    color: gray;
+  }
+
 .btn-download {
   right: 15px;
   padding: 5px 10px 5px 2px;
@@ -280,6 +287,12 @@ button img{
   width: 25px;
 }
 
+/* ======= PAGINAÇÃO =======*/
+
+.pagination a{
+	background-color: #656565 !important;
+	border-color: #ddd !important;
+}
 
 /* ======= CURSOS INATIVOS =======*/
 

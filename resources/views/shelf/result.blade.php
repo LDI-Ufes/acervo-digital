@@ -69,6 +69,23 @@
 							@endforeach
 						</select>
 					</li>
+
+					<li>
+						<!-- ANO -->
+						<select class="selectpicker" id="select-type">
+							<option selected disabled="">Ano</option>
+							<option value="0">Todos</option>
+							@foreach ($current->object_types as $type)								
+								@if ($current->type_id == $type->id)
+									<option value="{{$type->id}}" selected>{{$type->year}}</option>
+								@else
+									<option value="{{$type->id}}">{{$type->year}}</option>
+								@endif
+							@endforeach
+						</select>
+					</li>
+
+
 				</ul>
 				<form class="navbar-form navbar-right navbar-text">
 					<div class="input-group">
@@ -132,9 +149,10 @@
 									<div class="modal-caption">
 										<h3 class="modal-title">{{ $learning_object->title }}</h3>
 										<p class="modal-author">{{ $learning_object->author }}</p>
+										<p class="modal-year">{{ $learning_object->year }}</p>
 										<a class="btn-download" href="{{ $learning_object->link }}" role="button">
 											<img src="{{asset("/icons/baixar.svg")}}">
-										Abrir
+											Abrir
 										</a> 
 									</div>
 								</div>
@@ -145,7 +163,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div>	
 				</li>
 
 			@empty

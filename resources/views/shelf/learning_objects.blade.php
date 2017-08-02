@@ -171,8 +171,9 @@
 				<div>Não há materiais nessa categoria.</div>
 			@endforelse
 		</ul>
-
+		<div class="pagination-container">
 		<ul class="pagination"></ul>
+		</div>
 	</div>
 </div>
 

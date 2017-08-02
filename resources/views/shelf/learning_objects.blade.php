@@ -24,7 +24,7 @@
 		<h2>{{$current->course}}</h2>
 	</div>--}}
 
-	<div><small> <a href="#">Acervo SEAD</a> &raquo; {{$current->course}} &raquo; {{$current->type}} &raquo; {{ $current->year }} </small></div>
+	<div><small> <a href="#">Acervo SEAD</a> &raquo; {{$current->course}} {{--&raquo; {{$current->type}} &raquo; {{ $current->year }}--}} </small></div>
 
 
 	<nav class="navbar navbar-default">

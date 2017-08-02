@@ -24,6 +24,9 @@
 		<h2>{{$current->course}}</h2>
 	</div>--}}
 
+	<div><small> <a href="#">Acervo SEAD</a> &raquo; {{$current->course}} &raquo; {{$current->type}} &raquo; {{ $current->year }} </small></div>
+
+
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -40,21 +43,6 @@
 			
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-text">
-					{{-- //Seletor de Módulo de Materiais
-					<li>
-				 		<p>Módulo</p>
-						<select class="selectpicker" id="select-module">
-							<option value="0">Todos</option>
-							@for ($i = 1; $i <= $current->number_of_modules; $i++)
-								@if ($current->module_id == $i)
-									<option value="{{ $i }}" selected>{{ $i }}</option>
-								@else
-									<option value="{{ $i }}">{{ $i }}</option>
-								@endif
-							@endfor
-						</select>
-					</li>
-					--}}
 
 					<li>
 						<!-- TIPOS DE OBJETO DE APRENDIZAGEM -->
@@ -73,14 +61,18 @@
 
 					<li>
 						<!-- ANO -->
-						<select class="selectpicker" id="select-type">
+						<select class="selectpicker" id="select-year">
 							<option selected disabled="">Ano</option>
 							<option value="0">Todos</option>
 
-							@foreach ($learning_objects->pluck('year')->unique() as $year)
-								<option value="{{ $year }}"> </option>
-
-
+							@foreach ($learning_objects->pluck('year')->unique()->sort() as $year)
+								@if($year != null)
+									@if($current->year == $year)
+										<option value="{{ $year }}" selected>{{ $year }}</option>
+									@else
+										<option value="{{ $year }}">{{ $year }}</option>
+									@endif
+								@endif
 
 
 								{{-- SÓ FAZ SENTIDO CRIAR ISSO DEPOIS DO BACKEND FAZE A SELECAO... VALE A PENA???
@@ -182,7 +174,6 @@
 
 		<ul class="pagination"></ul>
 	</div>
-	<div><small> {{$current->course}} / {{$current->module}} / {{$current->type}} </small></div>
 </div>
 
 @endsection
@@ -199,16 +190,16 @@
 		$('#myInput').focus();
 	});
 
-	{{--
-	$('#select-module').on('change', function(){
-		params = document.location.href.split('/');
-		document.location.href = '/shelf/course/'+ params[5] +'/module/'+ this.value +'/type/'+ params[9];
-	});
-	--}}
 
 	$('#select-type').on('change', function(){
 		params = document.location.href.split('/');
-		document.location.href = '/shelf/course/'+ params[5] +'/module/'+ params[7] +'/type/'+ this.value;
+		document.location.href = '/shelf/course/'+ params[5] +'/type/'+ this.value +'/year/'+ params[9];
+	});
+
+
+	$('#select-year').on('change', function(){
+		params = document.location.href.split('/');
+		document.location.href = '/shelf/course/'+ params[5] +'/type/'+ params[7] +'/year/'+ this.value;
 	});
 	
 

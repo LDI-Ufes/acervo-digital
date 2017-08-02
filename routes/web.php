@@ -30,7 +30,11 @@ Route::resource('/course_types', 'CourseTypeController');
 Route::resource('/object_types', 'ObjectTypeController');
 
 // Rotas Públicas (Acesso ao Acervo para alunos e etc)
-Route::get('/shelf/course/{course}/module/{module}/type/{type}', 'ShelfController@index');
+// ROTA COM MODULO
+//Route::get('/shelf/course/{course}/module/{module}/type/{type}', 'ShelfController@index');
+
+// ROTA COM ANO
+Route::get('/shelf/course/{course}/type/{type}/year/{year}', 'ShelfController@learningObjects');
 
 Route::get('/shelf/courses', 'ShelfController@courses');
 

@@ -301,13 +301,18 @@ button img{
 
 /* ======= CURSOS INATIVOS =======*/
 
-/*  podemos chamar por $curso-inativo .panel{} (não sei como seria)     */
-
 .inativo{
   color:#656565;
   border-left: 7px solid #656565;
 }
 
+#inativos{
+  display: none;
+}
+
+#seta{
+  padding-left: 10px;
+}
 
 /* ========= BREAKPOINTS ========= */
 @media (min-width: 768px) {

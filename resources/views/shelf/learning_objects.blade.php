@@ -2,16 +2,14 @@
 
 @section('styles')
 			
-	<style>
-		@if (!empty($learning_objects))
+	<style> 
 		.btn-download {
 			background-color: {{ $learning_objects->first()->course->bg_color }}; 	/* chamar cor primaria */
 		}
 
 		.btn-download:hover {
 			background-color: {{ $learning_objects->first()->course->aux_color }}; 	/* chamar cor auxiliar */
-		}
-		@endif 
+		} 
 	</style>
 
 @endsection
@@ -65,7 +63,7 @@
 							<option selected disabled="">Ano</option>
 							<option value="0">Todos</option>
 
-							@foreach ($learning_objects->pluck('year')->unique()->sort() as $year)
+							@foreach ($current->years_by_course as $year)
 								@if($year != null)
 									@if($current->year == $year)
 										<option value="{{ $year }}" selected>{{ $year }}</option>
@@ -158,8 +156,13 @@
 									</div>
 								</div>
 								<div class="modal-body">
-									<p><strong>Resumo:</strong><br>
-										{{ $learning_object->summary }}
+
+									@if (!empty($learning_object->summary))
+										<p><strong>Resumo:</strong><br>
+											{{ $learning_object->summary }}
+										</p>
+									@endif
+
 									</p>
 								</div>
 							</div>

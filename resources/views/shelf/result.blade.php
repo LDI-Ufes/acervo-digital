@@ -166,9 +166,18 @@
 									</div>
 								</div>
 								<div class="modal-body">
-									<p><strong>Resumo:</strong><br>
-										{{ $learning_object->summary }}
-									</p>
+									@if (!empty($learning_object->summary))
+										<p><strong>Resumo:</strong><br>
+											{{ $learning_object->summary }}
+										</p>
+									@endif
+
+									@if (empty($learning_object->summary))
+										<strong> VAZIO </strong>
+									@else
+										<strong> NOT VAZIO </strong>
+									@endif
+
 								</div>
 							</div>
 						</div>

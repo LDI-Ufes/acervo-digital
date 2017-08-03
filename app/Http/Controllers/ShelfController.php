@@ -67,21 +67,30 @@ class ShelfController extends Controller
 		$current = (object)Array(
 			'course' => "Todos os Cursos",
 			'year' => "Todos os Anos",
+			'years_by_course' => [],
 			'type' => "Todos os Tipos",
 			'type_id' => 0,
-			'number_of_modules' => 0,
 			'object_types' => ObjectType::all(),
 		);
 
 		// seletor de objetos por curso
 		if ($course != 0){
 			$query->where('course_id', '=', $course);
-			$current->course = Course::findOrFail($course)->name;
 
+			$course_info = Course::findOrFail($course);
+
+			$current->course = $course_info->name; //Course::findOrFail($course)->name;
+			
 			//Not sure this is the best way of doing this...
-			$current->number_of_modules = Course::findOrFail($course)->modules;
-			$current->number_of_types = ObjectType::get()->count();
+			//$current->number_of_modules = Course::findOrFail($course)->modules;
+			//$current->number_of_types = ObjectType::get()->count();
+
+			$current->years_by_course = LearningObject::where('course_id', '=', $course_info->id)->pluck('year')->unique()->sort();
+		
+		} else {
+			$current->years_by_course = LearningObject::all()->pluck('year')->unique()->sort();
 		}
+
 		
 		//seletor de objetos por tipo
 		if ($type != 0){

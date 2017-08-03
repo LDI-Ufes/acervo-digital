@@ -70,6 +70,12 @@
 	<div class="col-md-10">
 
 		<select class="form-control" name="module" id="module">
+			@if (isset($learning_object) and ($learning_object->module == 0))
+				<option value="0" selected>Sem módulo</option>
+			@else 
+				<option value="0">Sem módulo</option>
+			@endif
+
 			@for ($i = 1; $i <= $courses->max('modules'); $i++)
 				@if(isset($learning_object) and ($learning_object->module == $i))
 		          		<option value="{{ $i }}" selected>{{ $i }}</option>

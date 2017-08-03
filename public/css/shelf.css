@@ -53,9 +53,83 @@ p {
     max-height: 100%;
     max-width: 100%;
 }
+/* ========= HEADER ========= */
 
+.header-top{
+    min-height: 34px;
+    position: relative;
+    display: block;
+}
 
-/* ========= NAVBAR ========= */
+.header-top a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.header-top p{
+    float: left;
+    padding: 0 25px 0 0;
+    line-height: 40px;
+    margin-bottom: 0 !important;
+    margin: 0 0 10px;
+    font-size: 14px;
+}
+
+.header-main{
+    height: 110px;
+}
+
+#logo{
+    padding-top: 20px;
+    display: inline-block;
+}
+
+#logo img{
+    height: 60px;
+}
+
+.rotulo{
+  text-align: left;
+  position: absolute;
+  height: 100%;
+  padding-top: 30px;
+  display: inline-block;
+  padding-left: 30px;
+  width: 100%;
+
+}
+
+.rotulo h1{
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff;            /* MOVER PARA PHP */
+  margin: 0;
+  line-height: 1.1;
+}
+
+.rotulo h2{
+  font-size: 20px;
+  color: #fff;         /* MOVER PARA PHP */
+  margin: 0;
+  line-height: 1.1;
+}
+
+.tamanho{
+  position: relative;
+  width: 100%;
+}
+
+/* ========= BREADCRUMBS ========= */
+
+.breadcrumbs{
+  height: 37px;
+  padding: 8px 0;
+  background-color: #eaeaea;
+  color: #656565;
+}
+
+/* ========= NAVBAR OBJETOS========= */
 
 .btn-group.bootstrap-select {
     width: inherit !important;
@@ -341,7 +415,36 @@ button img{
     padding-right: 15px;
     border: none;
   }
+
+  .header-top .navbar-text{
+    display: none;
+  }
+
+  #logo{
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+
+  #logo img{
+    height: 30px;
+  }
+
+  .rotulo{
+    left: initial;
+    width: 100%;
+    text-align: center;
+    top: 23px;
+    line-height: 20px;
+    padding-left: 0;
+  }
+
+  .rotulo h1, .rotulo h2 {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
+
 
 @media screen and (max-width: 720px) {
   .caption {

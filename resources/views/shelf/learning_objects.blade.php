@@ -3,13 +3,36 @@
 @section('styles')
 			
 	<style> 
+		@if (!empty($learning_objects))
+
 		.btn-download {
 			background-color: {{ $learning_objects->first()->course->bg_color }}; 	/* chamar cor primaria */
 		}
 
 		.btn-download:hover {
 			background-color: {{ $learning_objects->first()->course->aux_color }}; 	/* chamar cor auxiliar */
-		} 
+		}
+
+		small a{
+			color: {{ $learning_objects->first()->course->fg_color }} !important; 
+		}
+
+		@endif 
+	</style>
+
+		<!-- HEADER -->
+	<style>
+		@if (!empty($learning_objects))
+		
+		.header-top{
+			background-color: {{ $learning_objects->first()->course->aux_color }};
+		}
+
+		.header-main{
+			background-color: {{ $learning_objects->first()->course->bg_color }};
+		}
+
+		@endif 
 	</style>
 
 @endsection
@@ -17,13 +40,63 @@
 
 @section('content')
 
+<!--      ESSA PARTE SÓ É MOSTRADA NO LINK EXTERNO       -->
+
+<header>
+  <div class="header-top">
+    <div class='container'>
+      <p class="navbar-text"><a href="http://www.especializacao.aperfeicoamento.ufes.br/">
+        <i class="fa fa-home"></i>  
+      Início</a></p>
+      <p class="navbar-text"><a href="http://www.eadufes.org/" target="_blank">
+        <i class="fa fa-info-circle"></i>  
+      EAD na Ufes</a></p>
+      <p class="navbar-text"><a href="https://aluno.ufes.br/" target="_blank">
+        <i class="fa fa-graduation-cap"></i>  
+      Portal do Aluno</a></p>
+      <p class="navbar-text"><a href="http://www.bc.ufes.br/" target="_blank">
+        <i class="fa fa-book"></i>  
+      Biblioteca Ufes</a></p>
+      <p class="navbar-text"><a href="">  <!-- link para home  -->
+        <i class="fa fa-desktop"></i>  
+      Acervo Digital EAD</a></p>
+    </div>  
+  </div>
+
+  <div class="header-main">
+    <div class='container'>
+      <div class="tamanho">
+        <div id="logo">
+          <a href="">  <!-- link para home  -->
+            <img src="{{asset("/icons/marca-ufes-cor.svg")}}">
+          </a>
+        </div>
+        <div class="rotulo">
+          <h1>Acervo Digital</h1>
+          <h2>{{$current->course}}</h2>
+        </div>
+      </div>  
+    </div>  
+  </div>
+
+<div class="breadcrumbs">
+	<div class="container">
+	<small> <a href="#">Acervo SEAD</a> &raquo; {{$current->course}} {{--&raquo; {{$current->type}} &raquo; {{ $current->year }}--}} </small>
+
+	</div>
+</div>
+
+</header>
+
+<!--    fim do header     -->
+
+
+
+
 <div class="container">
 	{{--<div class="page-header">
 		<h2>{{$current->course}}</h2>
 	</div>--}}
-
-	<div><small> <a href="#">Acervo SEAD</a> &raquo; {{$current->course}} {{--&raquo; {{$current->type}} &raquo; {{ $current->year }}--}} </small></div>
-
 
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">

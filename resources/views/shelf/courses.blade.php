@@ -33,14 +33,17 @@
 		@empty
 			<div>Não há cursos cadastrados.</div>
 		@endforelse
-		<hr>
+
 
 		{{-- <a href="/shelf/course/0/module/0/type/0">Todos os Cursos</a> --}}
 
 		@if (!empty($inactive_courses))
-			<div class="container">	
-			<div class="page-header">
-				<h2>Batidão dos Inativos</h2> 
+			<!--<div class="container">	-->
+			<div class="page-header" id="inativos-mostra">
+				<h2>Batidão dos Inativos 
+				<i id="seta" class="fa fa-caret-down" aria-hidden="true"></i>
+
+				</h2> 
 			</div>
 
 			<div id="inativos" class="deveria-ser-collapsible"> 
@@ -61,7 +64,7 @@
 					@endforeach 
 				</ul> 
 			</div>
-			</div>
+			<!--</div>-->
 
 		@else
 			Testando esse &at;if na encolha aqui, mas na moral não tem nem esse &at;else que usei aqui, tá ligado? <br\>
@@ -70,5 +73,20 @@
 		@endif
 
 	</div>
+
+@endsection
+
+@section('scripts')
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+      $( "#inativos-mostra").click(
+      	function() {
+      		$( "#inativos" ).toggle();
+      		$('#seta').toggleClass('fa-caret-down');
+    		$('#seta').toggleClass('fa-caret-up');
+      	}
+      );
+	</script>
 
 @endsection

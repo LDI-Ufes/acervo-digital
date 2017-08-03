@@ -81,7 +81,7 @@
 
 <div class="breadcrumbs">
 	<div class="container">
-	<small> <a href="#">Acervo SEAD</a> &raquo; {{$current->course}} {{--&raquo; {{$current->type}} &raquo; {{ $current->year }}--}} </small>
+	<small> <a href="#">Acervo SEAD</a> &raquo; {{$current->course}} {{--&raquo; {{$current->type}} &raquo; {{ $current->year }}--}} </small> <!-- link para home  -->
 
 	</div>
 </div>
@@ -228,16 +228,16 @@
 										</a> 
 									</div>
 								</div>
+								
+								@if (!empty($learning_object->summary))
 								<div class="modal-body">
 
-									@if (!empty($learning_object->summary))
-										<p><strong>Resumo:</strong><br>
-											{{ $learning_object->summary }}
-										</p>
-									@endif
-
+									<p><strong>Resumo:</strong><br>
+										{{ $learning_object->summary }}
 									</p>
 								</div>
+								@endif
+						
 							</div>
 						</div>
 					</div>	

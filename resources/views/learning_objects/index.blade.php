@@ -34,7 +34,7 @@
                             <tr>
                                 <th>Curso</th>
                                 <th>Objeto</th>
-                                <th>Autor</th>
+                                <th>Responsável</th>
                                 <th class="icone"></th>
                                 <th class="icone"></th>
                             </tr>
@@ -42,7 +42,7 @@
                         <tbody>
                           @foreach( $all_learning_objects as $learning_object)
                           <tr>
-				<td class="box-curso" style="background-color:{{ $learning_object->course->bg_color }}" title="{{ $learning_object->course->name }}">{{ $learning_object->course->short }}</td>
+				            <td class="box-curso" style="background-color:{{ $learning_object->course->bg_color }}" title="{{ $learning_object->course->name }}">{{ $learning_object->course->short }}</td>
                          	<td>{{ $learning_object->title }}</td>
 	                        <td>{{ $learning_object->author }}</td>
         	                <td><a href="{{ route('learning_objects.show', $learning_object->id) }}"><i class="fa fa-eye"></i></a></td>

@@ -22,7 +22,7 @@
                 <div class="box-header">
                     <div>
                         <h3 class="box-title">
-                            <i class="fa fa-university"></i> Cursos cadastrados
+                            <i class="fa fa-university"></i> Tipos de objetos cadastrados
                         </h3>
                     </div>
                     <hr style="margin-bottom:0;">
@@ -34,6 +34,7 @@
                                 <th style="text-align:center;">Tag</th>
                                 <th>Tipo</th>
                                 <th class="icone"></th>
+                                <th class="icone"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,6 +42,7 @@
 				  <tr>
 				    <td class="box-curso" title="{{ $object_type->name }}"></td>
 				    <td>{{ $object_type->name }}</td>
+                    <td><a href="{{ route('object_types.show', $object_type->id) }}"><i class="fa fa-eye"></i></a></td>
 				    <td><a href="{{ route('object_types.edit', $object_type->id) }}"><i class="fa fa-edit"></i></a></td>
 				  </tr>
                            @endforeach

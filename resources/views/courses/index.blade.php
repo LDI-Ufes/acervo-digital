@@ -33,8 +33,10 @@
                             <tr>
                                 <th style="text-align:center;">Tag</th>
                                 <th>Curso</th>
+                                <th>Tipo</th>
                                 <th>Módulos</th>
-	                        <th>Situaçao</th>
+	                            <th>Situaçao</th>
+                                <th class="icone"></th>
                                 <th class="icone"></th>
                             </tr>
                         </thead>
@@ -42,9 +44,12 @@
                           @foreach( $all_courses as $course)
 				  <tr>
 					  <td class="box-curso" style="background-color:{{$course->bg_color}}"title="{{ $course->name }}">{{$course->short}}</td>
-					<td>{{ $course->name }}</td>
+                      <td>{{ $course->name }}</td>
+					<!--<td>{{ $course->type }}</td>-->
+                    <td>Colocar</td>
 					<td>{{$course->modules}}</td>
 					<td>{{ ($course->active) ? "Ativo" : "Inativo" }}</td>
+                    <td><a href="{{ route('courses.show', $course->id) }}"><i class="fa fa-eye"></i></a></td>
 					<td><a href="{{ route('courses.edit', $course->id) }}"><i class="fa fa-edit"></i></a></td>
 				  </tr>
                            @endforeach

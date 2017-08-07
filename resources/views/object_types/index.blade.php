@@ -4,11 +4,11 @@
 <!-- CABEÇALHO -->
 <section class="content-header">
   <h1>
-    Cursos
+    Tipos de Objeto de Aprendizagem
     <small>Listagem</small>
   </h1>
   <ol class="breadcrumb">
-    <li><i class="fa fa-university"></i> Tipos de Objetos de Aprendizagem</li>
+    <li><i class="fa fa-university"></i> Tipos de Objeto de Aprendizagem</li>
     <li class="active"><i class="fa fa-list"></i> Listagem</li>
   </ol>
 </section>

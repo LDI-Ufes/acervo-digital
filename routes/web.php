@@ -12,22 +12,23 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return redirect('/shelf/courses/');
+	//return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/admin', 'HomeController@index');
 
 
 // Rotas da Interface Administrativa
-Route::resource('/courses', 'CourseController');
+Route::resource('/admin/courses', 'CourseController');
 
-Route::resource('/learning_objects', 'LearningObjectController');
+Route::resource('/admin/learning_objects', 'LearningObjectController');
 
-Route::resource('/course_types', 'CourseTypeController');
+Route::resource('/admin/course_types', 'CourseTypeController');
 
-Route::resource('/object_types', 'ObjectTypeController');
+Route::resource('/admin/object_types', 'ObjectTypeController');
 
 // Rotas Públicas (Acesso ao Acervo para alunos e etc)
 // ROTA COM MODULO
@@ -37,4 +38,8 @@ Route::resource('/object_types', 'ObjectTypeController');
 Route::get('/shelf/course/{course}/type/{type}/year/{year}', 'ShelfController@learningObjects');
 
 Route::get('/shelf/courses', 'ShelfController@courses');
+
+Route::get('/shelf/', function () {
+	return redirect('/shelf/courses/');
+});
 

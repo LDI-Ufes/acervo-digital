@@ -46,7 +46,7 @@
 				</h2> 
 			</div>
 
-			<div id="inativos" class="deveria-ser-collapsible"> 
+			<div id="inativos"> 
 				<ul class="row"> 
 					@foreach($inactive_courses as $course)
 						<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">

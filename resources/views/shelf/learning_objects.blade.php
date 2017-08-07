@@ -202,7 +202,9 @@
 						<div class="caption"> 
 							<h3>{{  str_limit($learning_object->title, 40) }}
 								@if (Auth::check())
-									<a href="/learning_objects/{{$learning_object->id}}/edit">[editar]</a>
+									<a href="/learning_objects/{{$learning_object->id}}/edit">
+										<i class="fa fa-pencil-square-o"></i>
+									</a>
 								@endif
 							</h3>
 						</div>
@@ -210,6 +212,7 @@
 				
 				
 					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						<div class="outer-modal">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
@@ -240,6 +243,7 @@
 						
 							</div>
 						</div>
+					</div>
 					</div>	
 				</li>
 
@@ -279,7 +283,6 @@
 		document.location.href = '/shelf/course/'+ params[5] +'/type/'+ params[7] +'/year/'+ this.value;
 	});
 	
-
 	var options = {
 		valueNames: ['modal-title', 'modal-body'],
 		page: 6,

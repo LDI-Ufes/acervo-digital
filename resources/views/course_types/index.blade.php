@@ -33,7 +33,7 @@
                             <tr>
                                 <th style="text-align:center;">Tag</th>
                                 <th>Tipo de Curso</th>
-
+                                <th class="icone"></th>
                                 <th class="icone"></th>
                             </tr>
                         </thead>
@@ -42,7 +42,7 @@
 				  <tr>
 				    <td class="box-curso" title="{{ $course_type->name }}"></td>
 				    <td>{{ $course_type->name }}</td>
-
+                    <td><a href="{{ route('course_types.show', $course_type->id) }}"><i class="fa fa-eye"></i></a></td>
 				    <td><a href="{{ route('course_types.edit', $course_type->id) }}"><i class="fa fa-edit"></i></a></td>
 				  </tr>
                            @endforeach

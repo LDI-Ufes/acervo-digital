@@ -10,7 +10,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><i class="fa fa-university"></i> Tipos de Objetos de Aprendizagem</li>
-    <li><i class="fa fa-list"></i> Listagem</li>
+    <li><a href="{!! url('/admin/object_types') !!}"><i class="fa fa-list"></i> Listagem</a></li>
     <li class="active"><i class="fa fa-eye"></i> Visualizar</li>
   </ol>
 </section>

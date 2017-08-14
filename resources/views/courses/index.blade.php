@@ -45,7 +45,7 @@
             				<tr>
             					<td class="box-curso" style="background-color:{{$course->bg_color}}"title="{{ $course->name }}">{{$course->short}}</td>
                                 <td>{{ $course->name }}</td>
-                                <td>Colocar</td>
+                                <td>{{ $course->type->name }}</td>
             					<td>{{$course->modules}}</td>
             					<td>{{ ($course->active) ? "Ativo" : "Inativo" }}</td>
                                 <td><a href="{{ route('courses.show', $course->id) }}"><i class="fa fa-eye"></i></a></td>

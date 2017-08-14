@@ -9,7 +9,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><i class="fa fa-university"></i> Cursos</li>
-    <li><a href="{!! url('/courses') !!}"><i class="fa fa-list"></i> Listagem</a></li>
+    <li><a href="{!! url('/admin/courses') !!}"><i class="fa fa-list"></i> Listagem</a></li>
     <li class="active"><i class="fa fa-plus-circle"></i> Editar</li>
   </ol>
 </section>

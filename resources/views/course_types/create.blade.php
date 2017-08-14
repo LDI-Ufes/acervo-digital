@@ -9,7 +9,7 @@
   </h1>
   <ol class="breadcrumb">
     <li><i class="fa fa-university"></i> Tipos de Curso</li>
-    <li><a href="{!! url('/course_types') !!}"><i class="fa fa-list"></i> Listagem</a></li>
+    <li><a href="{!! url('/admin/course_types') !!}"><i class="fa fa-list"></i> Listagem</a></li>
     <li class="active"><i class="fa fa-plus-circle"></i> Cadastrar</li>
   </ol>
 </section>

@@ -4,11 +4,11 @@
 <!-- CABEÇALHO -->
 <section class="content-header">
   <h1>
-    Livros
+    Objetos
     <small>Cadastrar</small>
   </h1>
   <ol class="breadcrumb">
-    <li><i class="fa fa-learning_object"></i> Livros</li>
+    <li><i class="fa fa-book"></i> Objetos</li>
     <li><a href="{{ route('learning_objects.index') }}"><i class="fa fa-list"></i> Listagem</a></li>
     <li class="active"><i class="fa fa-plus-circle"></i> Cadastrar</li>
   </ol>
@@ -18,7 +18,7 @@
 <!-- ADICIONAR LIVRO -->
 <section class="content">
   <div class="row">
-    <section class="col-md-12">
+    <section class="col-xs-12">
       <div class="box box-ldi">
         <div class="box-body">
           @if ($errors->any())

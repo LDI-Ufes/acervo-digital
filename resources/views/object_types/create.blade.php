@@ -4,7 +4,7 @@
 <!-- CABEÇALHO -->
 <section class="content-header">
   <h1>
-    Cursos
+    Tipos de Objetos de Aprendizagem
     <small>Cadastrar</small>
   </h1>
   <ol class="breadcrumb">
@@ -19,7 +19,7 @@
 <!-- ADICIONAR USUÁRIO -->
 <section class="content">
   <div class="row">
-    <section class="col-md-4 offset-md-8">
+    <section class="col-xs-12">
       <div class="box box-ldi">
         <div class="box-body">
           @if ($errors->any())

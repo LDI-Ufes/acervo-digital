@@ -1,36 +1,51 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="panel panel-default">
-		<div class="panel-heading clearfix">
-			<span class="pull-left">Curso # {{ $course_type->id }}</span>
 
-			<div class="btn-group btn-group-xs pull-right" role="group">
-				<a href="{{ route('course_types.index') }}" class="btn btn-primary" title="Ver todos">
-					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-				</a>
-				<a href="{{ route('course_types.edit', $course_type->id ) }}" class="btn btn-primary" title="Editar">
-					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-				</a>
-				<form method="POST" action="{!! route('course_types.destroy', $course_type->id) !!}" accept-charset="UTF-8" style="display: inline;" novalidate="novalidate">
-					<input name="_method" value="DELETE" type="hidden">
-					{{ csrf_field() }}
-					<button type="submit" class="btn btn-danger btn-xs" title="Deletar" onclick="return confirm(&quot;Tem certeza que quer apagar?&quot;)" id="sometest">
-					<span class="glyphicon glyphicon-trash" aria-hidden="true" title="Apagar Curso"></span>
-					</button>
-				</form>
-			</div>
+<!-- CABEÇALHO -->
+<section class="content-header">
+  <h1>
+    Tipos de Curso
+    <small>Visualizar</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><i class="fa fa-university"></i> Tipos de Curso</li>
+    <li><i class="fa fa-list"></i> Listagem</li>
+    <li class="active"><i class="fa fa-eye"></i> Visualizar</li>
+  </ol>
+</section>
+<!-- FIM CABEÇALHO -->
 
-		
-		</div>
-	</div>
+<!-- VISUALIZAR TIPOS DE CURSO -->
+<section class="content visualizarLivro">
+  <div class="row">
+    <section class="col-xs-12">
+      <div class="box box-ldi" title="{{ $course_type->name }}">
+        <div class="box-header">
+          <h3 class="box-title">Curso tipo {{ $course_type->name }}</h3>
+        </div>
+        <div class="box-body">
+          <div class="row">
+              <div class="ficha">
+              <ul>
+              	<li><b>Nome:</b> {{ $course_type->name }} </li>
+                <li><b>ID:</b> {{ $course_type->id }}</li>
+              </ul>
+            </div>
+          </div> 
+          <hr>
+          <div class="row">
+            <div class="col-md-12">
+              <a href="{{ route('course_types.edit', $course_type->id ) }}" title="Editar">
+                <button class="btn btn-primary">Editar</button>
+              </a>
+            </div>
+          </div>         
+        </div>
+    </section>
+  </div>
+</section> 
 
-	<div class="panel-body">
-		<dl class="dl-horizontal">
-			<dt>#id do Tipo de Curso</dt>
-			<dd>{{ $course_type->id }}</dd>
-			<dt>Nome</dt>
-			<dd>{{ $course_type->name }}</dd>
-		</dl>
+<!-- FIM VISUALIZAR TIPOS DE CURSO -->
 
 @endsection

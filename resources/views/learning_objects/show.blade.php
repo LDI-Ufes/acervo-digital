@@ -4,11 +4,11 @@
 <!-- CABEÇALHO -->
 <section class="content-header">
   <h1>
-    Livros
+    Objetos
     <small>Visualizar</small>
   </h1>
   <ol class="breadcrumb">
-    <li><i class="fa fa-learning_object"></i> Livros</li>
+    <li><i class="fa fa-book"></i> Objetos</li>
     <li><a href="{{ route('learning_objects.index') }}"><i class="fa fa-list"></i> Listagem</a></li>
     <li class="active"><i class="fa fa-eye"></i> Visualizar</li>
   </ol>
@@ -18,10 +18,10 @@
 <!-- VISUALIZAR LIVRO -->
 <section class="content visualizarLivro">
   <div class="row">
-    <section class="col-md-12">
+    <section class="col-xs-12">
       <div class="box box-ldi" title="{{ $learning_object->course->name }}">
         <div class="box-header">
-          <h3 class="box-title">Livro de {{ $learning_object->course->name }}</h3>
+          <h3 class="box-title">Objeto de {{ $learning_object->course->name }}</h3>
         </div>
         <div class="box-body">
           <div class="row">
@@ -48,7 +48,7 @@
                 <li><b>Módulo:</b> {{ $learning_object->module }}</li>
                 <li><b>Título:</b> {{ $learning_object->title }}</li>
                 <li><b>Autor:</b> {{ $learning_object->author }}</li>
-		<li><b>Ano:</b> {{ $learning_object->year }}</li>
+		            <li><b>Ano:</b> {{ $learning_object->year }}</li>
                 <li><b>Endereço:</b> {{ $learning_object->link }}</li>
                 <li>
                   <b>Resumo</b> <br>

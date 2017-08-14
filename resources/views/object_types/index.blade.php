@@ -4,11 +4,11 @@
 <!-- CABEÇALHO -->
 <section class="content-header">
   <h1>
-    Tipos de Objeto de Aprendizagem
+    Tipos de Objetos de Aprendizagem
     <small>Listagem</small>
   </h1>
   <ol class="breadcrumb">
-    <li><i class="fa fa-university"></i> Tipos de Objeto de Aprendizagem</li>
+    <li><i class="fa fa-university"></i> Tipos de Objetos de Aprendizagem</li>
     <li class="active"><i class="fa fa-list"></i> Listagem</li>
   </ol>
 </section>
@@ -31,7 +31,7 @@
                     <table class="table table-bordered table-hover table-striped" width="100%">
                         <thead>
                             <tr>
-                                <th style="text-align:center;">Tag</th>
+                                <th style="text-align:center;">Ícone</th>
                                 <th>Tipo</th>
                                 <th class="icone"></th>
                                 <th class="icone"></th>
@@ -40,7 +40,7 @@
                         <tbody>
                           @foreach( $all_object_types as $object_type)
 				  <tr>
-				    <td class="box-curso" title="{{ $object_type->name }}"></td>
+				    <td class="box-icone" title="{{ $object_type->name }}"><img src="{{asset("/icons/". $object_type->id .".svg")}}"></td>
 				    <td>{{ $object_type->name }}</td>
                     <td><a href="{{ route('object_types.show', $object_type->id) }}"><i class="fa fa-eye"></i></a></td>
 				    <td><a href="{{ route('object_types.edit', $object_type->id) }}"><i class="fa fa-edit"></i></a></td>

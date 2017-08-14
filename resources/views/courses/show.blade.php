@@ -1,56 +1,67 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="panel panel-default">
-		<div class="panel-heading clearfix">
-			<span class="pull-left">Curso # {{ $course->id }}</span>
 
-			<div class="btn-group btn-group-xs pull-right" role="group">
-				<a href="{{ route('courses.index') }}" class="btn btn-primary" title="Ver todos">
-					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-				</a>
-				<a href="{{ route('courses.edit', $course->id ) }}" class="btn btn-primary" title="Editar">
-					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-				</a>
-				<form method="POST" action="{!! route('courses.destroy', $course->id) !!}" accept-charset="UTF-8" style="display: inline;" novalidate="novalidate">
-					<input name="_method" value="DELETE" type="hidden">
-					{{ csrf_field() }}
-					<button type="submit" class="btn btn-danger btn-xs" title="Deletar" onclick="return confirm(&quot;Tem certeza que quer apagar?&quot;)" id="sometest">
-					<span class="glyphicon glyphicon-trash" aria-hidden="true" title="Apagar Curso"></span>
-					</button>
-				</form>
-			</div>
+<!-- CABEÇALHO -->
+<section class="content-header">
+  <h1>
+    Cursos
+    <small>Visualizar</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><i class="fa fa-university"></i> Cursos</li>
+    <li><i class="fa fa-list"></i> Listagem</li>
+    <li class="active"><i class="fa fa-eye"></i> Visualizar</li>
+  </ol>
+</section>
+<!-- FIM CABEÇALHO -->
 
-		
-		</div>
-	</div>
+<!-- VISUALIZAR CURSOS -->
+<section class="content visualizarLivro">
+  <div class="row">
+    <section class="col-xs-12">
+      <div class="box box-ldi" title="{{ $course->name }}">
+        <div class="box-header">
+          <h3 class="box-title">Curso {{ $course->name }}</h3>
+        </div>
+        <div class="box-body">
+          <div class="row"> 
+            <div class="miniatura">
+		        <div class="img" style="overflow:hidden">
+              	</div>
+            </div>
+              <div class="ficha">
+              <ul>
+              	<li><b>Nome:</b> {{ $course->name }} </li>
+                <li><b>ID:</b> {{ $course->id }} </li>
+                <li><b>Tipo de Curso:</b> {{ $course->type->name}} </li>
+                <li><b>Número de Módulos:</b> {{ $course->modules }} </li>
+                <li><b>Cor Principal:</b> {{ $course->bg_color }} </li>
+                <li><b>Cor Auxiliar:</b> {{ $course->fg_color }} </li>
+                <li><b>Cor da Tipografia:</b> {{ $course->aux_color}} </li>
+                <li><b>Abreviação:</b> {{ $course->short }} </li>
+                <li><b>Ativo</b> 
+                	@if ($course->active)
+						Sim, ativo.
+					@else
+						Não, desativado.
+					@endif
+              </ul>
+            </div>
+          </div> 
+          <hr>
+          <div class="row">
+            <div class="col-md-12">
+              <a href="{{ route('courses.edit', $course->id ) }}" title="Editar">
+                <button class="btn btn-primary">Editar</button>
+              </a>
+            </div>
+          </div>         
+        </div>
+    </section>
+  </div>
+</section> 
 
-	<div class="panel-body">
-		<dl class="dl-horizontal">
-			<dt>#id do Curso</dt>
-			<dd>{{ $course->id }}</dd>
-			<dt>Nome</dt>
-			<dd>{{ $course->name }}</dd>
-			<dt>Tipo de Curso</dt>
-			<dd>{{ $course->type->name}}</dd>
-			<dt>Número de Módulos</dt>
-			<dd>{{ $course->modules }}</dd>
-			<dt>Cor de Fundo</dt>
-			<dd>{{ $course->bg_color }}</dd>
-			<dt>Cor da Frente</dt>
-			<dd>{{ $course->fg_color }}</dd>
-			<dt>Cor auxiliar</dt>
-			<dd>{{ $course->aux_color}}</dd>
-			<dt>Abreviação</dt>
-			<dd>{{ $course->short }}</dd>
-			<dt>Ativo</dt>
-			@if ($course->active)
-				<dd>Sim, ativo.</dd>
-			@else
-				<dd>Não, desativado.</dd>
-			@endif
-			
-		</dl>
-
+<!-- FIM VISUALIZAR CURSOS -->
 
 @endsection

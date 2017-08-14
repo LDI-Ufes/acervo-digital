@@ -8,7 +8,7 @@
     <small>Listagem</small>
   </h1>
   <ol class="breadcrumb">
-    <li><i class="fa fa-university"></i> Cursos</li>
+    <li><i class="fa fa-university"></i> Tipos de Curso</li>
     <li class="active"><i class="fa fa-list"></i> Listagem</li>
   </ol>
 </section>
@@ -31,7 +31,7 @@
                     <table class="table table-bordered table-hover table-striped" width="100%">
                         <thead>
                             <tr>
-                                <th style="text-align:center;">Tag</th>
+                                <!--<th style="text-align:center;">Tag</th>-->
                                 <th>Tipo de Curso</th>
                                 <th class="icone"></th>
                                 <th class="icone"></th>
@@ -40,7 +40,7 @@
                         <tbody>
                           @foreach( $all_course_types as $course_type)
 				  <tr>
-				    <td class="box-curso" title="{{ $course_type->name }}"></td>
+				    <!--<td class="box-curso" title="{{ $course_type->name }}"></td>-->
 				    <td>{{ $course_type->name }}</td>
                     <td><a href="{{ route('course_types.show', $course_type->id) }}"><i class="fa fa-eye"></i></a></td>
 				    <td><a href="{{ route('course_types.edit', $course_type->id) }}"><i class="fa fa-edit"></i></a></td>

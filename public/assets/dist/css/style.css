@@ -1,52 +1,40 @@
-/* IDENTIDADE DO LDI */
-/* CORES DOS CURSOS */
-/* COR DO CURSO NO BACKGROUND + COR PARA TEXTO */
+/*teste*/
 
-.box-curso .box-header {
+.skin-ldi{
+  background-color: #2e2e2e;
+}
+
+.wrapper{
+  max-width: 1200px;
+  margin: auto;
+}
+
+.box-icone {
   color: #fff;
   padding: 10px 20px;
-}
-
-/* APLICAÇÃO: TABELA DE PROJETOS */
-.listaLivros td.box-curso,
-.listaCursos td.box-curso {
+  background-color: #656565;
   width: 60px;
   text-align: center;
-   color: #fff;
+  font-size: 16px;
 }
 
-/*
-1) GERAL
-1.1) LOGIN
-1.2) SIDEBAR
-1.3) FORMULARIOS
+.box-icone img{
+  width: 25px;
+}
 
-2) GERENCIAR USUARIOS
-2.1) CRIAR USUARIO
+.box-curso{
+  width: 60px;
+  text-align: center;
+  color: #fff;
+}
 
-3) GERENCIAR PROJETOS
-
-*/
-/* 1) GERAL */
 .box-ldi {
   border-top-color: #4a6c82;
 }
 .box-ldi .panel {
   border-radius: 0;
 }
-.box-ldi a h3,
-.box-ldi .box-header:after {
-  color: #4a6c82 !important;
-}
-.box-header.panel-heading {
-  background-color: #fff;*/
-}
-.box-header.panel-heading a,
-.box-header.panel-heading a:hover,
-.box-header.panel-heading a:active,
-.box-header.panel-heading a:focus {
-  color: #4a6c82;
-}
+
 .box-body {
   padding: 20px;
 }
@@ -58,67 +46,23 @@
 }
 .box-body table thead {
   background-color: #efefef;
-  /*background-color: @corInst;*/
   border-top: 1px solid #d4d4d4;
-  /*color: white;*/
 }
 .box-body table thead th {
   border-color: #d4d4d4;
   border-bottom-width: 1px;
 }
-.box-body table i[title="Diagramação"],
-.box-body table i[title="Ilustração"],
-.box-body table i[title="Vídeo"],
-.box-body table i[title="Web"] {
-  margin: 0 2px;
-}
-.box-body table tr.panel-collapse {
-  background-color: #efefef !important;
-}
-.box-body table tr.shown {
-  background-color: #efefef;
-}
-.box-body table.dataTable thead .sorting {
-  padding-right: 27px;
-}
-.user-menu .user-header a {
-  color: white;
-}
-.user-menu .user-header a:hover {
-  text-decoration: underline;
-}
-.user-menu .user-footer {
-  background-color: #383838 !important;
-  background-image: url("../../theme/img/grid-pattern.png");
-  background-repeat: repeat;
-}
-.user-menu .user-footer .btn {
-  border-radius: 4px;
-}
-/* 1.1) LOGIN */
+
+/* LOGIN */
 .login-box-body .col-md-12 {
   margin: 5px 0;
 }
-/* 1.2) SIDEBAR */
+/* SIDEBAR */
 .sidebar-menu {
   margin: 10px 0px;
 }
 
-/* 2) GERENCIAR USUARIOS 
-button[form="desativarUsuario"].btn-warning:before {
-  content: 'Desativar';
-}
-button[form="desativarUsuario"].btn-primary:before {
-  content: 'Ativar';
-}*/
-/* 2.1) CRIAR USUARIO 
-.form-group.horarioUsuario .input-group {
-  margin-bottom: 10px;
-}
-.form-group.horarioUsuario .input-group .input-group-addon {
-  width: 50px;
-}*/
-/* 3) GERENCIAR PROJETOS */
+/* GERENCIAR PROJETOS */
 .icone {
   width: 30px;
   text-align: center;
@@ -127,6 +71,17 @@ button[form="desativarUsuario"].btn-primary:before {
 .icone a:active,
 .icone a:focus {
   color: #3c8dbc;
+}
+
+input[type="file"]{
+  width: 100%;
+  text-align: left;
+}
+
+textarea{
+  resize: vertical;
+  max-height: 150px;
+  min-height: 35px;
 }
 
 /* Personalizado - Estante Virtual */
@@ -189,7 +144,4 @@ body .content-wrapper section.visualizarLivro .box .box-body .ficha ul {
 }
 body .content-wrapper section.visualizarLivro .box .box-body .ficha ul li {
   margin: 3px 0;
-}
-body .content-wrapper section.visualizarLivro .box .box-body .ficha ul li:last-child {
-  margin-top: 30px;
 }

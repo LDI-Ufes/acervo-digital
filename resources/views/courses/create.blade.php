@@ -19,7 +19,7 @@
 <!-- ADICIONAR USUÁRIO -->
 <section class="content">
   <div class="row">
-    <section class="col-md-4 offset-md-8">
+    <section class="col-xs-12">
       <div class="box box-ldi">
         <div class="box-body">
           @if ($errors->any())

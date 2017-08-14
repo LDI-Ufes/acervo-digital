@@ -4,11 +4,11 @@
 <!-- CABEÇALHO -->
 <section class="content-header">
     <h1>
-        Livros
+        Objetos
         <small>Listagem</small>
     </h1>
     <ol class="breadcrumb">
-        <li><i class="fa fa-learning_object"></i> Livros</li>
+        <li><i class="fa fa-book"></i> Objetos</li>
         <li class="active"><i class="fa fa-list"></i> Listagem</li>
     </ol>
 </section>
@@ -22,7 +22,7 @@
                 <div class="box-header">
                     <div>
                         <h3 class="box-title">
-                            <i class="fa fa-learning_object"></i> Livros cadastrados
+                            <i class="fa fa-book"></i> Objetos cadastrados
                         </h3>
                     </div>
                     <hr style="margin-bottom:0;">

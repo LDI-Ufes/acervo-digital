@@ -8,7 +8,7 @@
     <small>Editar</small>
   </h1>
   <ol class="breadcrumb">
-    <li><i class="fa fa-university"></i> Cursos</li>
+    <li><i class="fa fa-university"></i> Tipos de Objetos de Aprendizagem</li>
     <li><a href="{!! url('/object_types') !!}"><i class="fa fa-list"></i> Listagem</a></li>
     <li class="active"><i class="fa fa-plus-circle"></i> Editar</li>
   </ol>
@@ -18,7 +18,7 @@
 <!-- ADICIONAR USUÁRIO -->
 <section class="content">
   <div class="row">
-    <section class="col-md-4 offset-md-8">
+    <section class="col-xs-12">
       <div class="box box-ldi">
         <div class="box-body">
           @if ($errors->any())

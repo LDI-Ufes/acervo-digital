@@ -26,7 +26,7 @@
 <div class="form-group {{ $errors->has('summary') ? 'has-error' : ''}}">
 	<label for="summary" class="col-md-2 control-label">Resumo</label>
 	<div class="col-md-10">
-		<textarea class="form-control" name="summary" id="summary" maxlength="2000"rows="3">{{ old('summary', isset($learning_object) ? $learning_object->summary : null) }}</textarea>
+		<textarea class="form-control" name="summary" id="summary" maxlength="300" rows="3">{{ old('summary', isset($learning_object) ? $learning_object->summary : null) }}</textarea>
 		{!! $errors->first('summary', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>

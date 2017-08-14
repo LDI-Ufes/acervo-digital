@@ -1,4 +1,4 @@
-@extends('layouts.shelf')
+@extends('layouts.public')
 
 @section('content')
 

@@ -32,6 +32,11 @@
 			background-color: {{ $learning_objects->first()->course->bg_color }};
 		}
 
+		footer{
+			background: {{ $learning_objects->first()->course->aux_color }};
+			border-top: 5px solid {{ $learning_objects->first()->course->bg_color }};
+		}
+
 		@endif 
 	</style>
 
@@ -45,7 +50,7 @@
 <header>
   <div class="header-top">
     <div class='container'>
-      <p class="navbar-text"><a href="http://www.especializacao.aperfeicoamento.ufes.br/">
+      <p class="navbar-text"><a href="/">
         <i class="fa fa-home"></i>  
       Início</a></p>
       <p class="navbar-text"><a href="http://www.eadufes.org/" target="_blank">
@@ -57,9 +62,9 @@
       <p class="navbar-text"><a href="http://www.bc.ufes.br/" target="_blank">
         <i class="fa fa-book"></i>  
       Biblioteca Ufes</a></p>
-      <p class="navbar-text"><a href="">  <!-- link para home  -->
+      <p class="navbar-text"><a href="http://www.especializacao.aperfeicoamento.ufes.br/">  <!-- link para home  -->
         <i class="fa fa-desktop"></i>  
-      Acervo Digital EAD</a></p>
+      Moodle</a></p>
     </div>  
   </div>
 
@@ -81,7 +86,7 @@
 
 <div class="breadcrumbs">
 	<div class="container">
-	<small> <a href="#">Acervo SEAD</a> &raquo; {{$current->course}} {{--&raquo; {{$current->type}} &raquo; {{ $current->year }}--}} </small> <!-- link para home  -->
+	<small> <a href="/">Acervo SEAD</a> &raquo; {{$current->course}} {{--&raquo; {{$current->type}} &raquo; {{ $current->year }}--}} </small> <!-- link para home  -->
 
 	</div>
 </div>
@@ -89,8 +94,6 @@
 </header>
 
 <!--    fim do header     -->
-
-
 
 
 <div class="container">
@@ -256,6 +259,20 @@
 		</div>
 	</div>
 </div>
+
+	<footer id="footer">
+	  <div class="footer-main">
+	    <div class="container-fluid">
+	      <div class="logos-group">
+	        <a href="http://ufes.br/" target="_blank" title="Ir para site da Ufes"><img src="http://www.especializacao.aperfeicoamento.ufes.br/theme/klass/pix/home/logo-ufes.svg" alt="Logo Ufes"></a>
+	        <a href="http://sead.ufes.br/" target="_blank" title="Ir para site da Sead"><img src="http://www.especializacao.aperfeicoamento.ufes.br/theme/klass/pix/home/logo-sead.svg" alt="Logo Sead"></a>
+	        <a href="http://uab.capes.gov.br" target="_blank" title="Ir para página da UAB"><img src="http://www.especializacao.aperfeicoamento.ufes.br/theme/klass/pix/home/logo-uab.svg" alt="Logo UAB"></a>
+	        <a href="http://capes.gov.br/" target="_blank" title="Ir para site da Capes"><img src="http://www.especializacao.aperfeicoamento.ufes.br/theme/klass/pix/home/logo-capes.svg" alt="Logo Capes"></a>
+	      </div>
+	    </div>
+	  </div>
+	</footer>
+
 
 @endsection
 

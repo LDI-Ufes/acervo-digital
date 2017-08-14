@@ -404,6 +404,24 @@ button img{
   padding-left: 10px;
 }
 
+/*    FOOTER    */
+
+ footer{
+  position: relative;
+  margin: 50px 0 0;
+  width: 100%;
+  bottom: 0;
+}
+
+.logos-group {
+    max-width: 364px;
+    margin: 0 auto;
+}
+
+.logos-group a img {
+    margin: 25px 15px;
+}
+
 /* ========= BREAKPOINTS ========= */
 /*@media (min-width: 768px) {
   .modal-dialog {

@@ -30,6 +30,20 @@
 
 	@yield('styles')
 
+	<style>
+		.header-top{
+			background-color: #193e70;
+		}
+
+		.header-main{
+			background-color: #0e64ac;
+		}
+
+		footer{
+			background: #193e70;
+			border-top: 5px solid #036bb2;
+		}
+	</style>
 
    <!-- Scripts -->
     <script>
@@ -43,7 +57,7 @@
 	<header>
 	  <div class="header-top">
 	    <div class='container'>
-	      <p class="navbar-text"><a href="http://www.especializacao.aperfeicoamento.ufes.br/">
+	      <p class="navbar-text"><a href="/">
 		<i class="fa fa-home"></i>  
 	      Início</a></p>
 	      <p class="navbar-text"><a href="http://www.eadufes.org/" target="_blank">
@@ -55,9 +69,9 @@
 	      <p class="navbar-text"><a href="http://www.bc.ufes.br/" target="_blank">
 		<i class="fa fa-book"></i>  
 	      Biblioteca Ufes</a></p>
-	      <p class="navbar-text"><a href="">  <!-- link para home  -->
+	      <p class="navbar-text"><a href="http://www.especializacao.aperfeicoamento.ufes.br/">
 		<i class="fa fa-desktop"></i>  
-	      Acervo Digital EAD</a></p>
+	      Moodle</a></p>
 	    </div>  
 	  </div>
 
@@ -78,7 +92,7 @@
 
 	<div class="breadcrumbs">
 		<div class="container">
-			Breadcrumb aqui.
+			<small>Acervo SEAD</small>
 		</div>
 	</div>
 
@@ -86,6 +100,18 @@
 
 	@yield('content')
 
+	<footer id="footer">
+	  <div class="footer-main">
+	    <div class="container-fluid">
+	      <div class="logos-group">
+	        <a href="http://ufes.br/" target="_blank" title="Ir para site da Ufes"><img src="http://www.especializacao.aperfeicoamento.ufes.br/theme/klass/pix/home/logo-ufes.svg" alt="Logo Ufes"></a>
+	        <a href="http://sead.ufes.br/" target="_blank" title="Ir para site da Sead"><img src="http://www.especializacao.aperfeicoamento.ufes.br/theme/klass/pix/home/logo-sead.svg" alt="Logo Sead"></a>
+	        <a href="http://uab.capes.gov.br" target="_blank" title="Ir para página da UAB"><img src="http://www.especializacao.aperfeicoamento.ufes.br/theme/klass/pix/home/logo-uab.svg" alt="Logo UAB"></a>
+	        <a href="http://capes.gov.br/" target="_blank" title="Ir para site da Capes"><img src="http://www.especializacao.aperfeicoamento.ufes.br/theme/klass/pix/home/logo-capes.svg" alt="Logo Capes"></a>
+	      </div>
+	    </div>
+	  </div>
+	</footer>
 
 
     <!-- jQuery 2.1.3 -->

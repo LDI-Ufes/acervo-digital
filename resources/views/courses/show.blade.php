@@ -27,8 +27,8 @@
         <div class="box-body">
           <div class="row"> 
             <div class="miniatura">
-		        <div class="img" style="overflow:hidden">
-              	</div>
+		            <div class="square" style="overflow:hidden; background-color: {{ $course->bg_color }};"></div>
+                <div class="square" style="overflow:hidden; background-color: {{ $course->aux_color }};"></div>
             </div>
               <div class="ficha">
               <ul>
@@ -37,8 +37,8 @@
                 <li><b>Tipo de Curso:</b> {{ $course->type->name}} </li>
                 <li><b>Número de Módulos:</b> {{ $course->modules }} </li>
                 <li><b>Cor Principal:</b> {{ $course->bg_color }} </li>
-                <li><b>Cor Auxiliar:</b> {{ $course->fg_color }} </li>
-                <li><b>Cor da Tipografia:</b> {{ $course->aux_color}} </li>
+                <li><b>Cor Auxiliar:</b> {{ $course->aux_color}} </li>
+                <li><b>Cor da Tipografia:</b> {{ $course->fg_color }} </li>
                 <li><b>Abreviação:</b> {{ $course->short }} </li>
                 <li><b>Ativo</b> 
                 	@if ($course->active)

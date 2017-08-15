@@ -20,7 +20,7 @@
 		@endif 
 	</style>
 
-		<!-- HEADER -->
+		<!-- HEADER E FOOTER  -->
 	<style>
 		@if (!empty($learning_objects))
 		
@@ -72,8 +72,8 @@
     <div class='container'>
       <div class="tamanho">
         <div id="logo">
-          <a href="">  <!-- link para home  -->
-            <img src="{{asset("/icons/marca-ufes-cor.svg")}}">
+          <a href="/">  <!-- link para home  -->
+            <img src="{{asset("/icons/ufes-branco.svg")}}">
           </a>
         </div>
         <div class="rotulo">
@@ -205,7 +205,7 @@
 						<div class="caption"> 
 							<h3>{{  str_limit($learning_object->title, 40) }}
 								@if (Auth::check())
-									<a href="/learning_objects/{{$learning_object->id}}/edit">
+									<a href="/admin/learning_objects/{{$learning_object->id}}/edit">
 										<i class="fa fa-pencil-square-o"></i>
 									</a>
 								@endif
@@ -229,7 +229,9 @@
 										<p class="modal-author">{{ $learning_object->author }}</p>
 										<p class="modal-year">{{ $learning_object->year }}</p>
 										<a class="btn-download" href="{{ $learning_object->link }}" role="button">
-											<img src="{{asset("/icons/baixar.svg")}}">
+											{!! file_get_contents(asset("/icons/baixar.svg")) !!}
+
+											<!--<img src="{{asset("/icons/baixar.svg")}}">-->
 											Abrir
 										</a> 
 									</div>

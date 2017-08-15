@@ -62,7 +62,7 @@
   margin: 10px 0px;
 }
 
-/* GERENCIAR PROJETOS */
+/* OUTROS */
 .icone {
   width: 30px;
   text-align: center;
@@ -82,6 +82,13 @@ textarea{
   resize: vertical;
   max-height: 150px;
   min-height: 35px;
+}
+
+.square{
+  width: 220px;
+  height: 110px;
+  border: none;
+  position: relative;
 }
 
 /* Personalizado - Estante Virtual */

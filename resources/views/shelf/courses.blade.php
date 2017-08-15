@@ -40,7 +40,7 @@
 		@if (!empty($inactive_courses))
 			<!--<div class="container">	-->
 			<div class="page-header" id="inativos-mostra">
-				<h2>Batidão dos Inativos 
+				<h2>Cursos Inativos 
 				<i id="seta" class="fa fa-caret-down" aria-hidden="true"></i>
 
 				</h2> 

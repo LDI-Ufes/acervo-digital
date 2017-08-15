@@ -65,19 +65,19 @@
   <div class="header-top">
     <div class='container'>
       <p class="navbar-text"><a href="/">
-        <i class="fa fa-home"></i>  
+        <i class="fa fa-home" alt="Ícone de Casa"></i>  
       Início</a></p>
       <p class="navbar-text"><a href="http://www.eadufes.org/" target="_blank">
-        <i class="fa fa-info-circle"></i>  
+        <i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
       EAD na Ufes</a></p>
       <p class="navbar-text"><a href="https://aluno.ufes.br/" target="_blank">
-        <i class="fa fa-graduation-cap"></i>  
+        <i class="fa fa-graduation-cap" alt="Ícone de Cap de Formatura"></i>  
       Portal do Aluno</a></p>
       <p class="navbar-text"><a href="http://www.bc.ufes.br/" target="_blank">
-        <i class="fa fa-book"></i>  
+        <i class="fa fa-book" alt="Ícone de Livro"></i>  
       Biblioteca Ufes</a></p>
       <p class="navbar-text"><a href="http://www.especializacao.aperfeicoamento.ufes.br/"> 
-        <i class="fa fa-desktop"></i>  
+        <i class="fa fa-desktop" alt="Ícone de Monitor"></i>  
       Moodle</a></p>
     </div>  
   </div>
@@ -86,11 +86,11 @@
     <div class='container'>
       <div class="tamanho">
         <div id="logo">
-          <a href="">
+          <a href="/">
           	@if ($current->course == 'Biologia')
-            	<img src="{{ asset('/icons/ufes-preto.svg') }}">
+            	<img alt="Logo UFES" src="{{ asset('/icons/ufes-preto.svg') }}">
             @else
-            	<img src="{{ asset('/icons/ufes-branco.svg') }}">
+            	<img alt="Logo UFES" src="{{ asset('/icons/ufes-branco.svg') }}">
             @endif
           </a>
         </div>
@@ -104,7 +104,9 @@
 
 <div class="breadcrumbs">
 	<div class="container">
-	<small> <a href="/">Acervo EAD</a> &raquo; {{$current->course}} {{--&raquo; {{$current->type}} &raquo; {{ $current->year }}--}} </small> <!-- link para home  -->
+	<small> <a href="/">Acervo EAD</a> &raquo; {{$current->course}} 
+	{{--&raquo; {{$current->type}} &raquo; {{ $current->year }}--}} 
+	</small>
 
 	</div>
 </div>
@@ -195,8 +197,7 @@
 
 						<div class="input-group-btn">
 							<button type="submit">
-								<img src="{{asset("/icons/buscar.svg")}}">
-								<i class="fa fa-search" aria-hidden="true"></i>
+								<img src="{{asset("/icons/buscar.svg")}}" alt="Ícone de Lupa">
 							</button>
 						</div>
 					</div>

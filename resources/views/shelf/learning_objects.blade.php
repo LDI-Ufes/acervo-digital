@@ -17,6 +17,20 @@
 			color: {{ $learning_objects->first()->course->fg_color }} !important; 
 		}
 
+			@if ($current->course == 'Biologia')
+				.icone-baixar path{
+					fill: #000 !important;
+				}
+
+				.rotulo h1, .rotulo h2{
+					color: #000;
+				}
+
+				.btn-download{
+					color: #000;
+				}
+			@endif
+
 		@endif 
 	</style>
 
@@ -62,7 +76,7 @@
       <p class="navbar-text"><a href="http://www.bc.ufes.br/" target="_blank">
         <i class="fa fa-book"></i>  
       Biblioteca Ufes</a></p>
-      <p class="navbar-text"><a href="http://www.especializacao.aperfeicoamento.ufes.br/">  <!-- link para home  -->
+      <p class="navbar-text"><a href="http://www.especializacao.aperfeicoamento.ufes.br/"> 
         <i class="fa fa-desktop"></i>  
       Moodle</a></p>
     </div>  
@@ -72,8 +86,12 @@
     <div class='container'>
       <div class="tamanho">
         <div id="logo">
-          <a href="/">  <!-- link para home  -->
-            <img src="{{asset("/icons/ufes-branco.svg")}}">
+          <a href="">
+          	@if ($current->course == 'Biologia')
+            	<img src="{{ asset('/icons/ufes-preto.svg') }}">
+            @else
+            	<img src="{{ asset('/icons/ufes-branco.svg') }}">
+            @endif
           </a>
         </div>
         <div class="rotulo">
@@ -86,7 +104,7 @@
 
 <div class="breadcrumbs">
 	<div class="container">
-	<small> <a href="/">Acervo SEAD</a> &raquo; {{$current->course}} {{--&raquo; {{$current->type}} &raquo; {{ $current->year }}--}} </small> <!-- link para home  -->
+	<small> <a href="/">Acervo EAD</a> &raquo; {{$current->course}} {{--&raquo; {{$current->type}} &raquo; {{ $current->year }}--}} </small> <!-- link para home  -->
 
 	</div>
 </div>
@@ -193,7 +211,7 @@
 				<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 					<div class="thumbnail no-shadow" type="button" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
 						<span class="label label-default">
-							<div class="icon">
+							<div class="icone-objeto">
 								<img src="{{asset("/icons/". $learning_object->type->id .".svg")}}">
 							</div> 
 							
@@ -229,9 +247,7 @@
 										<p class="modal-author">{{ $learning_object->author }}</p>
 										<p class="modal-year">{{ $learning_object->year }}</p>
 										<a class="btn-download" href="{{ $learning_object->link }}" role="button">
-											{!! file_get_contents(asset("/icons/baixar.svg")) !!}
-
-											<!--<img src="{{asset("/icons/baixar.svg")}}">-->
+											{{ svg_image('baixar', 'icone-baixar')->inline() }}
 											Abrir
 										</a> 
 									</div>

@@ -281,7 +281,7 @@ button img{
     background-color: #fff;
     color: #656565;
   }
-  .icon {
+  .icone-objeto {
     display: inline-block;
     vertical-align: middle;
     height: 24px;
@@ -370,7 +370,7 @@ button img{
   color: #fff;
 }
 
-.btn-download img {
+.icone-baixar {
   vertical-align: -7px;
   margin-right: 5px;
   height: 25px;
@@ -462,7 +462,7 @@ button img{
 
   #logo img{
     height: 30px;
-  }
+  }  
 
   .rotulo{
     left: initial;

@@ -3,11 +3,6 @@
 @section('content')
 
 	<div class="container">
-		<!--<div class="page-header">
-			<h2>Acervo UAB/SEAD/UFES</h2>
-		</div>-->
-
-
 
 		@forelse($courses as $group)
 			<div class="page-header">
@@ -38,8 +33,7 @@
 		{{-- <a href="/shelf/course/0/module/0/type/0">Todos os Cursos</a> --}}
 
 		@if (!empty($inactive_courses))
-			<!--<div class="container">	-->
-			<div class="page-header" id="inativos-mostra">
+			<div class="page-header" tabindex="0" role="button" id="inativos-mostra">
 				<h2>Cursos Inativos 
 				<i id="seta" class="fa fa-caret-down" aria-hidden="true"></i>
 
@@ -64,7 +58,6 @@
 					@endforeach 
 				</ul> 
 			</div>
-			<!--</div>-->
 
 		@else
 			Testando esse &at;if na encolha aqui, mas na moral não tem nem esse &at;else que usei aqui, tá ligado? <br\>

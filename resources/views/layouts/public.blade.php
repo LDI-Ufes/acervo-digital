@@ -60,7 +60,7 @@
 	      <p class="navbar-text"><a href="/">
 		<i class="fa fa-home" alt="Ícone de Casa"></i>  
 	      Início</a></p>
-	      <p class="navbar-text"><a href="/shelf/about" target="_blank">
+	      <p class="navbar-text"><a href="/shelf/about">
 	    <i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
 	      Sobre o Acervo</a></p>
 	      <p class="navbar-text"><a href="http://www.eadufes.org/" target="_blank">

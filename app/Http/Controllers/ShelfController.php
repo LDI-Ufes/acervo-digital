@@ -119,4 +119,9 @@ class ShelfController extends Controller
 		
 		return view('shelf.courses', compact('courses', 'inactive_courses'));
 	}
+
+	public function about()
+	{
+		return view('shelf.about');
+	}
 }

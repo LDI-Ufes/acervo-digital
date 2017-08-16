@@ -2,6 +2,12 @@
 
 @section('content')
 
+	<div class="breadcrumbs">
+		<div class="container">
+			<small>Acervo EAD</small>
+		</div>
+	</div>
+
 	<div class="container">
 
 		@forelse($courses as $group)

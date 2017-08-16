@@ -93,11 +93,6 @@
 	    </div>  
 	  </div>
 
-	<div class="breadcrumbs">
-		<div class="container">
-			<small>Acervo EAD</small>
-		</div>
-	</div>
 
 	</header>
 

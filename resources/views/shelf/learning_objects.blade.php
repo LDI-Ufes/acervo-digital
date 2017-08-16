@@ -65,6 +65,9 @@
       <p class="navbar-text"><a href="/">
         <i class="fa fa-home" alt="Ícone de Casa"></i>  
       Início</a></p>
+      <p class="navbar-text"><a href="/shelf/about">
+	    <i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
+	      Sobre o Acervo</a></p>
       <p class="navbar-text"><a href="http://www.eadufes.org/" target="_blank">
         <i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
       EAD na Ufes</a></p>
@@ -208,27 +211,27 @@
 		<ul class="row list">
 			@forelse($learning_objects as $learning_object)
 				<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-					<div class="thumbnail no-shadow" type="button" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
-						<span class="label label-default">
-							<div class="icone-objeto">
-								<img src="{{asset("/icons/". $learning_object->type->id .".svg")}}">
-							</div> 
-							
-							{{ $learning_object->type->name }}
-						</span>
-						<div class="wrap-image">
-							<img class="max-size" src="/covers/{{ $learning_object->cover}}" alt="Image do objeto">
-						</div>
-						<div class="caption"> 
-							<h3>{{  str_limit($learning_object->title, 40) }}
-								@if (Auth::check())
-									<a href="/admin/learning_objects/{{$learning_object->id}}/edit">
-										<i class="fa fa-pencil-square-o"></i>
-									</a>
-								@endif
-							</h3>
-						</div>
-					</div>
+					<button class="thumbnail no-shadow" type="button" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
+							<span class="label label-default">
+								<div class="icone-objeto">
+									<img src="{{asset("/icons/". $learning_object->type->id .".svg")}}">
+								</div> 
+								
+								{{ $learning_object->type->name }}
+							</span>
+							<div class="wrap-image">
+								<img class="max-size" src="/covers/{{ $learning_object->cover}}" alt="Image do objeto">
+							</div>
+							<div class="caption"> 
+								<h3>{{  str_limit($learning_object->title, 40) }}
+									@if (Auth::check())
+										<a href="/admin/learning_objects/{{$learning_object->id}}/edit">
+											<i class="fa fa-pencil-square-o"></i>
+										</a>
+									@endif
+								</h3>
+							</div>	
+					</button>
 				
 				
 					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

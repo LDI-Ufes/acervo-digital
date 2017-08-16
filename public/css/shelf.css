@@ -221,6 +221,9 @@ button img{
   font-weight: 700;
 }
 
+a:focus> .panel{
+    background-color: #eaeaea;
+}
 
 /* ========= THUMBNAIL ========= */
 
@@ -262,6 +265,16 @@ button img{
 
 .thumbnail img{
   height: inherit;
+}
+
+button {
+  width: 100%;
+  text-align: left;
+}
+
+li button:focus > .wrap-image img {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
 }
 
 /* ========= LABELS ========= */
@@ -404,6 +417,15 @@ button img{
   padding-left: 10px;
 }
 
+#inativos-mostra{
+  background: none;
+  border: none;
+  border-bottom: 1px solid #eeeeee;
+}
+
+#inativos-mostra:focus {
+  box-shadow: 1px 1px 8px #eeeeee;
+}
 /*    FOOTER    */
 
  footer{

@@ -2,6 +2,12 @@
 
 @section('content')
 
+	<div class="breadcrumbs">
+		<div class="container">
+			<small>Acervo EAD</small>
+		</div>
+	</div>
+
 	<div class="container">
 
 		@forelse($courses as $group)
@@ -33,12 +39,12 @@
 		{{-- <a href="/shelf/course/0/module/0/type/0">Todos os Cursos</a> --}}
 
 		@if (!empty($inactive_courses))
-			<div class="page-header" tabindex="0" role="button" id="inativos-mostra">
+			<button class="page-header" tabindex="0" role="button" id="inativos-mostra">
 				<h2>Cursos Inativos 
 				<i id="seta" class="fa fa-caret-down" aria-hidden="true"></i>
 
 				</h2> 
-			</div>
+			</button>
 
 			<div id="inativos"> 
 				<ul class="row"> 

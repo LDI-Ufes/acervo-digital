@@ -39,6 +39,12 @@ Route::get('/shelf/course/{course}/type/{type}/year/{year}', 'ShelfController@le
 
 Route::get('/shelf/courses', 'ShelfController@courses');
 
+Route::get('/shelf/about', 'ShelfController@about');
+
+Route::get('/shelf/sobre', function () {
+	return redirect('/shelf/about/');
+});
+
 Route::get('/shelf/', function () {
 	return redirect('/shelf/courses/');
 });

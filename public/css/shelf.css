@@ -164,6 +164,9 @@ button[type="submit"]{
   width: 34px;
   padding: 0;
 }
+button[type="submit"]:focus{
+  outline: thin dotted;
+}
 
 button img{
   height: inherit;
@@ -338,9 +341,10 @@ li button:focus > .wrap-image img {
     border: 0;
     float: right;
   }
-  .close img{
-    height: inherit;
-  } 
+  .modal-header .fechar:focus{
+    outline: thin dotted;
+  }
+
   .modal-image {
     max-width: 100%;
     max-height: 100%;
@@ -429,7 +433,7 @@ li button:focus > .wrap-image img {
 /*    FOOTER    */
 
  footer{
-  position: relative;
+  position: absolute;
   margin: 50px 0 0;
   width: 100%;
   bottom: 0;

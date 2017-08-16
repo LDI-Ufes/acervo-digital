@@ -186,7 +186,13 @@
 				<form class="navbar-form navbar-right navbar-text">
 					<div class="input-group">
 						{{-- <input type="text" class="form-control" placeholder="Busca"> --}}
-						<input type="text" class="form-control search" placeholder="Busca">
+						
+						<span class="input-group-addon">
+							<img src="{{asset("/icons/buscar.svg")}}" alt="Ícone de Lupa">
+							<!--<i class="fa fa-search" aria-hidden="true"></i>-->
+
+						</span>
+						<input type="text" class="form-control" placeholder="Busca">
 
 						{{-- //Botões de Ordenação do List.js //
 
@@ -194,13 +200,7 @@
 						<button class="sort" data-sort="course">Curso</button>
 						<button class="sort" data-sort="module">Modulo</button>
 
-						--}}
-
-						<div class="input-group-btn">
-							<button type="submit">
-								<img src="{{asset("/icons/buscar.svg")}}" alt="Ícone de Lupa">
-							</button>
-						</div>
+						--}}				
 					</div>
 				</form>
 			</div>
@@ -327,6 +327,10 @@
 	};
 
 	var learning_objectList = new List('learning_objects', options);
+
+	$(document).on("keypress", "input", function(event) { 
+    return event.keyCode != 13;
+	});
 </script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

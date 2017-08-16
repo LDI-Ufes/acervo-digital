@@ -1,23 +1,22 @@
 @extends('layouts.shelf')
 
 @section('styles')
-			
 	<style> 
-		@if (!empty($learning_objects))
+		@if(!empty($course_info->bg_color))
 
 		.btn-download {
-			background-color: {{ $learning_objects->first()->course->bg_color }}; 	/* chamar cor primaria */
+			background-color: {{ $course_info->bg_color }}; 	/* chamar cor primaria */
 		}
 
 		.btn-download:hover {
-			background-color: {{ $learning_objects->first()->course->aux_color }}; 	/* chamar cor auxiliar */
+			background-color: {{ $course_info->aux_color }}; 	/* chamar cor auxiliar */
 		}
 
 		small a{
-			color: {{ $learning_objects->first()->course->fg_color }} !important; 
+			color: {{ $course_info->fg_color }} !important; 
 		}
 
-			@if ($current->course == 'Biologia')
+			@if ($course_info->name == 'Biologia')
 				.icone-baixar path{
 					fill: #000 !important;
 				}
@@ -36,24 +35,23 @@
 
 		<!-- HEADER E FOOTER  -->
 	<style>
-		@if (!empty($learning_objects))
+		@if(!empty($course_info->bg_color))
 		
 		.header-top{
-			background-color: {{ $learning_objects->first()->course->aux_color }};
+			background-color: {{ $course_info->aux_color }};
 		}
 
 		.header-main{
-			background-color: {{ $learning_objects->first()->course->bg_color }};
+			background-color: {{ $course_info->bg_color }};
 		}
 
 		footer{
-			background: {{ $learning_objects->first()->course->aux_color }};
-			border-top: 5px solid {{ $learning_objects->first()->course->bg_color }};
+			background: {{ $course_info->aux_color }};
+			border-top: 5px solid {{ $course_info->bg_color }};
 		}
 
 		@endif 
 	</style>
-
 @endsection
 
 
@@ -87,11 +85,11 @@
       <div class="tamanho">
         <div id="logo">
           <a href="/">
-          	@if ($current->course == 'Biologia')
-            	<img alt="Logo UFES" src="{{ asset('/icons/ufes-preto.svg') }}">
-            @else
-            	<img alt="Logo UFES" src="{{ asset('/icons/ufes-branco.svg') }}">
-            @endif
+			@if ($current->course == 'Biologia')
+						<img alt="Logo UFES" src="{{ asset('/icons/ufes-preto.svg') }}">
+			@else
+						<img alt="Logo UFES" src="{{ asset('/icons/ufes-branco.svg') }}">
+			@endif
           </a>
         </div>
         <div class="rotulo">

@@ -31,11 +31,14 @@ class ShelfController extends Controller
 		// seletor de objetos por curso
 		if ($course != 0){
 			$query->where('course_id', '=', $course);
-			$current->course = Course::findOrFail($course)->name;
+			
+			$course = $current->course = Course::findOrFail($course);			
+			$current->course = $course->name;			
 
 			//Not sure this is the best way of doing this...
 			$current->number_of_modules = Course::findOrFail($course)->modules;
 			$current->number_of_types = ObjectType::get()->count();
+			
 		}
 
 		//seletor de objetos por modulo
@@ -54,7 +57,7 @@ class ShelfController extends Controller
 
 		$learning_objects = $query->get();
 
-		return view('shelf.result', compact('learning_objects', 'current'));
+		return view('shelf.result', compact('learning_objects', 'current', 'course'));
 	}
 
 
@@ -79,14 +82,9 @@ class ShelfController extends Controller
 
 			$course_info = Course::findOrFail($course);
 
-			$current->course = $course_info->name; //Course::findOrFail($course)->name;
-			
-			//Not sure this is the best way of doing this...
-			//$current->number_of_modules = Course::findOrFail($course)->modules;
-			//$current->number_of_types = ObjectType::get()->count();
+			$current->course = $course_info->name;
 
-			$current->years_by_course = LearningObject::where('course_id', '=', $course_info->id)->pluck('year')->unique()->sort();
-		
+			$current->years_by_course = LearningObject::where('course_id', '=', $course_info->id)->pluck('year')->unique()->sort();	
 		} else {
 			$current->years_by_course = LearningObject::all()->pluck('year')->unique()->sort();
 		}
@@ -107,10 +105,8 @@ class ShelfController extends Controller
 
 		$learning_objects = $query->get();
 
-		return view('shelf.learning_objects', compact('learning_objects', 'current'));
+		return view('shelf.learning_objects', compact('learning_objects', 'current', 'course_info'));
 	}
-
-
 
 	public function courses()
 	{
@@ -124,4 +120,5 @@ class ShelfController extends Controller
 	{
 		return view('shelf.about');
 	}
+
 }

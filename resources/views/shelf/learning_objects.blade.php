@@ -117,7 +117,7 @@
 <!--    fim do header     -->
 
 
-<div class="container">
+<div class="container" id="container">
 	{{--<div class="page-header">
 		<h2>{{$current->course}}</h2>
 	</div>--}}
@@ -271,7 +271,7 @@
 				</li>
 
 			@empty
-				<div>Não há materiais nessa categoria.</div>
+				<div class="curso-vazio">Não há materiais nessa categoria.</div>
 			@endforelse
 		</ul>
 		<div class="pagination-container">

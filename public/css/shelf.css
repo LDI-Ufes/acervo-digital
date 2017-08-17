@@ -53,6 +53,12 @@ p {
     max-height: 100%;
     max-width: 100%;
 }
+
+#container{
+  min-height: calc(100vh - 290px);
+  padding-bottom: 50px;
+}
+
 /* ========= HEADER ========= */
 
 .header-top{
@@ -140,6 +146,7 @@ p {
 
 .navbar-form {
   padding: 0;
+  display: inline-table;
 }
 
 .nav > li {
@@ -199,6 +206,14 @@ p {
     margin-bottom: 5px;
     background-color: #fff;
     color: #656565;
+}
+
+.navbar-toggle{
+  margin-right: 0;
+}
+
+.container-fluid > .navbar-header{
+  margin: 0;
 }
 
 /* ========= PANEL ========= */
@@ -272,9 +287,17 @@ button {
   text-align: left;
 }
 
+button img{
+  height: inherit;
+}
+
 li button:focus > .wrap-image img {
       -webkit-transform: scale(1.1);
       transform: scale(1.1);
+}
+
+.curso-vazio{
+  padding: 15px;
 }
 
 /* ========= LABELS ========= */
@@ -430,8 +453,8 @@ li button:focus > .wrap-image img {
 /*    FOOTER    */
 
  footer{
-  position: absolute;
-  margin: 50px 0 0;
+  position: relative;
+  margin: 0;
   width: 100%;
   bottom: 0;
 }
@@ -464,13 +487,13 @@ li button:focus > .wrap-image img {
   }
   nav .btn-group {
     position: relative;
-    top: -5px;
     vertical-align: top;
   }
   .navbar-nav,
   .navbar-form {
     padding-right: 15px;
     border: none;
+    display: inline-table;
   }
 
   .header-top .navbar-text{
@@ -510,7 +533,5 @@ li button:focus > .wrap-image img {
 }
 
 @media screen and (max-width: 420px) {
-  .nav > li {
-    width: 40%;
-  }
+
 }

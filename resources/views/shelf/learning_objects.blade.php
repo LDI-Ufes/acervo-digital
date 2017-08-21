@@ -208,6 +208,8 @@
 	</nav>
 
 	<div id="learning_objects" class="annotated-list">
+		<input class="search">
+	
 		<ul class="row list">
 			@forelse($learning_objects as $learning_object)
 				<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
@@ -240,7 +242,7 @@
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="fechar" data-dismiss="modal" aria-label="Close">
-									<img src="{{asset("icons/fechar.svg")}}">
+									<img src="{{ asset('icons/fechar.svg') }}">
 									</button> 
 
 									<img class="modal-image" src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
@@ -301,14 +303,16 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 
 <script>
+	// modais 
 	$('#myModal').on('shown.bs.modal', function () {
 		$('#myInput').focus();
 	});
 
-
+	// menus 
 	$('#select-type').on('change', function(){
 		params = document.location.href.split('/');
 		document.location.href = '/shelf/course/'+ params[5] +'/type/'+ this.value +'/year/'+ params[9];
@@ -320,15 +324,17 @@
 		document.location.href = '/shelf/course/'+ params[5] +'/type/'+ params[7] +'/year/'+ this.value;
 	});
 	
+	// list.js
 	var options = {
-		valueNames: ['modal-title', 'modal-body'],
-		page: 6,
+		valueNames: ['modal-title', 'modal-author', 'modal-body'],
+		page: 9,
 		pagination: true
 	};
 
 	var learning_objectList = new List('learning_objects', options);
+	
 </script>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 @endsection

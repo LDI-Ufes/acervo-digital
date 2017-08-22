@@ -60,11 +60,11 @@ p {
 }
 
 #learning_objects{
-  min-height: calc(100vh - 436px);
+  min-height: calc(100vh - 350px);
 }
 
 .conteudo{
-  min-height: calc(100vh - 487px);
+  min-height: calc(100vh - 488px);
   padding-bottom: 20px;
 }
 /* ========= HEADER ========= */

@@ -68,18 +68,18 @@
       <p class="navbar-text"><a href="/shelf/about">
 	    <i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
 	      Sobre o Acervo</a></p>
-      <p class="navbar-text"><a href="http://www.eadufes.org/" target="_blank">
+      <p class="navbar-text externo"><a href="http://www.eadufes.org/" target="_blank">
         <i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
       EAD na Ufes</a></p>
-      <p class="navbar-text"><a href="https://aluno.ufes.br/" target="_blank">
+      <p class="navbar-text externo"><a href="https://aluno.ufes.br/" target="_blank">
         <i class="fa fa-graduation-cap" alt="Ícone de Cap de Formatura"></i>  
       Portal do Aluno</a></p>
-      <p class="navbar-text"><a href="http://www.bc.ufes.br/" target="_blank">
+      <p class="navbar-text externo"><a href="http://www.bc.ufes.br/" target="_blank">
         <i class="fa fa-book" alt="Ícone de Livro"></i>  
       Biblioteca Ufes</a></p>
-      <p class="navbar-text"><a href="http://www.especializacao.aperfeicoamento.ufes.br/"> 
-        <i class="fa fa-desktop" alt="Ícone de Monitor"></i>  
-      Moodle</a></p>
+    <!--  <p class="navbar-text externo"><a href="http://www.especializacao.aperfeicoamento.ufes.br/"> 
+        <i class="fa fa-desktop" alt="Ícone de Monitor"></i> 
+      Moodle</a></p>  -->
     </div>  
   </div>
 
@@ -117,7 +117,7 @@
 <!--    fim do header     -->
 
 
-<div class="container">
+<div class="container" id="container">
 	{{--<div class="page-header">
 		<h2>{{$current->course}}</h2>
 	</div>--}}
@@ -186,7 +186,13 @@
 				<form class="navbar-form navbar-right navbar-text">
 					<div class="input-group">
 						{{-- <input type="text" class="form-control" placeholder="Busca"> --}}
-						<input type="text" class="form-control search" placeholder="Busca">
+						
+						<span class="input-group-addon">
+							<img src="{{asset("/icons/buscar.svg")}}" alt="Ícone de Lupa">
+							<!--<i class="fa fa-search" aria-hidden="true"></i>-->
+
+						</span>
+						<input type="text" class="form-control" placeholder="Busca">
 
 						{{-- //Botões de Ordenação do List.js //
 
@@ -194,13 +200,7 @@
 						<button class="sort" data-sort="course">Curso</button>
 						<button class="sort" data-sort="module">Modulo</button>
 
-						--}}
-
-						<div class="input-group-btn">
-							<button type="submit">
-								<img src="{{asset("/icons/buscar.svg")}}" alt="Ícone de Lupa">
-							</button>
-						</div>
+						--}}				
 					</div>
 				</form>
 			</div>
@@ -208,9 +208,7 @@
 	</nav>
 
 	<div id="learning_objects" class="annotated-list">
-		<input class="search">
-	
-		<ul class="row list">
+		<ul class="row list conteudo">
 			@forelse($learning_objects as $learning_object)
 				<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 					<button class="thumbnail no-shadow" type="button" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
@@ -273,7 +271,7 @@
 				</li>
 
 			@empty
-				<div>Não há materiais nessa categoria.</div>
+				<div class="curso-vazio">Não há materiais nessa categoria.</div>
 			@endforelse
 		</ul>
 		<div class="pagination-container">
@@ -332,7 +330,10 @@
 	};
 
 	var learning_objectList = new List('learning_objects', options);
-	
+
+	$(document).on("keypress", "input", function(event) { 
+    return event.keyCode != 13;
+	});
 </script>
 
 

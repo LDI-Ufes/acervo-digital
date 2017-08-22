@@ -8,7 +8,7 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container" id="container">
 
 		@forelse($courses as $group)
 			<div class="page-header">

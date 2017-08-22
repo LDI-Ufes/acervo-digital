@@ -56,9 +56,17 @@ p {
 
 #container{
   min-height: calc(100vh - 290px);
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
+#learning_objects{
+  min-height: calc(100vh - 436px);
+}
+
+.conteudo{
+  min-height: calc(100vh - 487px);
+  padding-bottom: 20px;
+}
 /* ========= HEADER ========= */
 
 .header-top{
@@ -417,8 +425,9 @@ li button:focus > .wrap-image img {
 /* ======= PAGINAÇÃO =======*/
 
 .pagination-container{
-  display: table;
-  margin: auto;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .pagination a{
@@ -426,6 +435,9 @@ li button:focus > .wrap-image img {
 	border-color: #ddd !important;
 }
 
+ul.pagination{
+  margin: 0;
+}
 /* ======= CURSOS INATIVOS =======*/
 
 .inativo{
@@ -496,7 +508,7 @@ li button:focus > .wrap-image img {
     display: inline-table;
   }
 
-  .header-top .navbar-text{
+  .header-top .externo{
     display: none;
   }
 

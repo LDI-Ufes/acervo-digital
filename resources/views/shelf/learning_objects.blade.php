@@ -68,18 +68,18 @@
       <p class="navbar-text"><a href="/shelf/about">
 	    <i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
 	      Sobre o Acervo</a></p>
-      <p class="navbar-text"><a href="http://www.eadufes.org/" target="_blank">
+      <p class="navbar-text externo"><a href="http://www.eadufes.org/" target="_blank">
         <i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
       EAD na Ufes</a></p>
-      <p class="navbar-text"><a href="https://aluno.ufes.br/" target="_blank">
+      <p class="navbar-text externo"><a href="https://aluno.ufes.br/" target="_blank">
         <i class="fa fa-graduation-cap" alt="Ícone de Cap de Formatura"></i>  
       Portal do Aluno</a></p>
-      <p class="navbar-text"><a href="http://www.bc.ufes.br/" target="_blank">
+      <p class="navbar-text externo"><a href="http://www.bc.ufes.br/" target="_blank">
         <i class="fa fa-book" alt="Ícone de Livro"></i>  
       Biblioteca Ufes</a></p>
-      <p class="navbar-text"><a href="http://www.especializacao.aperfeicoamento.ufes.br/"> 
-        <i class="fa fa-desktop" alt="Ícone de Monitor"></i>  
-      Moodle</a></p>
+    <!--  <p class="navbar-text externo"><a href="http://www.especializacao.aperfeicoamento.ufes.br/"> 
+        <i class="fa fa-desktop" alt="Ícone de Monitor"></i> 
+      Moodle</a></p>  -->
     </div>  
   </div>
 
@@ -118,99 +118,91 @@
 
 
 <div class="container" id="container">
-	{{--<div class="page-header">
-		<h2>{{$current->course}}</h2>
-	</div>--}}
-
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-
-				{{--<a class="btn btn-default navbar-text" href="{{ url('shelf/courses') }}">Voltar</a>--}}
-
-				<button type="button" class="navbar-toggle collapsed navbar-text" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				    <span class="sr-only">Toggle navigation</span>
-				    <span class="icon-bar"></span>
-				    <span class="icon-bar"></span>
-				    <span class="icon-bar"></span>
-				</button>
-			</div>
-			
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-text">
-
-					<li>
-						<!-- TIPOS DE OBJETO DE APRENDIZAGEM -->
-						<select class="selectpicker" id="select-type">
-							<option selected disabled="">Tipo de Objeto</option>
-							<option value="0">Todos</option>
-							@foreach ($current->object_types as $type)								
-								@if ($current->type_id == $type->id)
-									<option value="{{$type->id}}" selected>{{$type->name}}</option>
-								@else
-									<option value="{{$type->id}}">{{$type->name}}</option>
-								@endif
-							@endforeach
-						</select>
-					</li>
-
-					<li>
-						<!-- ANO -->
-						<select class="selectpicker" id="select-year">
-							<option selected disabled="">Ano</option>
-							<option value="0">Todos</option>
-
-							@foreach ($current->years_by_course as $year)
-								@if($year != null)
-									@if($current->year == $year)
-										<option value="{{ $year }}" selected>{{ $year }}</option>
-									@else
-										<option value="{{ $year }}">{{ $year }}</option>
-									@endif
-								@endif
-
-
-								{{-- SÓ FAZ SENTIDO CRIAR ISSO DEPOIS DO BACKEND FAZE A SELECAO... VALE A PENA???
-								@if ($current->type_id == $type->id)
-									<option value="{{$type->id}}" selected>{{$type->year}}</option>
-								@else
-									<option value="{{$type->id}}">{{$type->year}}</option>
-								@endif
-								--}}
-							@endforeach
-						</select>
-					</li>
-
-
-				</ul>
-				<form class="navbar-form navbar-right navbar-text">
-					<div class="input-group">
-						{{-- <input type="text" class="form-control" placeholder="Busca"> --}}
-						
-						<span class="input-group-addon">
-							<img src="{{asset("/icons/buscar.svg")}}" alt="Ícone de Lupa">
-							<!--<i class="fa fa-search" aria-hidden="true"></i>-->
-
-						</span>
-						<input type="text" class="form-control" placeholder="Busca">
-
-						{{-- //Botões de Ordenação do List.js //
-
-						<button class="sort" data-sort="title">Título</button>
-						<button class="sort" data-sort="course">Curso</button>
-						<button class="sort" data-sort="module">Modulo</button>
-
-						--}}				
-					</div>
-				</form>
-			</div>
-		</div>
-	</nav>
 
 	<div id="learning_objects" class="annotated-list">
-		<input class="search">
-	
-		<ul class="row list">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+
+					<button type="button" class="navbar-toggle collapsed navbar-text" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					    <span class="sr-only">Toggle navigation</span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+					</button>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-text">
+
+						<li>
+							<!-- TIPOS DE OBJETO DE APRENDIZAGEM -->
+							<select class="selectpicker" id="select-type">
+								<option selected disabled="">Tipo de Objeto</option>
+								<option value="0">Todos</option>
+								@foreach ($current->object_types as $type)								
+									@if ($current->type_id == $type->id)
+										<option value="{{$type->id}}" selected>{{$type->name}}</option>
+									@else
+										<option value="{{$type->id}}">{{$type->name}}</option>
+									@endif
+								@endforeach
+							</select>
+						</li>
+
+						<li>
+							<!-- ANO -->
+							<select class="selectpicker" id="select-year">
+								<option selected disabled="">Ano</option>
+								<option value="0">Todos</option>
+
+								@foreach ($current->years_by_course as $year)
+									@if($year != null)
+										@if($current->year == $year)
+											<option value="{{ $year }}" selected>{{ $year }}</option>
+										@else
+											<option value="{{ $year }}">{{ $year }}</option>
+										@endif
+									@endif
+
+
+									{{-- SÓ FAZ SENTIDO CRIAR ISSO DEPOIS DO BACKEND FAZE A SELECAO... VALE A PENA???
+									@if ($current->type_id == $type->id)
+										<option value="{{$type->id}}" selected>{{$type->year}}</option>
+									@else
+										<option value="{{$type->id}}">{{$type->year}}</option>
+									@endif
+									--}}
+								@endforeach
+							</select>
+						</li>
+
+
+					</ul>
+					<form class="navbar-form navbar-right navbar-text">
+						<div class="input-group">
+						
+							<span class="input-group-addon">
+								<img src="{{asset("/icons/buscar.svg")}}" alt="Ícone de Lupa">
+								<!--<i class="fa fa-search" aria-hidden="true"></i>-->
+
+							</span>
+							<input type="text" class="form-control search" placeholder="Busca">
+
+							{{-- //Botões de Ordenação do List.js //
+
+							<button class="sort" data-sort="title">Título</button>
+							<button class="sort" data-sort="course">Curso</button>
+							<button class="sort" data-sort="module">Modulo</button>
+
+							--}}				
+						</div>
+					</form>
+				</div>
+			</div>
+		</nav>
+
+		<ul class="row list conteudo">
 			@forelse($learning_objects as $learning_object)
 				<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 					<button class="thumbnail no-shadow" type="button" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">

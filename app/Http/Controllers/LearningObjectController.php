@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Course;
 use App\ObjectType;
 use App\LearningObject;
+use Intervention\Image\ImageManagerStatic as Image;
+
 
 class LearningObjectController extends Controller
 {
@@ -76,15 +78,21 @@ class LearningObjectController extends Controller
 	    //checar se a imagem tem o tamanho necessário (219x219) 
 	    //e dar resize se não tiver
 	    //
-	    if ($request->hasFile('cover')){
+	    if ($request->hasFile('cover')) {
 		    $image = $request->file('cover');
-		    $input['cover'] = time().'.'.$image->extension();
 
-		    $destinationPath = public_path('/covers');
-		    $image->move($destinationPath, $input['cover']);
+		    $resizer = Image::make($image);
+		    $file_name = time().'.'.$image->extension();
 
-		    $learning_object->cover = $input['cover'];
+		    //$resizer->resize(735, 396);
 
+		    $resizer->fit(735, 396, function ($constraint) {
+		        $constraint->upsize();
+		    });
+
+		    $resizer->save(public_path('/covers') .'/'. $file_name);
+
+		    $learning_object->cover = $file_name;
 	    } else {
 	    	$learning_object->cover = "default.jpg";
 	    }
@@ -148,6 +156,23 @@ class LearningObjectController extends Controller
 	    // falta fazer o upload, checagem e resize do arquivo de capa...
 	    //$learning_object->cover = $request->cover 
 	    //
+	    //
+	    if ($request->hasFile('cover')) {
+		    $image = $request->file('cover');
+
+		    $resizer = Image::make($image);
+		    $file_name = time().'.'.$image->extension();
+
+		    //$resizer->resize(735, 396);
+
+		    $resizer->fit(735, 396, function ($constraint) {
+		        $constraint->upsize();
+		    });
+
+		    $resizer->save(public_path('/covers') .'/'. $file_name);
+
+		    $learning_object->cover = $file_name;
+	    }
 
 	    $learning_object->save();
 

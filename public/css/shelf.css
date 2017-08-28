@@ -282,8 +282,9 @@ a:focus> .panel{
     color: #656565;
   }
 
-.caption .fa{
-  font-size: 0.9em;
+.modal-caption .fa{
+  padding-left: 7px;
+  padding-right: 3px;
 }
 
 .thumbnail img{
@@ -532,7 +533,7 @@ ul.pagination{
   }
 
   .rotulo h1, .rotulo h2 {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 20px;
   }
 }
@@ -542,8 +543,14 @@ ul.pagination{
   .caption {
     height: auto;
   }
+
+  .rotulo h2 {
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 
 @media screen and (max-width: 420px) {
+
 
 }

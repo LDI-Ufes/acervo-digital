@@ -36,13 +36,13 @@
             </div>
           </div>
           <div class="row">
-            <div class="miniatura">
+            <div class="miniatura col-xs-12 col-md-6">
 		    <div class="img" style="overflow:hidden">
 		<img src="/covers/{{ $learning_object->cover }}">
                 <span>{{ $learning_object->cover }}</span>
               </div>
             </div>
-            <div class="ficha">
+            <div class="ficha col-xs-12 col-md-6">
               <ul>
                 <li><b>Curso:</b> {{ $learning_object->course->name }}</li>
                 <li><b>Módulo:</b> {{ $learning_object->module }}</li>

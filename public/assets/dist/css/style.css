@@ -100,6 +100,11 @@ body {
 body .form-horizontal .control-label {
   text-align: left;
 }
+
+body .form-horizontal .control-label .imagem-existente img {
+  height: 42px;
+}
+
 body .login-box .login-box-body {
   float: left;
   min-width: 360px;
@@ -129,18 +134,25 @@ body .content-wrapper section.visualizarLivro .box .box-body .miniatura {
   padding: 15px;
 }
 body .content-wrapper section.visualizarLivro .box .box-body .miniatura .img {
-  width: 220px;
-  height: 220px;
+  width: 100%;
   border: 1px solid darkgray;
   position: relative;
   background-color: lightgray;
 }
-body .content-wrapper section.visualizarLivro .box .box-body .miniatura .img span {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+
+body .content-wrapper section.visualizarLivro .box .box-body .miniatura .img img{
+  width: 100%;
 }
+
+.imagem-existente {
+  padding-left: 0;
+  height: 44px;
+}
+
+.imagem-existente img{
+  width: 100%;
+}
+
 body .content-wrapper section.visualizarLivro .box .box-body .ficha {
   float: left;
   padding: 15px;

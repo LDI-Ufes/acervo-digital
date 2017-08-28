@@ -32,7 +32,7 @@
         <!-- HEADER -->
         <header class="main-header">
           <!-- LOGO -->
-          <a href="/admin" class="logo">Estante Virtual</a>
+          <a href="/admin" class="logo">Acervo Digital EaD</a>
           <!-- NAVEGAÇÃO -->
           <nav class="navbar navbar-static-top" role="navigation">
             <!-- BOTÃO DE NAVEGAÇÃO (ESQUERDA)-->

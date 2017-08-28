@@ -4,31 +4,44 @@
 	<style> 
 		@if(!empty($course_info->bg_color))
 
-		.btn-download {
-			background-color: {{ $course_info->bg_color }}; 	/* chamar cor primaria */
-		}
-
-		.btn-download:hover {
-			background-color: {{ $course_info->aux_color }}; 	/* chamar cor auxiliar */
-		}
-
-		small a{
-			color: {{ $course_info->fg_color }} !important; 
-		}
-
-			@if ($course_info->name == 'Biologia')
-				.icone-baixar path{
-					fill: #000 !important;
+			@if ($course_info->active == 1)
+				.btn-download {
+					background-color: {{ $course_info->bg_color }}; 	/* chamar cor primaria */
 				}
 
-				.rotulo h1, .rotulo h2{
-					color: #000;
+				.btn-download:hover {
+					background-color: {{ $course_info->aux_color }}; 	/* chamar cor auxiliar */
 				}
 
-				.btn-download{
-					color: #000;
+				small a{
+					color: {{ $course_info->fg_color }} !important; 
 				}
-			@endif
+
+					@if ($course_info->name == 'Biologia')
+
+						.rotulo h1, .rotulo h2{
+							color: #000;
+						}
+
+						.btn-download{
+							color: #000;
+						}
+					@endif
+			@else
+			
+				.btn-download {
+					background-color: #656565; 	/* chamar cor primaria */
+				}
+
+				.btn-download:hover {
+					background-color: #373737; 	/* chamar cor auxiliar */
+				}
+
+				small a{
+					color: #656565 !important;  
+				}
+
+			@endif	
 
 		@endif 
 	</style>
@@ -36,19 +49,38 @@
 		<!-- HEADER E FOOTER  -->
 	<style>
 		@if(!empty($course_info->bg_color))
-		
-		.header-top{
-			background-color: {{ $course_info->aux_color }};
-		}
+			
+			@if ($course_info->active == 1)
 
-		.header-main{
-			background-color: {{ $course_info->bg_color }};
-		}
+				.header-top{
+					background-color: {{ $course_info->aux_color }};
+				}
 
-		footer{
-			background: {{ $course_info->aux_color }};
-			border-top: 5px solid {{ $course_info->bg_color }};
-		}
+				.header-main{
+					background-color: {{ $course_info->bg_color }};
+				}
+
+				footer{
+					background: {{ $course_info->aux_color }};
+					border-top: 5px solid {{ $course_info->bg_color }};
+				}
+
+			@else
+
+				.header-top{
+					background-color: #373737;
+				}
+
+				.header-main{
+					background-color: #656565;
+				}
+
+				footer{
+					background: #373737;
+					border-top: 5px solid #656565;
+				}
+
+			@endif
 
 		@endif 
 	</style>
@@ -97,7 +129,7 @@
         </div>
         <div class="rotulo">
           <h1>Acervo Digital</h1>
-          <h2>{{$current->course}}</h2>
+          <h2>{{ $current->course }}</h2>
         </div>
       </div>  
     </div>  
@@ -105,8 +137,9 @@
 
 <div class="breadcrumbs">
 	<div class="container">
-	<small> <a href="/">Acervo EAD</a> &raquo; {{$current->course}} 
-	{{--&raquo; {{$current->type}} &raquo; {{ $current->year }}--}} 
+	<small> <a href="/">Acervo EAD</a> &raquo; {{  str_limit($current->course, 20) }} <!-- Trocar pela url  -->
+
+	
 	</small>
 
 	</div>
@@ -217,18 +250,12 @@
 								<img class="max-size" src="/covers/{{ $learning_object->cover}}" alt="Image do objeto">
 							</div>
 							<div class="caption"> 
-								<h3>{{  str_limit($learning_object->title, 40) }}
-									@if (Auth::check())
-										<a href="/admin/learning_objects/{{$learning_object->id}}/edit">
-											<i class="fa fa-pencil-square-o"></i>
-										</a>
-									@endif
-								</h3>
+								<h3>{{  str_limit($learning_object->title, 40) }}</h3>
 							</div>	
 					</button>
 				
 				
-					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="outer-modal">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
@@ -243,7 +270,8 @@
 										<p class="modal-author">{{ $learning_object->author }}</p>
 										<p class="modal-year">{{ $learning_object->year }}</p>
 										<a class="btn-download" href="{{ $learning_object->link }}" role="button">
-											{{ svg_image('baixar', 'icone-baixar')->inline() }}
+											<i class="fa fa-external-link" aria-hidden="true"></i>
+											<!--<i class="fa fa-external-link-square" aria-hidden="true"></i>-->
 											Abrir
 										</a> 
 									</div>

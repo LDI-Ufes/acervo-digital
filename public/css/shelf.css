@@ -55,16 +55,16 @@ p {
 }
 
 #container{
-  min-height: calc(100vh - 290px);
+  min-height: calc(100vh - 296px);
   padding-bottom: 30px;
 }
 
 #learning_objects{
-  min-height: calc(100vh - 350px);
+  min-height: calc(100vh - 356px);
 }
 
 .conteudo{
-  min-height: calc(100vh - 488px);
+  min-height: calc(100vh - 494px);
   padding-bottom: 20px;
 }
 /* ========= HEADER ========= */
@@ -160,6 +160,9 @@ p {
   color: #656565;
 }
 
+small a:hover{
+  filter: brightness(70%);
+}
 /* ========= NAVBAR OBJETOS========= */
 
 .btn-group.bootstrap-select {

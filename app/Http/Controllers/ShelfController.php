@@ -108,6 +108,24 @@ class ShelfController extends Controller
 		return view('shelf.learning_objects', compact('learning_objects', 'current', 'course_info'));
 	}
 
+	public function courseObjectsPage($slug)
+	{
+		$course_info = Course::whereSlug($slug)->first();
+
+		$learning_objects = $course_info->learning_objects;
+
+		$current = (object) Array(
+			'course' => ($course_info->name),
+			'year' => 'Todos os Anos',
+			'years_by_course' => [],
+			'type' => "Todos os Tipos",
+			'type_id' => 0,
+			'object_types' => ObjectType::all(),
+		);
+
+		return view('shelf.learning_objects', compact('learning_objects', 'current', 'course_info'));	
+	}
+
 	public function courses()
 	{
 		$courses = Course::where('active', '=', 1)->orderBy('name', 'asc')->get()->groupBy('type_id');

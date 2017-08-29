@@ -34,6 +34,10 @@ Route::resource('/admin/object_types', 'ObjectTypeController');
 // ROTA COM MODULO
 //Route::get('/shelf/course/{course}/module/{module}/type/{type}', 'ShelfController@index');
 
+
+Route::get('/curso/{slug}', 'ShelfController@courseObjectsPage');
+
+
 // ROTA COM ANO
 Route::get('/shelf/course/{course}/type/{type}/year/{year}', 'ShelfController@learningObjects');
 

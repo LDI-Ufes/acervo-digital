@@ -179,6 +179,7 @@ return [
 
 	BladeSvg\BladeSvgServiceProvider::class,
 	Intervention\Image\ImageServiceProvider::class,
+	Cviebrock\EloquentSluggable\ServiceProvider::class,
 
     ],
 

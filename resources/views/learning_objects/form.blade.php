@@ -62,9 +62,9 @@
 		<select class="form-control" name="course_id" id="course_id">
 			@foreach($courses  as $course)
 				@if (isset($learning_object) and ($learning_object->course_id == $course->id))
-					<option value="{{$course->id}}" data-module-number="{{$course->modules}}" selected>{{$course->name}}</option>
+					<option value="{{$course->id}}" data-module-number="{{$course->modules}}" selected>{{$course->name}} {{ $course->active ? "" : "(inativo)"}}</option>
 				@else
-					<option value="{{$course->id}}"  data-module-number="{{$course->modules}}">{{$course->name}}</option>
+					<option value="{{$course->id}}"  data-module-number="{{$course->modules}}">{{$course->name}} {{ $course->active ? "" : "(inativo)"}}</option>
 				@endif
 			@endforeach
 		</select>

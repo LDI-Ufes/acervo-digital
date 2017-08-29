@@ -93,26 +93,39 @@
 
 <header>
   <div class="header-top">
-    <div class='container'>
-      <p class="navbar-text"><a href="/">
-        <i class="fa fa-home" alt="Ícone de Casa"></i>  
-      Início</a></p>
-      <p class="navbar-text"><a href="/shelf/about">
-	    <i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
-	      Sobre o Acervo</a></p>
-      <p class="navbar-text externo"><a href="http://www.eadufes.org/" target="_blank">
-        <i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
-      EAD na Ufes</a></p>
-      <p class="navbar-text externo"><a href="https://aluno.ufes.br/" target="_blank">
-        <i class="fa fa-graduation-cap" alt="Ícone de Cap de Formatura"></i>  
-      Portal do Aluno</a></p>
-      <p class="navbar-text externo"><a href="http://www.bc.ufes.br/" target="_blank">
-        <i class="fa fa-book" alt="Ícone de Livro"></i>  
-      Biblioteca Ufes</a></p>
-    <!--  <p class="navbar-text externo"><a href="http://www.especializacao.aperfeicoamento.ufes.br/"> 
-        <i class="fa fa-desktop" alt="Ícone de Monitor"></i> 
-      Moodle</a></p>  -->
-    </div>  
+	<nav class="navbar">
+			<div class="container">
+				<div class="navbar-header">
+
+					<button type="button" class="navbar-toggle collapsed navbar-text" data-toggle="collapse" data-target="#menu-topo" aria-expanded="false">
+						<i class="fa fa-bars" aria-hidden="true" alt="Menu expansível"></i>
+					</button>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="menu-topo">
+				    <ul>
+				      <li class="navbar-text"><a href="/">
+				        <i class="fa fa-home" alt="Ícone de Casa"></i>  
+				      Início</a></li>
+				      <li class="navbar-text"><a href="/shelf/about">
+					    <i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
+					      Sobre o Acervo</a></li>
+				      <li class="navbar-text externo"><a href="http://www.eadufes.org/" target="_blank">
+				        <i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
+				      EAD na Ufes</a></li>
+				      <li class="navbar-text externo"><a href="https://aluno.ufes.br/" target="_blank">
+				        <i class="fa fa-graduation-cap" alt="Ícone de Cap de Formatura"></i>  
+				      Portal do Aluno</a></li>
+				      <li class="navbar-text externo"><a href="http://www.bc.ufes.br/" target="_blank">
+				        <i class="fa fa-book" alt="Ícone de Livro"></i>  
+				      Biblioteca Ufes</a></li>
+				    <!--  <p class="navbar-text externo"><a href="http://www.especializacao.aperfeicoamento.ufes.br/"> 
+				        <i class="fa fa-desktop" alt="Ícone de Monitor"></i> 
+				      Moodle</a></p>  -->
+				     </ul>
+				</div>
+			</div>	      
+	    </nav>  
   </div>
 
   <div class="header-main">
@@ -158,10 +171,11 @@
 				<div class="navbar-header">
 
 					<button type="button" class="navbar-toggle collapsed navbar-text" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					    <span class="sr-only">Toggle navigation</span>
+					   <!-- <span class="sr-only">Toggle navigation</span>
 					    <span class="icon-bar"></span>
 					    <span class="icon-bar"></span>
-					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>-->
+					    <i class="fa fa-bars" aria-hidden="true" alt="Menu expansível"></i>
 					</button>
 				</div>
 				
@@ -256,10 +270,6 @@
 				
 				
 					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<<<<<<< Updated upstream
-=======
-						<div class="outer-modal">
->>>>>>> Stashed changes
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
@@ -272,11 +282,7 @@
 										<h3 class="modal-title">{{ $learning_object->title }}</h3>
 										<p class="modal-author">{{ $learning_object->author }}</p>
 										<p class="modal-year">{{ $learning_object->year }}</p>
-<<<<<<< Updated upstream
 										<a class="btn-download" href="{{ $learning_object->link }}" role="button" target="_blank">
-=======
-										<a class="btn-download" href="{{ $learning_object->link }}" role="button">
->>>>>>> Stashed changes
 											<i class="fa fa-external-link" aria-hidden="true"></i>
 											<!--<i class="fa fa-external-link-square" aria-hidden="true"></i>-->
 											Abrir

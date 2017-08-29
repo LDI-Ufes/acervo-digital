@@ -270,10 +270,6 @@
 				
 				
 					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<<<<<<< Updated upstream
-=======
-						<div class="outer-modal">
->>>>>>> Stashed changes
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
@@ -286,11 +282,7 @@
 										<h3 class="modal-title">{{ $learning_object->title }}</h3>
 										<p class="modal-author">{{ $learning_object->author }}</p>
 										<p class="modal-year">{{ $learning_object->year }}</p>
-<<<<<<< Updated upstream
 										<a class="btn-download" href="{{ $learning_object->link }}" role="button" target="_blank">
-=======
-										<a class="btn-download" href="{{ $learning_object->link }}" role="button">
->>>>>>> Stashed changes
 											<i class="fa fa-external-link" aria-hidden="true"></i>
 											<!--<i class="fa fa-external-link-square" aria-hidden="true"></i>-->
 											Abrir

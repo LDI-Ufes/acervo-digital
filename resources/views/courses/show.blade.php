@@ -40,6 +40,8 @@
                 <li><b>Cor Auxiliar:</b> {{ $course->aux_color}} </li>
                 <li><b>Cor da Tipografia:</b> {{ $course->fg_color }} </li>
                 <li><b>Abreviação:</b> {{ $course->short }} </li>
+		<li><b>Endereço:</b> <a href="{{ URL::to('/') }}/curso/{{ $course->slug }}" target="_blank">{{ URL::to('/') }}/curso/{{ $course->slug }}</a> </li>
+	
                 <li><b>Ativo</b> 
                 	@if ($course->active)
 						Sim, ativo.

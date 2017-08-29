@@ -84,11 +84,11 @@ class LearningObjectController extends Controller
 		    $resizer = Image::make($image);
 		    $file_name = time().'.'.$image->extension();
 
-		    //$resizer->resize(735, 396);
-
-		    $resizer->fit(735, 396, function ($constraint) {
-		        $constraint->upsize();
-		    });
+		    if (($resizer->width() != 735) or ($resizer->height() != 396)){ 
+			    $resizer->fit(735, 396, function ($constraint) {
+				$constraint->upsize();
+			    }); 
+		    }
 
 		    $resizer->save(public_path('/covers') .'/'. $file_name);
 
@@ -165,9 +165,12 @@ class LearningObjectController extends Controller
 
 		    //$resizer->resize(735, 396);
 
-		    $resizer->fit(735, 396, function ($constraint) {
-		        $constraint->upsize();
-		    });
+
+		    if (($resizer->width() != 735) or ($resizer->height() != 396)){ 
+			    $resizer->fit(735, 396, function ($constraint) {
+				$constraint->upsize();
+			    }); 
+		    }
 
 		    $resizer->save(public_path('/covers') .'/'. $file_name);
 

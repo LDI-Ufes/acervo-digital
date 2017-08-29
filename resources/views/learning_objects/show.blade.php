@@ -68,7 +68,7 @@
               <form method="POST" action="{!! route('learning_objects.destroy', $learning_object->id) !!}" accept-charset="UTF-8" style="display: inline;" novalidate="novalidate">
                 <input name="_method" value="DELETE" type="hidden">
                 {{ csrf_field() }}
-                <button type="submit" class="btn btn-danger" title="Deletar" onclick="return confirm( & quot; Tem certeza que quer apagar? & quot; )" id="sometest">
+                <button type="submit" class="btn btn-danger" title="Deletar" onclick="return confirm('Tem certeza que quer apagar?')" id="sometest">
                   Deletar
                 </button>
               </form>

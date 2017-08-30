@@ -66,11 +66,6 @@
 					@endforeach 
 				</ul> 
 			</div>
-
-		@else
-			Testando esse &at;if na encolha aqui, mas na moral não tem nem esse &at;else que usei aqui, tá ligado? <br\>
-			Não vai ficar nada aqui porque não tem curso inativo, fraga? (não faz sentido ter um campo vísivel para cursos inativos se não existirem cursos inativos.... ou faz?) <br\>
-
 		@endif
 
 	</div>

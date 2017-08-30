@@ -39,17 +39,92 @@
     </script>
   </head>
   <body>
-   {{--
-   <div id="app">
-      <div class="wrapper">
-        <div class="content-wrapper">
---}}
-	@yield('content')
-{{--
+	   
+	<header>
+	  <div class="header-top">
+		<nav class="navbar">
+				<div class="container">
+					<div class="navbar-header">
+
+						<button type="button" class="navbar-toggle collapsed navbar-text" data-toggle="collapse" data-target="#menu-topo" aria-expanded="false">
+							<i class="fa fa-bars" aria-hidden="true" alt="Menu expansível"></i>
+						</button>
+					</div>
+					
+					<div class="collapse navbar-collapse" id="menu-topo">
+						<ul>
+						  <li class="navbar-text"><a href="/">
+							<i class="fa fa-home" alt="Ícone de Casa"></i>  
+						  Início</a></li>
+						  <li class="navbar-text"><a href="/shelf/about">
+							<i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
+							  Sobre o Acervo</a></li>
+						  <li class="navbar-text externo"><a href="http://www.eadufes.org/" target="_blank">
+							<i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
+						  EAD na Ufes</a></li>
+						  <li class="navbar-text externo"><a href="https://aluno.ufes.br/" target="_blank">
+							<i class="fa fa-graduation-cap" alt="Ícone de Cap de Formatura"></i>  
+						  Portal do Aluno</a></li>
+						  <li class="navbar-text externo"><a href="http://www.bc.ufes.br/" target="_blank">
+							<i class="fa fa-book" alt="Ícone de Livro"></i>  
+						  Biblioteca Ufes</a></li>
+						<!--  <p class="navbar-text externo"><a href="http://www.especializacao.aperfeicoamento.ufes.br/"> 
+							<i class="fa fa-desktop" alt="Ícone de Monitor"></i> 
+						  Moodle</a></p>  -->
+						 </ul>
+					</div>
+				</div>	      
+			</nav>  
+	  </div>
+
+	  <div class="header-main">
+		<div class='container'>
+		  <div class="tamanho">
+			<div id="logo">
+			  <a href="/">
+				@if ($current->course == 'Biologia')
+							<img alt="Logo UFES" src="{{ asset('/icons/ufes-preto.svg') }}">
+				@else
+							<img alt="Logo UFES" src="{{ asset('/icons/ufes-branco.svg') }}">
+				@endif
+			  </a>
+			</div>
+			<div class="rotulo">
+			  <h1>Acervo Digital</h1>
+			  <h2>{{ $current->course }}</h2>
+			</div>
+		  </div>  
+		</div>  
+	  </div>
+
+	<div class="breadcrumbs">
+		<div class="container">
+		<small> <a href="/">Acervo EAD</a> &raquo; {{  str_limit($current->course, 20) }}
+
+		
+		</small>
+
+		</div>
 	</div>
-      </div>
-    </div>
---}}
+
+	</header>
+	
+	@yield('content')
+
+	<footer id="footer">
+	  <div class="footer-main">
+	    <div class="container-fluid">
+	      <div class="logos-group">
+	        <a href="http://ufes.br/" target="_blank" title="Ir para site da Ufes"><img src="http://www.especializacao.aperfeicoamento.ufes.br/theme/klass/pix/home/logo-ufes.svg" alt="Logo Ufes"></a>
+	        <a href="http://sead.ufes.br/" target="_blank" title="Ir para site da Sead"><img src="http://www.especializacao.aperfeicoamento.ufes.br/theme/klass/pix/home/logo-sead.svg" alt="Logo Sead"></a>
+	        <a href="http://uab.capes.gov.br" target="_blank" title="Ir para página da UAB"><img src="http://www.especializacao.aperfeicoamento.ufes.br/theme/klass/pix/home/logo-uab.svg" alt="Logo UAB"></a>
+	        <a href="http://capes.gov.br/" target="_blank" title="Ir para site da Capes"><img src="http://www.especializacao.aperfeicoamento.ufes.br/theme/klass/pix/home/logo-capes.svg" alt="Logo Capes"></a>
+	      </div>
+	    </div>
+	  </div>
+	</footer>
+
+
     <!-- Scripts original-->
 {{--	    <script src="{{ asset('public/js/app.js') }}"></script> --}}
 {{--	    <script src="{{ asset('assets/plugins/jQuery/jQuery-2.1.3.min.js') }}"></script> --}}

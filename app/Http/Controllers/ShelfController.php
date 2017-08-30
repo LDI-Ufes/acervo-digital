@@ -108,7 +108,7 @@ class ShelfController extends Controller
 		return view('shelf.learning_objects', compact('learning_objects', 'current', 'course_info'));
 	}
 
-	public function courseObjectsPage($slug)
+	public function courseObjectsPage($slug, $type = 0, $year = 0)
 	{
 		$course_info = Course::whereSlug($slug)->first();
 
@@ -122,6 +122,26 @@ class ShelfController extends Controller
 			'type_id' => 0,
 			'object_types' => ObjectType::all(),
 		);
+
+		$current->years_by_course = LearningObject::where('course_id', '=', $course_info->id)->pluck('year')->unique()->sort();	
+
+
+		if(($type != 0) or ($year != 0)){
+			$query = LearningObject::where('course_id', $course_info->id)->orderBy('title', 'asc');
+
+			if ($type != 0){
+				$query->where('type_id', '=', $type);
+				$current->type = ObjectType::findOrFail($type)->name;
+				$current->type_id = $type;
+			}
+
+			if ($year != 0){
+				$query->where('year', '=', $year);
+				$current->year = $year;
+			}
+
+			$learning_objects = $query->get();
+		}
 
 		return view('shelf.learning_objects', compact('learning_objects', 'current', 'course_info'));	
 	}

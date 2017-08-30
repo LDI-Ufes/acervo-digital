@@ -263,13 +263,21 @@
 	// menus 
 	$('#select-type').on('change', function(){
 		params = document.location.href.split('/');
-		document.location.href = '/shelf/course/'+ params[5] +'/type/'+ this.value +'/year/'+ params[9];
+		
+		if (typeof params[5] == 'undefined') params[5] = 0;
+		if (typeof params[6] == 'undefined') params[6] = 0;
+		
+		document.location.href = '/curso/'+ params[4] + '/' + this.value +'/'+ params[6];
 	});
 
 
 	$('#select-year').on('change', function(){
 		params = document.location.href.split('/');
-		document.location.href = '/shelf/course/'+ params[5] +'/type/'+ params[7] +'/year/'+ this.value;
+		
+		if (typeof params[5] == 'undefined') params[5] = 0;
+		if (typeof params[6] == 'undefined') params[6] = 0;
+		
+		document.location.href = '/curso/'+ params[4] + '/' + params[5] + '/' + this.value;
 	});
 	
 	// list.js

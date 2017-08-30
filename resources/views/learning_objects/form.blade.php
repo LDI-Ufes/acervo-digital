@@ -32,15 +32,15 @@
 </div>
 
 <div class="form-group {{ $errors->has('cover') ? 'has-error' : ''}}">
- 	<label for="cover" class="col-md-2 control-label">Escolha Capa</label>
+ 	<label for="cover" class="col-xs-12 col-md-2 control-label">Escolha Capa</label>
 	
-	<div class="col-md-9">
+	<div class="col-xs-10 col-md-9">
 		<input class="btn btn-default btn-file" name="cover" type="file" id="cover" value="{{ old('cover', isset($learning_object) ? $learning_object->cover : null) }}">
 		{!! $errors->first('cover', '<p class="help-block">:message</p>') !!}
 	</div>
 	
 	@if (isset($learning_object->cover))
-	<div class="col-md-1 imagem-existente">
+	<div class="col-xs-2 col-md-1 imagem-existente">
 		<img src="/covers/{{ $learning_object->cover }}">
 		{{-- old('cover', isset($learning_object) ? $learning_object->cover : null) --}}		
 	</div>

@@ -30,21 +30,6 @@
 
 	@yield('styles')
 
-	<style>
-		.header-top{
-			background-color: #193e70;
-		}
-
-		.header-main{
-			background-color: #0e64ac;
-		}
-
-		footer{
-			background: #193e70;
-			border-top: 5px solid #036bb2;
-		}
-	</style>
-
    <!-- Scripts -->
     <script>
       window.Laravel = {!! json_encode([
@@ -56,20 +41,6 @@
   <body>
 
 	@yield('content')
-
-    <!-- jQuery 2.1.3 -->
-    <script src="{{ asset('assets/plugins/jQuery/jQuery-2.1.3.min.js') }}"></script>
-
-    <!-- Bootstrap 3.3.2 JS -->
-    <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
-
-    <!-- AdminLTE App -->
-    <script src="{{ asset('assets/theme/js/app.min.js') }}" type="text/javascript"></script>
-
-    <!-- Personalizado -->
-    <script src="{{ asset('assets/dist/js/ldi.js') }}" type="text/javascript"></script> <!-- NOVO -->
-
-
 
 	@yield('scripts')
 

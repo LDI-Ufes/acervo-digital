@@ -124,11 +124,6 @@
 	  </div>
 	</footer>
 
-
-    <!-- Scripts original-->
-{{--	    <script src="{{ asset('public/js/app.js') }}"></script> --}}
-{{--	    <script src="{{ asset('assets/plugins/jQuery/jQuery-2.1.3.min.js') }}"></script> --}}
-
 	    @yield('scripts')
 
   </body>

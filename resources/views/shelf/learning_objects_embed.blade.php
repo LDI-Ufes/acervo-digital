@@ -44,54 +44,11 @@
 			@endif	
 
 		@endif 
-	
-	
-		@if(!empty($course_info->bg_color))
-			
-			@if ($course_info->active == 1)
-
-				.header-top{
-					background-color: {{ $course_info->aux_color }};
-				}
-
-				.header-main{
-					background-color: {{ $course_info->bg_color }};
-				}
-
-				footer{
-					background: {{ $course_info->aux_color }};
-					border-top: 5px solid {{ $course_info->bg_color }};
-				}
-
-			@else
-
-				.header-top{
-					background-color: #373737;
-				}
-
-				.header-main{
-					background-color: #656565;
-				}
-
-				footer{
-					background: #373737;
-					border-top: 5px solid #656565;
-				}
-
-			@endif
-
-		@endif 
 	</style>
 @endsection
 
 
 @section('content')
-
-<!--      ESSA PARTE SÓ É MOSTRADA NO LINK EXTERNO       -->
-
-
-<!--    fim do header     -->
-
 
 <div class="container" id="container">
 
@@ -142,14 +99,6 @@
 										@endif
 									@endif
 
-
-									{{-- SÓ FAZ SENTIDO CRIAR ISSO DEPOIS DO BACKEND FAZE A SELECAO... VALE A PENA???
-									@if ($current->type_id == $type->id)
-										<option value="{{$type->id}}" selected>{{$type->year}}</option>
-									@else
-										<option value="{{$type->id}}">{{$type->year}}</option>
-									@endif
-									--}}
 								@endforeach
 							</select>
 						</li>
@@ -267,7 +216,7 @@
 		if (typeof params[5] == 'undefined') params[5] = 0;
 		if (typeof params[6] == 'undefined') params[6] = 0;
 		
-		document.location.href = '/curso/'+ params[4] + '/' + this.value +'/'+ params[6];
+		document.location.href = '/embed/'+ params[4] + '/' + this.value +'/'+ params[6];
 	});
 
 
@@ -277,7 +226,7 @@
 		if (typeof params[5] == 'undefined') params[5] = 0;
 		if (typeof params[6] == 'undefined') params[6] = 0;
 		
-		document.location.href = '/curso/'+ params[4] + '/' + params[5] + '/' + this.value;
+		document.location.href = '/embed/'+ params[4] + '/' + params[5] + '/' + this.value;
 	});
 	
 	// list.js

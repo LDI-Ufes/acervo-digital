@@ -31,6 +31,9 @@ Route::resource('/admin/object_types', 'ObjectTypeController');
 
 Route::get('/curso/{slug}/{type?}/{year?}', 'ShelfController@courseObjectsPage');
 
+Route::get('/embed/{slug}/{type?}/{year?}', 'ShelfController@courseObjectsIFrame');
+
+
 
 // ROTA COM ANO
 Route::get('/shelf/course/{course}/type/{type}/year/{year}', 'ShelfController@learningObjects');

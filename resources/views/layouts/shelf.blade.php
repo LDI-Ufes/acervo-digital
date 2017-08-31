@@ -56,7 +56,7 @@
 						  <li class="navbar-text"><a href="/">
 							<i class="fa fa-home" alt="Ícone de Casa"></i>  
 						  Início</a></li>
-						  <li class="navbar-text"><a href="/shelf/about">
+						  <li class="navbar-text"><a href="/sobre">
 							<i class="fa fa-info-circle" alt="Ícone de Informação"></i>  
 							  Sobre o Acervo</a></li>
 						  <li class="navbar-text externo"><a href="http://www.eadufes.org/" target="_blank">

@@ -39,7 +39,7 @@
 
 		{{-- <a href="/shelf/course/0/module/0/type/0">Todos os Cursos</a> --}}
 
-		@if (!empty($inactive_courses))
+		@if (! $inactive_courses->isEmpty() )
 			<button class="page-header" tabindex="0" role="button" id="inativos-mostra">
 				<h2>Cursos Inativos 
 				<i id="seta" class="fa fa-caret-down" aria-hidden="true"></i>
@@ -53,7 +53,7 @@
 						<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 							{{-- <a href="/shelf/course/{{$course->id}}/module/0/type/0"> --}}
 							{{-- <a href="/shelf/course/{{$course->id}}/type/0/year/0">   --}}
-							<a href="/curso/{{ $course->slug }}">								
+							<a href="/curso/{{ $course->slug }}">
 								<div class="panel panel-default" style=" border-left: 7px solid #656565; color: #656565">
 									<div class="panel-body">
 										<p>{{$course->name}}</p>

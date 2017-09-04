@@ -42,16 +42,16 @@
 	   
 	<header>
 	  <div class="header-top">
-		<nav class="navbar">
+		<!--<nav class="navbar">-->
 				<div class="container">
-					<div class="navbar-header">
+					<!--<div class="navbar-header">
 
 						<button type="button" class="navbar-toggle collapsed navbar-text" data-toggle="collapse" data-target="#menu-topo" aria-expanded="false">
 							<i class="fa fa-bars" aria-hidden="true" alt="Menu expansível"></i>
 						</button>
-					</div>
+					</div>-->
 					
-					<div class="collapse navbar-collapse" id="menu-topo">
+					<!--<div class="collapse navbar-collapse" id="menu-topo">-->
 						<ul>
 						  <li class="navbar-text"><a href="/">
 							<i class="fa fa-home" alt="Ícone de Casa"></i>  
@@ -73,22 +73,24 @@
 						  Moodle</a></p>  -->
 						 </ul>
 					</div>
-				</div>	      
-			</nav>  
+				<!--</div>	      
+			</nav>  -->
 	  </div>
 
 	  <div class="header-main">
 		<div class='container'>
 		  <div class="tamanho">
+			
 			<div id="logo">
-			  <a href="/">
+			  
 				@if ($current->course == 'Biologia')
-							<img alt="Logo UFES" src="{{ asset('/icons/ufes-preto.svg') }}">
+							<a href="/"><img alt="Logo UFES" src="{{ asset('/icons/ufes-preto.svg') }}"></a>
 				@else
-							<img alt="Logo UFES" src="{{ asset('/icons/ufes-branco.svg') }}">
+							<a href="/"><img alt="Logo UFES" src="{{ asset('/icons/ufes-branco.svg') }}"></a>
 				@endif
-			  </a>
+			  
 			</div>
+			
 			<div class="rotulo">
 			  <h1>Acervo Digital</h1>
 			  <h2>{{ $current->course }}</h2>

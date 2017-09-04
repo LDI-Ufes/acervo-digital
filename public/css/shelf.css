@@ -55,16 +55,16 @@ p {
 }
 
 #container{
-  min-height: calc(100vh - 296px);
+  min-height: calc(100vh - 291px);
   padding-bottom: 30px;
 }
 
 #learning_objects{
-  min-height: calc(100vh - 356px);
+  min-height: calc(100vh - 351px);
 }
 
 .conteudo{
-  min-height: calc(100vh - 494px);
+  min-height: calc(100vh - 489px);
   padding-bottom: 20px;
 }
 /* ========= HEADER ========= */

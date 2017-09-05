@@ -139,6 +139,10 @@ p {
   line-height: 1.1;
 }
 
+.titulo-public{
+  padding-top: 5px;
+}
+
 .rotulo h2{
   font-size: 20px;
   color: #fff;         /* MOVER PARA PHP */
@@ -593,6 +597,11 @@ ul.pagination{
     margin-top: 40px;
     min-width: 100px;
     max-width: 400px;
+  }
+
+  .logos-group a img {
+    margin: 25px 10px;
+    width: 15%;
   }
 }
 

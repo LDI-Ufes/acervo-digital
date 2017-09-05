@@ -100,7 +100,7 @@
 		  </a>
 		</div>
 		<div class="rotulo">
-		  <h1>Acervo Digital</h1>
+		  <h1 class="titulo-public">Acervo Digital</h1>
 		</div>
 	      </div>  
 	    </div>  

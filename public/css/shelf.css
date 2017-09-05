@@ -487,6 +487,7 @@ li button:focus > .wrap-image img {
 .pagination a{
 	background-color: #656565 !important;
 	border-color: #ddd !important;
+  color: #ffffff !important;
 }
 
 ul.pagination{

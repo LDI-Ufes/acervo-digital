@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Estante Virtual') }}</title>
 
     <!-- Font PT Sans -->
-    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
     
 
     <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
@@ -26,7 +26,7 @@
    <link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet">
 
    <!-- Bootstrap Select -->
-   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 
 	@yield('styles')
 
@@ -56,16 +56,16 @@
   <body>
 	<header>
 	    <div class="header-top">
-			<nav class="navbar">
+			<!--<nav class="navbar">-->
 					<div class="container">
-						<div class="navbar-header">
+						<!--<div class="navbar-header">
 
 							<button type="button" class="navbar-toggle collapsed navbar-text" data-toggle="collapse" data-target="#menu-topo" aria-expanded="false">
 								<i class="fa fa-bars" aria-hidden="true" alt="Menu expansível"></i>
 							</button>
 						</div>
 						
-						<div class="collapse navbar-collapse" id="menu-topo">
+						<div class="collapse navbar-collapse" id="menu-topo">-->
 						    <ul>
 						      <li class="navbar-text"><a href="/">
 						        <i class="fa fa-home" alt="Ícone de Casa"></i>  
@@ -87,8 +87,8 @@
 						      Moodle</a></p>  -->
 						     </ul>
 						</div>
-					</div>	      
-			    </nav>  
+					<!--</div>	      
+			    </nav>  -->
 		  </div>
 
 	  <div class="header-main">

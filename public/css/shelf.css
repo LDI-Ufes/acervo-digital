@@ -55,16 +55,16 @@ p {
 }
 
 #container{
-  min-height: calc(100vh - 296px);
+  min-height: calc(100vh - 291px);
   padding-bottom: 30px;
 }
 
 #learning_objects{
-  min-height: calc(100vh - 356px);
+  min-height: calc(100vh - 351px);
 }
 
 .conteudo{
-  min-height: calc(100vh - 494px);
+  min-height: calc(100vh - 489px);
   padding-bottom: 20px;
 }
 /* ========= HEADER ========= */
@@ -531,16 +531,12 @@ ul.pagination{
 }
 
 /* ========= BREAKPOINTS ========= */
-/*@media (min-width: 768px) {
-  .modal-dialog {
-      width: 400px;
-  }
-}*/
 
 @media screen and (max-width: 992px) {
   .caption h3 {
     font-size: 16px;
   }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -558,9 +554,9 @@ ul.pagination{
     display: inline-table;
   }
 
-  /*.header-top .externo{
+  .header-top .externo{
     display: none;
-  }*/
+  }
 
   #logo{
     left: 50%;
@@ -584,6 +580,19 @@ ul.pagination{
   .rotulo h1, .rotulo h2 {
     font-size: 18px;
     line-height: 20px;
+  }
+
+  .modal:before {
+  content: '';
+  display: none;
+  }
+
+  .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    margin-top: 40px;
+    min-width: 100px;
+    max-width: 400px;
   }
 }
 

@@ -55,7 +55,7 @@ p {
 }
 
 #container{
-  min-height: calc(100vh - 291px);
+  min-height: calc(100vh - 289px);
   padding-bottom: 30px;
 }
 

@@ -194,10 +194,9 @@
 								<img class="max-size" src="/covers/{{ $learning_object->cover}}" alt="Image do objeto">
 							</div>
 							<div class="caption"> 
-								<h3>{{  str_limit($learning_object->title, 40) }}</h3>
+								<h3>{{  str_limit($learning_object->title, 70) }}</h3>
 							</div>	
 					</button>
-				
 				
 					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-dialog" role="document">

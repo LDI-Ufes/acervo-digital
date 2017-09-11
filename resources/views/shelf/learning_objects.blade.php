@@ -194,7 +194,7 @@
 								<img class="max-size" src="/covers/{{ $learning_object->cover}}" alt="Image do objeto">
 							</div>
 							<div class="caption"> 
-								<h3>{{  str_limit($learning_object->title, 70) }}</h3>
+								<h3>{{  str_limit($learning_object->title, 60) }}</h3>
 							</div>	
 					</button>
 				

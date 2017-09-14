@@ -490,6 +490,10 @@ li button:focus > .wrap-image img {
   color: #ffffff !important;
 }
 
+.pagination > .active > a{
+  background-color: #8a8a8a !important;
+}
+
 ul.pagination{
   margin: 0;
 }

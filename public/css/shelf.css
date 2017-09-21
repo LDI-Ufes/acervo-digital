@@ -254,7 +254,7 @@ small a:hover{
 }
 
 .navbar-toggle{
-  margin-right: 0;
+  margin: 11px 0;
 }
 
 .container-fluid > .navbar-header{

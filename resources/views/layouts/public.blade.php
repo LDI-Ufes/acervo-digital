@@ -117,7 +117,7 @@
 	      <div class="logos-group">
 	        <a href="http://ufes.br/" target="_blank" title="Ir para site da Ufes"><img src="{{asset('/icons/logo-ufes.svg')}}" alt="Logo Ufes"></a>
 	        <a href="http://sead.ufes.br/" target="_blank" title="Ir para site da Sead"><img src="{{asset('/icons/logo-sead.svg')}}" alt="Logo Sead"></a>
-	        <a href="http://uab.capes.gov.br" target="_blank" title="Ir para página da UAB"><img src="{{asset('/icons/logo-uab.svg')}}" alt="Logo UAB"></a>
+	        <a href="http://uab.capes.gov.br" target="_blank" title="Ir para página da UAB"><img src="{{asset('/icons/logo-uab.png')}}" alt="Logo UAB" style="width: 60px;"></a>
 	        <a href="http://capes.gov.br/" target="_blank" title="Ir para site da Capes"><img src="{{asset('/icons/logo-capes.svg')}}" alt="Logo Capes"></a>
 	      </div>
 	    </div>

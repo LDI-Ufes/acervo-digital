@@ -282,7 +282,7 @@
 	// list.js
 	var options = {
 		valueNames: ['modal-title', 'modal-author', 'modal-body'],
-		page: 9,
+		page: 12,
 		pagination: true
 	};
 

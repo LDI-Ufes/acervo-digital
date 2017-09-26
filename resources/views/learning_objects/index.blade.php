@@ -18,7 +18,13 @@
 <section class="content">
     <div class="row">
         <section class="listaLivros col-md-12 connectedSortable ui-sortable">
-            <div class="box box-ldi">
+            <div class="box box-ldi" id="object_list">
+
+
+		<!-- CAMPO DE PESQUISA -->
+		<input type="text" class="search" placeholder="Busca">
+		<!-- ################# -->
+
                 <div class="box-header">
                     <div>
                         <h3 class="box-title">
@@ -39,18 +45,22 @@
                                 <th class="icone"></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="list">
                           @foreach( $all_learning_objects as $learning_object)
                           <tr>
 				            <td class="box-curso" style="background-color:{{ $learning_object->course->bg_color }}" title="{{ $learning_object->course->name }}">{{ $learning_object->course->short }}</td>
-                         	<td>{{ $learning_object->title }}</td>
-	                        <td>{{ $learning_object->author }}</td>
+                         	<td class="table-title"  >{{ $learning_object->title }}</td>
+	                        <td class="table-author" >{{ $learning_object->author }}</td>
         	                <td><a href="{{ route('learning_objects.show', $learning_object->id) }}"><i class="fa fa-eye"></i></a></td>
                  	        <td><a href="{{ route('learning_objects.edit', $learning_object->id) }}"><i class="fa fa-edit"></i></a></td>
                           </tr>
                           @endforeach
                         </tbody>
                     </table>
+
+			<div class="pagination-container">
+				<ul class="pagination"></ul>
+			</div>
 
                 </div>
             </div>
@@ -59,4 +69,22 @@
 </section>
 <!-- FIM TABELA - LISTA DE LIVROS -->
 
+@endsection
+
+
+@section('scripts')
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+	<script>
+		
+		// list.js
+		var options = {
+			valueNames: ['table-title', 'table-author'],
+			page: 9,
+			pagination: true
+		};
+
+		var learning_objectList = new List('object_list', options);
+
+	</script>
 @endsection

@@ -20,16 +20,14 @@
         <section class="listaLivros col-md-12 connectedSortable ui-sortable">
             <div class="box box-ldi" id="object_list">
 
-
-		<!-- CAMPO DE PESQUISA -->
-		<input type="text" class="search" placeholder="Busca">
-		<!-- ################# -->
-
                 <div class="box-header">
                     <div>
                         <h3 class="box-title">
                             <i class="fa fa-book"></i> Objetos cadastrados
                         </h3>
+                        <!-- CAMPO DE PESQUISA -->
+							<input type="text" class="search" placeholder="Busca">
+						<!-- ################# -->
                     </div>
                     <hr style="margin-bottom:0;">
                 </div>
@@ -80,7 +78,7 @@
 		// list.js
 		var options = {
 			valueNames: ['table-title', 'table-author'],
-			page: 9,
+			page: 15,
 			pagination: true
 		};
 

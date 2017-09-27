@@ -91,6 +91,14 @@ textarea{
   position: relative;
 }
 
+.search{
+  float: right;
+}
+
+.pagination-container{
+  text-align: center;
+}
+
 /* Personalizado - Estante Virtual */
 body {
   /* Geral */

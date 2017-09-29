@@ -35,7 +35,7 @@
               	<li><b>Nome:</b> {{ $course->name }} </li>
                 <li><b>ID:</b> {{ $course->id }} </li>
                 <li><b>Tipo de Curso:</b> {{ $course->type->name}} </li>
-                <li><b>Número de Módulos:</b> {{ $course->modules }} </li>
+                <!--<li><b>Número de Módulos:</b> {{ $course->modules }} </li>-->
                 <li><b>Cor Principal:</b> {{ $course->bg_color }} </li>
                 <li><b>Cor Auxiliar:</b> {{ $course->aux_color}} </li>
                 <li><b>Cor da Tipografia:</b> {{ $course->fg_color }} </li>

@@ -45,7 +45,7 @@
             <div class="ficha col-xs-12 col-md-6">
               <ul>
                 <li><b>Curso:</b> {{ $learning_object->course->name }}</li>
-                <li><b>Módulo:</b> {{ $learning_object->module }}</li>
+                <!--<li><b>Módulo:</b> {{ $learning_object->module }}</li>-->
                 <li><b>Título:</b> {{ $learning_object->title }}</li>
                 <li><b>Autor:</b> {{ $learning_object->author }}</li>
 		            <li><b>Ano:</b> {{ $learning_object->year }}</li>

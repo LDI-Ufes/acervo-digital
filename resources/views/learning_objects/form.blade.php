@@ -73,7 +73,7 @@
 	</div>
 </div>
 
-<div class="form-group {{ $errors->has('module') ? 'has-error' : ''}}">
+<!--<div class="form-group {{ $errors->has('module') ? 'has-error' : ''}}">
 	<label for="module" class="col-md-2 control-label">Módulo</label>
 	<div class="col-md-10">
 
@@ -95,7 +95,7 @@
 
 		{!! $errors->first('module', '<p class="help-block">:message</p>') !!}
 	</div>
-</div>
+</div>-->
 
 <div class="form-group {{ $errors->has('type_id') ? 'has-error' : ''}}">
 	<label for="type" class="col-md-2 control-label">Tipo de Objeto de Aprendizagem</label>

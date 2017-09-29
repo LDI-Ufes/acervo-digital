@@ -81,6 +81,11 @@ p {
     text-decoration: none;
 }
 
+.header-top a:hover {
+    color: #2598d5;
+
+}
+
 .header-top li{
     float: left;
     padding: 0 25px 0 0;

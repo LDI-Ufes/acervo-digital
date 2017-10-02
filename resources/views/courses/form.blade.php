@@ -26,13 +26,13 @@
 </div>
 
 
-<div class="form-group {{ $errors->has('modules') ? 'has-error' : ''}}">
+<!--<div class="form-group {{ $errors->has('modules') ? 'has-error' : ''}}">
 	<label for="modules" class="col-md-2 control-label">Módulos</label>
 	<div class="col-md-10">
 		<input class="form-control" name="modules" type="text" id="modules" value="{{ old('modules', isset($course) ? $course->modules : null) }}" maxlength="80">
 		{!! $errors->first('modules', '<p class="help-block">:message</p>') !!}
 	</div>
-</div>
+</div>-->
 
 <div class="form-group {{ $errors->has('bg_color') ? 'has-error' : ''}}">
 	<label for="bg_color" class="col-md-2 control-label">Cor de fundo</label>

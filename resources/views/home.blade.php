@@ -1,20 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
+<section class="content-header"></section>
 
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-    <div class="panel panel-default">
-      <div class="panel-heading">Não sei.</div>
+<section class="content">
 
-      <div class="panel-body">
-	<p>Lembrando que pra se cadastrar um objeto de aprendizagem é necessário se cadastrar tipos de objeto e cursos.</p>
-	<p>Para se cadastrar um curso é necessário cadastrar tipos de curso primeiro.</p>
-	<p>Botar umas estatísticas aqui? Algo assim?</p>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-ldi instrucoes-iniciais">
+        <div class="box-header">
+          <h3 class="box-title">Instruções</h3>
+          <hr style="margin-bottom:0;">
+        </div>
+
+        <div class="box-body">
+  	       <p>Para excluir um objeto selecione a opção visualizar na lista de objetos cadastrados.</p>
+           <p>Na hora de cadastrar um novo objeto é necessário:</p>
+            <ul>
+              <li>Inserir uma imagem para capa de tamanho 735 x 396px;</li>
+              <li>Informar o link do arquivo;</li>
+              <li>Fornecer um resumo do material.</li>
+           </ul>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-
-</div>
 @endsection

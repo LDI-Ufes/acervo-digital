@@ -52,6 +52,21 @@
 	<div class="col-md-10">
 		<input class="form-control" name="link" type="text" id="link" value="{{ old('link', isset($learning_object) ? $learning_object->link : null) }}" maxlength="160">
 		{!! $errors->first('link', '<p class="help-block">:message</p>') !!}
+		<hr>
+		//teste//
+		<div>
+			<input type="radio" class="teste" name="file_or_link" value="usar_link" checked="checked">Fornecer link para o material.
+			<input type="radio" class="teste" name="file_or_link" value="fazer_upload">Fazer upload de arquivo. <br/>
+		</div>
+		<div>
+			Selecione arquivo para upload <input type="file" id="upload_input" disabled>
+		</div>
+		<div>
+			Insira o link do arquivo <input type="text" id="link_input">
+		</div>
+		//teste//
+		<hr>
+
 	</div>
 </div>
 

@@ -76,6 +76,8 @@
 input[type="file"]{
   width: 100%;
   text-align: left;
+  border-radius: 0;
+  
 }
 
 textarea{
@@ -97,6 +99,13 @@ textarea{
 
 .pagination-container{
   text-align: center;
+}
+
+.selecao-arquivo{
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 76px;
+  background-color: #f4f4f4;
 }
 
 /* Personalizado - Estante Virtual */

@@ -34,7 +34,7 @@
 <div class="form-group {{ $errors->has('cover') ? 'has-error' : ''}}">
  	<label for="cover" class="col-xs-12 col-md-2 control-label">Escolha Capa</label>
 	
-	<div class="col-xs-10 col-md-9">
+	<div class="col-xs-10">
 		<input class="btn btn-default btn-file" name="cover" type="file" id="cover" value="{{ old('cover', isset($learning_object) ? $learning_object->cover : null) }}">
 		{!! $errors->first('cover', '<p class="help-block">:message</p>') !!}
 	</div>
@@ -50,21 +50,25 @@
 <div class="form-group {{ $errors->has('link') ? 'has-error' : ''}}">
 	<label for="link" class="col-md-2 control-label">Link do Objeto</label>
 	<div class="col-md-10">
-		<input class="form-control" name="link" type="text" id="link" value="{{ old('link', isset($learning_object) ? $learning_object->link : null) }}" maxlength="160">
+		<!--<input class="form-control" name="link" type="text" id="link" value="{{ old('link', isset($learning_object) ? $learning_object->link : null) }}" maxlength="160">
 		{!! $errors->first('link', '<p class="help-block">:message</p>') !!}
 		<hr>
-		//teste//
+		-->
 		<div>
-			<input type="radio" class="teste" name="file_or_link" value="usar_link" checked="checked">Fornecer link para o material.
-			<input type="radio" class="teste" name="file_or_link" value="fazer_upload">Fazer upload de arquivo. <br/>
+			<input type="radio" class="opcao-link col-xs-1" name="file_or_link" value="usar_link" checked="checked"> 
+			<p class="col-xs-5">Fornecer link para o material.</p>
+			
+			<input type="radio" class="opcao-link col-xs-1" name="file_or_link" value="fazer_upload"> 
+			<p class="col-xs-5">Fazer upload de arquivo.</p> 
 		</div>
-		<div>
-			Selecione arquivo para upload <input type="file" id="upload_input" disabled>
+		<br/><br/>
+		<div class="col-sm-6 selecao-arquivo">
+			Selecione arquivo para upload <br/><input type="file" id="upload_input" disabled>
 		</div>
-		<div>
-			Insira o link do arquivo <input type="text" id="link_input">
+		<div class="col-sm-6 selecao-arquivo">
+			Insira o link do arquivo <br/><input type="text" class="form-control" id="link_input">
 		</div>
-		//teste//
+
 		<hr>
 
 	</div>

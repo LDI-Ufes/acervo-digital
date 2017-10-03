@@ -58,7 +58,7 @@
 			 }
 		 });
 
-		$('.teste').change(function(){
+		$('.opcao-link').change(function(){
 	   	//console.log(this.value);
 	  	if(this.value == "fazer_upload"){
 			$('#upload_input').removeAttr('disabled');

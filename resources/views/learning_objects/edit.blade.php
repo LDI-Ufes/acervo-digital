@@ -59,5 +59,19 @@
 					'text': (i+1) 
 				}));
 			 }
-		 });	</script>
+		 });	
+
+		$('.opcao-link').change(function(){
+			if(this.value == "fazer_upload"){
+				$('#upload_input').removeAttr('disabled');
+				$('#link_input').attr('disabled','disabled');
+				$('#link_input').val("");
+			} else {
+				$('#link_input').removeAttr('disabled');
+				$('#upload_input').attr('disabled','disabled');
+				$('#upload_input').val("");
+			}
+		});
+
+	</script>
 @endsection

@@ -58,15 +58,16 @@
 			<input type="radio" class="opcao-link col-xs-1" name="file_or_link" value="usar_link" checked="checked"> 
 			<p class="col-xs-5">Fornecer link para o material.</p>
 			
-			<input type="radio" class="opcao-link col-xs-1" name="file_or_link" value="fazer_upload"> 
+			<input type="radio" class="opcao-link col-xs-1" name="file_or_link" value="usar_arquivo"> 
 			<p class="col-xs-5">Fazer upload de arquivo.</p> 
 		</div>
+
 		<br/><br/>
 		<div class="col-sm-6 selecao-arquivo">
-			Selecione arquivo para upload <br/><input type="file" id="upload_input" disabled>
+			Insira o link do arquivo <br/><input type="text" class="form-control" id="link_input">
 		</div>
 		<div class="col-sm-6 selecao-arquivo">
-			Insira o link do arquivo <br/><input type="text" class="form-control" id="link_input">
+			Selecione arquivo para upload <br/><input type="file" id="upload_input" disabled>
 		</div>
 
 		<hr>
@@ -92,7 +93,7 @@
 	</div>
 </div>
 
-<!--<div class="form-group {{ $errors->has('module') ? 'has-error' : ''}}">
+<div class="form-group {{ $errors->has('module') ? 'has-error' : ''}}">
 	<label for="module" class="col-md-2 control-label">Módulo</label>
 	<div class="col-md-10">
 
@@ -114,7 +115,7 @@
 
 		{!! $errors->first('module', '<p class="help-block">:message</p>') !!}
 	</div>
-</div>-->
+</div>
 
 <div class="form-group {{ $errors->has('type_id') ? 'has-error' : ''}}">
 	<label for="type" class="col-md-2 control-label">Tipo de Objeto de Aprendizagem</label>

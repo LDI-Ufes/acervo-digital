@@ -64,10 +64,10 @@
 
 		<br/><br/>
 		<div class="col-sm-6 selecao-arquivo">
-			Insira o link do arquivo <br/><input type="text" class="form-control" id="link_input">
+			Insira o link do arquivo <br/><input type="text" class="form-control" id="link_input" name="link_input" {{ isset($learning_object) ? 'value=' . $learning_object->link  : "" }}>
 		</div>
 		<div class="col-sm-6 selecao-arquivo">
-			Selecione arquivo para upload <br/><input type="file" id="upload_input" disabled>
+			Selecione arquivo para upload <br/><input type="file" id="upload_input" name="upload_input" disabled>
 		</div>
 
 		<hr>

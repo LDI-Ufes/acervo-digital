@@ -62,16 +62,16 @@
 		 });	
 
 		$('.opcao-link').change(function(){
-			if(this.value == "fazer_upload"){
-				$('#upload_input').removeAttr('disabled');
-				$('#link_input').attr('disabled','disabled');
-				$('#link_input').val("");
-			} else {
+			if(this.value == "usar_link"){
 				$('#link_input').removeAttr('disabled');
 				$('#upload_input').attr('disabled','disabled');
 				$('#upload_input').val("");
+			} else {
+				$('#upload_input').removeAttr('disabled');
+				$('#link_input').attr('disabled','disabled');
+				$('#link_input').val("");
 			}
-		});
+		  });
 
 	</script>
 @endsection

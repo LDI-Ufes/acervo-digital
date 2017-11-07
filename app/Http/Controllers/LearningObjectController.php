@@ -83,7 +83,7 @@ class LearningObjectController extends Controller
 		    $file_name = strtolower($file_name);
 		    $file_name = preg_replace( array('/[ ]/', '/[^A-Za-z0-9\-]/'), array('-', '-'), $file_name);
 
-		    $request->file('upload_input')->move(public_path('/files'), $file_name . '.' . $file_ext);
+		    $request->file('upload_input')->move(public_path('/arquivos'), $file_name . '.' . $file_ext);
 
 		    $learning_object->link = '/files/' . $file_name . '.' . $file_ext;
 
@@ -184,7 +184,7 @@ class LearningObjectController extends Controller
 		    $file_name = strtolower($file_name);
 		    $file_name = preg_replace( array('/[ ]/', '/[^A-Za-z0-9\-]/'), array('-', '-'), $file_name);
 
-		    $request->file('upload_input')->move(public_path('/files'), $file_name . '.' . $file_ext);
+		    $request->file('upload_input')->move(public_path('/arquivos'), $file_name . '.' . $file_ext);
 
 		    $learning_object->link = '/files/' . $file_name . '.' . $file_ext;
 

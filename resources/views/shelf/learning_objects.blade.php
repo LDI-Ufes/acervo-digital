@@ -9,7 +9,7 @@
 					background-color: {{ $course_info->bg_color }}; 	/* chamar cor primaria */
 				}
 
-				.btn-download:hover {
+				.btn-download:hover, .btn-download:focus{
 					background-color: {{ $course_info->aux_color }}; 	/* chamar cor auxiliar */
 				}
 
@@ -26,6 +26,11 @@
 						.btn-download{
 							color: #000;
 						}
+
+						.header-top a:hover, .header-top a:focus {
+						    filter: brightness(100%);
+						}
+
 					@endif
 			@else
 			
@@ -33,7 +38,7 @@
 					background-color: #656565; 	/* chamar cor primaria */
 				}
 
-				.btn-download:hover {
+				.btn-download:hover, .btn-download:focus{
 					background-color: #373737; 	/* chamar cor auxiliar */
 				}
 
@@ -54,6 +59,10 @@
 					background-color: {{ $course_info->aux_color }};
 				}
 
+				.header-top a:hover, .header-top a:focus{
+					color: {{ $course_info->bg_color }};
+				}
+
 				.header-main{
 					background-color: {{ $course_info->bg_color }};
 				}
@@ -67,6 +76,10 @@
 
 				.header-top{
 					background-color: #373737;
+				}
+
+				.header-top a:hover, .header-top a:focus{
+					color: #656565;
 				}
 
 				.header-main{
@@ -101,10 +114,6 @@
 				<div class="navbar-header">
 
 					<button type="button" class="navbar-toggle collapsed navbar-text" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					   <!-- <span class="sr-only">Toggle navigation</span>
-					    <span class="icon-bar"></span>
-					    <span class="icon-bar"></span>
-					    <span class="icon-bar"></span>-->
 					    <i class="fa fa-bars" aria-hidden="true" alt="Menu expansível"></i>
 					</button>
 				</div>
@@ -161,8 +170,6 @@
 						
 							<span class="input-group-addon">
 								<img src="{{asset("/icons/buscar.svg")}}" alt="Ícone de Lupa">
-								<!--<i class="fa fa-search" aria-hidden="true"></i>-->
-
 							</span>
 							<input type="text" class="form-control search" placeholder="Busca">
 
@@ -213,7 +220,6 @@
 										<p class="modal-year">{{ $learning_object->year }}</p>
 										<a class="btn-download" href="{{ $learning_object->link }}" role="button" target="_blank">
 											<i class="fa fa-external-link" aria-hidden="true"></i>
-											<!--<i class="fa fa-external-link-square" aria-hidden="true"></i>-->
 											Abrir
 										</a> 
 									</div>

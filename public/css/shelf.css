@@ -26,7 +26,6 @@ h1 {
 h2 {
   font-size: 28.430px;
   line-height: 37.897px;
-  color:#656565;
 }
 
 h3 {
@@ -302,6 +301,12 @@ a:focus> .panel{
     background-color: #eaeaea;
 }
 
+.page-header{
+  font-size: 28.430px;
+  line-height: 37.897px;
+  color:#656565;
+}
+
 /* ========= THUMBNAIL ========= */
 
 .thumbnail {
@@ -310,13 +315,17 @@ a:focus> .panel{
   padding: 0;
   border-radius: 0;
 }
+  .thumbnail:hover, .thumbnail:focus{
+    border: 1px solid #ddd !important;
+  }
+
   .thumbnail .wrap-image img {
   	-webkit-transform: scale(1);
   	transform: scale(1);
   	-webkit-transition: .2s ease-in-out;
   	transition: .2s ease-in-out;
   }
-    .thumbnail:hover .wrap-image img {
+    .thumbnail:hover .wrap-image img, .thumbnail:focus .wrap-image img {
     	-webkit-transform: scale(1.1);
     	transform: scale(1.1);
     }

@@ -12,7 +12,7 @@
 
 		@forelse($courses as $group)
 			<div class="page-header">
-				<h2> {{$group->first()->type->name}} </h2>
+				{{$group->first()->type->name}}
 			</div>
 
 			<ul class="row">
@@ -40,11 +40,9 @@
 		{{-- <a href="/shelf/course/0/module/0/type/0">Todos os Cursos</a> --}}
 
 		@if (! $inactive_courses->isEmpty() )
-			<button class="page-header" tabindex="0" role="button" id="inativos-mostra">
-				<h2>Cursos Inativos 
-				<i id="seta" class="fa fa-caret-down" aria-hidden="true"></i>
-
-				</h2> 
+			<button class="page-header" tabindex="0" id="inativos-mostra">
+				Cursos Inativos 
+				<i id="seta" class="fa fa-caret-down" aria-hidden="true"></i> 
 			</button>
 
 			<div id="inativos"> 

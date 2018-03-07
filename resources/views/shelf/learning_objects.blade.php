@@ -113,8 +113,8 @@
 			<div class="container-fluid">
 				<div class="navbar-header">
 
-					<button type="button" class="navbar-toggle collapsed navbar-text" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					    <i class="fa fa-bars" aria-hidden="true" alt="Menu expansível"></i>
+					<button class="navbar-toggle collapsed navbar-text" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					    <i class="fa fa-bars" aria-hidden="true"></i>
 					</button>
 				</div>
 				
@@ -189,28 +189,28 @@
 		<ul class="row list conteudo">
 			@forelse($learning_objects as $learning_object)
 				<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-					<button class="thumbnail no-shadow" type="button" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
-							<span class="label label-default">
-								<div class="icone-objeto">
-									<img src="{{asset("/icons/". $learning_object->type->id .".svg")}}">
-								</div> 
-								
-								{{ $learning_object->type->name }}
-							</span>
-							<div class="wrap-image">
-								<img class="max-size" src="/covers/{{ $learning_object->cover}}" alt="Image do objeto">
-							</div>
-							<div class="caption"> 
-								<h3>{{  str_limit($learning_object->title, 60) }}</h3>
-							</div>	
-					</button>
+					<a class="thumbnail no-shadow" href="" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
+						<div class="label label-default">
+							<div class="icone-objeto">
+								<img alt="{{ $learning_object->type->name }}" src="{{asset("/icons/". $learning_object->type->id .".svg")}}">
+							</div> 
+							
+							{{ $learning_object->type->name }}
+						</div>
+						<div class="wrap-image">
+							<img class="max-size" src="/covers/{{ $learning_object->cover}}" alt="Image do objeto">
+						</div>
+						<div class="caption"> 
+							<h3>{{  str_limit($learning_object->title, 60) }}</h3>
+						</div>	
+					</a>
 				
-					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<button type="button" class="fechar" data-dismiss="modal" aria-label="Close">
-									<img src="{{ asset('icons/fechar.svg') }}">
+									<button class="fechar" data-dismiss="modal" aria-label="Close">
+										<img src="{{ asset('icons/fechar.svg') }}" alt="Fechar Modal">
 									</button> 
 
 									<img class="modal-image" src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">

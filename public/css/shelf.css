@@ -249,12 +249,6 @@ small a:hover, small a:focus{
   background-color: #eaeaea;
 }
 
-.btn:click{
-  text-decoration: none;
-  background-image: none;
-  background-color: #fff;
-}
-
 .dropdown-menu{
   width: inherit !important;
 }

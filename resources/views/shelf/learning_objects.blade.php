@@ -123,8 +123,8 @@
 
 						<li>
 							<!-- TIPOS DE OBJETO DE APRENDIZAGEM -->
+							<select class="selectpicker" id="select-type">
 								<option selected disabled="">Tipo de Objeto</option>
-								<!-- <option selected disabled="">Tipo de Objeto</option> -->
 								<option value="0">Todos</option>
 								@foreach ($current->object_types as $type)								
 									@if ($current->type_id == $type->id)
@@ -140,7 +140,6 @@
 							<!-- ANO -->
 							<select class="selectpicker" id="select-year">
 								<option selected disabled="">Ano</option>
-								<!-- <option selected disabled="">Ano</option> -->
 								<option value="0">Todos</option>
 
 								@foreach ($current->years_by_course as $year)

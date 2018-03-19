@@ -82,11 +82,6 @@ strong{
     text-decoration: none;
 }
 
-.header-top a:hover, .header-top a:focus {
-   
-    filter: brightness(130%);
-}
-
 .header-top li{
     float: left;
     padding: 0 25px 0 0;

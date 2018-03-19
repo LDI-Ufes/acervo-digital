@@ -28,7 +28,7 @@
 						}
 
 						.header-top a:hover, .header-top a:focus {
-						    filter: brightness(100%);
+						    color: #000 !important;
 						}
 
 					@endif
@@ -59,8 +59,8 @@
 					background-color: {{ $course_info->aux_color }};
 				}
 
-				.header-top a:hover, .header-top a:focus{
-					color: {{ $course_info->bg_color }};
+				.header-top a:hover, .header-top a:focus {
+					background-color: {{ $course_info->bg_color }};
 				}
 
 				.header-main{
@@ -79,7 +79,7 @@
 				}
 
 				.header-top a:hover, .header-top a:focus{
-					color: #656565;
+					background-color: #656565;
 				}
 
 				.header-main{
@@ -189,8 +189,9 @@
 		<ul class="row list conteudo">
 			@forelse($learning_objects as $learning_object)
 				<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-					<a class="thumbnail no-shadow" href="" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
-						<div class="label label-default">
+
+					<button onclick="" class="thumbnail no-shadow" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
+					 	<div class="label label-default">
 							<div class="icone-objeto">
 								<img alt="{{ $learning_object->type->name }}" src="{{asset("/icons/". $learning_object->type->id .".svg")}}">
 							</div> 
@@ -198,14 +199,14 @@
 							{{ $learning_object->type->name }}
 						</div>
 						<div class="wrap-image">
-							<img class="max-size" src="/covers/{{ $learning_object->cover}}" alt="Image do objeto">
+							<img class="max-size" src="/covers/{{ $learning_object->cover}}" alt="">
 						</div>
 						<div class="caption"> 
 							<h3>{{  str_limit($learning_object->title, 60) }}</h3>
-						</div>	
-					</a>
+						</div>
+					</button>
 				
-					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby=" modal_{{ $learning_object->title }} ">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
@@ -215,7 +216,7 @@
 
 									<img class="modal-image" src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
 									<div class="modal-caption">
-										<h3 class="modal-title">{{ $learning_object->title }}</h3>
+										<h3 class="modal-title" id=" modal_{{ $learning_object->title }} ">{{ $learning_object->title }}</h3>
 										<p class="modal-author">{{ $learning_object->author }}</p>
 										<p class="modal-year">{{ $learning_object->year }}</p>
 										<a class="btn-download" href="{{ $learning_object->link }}" role="button" target="_blank">

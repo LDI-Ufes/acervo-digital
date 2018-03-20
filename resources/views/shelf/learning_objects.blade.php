@@ -211,7 +211,6 @@
 							<div class="modal-content">
 								<div class="modal-header">
 									
-
 									<img class="modal-image" src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
 									<div class="modal-caption">
 										<h3 class="modal-title" id="modal_{{ $learning_object->title }}" tabindex="0">{{ $learning_object->title }}</h3>
@@ -222,6 +221,7 @@
 											Abrir
 										</a> 
 									</div>
+
 									<button class="fechar" data-dismiss="modal" aria-label="Close">
 										<img src="{{ asset('icons/fechar.svg') }}" alt="Fechar Modal">
 									</button> 
@@ -263,8 +263,8 @@
 
 <script>
 	// modais 
-	$('#learning_object'+{{ $learning_object->id }}).on('shown.bs.modal', function () {
-		$('#modal_'+{{ $learning_object->title }}).focus();
+	$('.modal').on('shown.bs.modal', function () {
+		$('h3').focus();
 	});
 
 	// menus 

@@ -210,13 +210,11 @@
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<button class="fechar" data-dismiss="modal" aria-label="Close">
-										<img src="{{ asset('icons/fechar.svg') }}" alt="Fechar Modal">
-									</button> 
+									
 
 									<img class="modal-image" src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
 									<div class="modal-caption">
-										<h3 class="modal-title" id=" modal_{{ $learning_object->title }} ">{{ $learning_object->title }}</h3>
+										<h3 class="modal-title" id="modal_{{ $learning_object->title }}" tabindex="0">{{ $learning_object->title }}</h3>
 										<p class="modal-author">{{ $learning_object->author }}</p>
 										<p class="modal-year">{{ $learning_object->year }}</p>
 										<a class="btn-download" href="{{ $learning_object->link }}" role="button" target="_blank">
@@ -224,6 +222,9 @@
 											Abrir
 										</a> 
 									</div>
+									<button class="fechar" data-dismiss="modal" aria-label="Close">
+										<img src="{{ asset('icons/fechar.svg') }}" alt="Fechar Modal">
+									</button> 
 								</div>
 								
 								@if (!empty($learning_object->summary))
@@ -262,8 +263,8 @@
 
 <script>
 	// modais 
-	$('#myModal').on('shown.bs.modal', function () {
-		$('#myInput').focus();
+	$('#learning_object'+{{ $learning_object->id }}).on('shown.bs.modal', function () {
+		$('#modal_'+{{ $learning_object->title }}).focus();
 	});
 
 	// menus 

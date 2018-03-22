@@ -100,7 +100,7 @@
 	      <div class="tamanho">
 		<div id="logo">
 
-			@if (Request::url() === 'http://acervodigital.eadufes.org/')
+			@if (Request::url() === 'http://acervodigital.eadufes.org')
 		    	<img alt="Logo da UFES" src="{{asset('/icons/marca-ufes-cor.svg')}}">
 		  	@else
 				<a href="/" title="Ir para Início">  <!-- link para home  -->

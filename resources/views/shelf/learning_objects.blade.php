@@ -114,7 +114,7 @@
 				<div class="navbar-header">
 
 					<button class="navbar-toggle collapsed navbar-text" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					    <i class="fa fa-bars" aria-hidden="true"></i>
+					    <span class="fa fa-bars" aria-hidden="true"></span>
 					</button>
 				</div>
 				
@@ -206,6 +206,7 @@
 						</div>
 					</button>
 				
+				<!-- MODAL -->
 					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby=" modal_{{ $learning_object->title }} ">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
@@ -216,38 +217,35 @@
 										<h3 class="modal-title" id="modal_{{ $learning_object->title }}" tabindex="0">{{ $learning_object->title }}</h3>
 										<p class="modal-author">{{ $learning_object->author }}</p>
 										<p class="modal-year">{{ $learning_object->year }}</p>
-										<a class="btn-download" href="{{ $learning_object->link }}" role="button" target="_blank">
-											<i class="fa fa-external-link" aria-hidden="true"></i>
+										@if (!empty($learning_object->summary))
+											<p><strong>Resumo:</strong><br>
+												{{ $learning_object->summary }}
+											</p>
+										@endif
+										<a class="btn-download" href="{{ $learning_object->link }}" title="Abrir {{ $learning_object->title }} em nova aba" role="button" target="_blank">
+											<span class="fa fa-external-link" aria-hidden="true"></span>
 											Abrir
 										</a> 
-									</div>
+									</div>								
 
 									<button class="fechar" data-dismiss="modal" aria-label="Close">
 										<img src="{{ asset('icons/fechar.svg') }}" alt="Fechar Modal">
 									</button> 
-								</div>
-								
-								@if (!empty($learning_object->summary))
-								<div class="modal-body">
 
-									<p><strong>Resumo:</strong><br>
-										{{ $learning_object->summary }}
-									</p>
 								</div>
-								@endif
-						
 							</div>
 						</div>
-					</div>	
+					</div> <!-- FIM DO MODAL -->	
+
 				</li>
 
 			@empty
 				<div class="curso-vazio">Não há materiais nessa categoria.</div>
 			@endforelse
 		</ul>
-		<div class="pagination-container">
+<!-- 		<div class="pagination-container">
 		<ul class="pagination"></ul>
-		</div>
+		</div> -->
 	</div>
 </div>
 
@@ -259,7 +257,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script src="/js/ldi.list.min.js"></script>
 
 <script>
 	// modais 
@@ -291,7 +289,7 @@
 	var options = {
 		valueNames: ['modal-title', 'modal-author', 'modal-body'],
 		page: 12,
-		pagination: true
+		pagination: false
 	};
 
 	var learning_objectList = new List('learning_objects', options);

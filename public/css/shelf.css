@@ -201,7 +201,7 @@ small a:hover, small a:focus{
 }
 
 .nav > li {
-  margin-right: 15px;
+  margin-left: 15px;
   display: inline-block;
 }
 
@@ -454,7 +454,7 @@ li button:focus > .wrap-image img {
 
   .modal-year{
   	display: inline-block;
-  	margin: 5px 0 0;
+  	margin: 5px 0 10px;
     font-weight: 400;
     color: gray;
   }

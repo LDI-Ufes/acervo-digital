@@ -58,7 +58,7 @@
 						  <li class="navbar-text"><a href="/sobre" title="Ir para Sobre">
 							<span class="fa fa-info-circle" aria-hidden="true"></span> Sobre o Acervo</a>
 						  </li>
-						  <li class="navbar-text externo"><a href="http://www.eadufes.org/" title="Abrir site da SEAD em nova aba target="_blank">
+						  <li class="navbar-text externo"><a href="http://www.eadufes.org/" title="Abrir site da SEAD em nova aba" target="_blank">
 							<span class="fa fa-info-circle" aria-hidden="true"></span> EAD na Ufes</a>
 						  </li>
 						  <li class="navbar-text externo"><a href="https://aluno.ufes.br/" title="Abrir Portal do Aluno em nova aba" target="_blank">

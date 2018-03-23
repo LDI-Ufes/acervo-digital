@@ -119,7 +119,26 @@
 				</div>
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-text">
+					<form class="navbar-form navbar-left navbar-text">
+						<div class="input-group">
+						
+							<span class="input-group-addon">
+
+								<img src="{{asset("/icons/buscar.svg")}}" alt="Ícone de Lupa">
+							</span>
+							<input type="text" class="form-control search" placeholder="Busca">
+
+							{{-- //Botões de Ordenação do List.js //
+
+							<button class="sort" data-sort="title">Título</button>
+							<button class="sort" data-sort="course">Curso</button>
+							<button class="sort" data-sort="module">Modulo</button>
+
+							--}}				
+						</div>
+					</form>
+
+					<ul class="nav navbar-nav navbar-text navbar-right">
 
 						<li>
 							<!-- TIPOS DE OBJETO DE APRENDIZAGEM -->
@@ -162,26 +181,8 @@
 								@endforeach
 							</select>
 						</li>
-
-
 					</ul>
-					<form class="navbar-form navbar-right navbar-text">
-						<div class="input-group">
-						
-							<span class="input-group-addon">
-								<img src="{{asset("/icons/buscar.svg")}}" alt="Ícone de Lupa">
-							</span>
-							<input type="text" class="form-control search" placeholder="Busca">
-
-							{{-- //Botões de Ordenação do List.js //
-
-							<button class="sort" data-sort="title">Título</button>
-							<button class="sort" data-sort="course">Curso</button>
-							<button class="sort" data-sort="module">Modulo</button>
-
-							--}}				
-						</div>
-					</form>
+					
 				</div>
 			</div>
 		</nav>
@@ -190,7 +191,7 @@
 			@forelse($learning_objects as $learning_object)
 				<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 
-					<button onclick="" class="thumbnail no-shadow" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
+					<a href="" title="" class="thumbnail no-shadow" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
 					 	<div class="label label-default">
 							<div class="icone-objeto">
 								<img alt="{{ $learning_object->type->name }}" src="{{asset("/icons/". $learning_object->type->id .".svg")}}">
@@ -204,17 +205,17 @@
 						<div class="caption"> 
 							<h3>{{  str_limit($learning_object->title, 60) }}</h3>
 						</div>
-					</button>
+					</a>
 				
 				<!-- MODAL -->
-					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby=" modal_{{ $learning_object->title }} ">
+					<div class="modal fade" id="learning_object{{ $learning_object->id }}" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby=" modal_{{ $learning_object->id }} ">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
 									
 									<img class="modal-image" src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
 									<div class="modal-caption">
-										<h3 class="modal-title" id="modal_{{ $learning_object->title }}" tabindex="0">{{ $learning_object->title }}</h3>
+										<h3 class="modal-title" id="modal_{{ $learning_object->id }}" tabindex="0">{{ $learning_object->title }}</h3>
 										<p class="modal-author">{{ $learning_object->author }}</p>
 										<p class="modal-year">{{ $learning_object->year }}</p>
 										@if (!empty($learning_object->summary))

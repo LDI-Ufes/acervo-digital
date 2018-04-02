@@ -13,3 +13,5 @@ Homestead.yaml
 *~
 /nbproject/private/
 *.jpeg
+
+public/covers/

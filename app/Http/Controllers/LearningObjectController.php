@@ -85,7 +85,7 @@ class LearningObjectController extends Controller
 
 		    $request->file('upload_input')->move(public_path('/arquivos'), $file_name . '.' . $file_ext);
 
-		    $learning_object->link = '/files/' . $file_name . '.' . $file_ext;
+		    $learning_object->link = '/arquivos/' . $file_name . '.' . $file_ext;
 
 
 	    } else {

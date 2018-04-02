@@ -15,11 +15,7 @@
     
 
     <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap-theme.css') }}" rel="stylesheet">
- 
-
-    <!-- Books CSS -->
-    <link href="{{asset("css/shelf.css")}}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-theme.css') }}" rel="stylesheet"> 
 
    <!-- Font Awesome -->
    {{-- <link rel="stylesheet" href="{{asset('assets/css/font-awesome.css')}}"> --}}
@@ -28,6 +24,9 @@
    <!-- Bootstrap Select -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 
+	<!-- Books CSS -->
+    <link href="{{asset("css/shelf.css")}}" rel="stylesheet">
+    
 	@yield('styles')
 
 
@@ -47,29 +46,29 @@
 					<!--<div class="navbar-header">
 
 						<button type="button" class="navbar-toggle collapsed navbar-text" data-toggle="collapse" data-target="#menu-topo" aria-expanded="false">
-							<i class="fa fa-bars" aria-hidden="true" alt="Menu expansível"></i>
+							<span class="fa fa-bars" aria-hidden="true" alt="Menu expansível"></span>
 						</button>
 					</div>-->
 					
 					<!--<div class="collapse navbar-collapse" id="menu-topo">-->
 						<ul>
-						  <li class="navbar-text"><a href="/">
-							<i class="fa fa-home" alt="Ícone de Casa"></i> Início</a>
+						  <li class="navbar-text"><a href="/" title="Ir para Início">
+							<span class="fa fa-home" aria-hidden="true"></span> Início</a>
 						  </li>
-						  <li class="navbar-text"><a href="/sobre">
-							<i class="fa fa-info-circle" alt="Ícone de Informação"></i> Sobre o Acervo</a>
+						  <li class="navbar-text"><a href="/sobre" title="Ir para Sobre">
+							<span class="fa fa-info-circle" aria-hidden="true"></span> Sobre o Acervo</a>
 						  </li>
-						  <li class="navbar-text externo"><a href="http://www.eadufes.org/" target="_blank">
-							<i class="fa fa-info-circle" alt="Ícone de Informação"></i> EAD na Ufes</a>
+						  <li class="navbar-text externo"><a href="http://www.eadufes.org/" title="Abrir site da SEAD em nova aba" target="_blank">
+							<span class="fa fa-info-circle" aria-hidden="true"></span> EAD na Ufes</a>
 						  </li>
-						  <li class="navbar-text externo"><a href="https://aluno.ufes.br/" target="_blank">
-							<i class="fa fa-graduation-cap" alt="Ícone de Cap de Formatura"></i> Portal do Aluno</a>
+						  <li class="navbar-text externo"><a href="https://aluno.ufes.br/" title="Abrir Portal do Aluno em nova aba" target="_blank">
+							<span class="fa fa-graduation-cap" aria-hidden="true"></span> Portal do Aluno</a>
 						  </li>
-						  <li class="navbar-text externo"><a href="http://www.bc.ufes.br/" target="_blank">
-							<i class="fa fa-book" alt="Ícone de Livro"></i> Biblioteca Ufes</a>
+						  <li class="navbar-text externo"><a href="http://www.bc.ufes.br/" title="Abrir Biblioteca UFES em nova aba" target="_blank">
+							<span class="fa fa-book" aria-hidden="true"></span> Biblioteca Ufes</a>
 						  </li>
 						<!--  <p class="navbar-text externo"><a href="http://www.especializacao.aperfeicoamento.ufes.br/"> 
-							<i class="fa fa-desktop" alt="Ícone de Monitor"></i> 
+							<span class="fa fa-desktop" alt="Ícone de Monitor"></span> 
 						  Moodle</a></p>  -->
 						 </ul>
 					</div>
@@ -84,9 +83,9 @@
 			<div id="logo">
 			  
 				@if ($current->course == 'Biologia')
-							<a href="/"><img alt="Logo UFES" src="{{ asset('/icons/ufes-preto.svg') }}"></a>
+							<a href="/" title="Ir para Início"><img alt="Logo da UFES" src="{{ asset('/icons/ufes-preto.svg') }}"></a>
 				@else
-							<a href="/"><img alt="Logo UFES" src="{{ asset('/icons/ufes-branco.svg') }}"></a>
+							<a href="/" title="Ir para Início"><img alt="Logo da UFES" src="{{ asset('/icons/ufes-branco.svg') }}"></a>
 				@endif
 			  
 			</div>
@@ -117,10 +116,10 @@
 	  <div class="footer-main">
 	    <div class="container-fluid">
 	      <div class="logos-group">
-	        <a href="http://ufes.br/" target="_blank" title="Ir para site da Ufes"><img src="{{asset('/icons/logo-ufes.svg')}}" alt="Logo Ufes"></a>
-	        <a href="http://sead.ufes.br/" target="_blank" title="Ir para site da Sead"><img src="{{asset('/icons/logo-sead.svg')}}" alt="Logo Sead"></a>
-	        <a href="http://uab.capes.gov.br" target="_blank" title="Ir para página da UAB"><img src="{{asset('/icons/logo-uab.png')}}" alt="Logo UAB" style="max-width: 60px;"></a>
-	        <a href="http://capes.gov.br/" target="_blank" title="Ir para site da Capes"><img src="{{asset('/icons/logo-capes.svg')}}" alt="Logo Capes"></a>
+	        <a href="http://ufes.br/" target="_blank" title="Abrir site da Ufes em nova aba"><img src="{{asset('/icons/logo-ufes.svg')}}" alt="Logo da UFES"></a>
+	        <a href="http://sead.ufes.br/" target="_blank" title="Abrir site da Sead em nova aba"><img src="{{asset('/icons/logo-sead.svg')}}" alt="Logo da SEAD"></a>
+	        <a href="http://uab.capes.gov.br" target="_blank" title="Abrir página da UAB em nova aba"><img src="{{asset('/icons/logo-uab.png')}}" style="max-width: 60px;" alt="Logo da UAB"></a>
+	        <a href="http://capes.gov.br/" target="_blank" title="Abrir site da Capes em nova aba"><img src="{{asset('/icons/logo-capes.svg')}}" alt="Logo da CAPES"></a>
 	      </div>
 	    </div>
 	  </div>

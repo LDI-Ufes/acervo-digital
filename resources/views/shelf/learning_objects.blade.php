@@ -200,7 +200,7 @@
 							{{ $learning_object->type->name }}
 						</div>
 						<div class="wrap-image">
-							<img class="max-size" src="/covers/{{ $learning_object->cover}}" alt="">
+							<img class="max-size" src="/covers/_default.jpg" data-src="/covers/{{ $learning_object->cover}}" alt="">
 						</div>
 						<div class="caption"> 
 							<h3>{{  str_limit($learning_object->title, 60) }}</h3>
@@ -213,7 +213,7 @@
 							<div class="modal-content">
 								<div class="modal-header">
 									
-									<img class="modal-image" src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
+									<img class="modal-image" src="/covers/_default.jpg" data-src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
 									<div class="modal-caption">
 										<h3 class="modal-title" id="modal_{{ $learning_object->id }}" tabindex="0">{{ $learning_object->title }}</h3>
 										<p class="modal-author">{{ $learning_object->author }}</p>
@@ -286,6 +286,18 @@
 		document.location.href = '/curso/'+ params[4] + '/' + params[5] + '/' + this.value;
 	});
 	
+	// lazyloading
+	function runLoader() {
+		var defer = document.getElementsByTagName('img')
+		Array.prototype.slice.call(defer).map(lazyLoad)
+	}
+
+	function lazyLoad(item){
+		if (item.getAttribute('data-src')) item.setAttribute('src', item.getAttribute('data-src'))
+	}
+
+	runLoader();
+
 	// list.js
 	var options = {
 		valueNames: ['modal-title', 'modal-author', 'modal-body'],
@@ -296,10 +308,9 @@
 	var learning_objectList = new List('learning_objects', options);
 
 	$(document).on("keypress", "input", function(event) { 
-    return event.keyCode != 13;
+		return event.keyCode != 13;
 	});
+
 </script>
-
-
 
 @endsection

@@ -134,7 +134,7 @@
 							{{ $learning_object->type->name }}
 						</span>
 						<div class="wrap-image">
-							<img class="max-size" src="/covers/{{ $learning_object->cover}}" alt="Image do objeto">
+							<img class="max-size" src="/covers/_default.jpg" data-src="/covers/{{ $learning_object->cover}}" alt="Image do objeto">
 						</div>
 						<div class="caption"> 
 							<h3>{{  str_limit($learning_object->title, 40) }}
@@ -154,7 +154,7 @@
 									<img src="{{asset("icons/fechar.svg")}}">
 									</button> 
 
-									<img class="modal-image" src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
+									<img class="modal-image" src="/covers/_default.jpg" data-src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
 									<div class="modal-caption">
 										<h3 class="modal-title">{{ $learning_object->title }}</h3>
 										<p class="modal-author">{{ $learning_object->author }}</p>
@@ -197,39 +197,65 @@
 @endsection
 
 
+
 @section('scripts')
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/ldi.list.min.js"></script>
 
 <script>
-	$('#myModal').on('shown.bs.modal', function () {
-		$('#myInput').focus();
+	// modais 
+	$('.modal').on('shown.bs.modal', function () {
+		$('h3').focus();
 	});
 
-	{{--
-	$('#select-module').on('change', function(){
-		params = document.location.href.split('/');
-		document.location.href = '/shelf/course/'+ params[5] +'/module/'+ this.value +'/type/'+ params[9];
-	});
-	--}}
-
+	// menus 
 	$('#select-type').on('change', function(){
 		params = document.location.href.split('/');
-		document.location.href = '/shelf/course/'+ params[5] +'/module/'+ params[7] +'/type/'+ this.value;
+		
+		if (typeof params[5] == 'undefined') params[5] = 0;
+		if (typeof params[6] == 'undefined') params[6] = 0;
+		
+		document.location.href = '/curso/'+ params[4] + '/' + this.value +'/'+ params[6];
+	});
+
+
+	$('#select-year').on('change', function(){
+		params = document.location.href.split('/');
+		
+		if (typeof params[5] == 'undefined') params[5] = 0;
+		if (typeof params[6] == 'undefined') params[6] = 0;
+		
+		document.location.href = '/curso/'+ params[4] + '/' + params[5] + '/' + this.value;
 	});
 	
+	// lazyloading
+	function runLoader() {
+		var defer = document.getElementsByTagName('img')
+		Array.prototype.slice.call(defer).map(lazyLoad)
+	}
 
+	function lazyLoad(item){
+		if (item.getAttribute('data-src')) item.setAttribute('src', item.getAttribute('data-src'))
+	}
+
+	runLoader();
+
+	// list.js
 	var options = {
-		valueNames: ['modal-title', 'modal-body'],
-		page: 6,
-		pagination: true
+		valueNames: ['modal-title', 'modal-author', 'modal-body'],
+		page: 12,
+		pagination: false
 	};
 
 	var learning_objectList = new List('learning_objects', options);
-</script>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	$(document).on("keypress", "input", function(event) { 
+		return event.keyCode != 13;
+	});
+
+</script>
 
 @endsection

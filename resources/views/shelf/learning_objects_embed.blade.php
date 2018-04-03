@@ -140,7 +140,7 @@
 								{{ $learning_object->type->name }}
 							</span>
 							<div class="wrap-image">
-								<img class="max-size" src="/covers/{{ $learning_object->cover}}" alt="Image do objeto">
+								<img class="max-size" src="/covers/_default.jpg" data-src="/covers/{{ $learning_object->cover}}" alt="Image do objeto">
 							</div>
 							<div class="caption"> 
 								<h3>{{  str_limit($learning_object->title, 40) }}</h3>
@@ -156,7 +156,7 @@
 									<img src="{{ asset('icons/fechar.svg') }}">
 									</button> 
 
-									<img class="modal-image" src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
+									<img class="modal-image" src="/covers/_default.jpg" data-src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
 									<div class="modal-caption">
 										<h3 class="modal-title">{{ $learning_object->title }}</h3>
 										<p class="modal-author">{{ $learning_object->author }}</p>
@@ -196,6 +196,7 @@
 @endsection
 
 
+
 @section('scripts')
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -205,8 +206,8 @@
 
 <script>
 	// modais 
-	$('#myModal').on('shown.bs.modal', function () {
-		$('#myInput').focus();
+	$('.modal').on('shown.bs.modal', function () {
+		$('h3').focus();
 	});
 
 	// menus 
@@ -216,7 +217,7 @@
 		if (typeof params[5] == 'undefined') params[5] = 0;
 		if (typeof params[6] == 'undefined') params[6] = 0;
 		
-		document.location.href = '/embed/'+ params[4] + '/' + this.value +'/'+ params[6];
+		document.location.href = '/curso/'+ params[4] + '/' + this.value +'/'+ params[6];
 	});
 
 
@@ -226,23 +227,34 @@
 		if (typeof params[5] == 'undefined') params[5] = 0;
 		if (typeof params[6] == 'undefined') params[6] = 0;
 		
-		document.location.href = '/embed/'+ params[4] + '/' + params[5] + '/' + this.value;
+		document.location.href = '/curso/'+ params[4] + '/' + params[5] + '/' + this.value;
 	});
 	
+	// lazyloading
+	function runLoader() {
+		var defer = document.getElementsByTagName('img')
+		Array.prototype.slice.call(defer).map(lazyLoad)
+	}
+
+	function lazyLoad(item){
+		if (item.getAttribute('data-src')) item.setAttribute('src', item.getAttribute('data-src'))
+	}
+
+	runLoader();
+
 	// list.js
 	var options = {
 		valueNames: ['modal-title', 'modal-author', 'modal-body'],
-		page: 9,
-		pagination: true
+		page: 12,
+		pagination: false
 	};
 
 	var learning_objectList = new List('learning_objects', options);
 
 	$(document).on("keypress", "input", function(event) { 
-    return event.keyCode != 13;
+		return event.keyCode != 13;
 	});
+
 </script>
-
-
 
 @endsection

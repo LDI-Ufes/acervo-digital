@@ -1,4 +1,3 @@
-# Estante Virtual
+# Acervo Digital
 
-Projeto de estante virtual para materiais de cursos EAD.
-
+Repositório de materiais dos cursos da educação a distância da Ufes.

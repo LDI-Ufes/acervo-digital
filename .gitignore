@@ -14,9 +14,9 @@ Homestead.yaml
 *.swp
 *.swo
 *~
-/nbproject/private/
 *.jpeg
 
 public/covers/
 
 desktop.ini
+nbproject/

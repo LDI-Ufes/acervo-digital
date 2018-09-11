@@ -76,7 +76,7 @@
 									</a>
 								</li>
 								<li class="navbar-text externo">
-									<a href="http://www.eadufes.org/" title="Abrir site da SEAD em nova aba" target="_blank">
+									<a href="http://www.eadufes.org/" title="Abrir site da Sead em nova aba" target="_blank">
 										<span class="fa fa-info-circle" aria-hidden="true"></span> EAD na Ufes
 									</a>
 								</li>
@@ -86,7 +86,7 @@
 									</a>
 								</li>
 								<li class="navbar-text externo">
-									<a href="http://www.bc.ufes.br/" title="Abrir Biblioteca UFES em nova aba" target="_blank">
+									<a href="http://www.bc.ufes.br/" title="Abrir Biblioteca Ufes em nova aba" target="_blank">
 										<span class="fa fa-book" aria-hidden="true"></span> Biblioteca Ufes
 									</a>
 								</li>
@@ -105,10 +105,10 @@
 							<div id="logo">
 
 								@if (Request::url() === 'http://acervodigital.eadufes.org')
-								<img alt="Logo da UFES" src="{{asset('/icons/marca-ufes-cor.svg')}}">
+								<img alt="Logo da Ufes" src="{{asset('/icons/marca-ufes-cor.svg')}}">
 								@else
 								<a href="/" title="Ir para Início">  <!-- link para home  -->
-									<img alt="Logo da UFES" src="{{asset('/icons/marca-ufes-cor.svg')}}">	
+									<img alt="Logo da Ufes" src="{{asset('/icons/marca-ufes-cor.svg')}}">	
 								</a>
 								@endif
 
@@ -128,8 +128,8 @@
 				<div class="footer-main">
 					<div class="container-fluid">
 						<div class="logos-group">
-							<a href="http://ufes.br/" target="_blank" title="Abrir site da Ufes em nova aba"><img src="{{asset('/icons/logo-ufes.svg')}}" alt="Logo da UFES"></a>
-							<a href="http://sead.ufes.br/" target="_blank" title="Abrir site da Sead em nova aba"><img src="{{asset('/icons/logo-sead.svg')}}" alt="Logo da SEAD"></a>
+							<a href="http://ufes.br/" target="_blank" title="Abrir site da Ufes em nova aba"><img src="{{asset('/icons/logo-ufes.svg')}}" alt="Logo da Ufes"></a>
+							<a href="http://sead.ufes.br/" target="_blank" title="Abrir site da Sead em nova aba"><img src="{{asset('/icons/logo-sead.svg')}}" alt="Logo da Sead"></a>
 							<a href="http://uab.capes.gov.br" target="_blank" title="Abrir página da UAB em nova aba"><img src="{{asset('/icons/logo-uab.png')}}" alt="Logo da UAB" style="max-width: 60px;"></a>
 							<a href="http://capes.gov.br/" target="_blank" title="Abrir site da Capes em nova aba"><img src="{{asset('/icons/logo-capes.svg')}}" alt="Logo da CAPES"></a>
 						</div>
@@ -147,11 +147,19 @@
 			<script src="{{ asset('assets/theme/js/app.min.js') }}"></script>
 
 			<!-- Personalizado -->
-			<script src="{{ asset('assets/dist/js/ldi.js') }}"></script> <!-- NOVO -->
+			<script src="{{ asset('assets/dist/js/ldi.js') }}"></script>
+
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-82472266-10"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+
+				gtag('config', 'UA-82472266-10');
+			</script>
 
 			@yield('scripts')
-
-			<!-- O FOOTER VAI ENTRAR AQUI -->
 
 		</body>
 		</html>

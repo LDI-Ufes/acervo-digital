@@ -83,8 +83,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://www.ufes.br">UFES</a>
-                    <a href="https://www.neaad.ufes.br">SEAD</a>
+                    <a href="https://www.ufes.br">Ufes</a>
+                    <a href="https://www.neaad.ufes.br">Sead</a>
                     <a href="https://http://www.capes.gov.br/uab">UAB</a>
                 </div>
             </div>

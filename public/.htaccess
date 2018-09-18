@@ -8,9 +8,9 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Verifica conexão e solicita autenticação
-<If "%{HTTPS} == 'on'">
-    AuthName "Ambiente de Desenvolvimento"
-    AuthUserFile "/home/ldiufes/.htpasswds/public_html/dev/passwd"
-    AuthType Basic
-    require valid-user
-</If>
+#<If "%{HTTPS} == 'on'">
+#    AuthName "Ambiente de Desenvolvimento"
+#    AuthUserFile "/home/ldiufes/.htpasswds/public_html/dev/passwd"
+#    AuthType Basic
+#    require valid-user
+#</If>

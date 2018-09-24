@@ -81,9 +81,9 @@
 
 						<div id="logo">							
 							@if ($current->course == 'Biologia')
-							<a href="/" title="Ir para Início"><img alt="Logo da Ufes" src="{{ asset('/icons/ufes-preto.svg') }}"></a>
+							<a href="/" title="Ir para Início"><img alt="Sead Ufes" src="{{ asset('/icons/sead-ufes-preto.svg') }}"></a>
 							@else
-							<a href="/" title="Ir para Início"><img alt="Logo da Ufes" src="{{ asset('/icons/ufes-branco.svg') }}"></a>
+							<a href="/" title="Ir para Início"><img alt="Sead Ufes" src="{{ asset('/icons/sead-ufes.svg') }}"></a>
 							@endif
 						</div>
 

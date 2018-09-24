@@ -105,10 +105,10 @@
 							<div id="logo">
 
 								@if (Request::url() === 'http://acervodigital.eadufes.org')
-								<img alt="Logo da Ufes" src="{{asset('/icons/marca-ufes-cor.svg')}}">
+								<img alt="Sead Ufes" src="{{asset('/icons/sead-ufes.svg')}}">
 								@else
 								<a href="/" title="Ir para Início">  <!-- link para home  -->
-									<img alt="Logo da Ufes" src="{{asset('/icons/marca-ufes-cor.svg')}}">	
+									<img alt="Sead Ufes" src="{{asset('/icons/sead-ufes.svg')}}">	
 								</a>
 								@endif
 

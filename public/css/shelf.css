@@ -50,8 +50,8 @@ strong{
 }
 
 .max-size {
-    max-height: 100%;
-    max-width: 100%;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 #container{
@@ -71,24 +71,24 @@ strong{
 /* ========= HEADER ========= */
 
 .header-top{
-    min-height: 34px;
-    position: relative;
-    display: block;
+  min-height: 34px;
+  position: relative;
+  display: block;
 }
 
 .header-top a {
-    color: #fff;
-    text-transform: uppercase;
-    text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .header-top li{
-    float: left;
-    padding: 0 25px 0 0;
-    line-height: 40px;
-    margin-bottom: 0 !important;
-    margin: 0 0 10px;
-    font-size: 14px;
+  float: left;
+  padding: 0 25px 0 0;
+  line-height: 40px;
+  margin-bottom: 0 !important;
+  margin: 0 0 10px;
+  font-size: 14px;
 }
 
 .header-top .navbar{
@@ -109,16 +109,18 @@ strong{
 }
 
 .header-main{
-    height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 110px;
 }
 
 #logo{
-    padding-top: 20px;
-    display: inline-block;
+  display: inline-block;
 }
 
 #logo img{
-    height: 60px;
+  height: 60px;
 }
 
 #logo a:focus{
@@ -129,7 +131,6 @@ strong{
   text-align: left;
   position: absolute;
   height: inherit;
-  padding-top: 30px;
   display: inline-block;
   padding-left: 30px;
 }
@@ -189,7 +190,7 @@ small a:hover, small a:focus{
 /* ========= NAVBAR OBJETOS========= */
 
 .btn-group.bootstrap-select {
-    width: inherit !important;
+  width: inherit !important;
 }
 .navbar-text {
   margin-left: 0;
@@ -249,13 +250,13 @@ small a:hover, small a:focus{
 }
 
 .selectpicker{
-    box-shadow: none;
-    padding: 2px;
-    margin-right: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background-color: #fff;
-    color: #656565;
+  box-shadow: none;
+  padding: 2px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #fff;
+  color: #656565;
 }
 
 .navbar-toggle{
@@ -275,9 +276,9 @@ small a:hover, small a:focus{
   background-color: #ffffff;
   border:1px solid #eaeaea;
 }
-  .panel:hover {
-    background-color: #eaeaea;
-  }
+.panel:hover {
+  background-color: #eaeaea;
+}
 
 .panel-body {
   position: absolute;
@@ -287,7 +288,7 @@ small a:hover, small a:focus{
 }
 
 a:focus> .panel{
-    background-color: #eaeaea;
+  background-color: #eaeaea;
 }
 
 .page-header{
@@ -304,20 +305,20 @@ a:focus> .panel{
   padding: 0;
   border-radius: 0;
 }
-  .thumbnail:hover, .thumbnail:focus{
-    border: 1px solid #ddd !important;
-  }
+.thumbnail:hover, .thumbnail:focus{
+  border: 1px solid #ddd !important;
+}
 
-  .thumbnail .wrap-image img {
-  	-webkit-transform: scale(1);
-  	transform: scale(1);
-  	-webkit-transition: .2s ease-in-out;
-  	transition: .2s ease-in-out;
-  }
-    .thumbnail:hover .wrap-image img, .thumbnail:focus .wrap-image img {
-    	-webkit-transform: scale(1.1);
-    	transform: scale(1.1);
-    }
+.thumbnail .wrap-image img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+.thumbnail:hover .wrap-image img, .thumbnail:focus .wrap-image img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
 
 .wrap-image {
   overflow: hidden;
@@ -329,10 +330,10 @@ a:focus> .panel{
   overflow: hidden;
   background-color: #f5f5f5
 }
-  .caption h3 {
-    margin: 5px 0;
-    color: #656565;
-  }
+.caption h3 {
+  margin: 5px 0;
+  color: #656565;
+}
 
 .modal-caption .fa{
   padding-left: 7px;
@@ -353,8 +354,8 @@ button img{
 }
 
 li button:focus > .wrap-image img {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .curso-vazio{
@@ -374,17 +375,17 @@ li button:focus > .wrap-image img {
   text-align: left;
   border-radius: 0;
 }
-  .label-default {
-    background-color: #fff;
-    color: #656565;
-  }
-  .icone-objeto {
-    display: inline-block;
-    vertical-align: middle;
-    height: 24px;
-    width: 24px;
-    background-color: #656565;
-  }
+.label-default {
+  background-color: #fff;
+  color: #656565;
+}
+.icone-objeto {
+  display: inline-block;
+  vertical-align: middle;
+  height: 24px;
+  width: 24px;
+  background-color: #656565;
+}
 
 .thumbnail .fa {
   padding: 5px;
@@ -418,46 +419,46 @@ li button:focus > .wrap-image img {
   padding: 0;
   background-color: #f5f5f5;
 }
-  .modal-header .fechar {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 25px;
-    height: 25px;
-    background-color: #656565;
-    opacity: 1;
-    padding: 0;
-    border: 0;
-    float: right;
-  }
-  .modal-header .fechar:focus, .modal-header .fechar:hover{
-    filter: brightness(120%);
-  }
+.modal-header .fechar {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 25px;
+  height: 25px;
+  background-color: #656565;
+  opacity: 1;
+  padding: 0;
+  border: 0;
+  float: right;
+}
+.modal-header .fechar:focus, .modal-header .fechar:hover{
+  filter: brightness(120%);
+}
 
-  .modal-image {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  .modal-caption {
-    padding: 15px;
-    color:#656565;
-  }
-  .modal-title {
-    margin: 0;
-    font-weight: 700;
-  }
-  .modal-author {
-    margin: 5px 0 0;
-    font-weight: 400;
-    color: gray;
-  }
+.modal-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+.modal-caption {
+  padding: 15px;
+  color:#656565;
+}
+.modal-title {
+  margin: 0;
+  font-weight: 700;
+}
+.modal-author {
+  margin: 5px 0 0;
+  font-weight: 400;
+  color: gray;
+}
 
-  .modal-year{
-  	display: inline-block;
-  	margin: 5px 0 10px;
-    font-weight: 400;
-    color: gray;
-  }
+.modal-year{
+  display: inline-block;
+  margin: 5px 0 10px;
+  font-weight: 400;
+  color: gray;
+}
 
 .btn-download {
   right: 15px;
@@ -492,8 +493,8 @@ li button:focus > .wrap-image img {
 }
 
 .pagination a{
-	background-color: #656565 !important;
-	border-color: #ddd !important;
+  background-color: #656565 !important;
+  border-color: #ddd !important;
   color: #ffffff !important;
 }
 
@@ -540,7 +541,7 @@ ul.pagination{
 }
 /*  =======  FOOTER  =======  */
 
- footer{
+footer{
   position: relative;
   margin: 0;
   width: 100%;
@@ -549,14 +550,14 @@ ul.pagination{
 }
 
 .logos-group {
-    max-width: 364px;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 364px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .logos-group a img {
-    margin: 25px 10px;
-    max-height: 47px;
+  margin: 25px 10px;
+  max-height: 47px;
 }
 
 .logos-group a:focus{
@@ -614,8 +615,8 @@ ul.pagination{
   }
 
   .modal:before {
-  content: '';
-  display: none;
+    content: '';
+    display: none;
   }
 
   .modal-dialog {

@@ -54,9 +54,6 @@
 							<li class="navbar-text"><a href="/" title="Ir para Início">
 								<span class="fa fa-home" aria-hidden="true"></span> Início</a>
 							</li>
-							<li class="navbar-text"><a href="/sobre" title="Ir para Sobre">
-								<span class="fa fa-info-circle" aria-hidden="true"></span> Sobre o Acervo</a>
-							</li>
 							<li class="navbar-text externo"><a href="http://www.eadufes.org/" title="Abrir sítio da Sead em nova aba" target="_blank">
 								<span class="fa fa-info-circle" aria-hidden="true"></span> EAD na Ufes</a>
 							</li>

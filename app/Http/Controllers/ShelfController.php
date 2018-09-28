@@ -121,6 +121,7 @@ class ShelfController extends Controller
 			'type' => "Todos os Tipos",
 			'type_id' => 0,
 			'object_types' => ObjectType::all(),
+      'course_list' => Course::all()
 		);
 
 		$current->course = $course_info->name;

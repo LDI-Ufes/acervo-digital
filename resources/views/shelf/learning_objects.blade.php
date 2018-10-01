@@ -222,7 +222,15 @@
 											<p><strong>Resumo:</strong><br>
 												{{ $learning_object->summary }}
 											</p>
-										@endif
+                    @endif
+                      
+                    @if ($learning_object->type->id == 4)
+                      <p>
+                        Use o Adobe PDF Reader para uma melhor vizualização dos livros interativos.
+                        <a href="https://get.adobe.com/br/reader/otherversions/">Baixar Adobe Reader</a>
+                      </p>
+                    @endif
+
 										<a class="btn-download" href="{{ $learning_object->link }}" title="Abrir {{ $learning_object->title }} em nova aba" role="button" target="_blank">
 											<span class="fa fa-external-link" aria-hidden="true"></span>
 											Abrir

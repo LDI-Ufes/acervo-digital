@@ -21,8 +21,8 @@
 	<link href="{{asset("css/shelf.css")}}" rel="stylesheet">
 
 	<!-- Font Awesome -->
-	{{-- <link rel="stylesheet" href="{{asset('assets/css/font-awesome.css')}}"> --}}
-	<link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<!-- <link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet"> -->
 
 	<!-- Bootstrap Select -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
@@ -88,6 +88,11 @@
 								<li class="navbar-text externo">
 									<a href="http://www.bc.ufes.br/" title="Abrir Biblioteca Ufes em nova aba" target="_blank">
 										<span class="fa fa-book" aria-hidden="true"></span> Biblioteca Ufes
+									</a>
+								</li>
+								<li class="navbar-text externo">
+									<a href="https://www.youtube.com/user/ufesinstrucional" title="Abrir canal da Sead no YouTube em nova aba" target="_blank">
+										<span class="fab fa-youtube" aria-hidden="true"></span> Videoaulas Sead
 									</a>
 								</li>
 						    <!--  <p class="navbar-text externo"><a href="http://www.especializacao.aperfeicoamento.ufes.br/"> 

@@ -33,13 +33,13 @@
 				@endforeach
 			</ul>
 		@empty
-			<div>Não há cursos cadastrados.</div>
+			<div class="curso-vazio">Não há cursos cadastrados.</div>
 		@endforelse
 
 
 		{{-- <a href="/shelf/course/0/module/0/type/0">Todos os Cursos</a> --}}
 
-		@if (! $inactive_courses->isEmpty() )
+<!-- 		@if (! $inactive_courses->isEmpty() )
 			<button class="page-header" tabindex="0" id="inativos-mostra">
 				Cursos Inativos 
 				<i id="seta" class="fa fa-caret-down" aria-hidden="true"></i> 
@@ -64,7 +64,8 @@
 					@endforeach 
 				</ul> 
 			</div>
-		@endif
+		@endif -->
+
 
 	</div>
 

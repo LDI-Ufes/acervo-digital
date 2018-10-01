@@ -194,7 +194,7 @@
 					<a href="" title="" class="thumbnail no-shadow" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
 					 	<div class="label label-default">
 							<div class="icone-objeto">
-								<img alt="{{ $learning_object->type->name }}" src="{{asset("/icons/". $learning_object->type->id .".svg")}}">
+								<img alt="" src="{{asset("/icons/". $learning_object->type->id .".svg")}}">
 							</div> 
 							
 							{{ $learning_object->type->name }}
@@ -226,8 +226,7 @@
                       
                     @if ($learning_object->type->id == 4)
                       <p>
-                        Use o Adobe PDF Reader para uma melhor vizualização dos livros interativos.
-                        <a href="https://get.adobe.com/br/reader/otherversions/">Baixar Adobe Reader</a>
+                        <i class="fas fa-info-circle"></i> Para melhor visualização do <strong>PDF Interativo</strong> use o programa <a href="https://get.adobe.com/reader/?loc=br">Adobe Acrobat (clique aqui para baixar)</a>.
                       </p>
                     @endif
 

@@ -112,7 +112,7 @@ class ShelfController extends Controller
 	{
 		$course_info = Course::whereSlug($slug)->first();
 
-		$learning_objects = $course_info->learning_objects;
+		$learning_objects = $course_info->learning_objects->sortBy('title');
 		
 		$current = (object)Array(
 			'course' => "Todos os Cursos",

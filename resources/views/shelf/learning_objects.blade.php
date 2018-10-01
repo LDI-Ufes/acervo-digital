@@ -128,7 +128,7 @@
 							</span>
 							<input type="text" class="form-control search" placeholder="Busca">
 
-							{{-- //Botões de Ordenação do List.js //
+							{{-- Botões de Ordenação do List.js
 
 							<button class="sort" data-sort="title">Título</button>
 							<button class="sort" data-sort="course">Curso</button>
@@ -185,12 +185,6 @@
 										@endif
 									@endif
 	
-									@if ($current->type_id == $type->id)
-										<option value="{{$type->id}}" selected>{{$type->year}}</option>
-									@else
-										<option value="{{$type->id}}">{{$type->year}}</option>
-									@endif
-									--}}
 								@endforeach
 							</select>
 						</li>

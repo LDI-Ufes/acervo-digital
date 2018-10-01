@@ -128,7 +128,7 @@
 							</span>
 							<input type="text" class="form-control search" placeholder="Busca">
 
-							{{-- //Botões de Ordenação do List.js //
+							{{-- Botões de Ordenação do List.js
 
 							<button class="sort" data-sort="title">Título</button>
 							<button class="sort" data-sort="course">Curso</button>
@@ -140,7 +140,22 @@
 
 					<ul class="nav navbar-nav navbar-text navbar-right">
 
-						<li>
+            <li>
+							<!-- SELETOR DE CURSO -->
+							<select class="selectpicker" id="select-course">
+								<option selected disabled="">Curso</option>
+                {{-- TO BE IMPLEMENTED <option value="0">Todos</option> --}}
+								@foreach ($current->course_list as $course)								
+									@if ($course_info->id == $course->id)
+                    <option value="{{$course->slug}}" selected>{{$course->name}}</option>
+									@else
+										<option value="{{$course->slug}}">{{$course->name}}</option>
+									@endif
+								@endforeach
+							</select>
+						</li>
+
+            <li>
 							<!-- TIPOS DE OBJETO DE APRENDIZAGEM -->
 							<select class="selectpicker" id="select-type">
 								<option selected disabled="">Tipo de Objeto</option>
@@ -169,15 +184,7 @@
 											<option value="{{ $year }}">{{ $year }}</option>
 										@endif
 									@endif
-
-
-									{{-- SÓ FAZ SENTIDO CRIAR ISSO DEPOIS DO BACKEND FAZE A SELECAO... VALE A PENA???
-									@if ($current->type_id == $type->id)
-										<option value="{{$type->id}}" selected>{{$type->year}}</option>
-									@else
-										<option value="{{$type->id}}">{{$type->year}}</option>
-									@endif
-									--}}
+	
 								@endforeach
 							</select>
 						</li>
@@ -271,6 +278,15 @@
 	// modais 
 	$('.modal').on('shown.bs.modal', function () {
 		$('h3').focus();
+	});
+
+  $('#select-course').on('change', function(){
+		params = document.location.href.split('/');
+		
+		if (typeof params[5] == 'undefined') params[5] = 0;
+		if (typeof params[6] == 'undefined') params[6] = 0;
+		
+		document.location.href = '/curso/'+ this.value + '/' + params[5] +'/'+ params[6];
 	});
 
 	// menus 

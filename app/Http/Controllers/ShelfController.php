@@ -120,13 +120,18 @@ class ShelfController extends Controller
 			'years_by_course' => [],
 			'type' => "Todos os Tipos",
 			'type_id' => 0,
-			'object_types' => ObjectType::all(),
+			'object_types' => ObjectType::orderBy('name', 'asc')->get(),
+      'course_list' => Course::orderBy('name', 'asc')->get()
 		);
 
 		$current->course = $course_info->name;
 
 
-		$current->years_by_course = LearningObject::where('course_id', '=', $course_info->id)->pluck('year')->unique()->sort();	
+    $current->years_by_course = LearningObject::where('course_id', '=', $course_info->id)
+      ->pluck('year')
+      ->sort()
+      ->unique()
+      ->reverse();
 
 
 		if(($type != 0) or ($year != 0)){

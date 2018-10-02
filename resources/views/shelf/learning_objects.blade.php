@@ -233,7 +233,7 @@
                       
                     @if ($learning_object->type->id == 4)
                       <p>
-                        <i class="fas fa-info-circle"></i> Para melhor visualização do <strong>PDF Interativo</strong> use o programa <a href="https://get.adobe.com/reader/?loc=br">Adobe Acrobat (clique aqui para baixar)</a>.
+                        <i class="fa fa-info-circle"></i> Para melhor visualização do <strong>PDF Interativo</strong> use o programa <a href="https://get.adobe.com/reader/?loc=br">Adobe Acrobat (clique aqui para baixar)</a>.
                       </p>
                     @endif
 

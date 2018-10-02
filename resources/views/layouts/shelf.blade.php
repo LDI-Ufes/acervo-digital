@@ -63,7 +63,7 @@
                 <span class="fa fa-book" aria-hidden="true"></span> Biblioteca Ufes</a>
             </li>
             <li class="navbar-text externo"><a href="https://www.youtube.com/user/ufesinstrucional" title="Abrir canal da Sead no YouTube em nova aba" target="_blank">
-                <span class="fab fa-youtube" aria-hidden="true"></span> Videoaulas Sead</a>
+                <span class="fa fa-youtube-play" aria-hidden="true"></span> Videoaulas Sead</a>
             </li>
       <!--  <p class="navbar-text externo"><a href="http://www.especializacao.aperfeicoamento.ufes.br/"> 
             <span class="fa fa-desktop" alt="Ícone de Monitor"></span> 

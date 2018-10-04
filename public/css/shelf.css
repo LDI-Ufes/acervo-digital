@@ -443,6 +443,15 @@ li button:focus > .wrap-image img {
   padding: 15px;
   color:#656565;
 }
+
+.modal-caption > p > a{
+	color: #0E64AD;;
+}
+
+.modal-caption > p > a:hover{
+	color: #053C7B;
+}
+
 .modal-title {
   margin: 0;
   font-weight: 700;
@@ -583,6 +592,21 @@ footer{
     padding-right: 15px;
     border: none;
     display: inline-table;
+  }
+
+  .navbar-form{
+  	display: block;
+  }
+
+  .nav > li{
+  	margin-left: 0;
+  	margin-right: 15px;
+  	margin-bottom: 15px;
+  }
+
+  .nav > li:last-child{
+  	margin-right: 0;
+  	margin-bottom: 0;
   }
 
   .header-top .externo{

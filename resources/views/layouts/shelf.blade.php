@@ -18,10 +18,10 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
 
     <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap-theme.css') }}" rel="stylesheet"> 
+    <link href="{{ asset('css/bootstrap-theme.css') }}" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet"> 
+    <link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet">
 
     <!-- Bootstrap Select -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
@@ -68,12 +68,12 @@
             <li class="navbar-text externo"><a href="https://www.youtube.com/user/ufesinstrucional" title="Abrir canal da Sead no YouTube em nova aba" target="_blank">
                 <span class="fa fa-youtube-play" aria-hidden="true"></span> Videoaulas Sead</a>
             </li>
-      <!--  <p class="navbar-text externo"><a href="http://www.especializacao.aperfeicoamento.ufes.br/"> 
-            <span class="fa fa-desktop" alt="Ícone de Monitor"></span> 
+      <!--  <p class="navbar-text externo"><a href="http://www.especializacao.aperfeicoamento.ufes.br/">
+            <span class="fa fa-desktop" alt="Ícone de Monitor"></span>
       Moodle</a></p>  -->
           </ul>
         </div>
-        <!--</div>	      
+        <!--</div>
         </nav>  -->
       </div>
 
@@ -81,7 +81,7 @@
         <div class='container'>
           <div class="tamanho">
 
-            <div id="logo">							
+            <div id="logo">
               @if ($current->course == 'Biologia')
               <a href="/" title="Ir para Início"><img alt="Sead Ufes" src="{{ asset('/icons/sead-ufes-preto.svg') }}"></a>
               @else
@@ -93,14 +93,14 @@
               <a href="/" title="Ir para Início"><h1>Acervo Digital</h1></a>
               <h2>{{ $current->course }}</h2>
             </div>
-          </div>  
-        </div>  
+          </div>
+        </div>
       </div>
 
       <div class="breadcrumbs">
         <div class="container">
-          <small> 
-            <a href="/">Acervo EAD</a> &raquo; {{  str_limit($current->course, 20) }}		
+          <small>
+            <a href="/">Acervo EAD</a> &raquo; {{  str_limit($current->course, 20) }}
           </small>
         </div>
       </div>
@@ -117,6 +117,9 @@
             <a href="http://sead.ufes.br/" target="_blank" title="Abrir sítio da Sead em nova aba"><img src="{{asset('/icons/logo-sead.svg')}}" alt="Logo da Sead"></a>
             <a href="http://uab.capes.gov.br" target="_blank" title="Abrir página da UAB em nova aba"><img src="{{asset('/icons/logo-uab.png')}}" style="max-width: 60px;" alt="Logo da UAB"></a>
             <a href="http://capes.gov.br/" target="_blank" title="Abrir sítio da Capes em nova aba"><img src="{{asset('/icons/logo-capes.svg')}}" alt="Logo da CAPES"></a>
+          </div>
+          <div class="creditos">
+            <a href="https://ldi.eadufes.org/" target="_blank" title="Abrir sítio do LDI em nova aba">Desenvolvido pelo Laboratório de Design Instrucional</a>
           </div>
         </div>
       </div>

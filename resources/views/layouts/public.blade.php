@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://cdn.eadufes.org/icone/sead.png">
     <link rel="icon" type="image/svg+xml" href="https://cdn.eadufes.org/icone/sead.svg">
@@ -24,7 +24,7 @@
     <link href="{{asset("css/shelf.css")}}" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet"> 
+    <link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet">
 
     <!-- Bootstrap Select -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
@@ -46,7 +46,6 @@
 
       footer{
         background: #193e70;
-        border-top: 5px solid #036bb2;
       }
     </style>
 
@@ -70,7 +69,7 @@
                       <span class="fa fa-bars" aria-hidden="true" alt="Menu expansível"></span>
                 </button>
           </div>
-          
+
           <div class="collapse navbar-collapse" id="menu-topo">-->
           <ul>
             <li class="navbar-text">
@@ -98,12 +97,12 @@
                 <span class="fa fa-youtube-play" aria-hidden="true"></span> Videoaulas Sead
               </a>
             </li>
-    <!--  <p class="navbar-text externo"><a href="http://www.especializacao.aperfeicoamento.ufes.br/"> 
-        <span class="fa fa-desktop"></span> 
+    <!--  <p class="navbar-text externo"><a href="http://www.especializacao.aperfeicoamento.ufes.br/">
+        <span class="fa fa-desktop"></span>
       Moodle</a></p>  -->
           </ul>
         </div>
-        <!--</div>	      
+        <!--</div>
         </nav>  -->
       </div>
 
@@ -116,7 +115,7 @@
               <img alt="Sead Ufes" src="{{asset('/icons/sead-ufes.svg')}}">
               @else
               <a href="/" title="Ir para Início">  <!-- link para home  -->
-                <img alt="Sead Ufes" src="{{asset('/icons/sead-ufes.svg')}}">	
+                <img alt="Sead Ufes" src="{{asset('/icons/sead-ufes.svg')}}">
               </a>
               @endif
 
@@ -124,8 +123,8 @@
             <div class="rotulo">
               <h1 class="titulo-public">Acervo Digital</h1>
             </div>
-          </div>  
-        </div>  
+          </div>
+        </div>
       </div>
 
     </header>
@@ -140,6 +139,9 @@
             <a href="http://sead.ufes.br/" target="_blank" title="Abrir sítio da Sead em nova aba"><img src="{{asset('/icons/logo-sead.svg')}}" alt="Logo da Sead"></a>
             <a href="http://uab.capes.gov.br" target="_blank" title="Abrir página da UAB em nova aba"><img src="{{asset('/icons/logo-uab.png')}}" alt="Logo da UAB" style="max-width: 60px;"></a>
             <a href="http://capes.gov.br/" target="_blank" title="Abrir sítio da Capes em nova aba"><img src="{{asset('/icons/logo-capes.svg')}}" alt="Logo da CAPES"></a>
+          </div>
+          <div class="creditos">
+            <a href="https://ldi.eadufes.org/" target="_blank" title="Abrir sítio do LDI em nova aba">Desenvolvido pelo Laboratório de Design Instrucional</a>
           </div>
         </div>
       </div>

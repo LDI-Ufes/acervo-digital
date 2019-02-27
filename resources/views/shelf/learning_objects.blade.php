@@ -31,6 +31,18 @@
     color: #000 !important;
   }
 
+  .creditos{
+    background-color: {{ $course_info->bg_color }} !important;
+  }
+
+  .creditos a{
+    color: #000 !important;
+  }
+
+  footer{
+    background-color: {{ $course_info->aux_color }} !important;
+  }
+
   @endif
   @else
 
@@ -55,7 +67,7 @@
 
   @if ($course_info->active == 1)
 
-  .header-top{
+  .header-top, .creditos{
     background-color: {{ $course_info->aux_color }};
   }
 
@@ -63,18 +75,13 @@
     background-color: {{ $course_info->bg_color }};
   }
 
-  .header-main{
+  .header-main, footer{
     background-color: {{ $course_info->bg_color }};
-  }
-
-  footer{
-    background: {{ $course_info->aux_color }};
-    border-top: 5px solid {{ $course_info->bg_color }};
   }
 
   @else
 
-  .header-top{
+  .header-top, .creditos{
     background-color: #373737;
   }
 
@@ -82,13 +89,8 @@
     background-color: #656565;
   }
 
-  .header-main{
+  .header-main, footer{
     background-color: #656565;
-  }
-
-  footer{
-    background: #373737;
-    border-top: 5px solid #656565;
   }
 
   @endif

@@ -118,10 +118,11 @@
             <a href="http://uab.capes.gov.br" target="_blank" title="Abrir página da UAB em nova aba"><img src="{{asset('/icons/logo-uab.png')}}" style="max-width: 60px;" alt="Logo da UAB"></a>
             <a href="http://capes.gov.br/" target="_blank" title="Abrir sítio da Capes em nova aba"><img src="{{asset('/icons/logo-capes.svg')}}" alt="Logo da CAPES"></a>
           </div>
-          <div class="creditos">
-            <a href="https://ldi.eadufes.org/" target="_blank" title="Abrir sítio do LDI em nova aba">Desenvolvido pelo Laboratório de Design Instrucional</a>
-          </div>
+
         </div>
+      </div>
+      <div class="creditos">
+        <a href="https://ldi.eadufes.org/" target="_blank" title="Abrir sítio do LDI em nova aba">Desenvolvido pelo Laboratório de Design Instrucional</a>
       </div>
     </footer>
 

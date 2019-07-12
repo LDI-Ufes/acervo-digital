@@ -109,7 +109,7 @@
 						<div class="input-group">
 						
 							<span class="input-group-addon">
-								<img src="{{asset("/icons/buscar.svg")}}" alt="Ícone de Lupa">
+								<img src="{{asset("/icons-local/buscar.svg")}}" alt="Ícone de Lupa">
 								<!--<i class="fa fa-search" aria-hidden="true"></i>-->
 
 							</span>
@@ -134,7 +134,7 @@
 					<button class="thumbnail no-shadow" type="button" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
 							<span class="label label-default">
 								<div class="icone-objeto">
-									<img src="{{asset("/icons/". $learning_object->type->id .".svg")}}">
+									<img src="{{asset("/icons-local/". $learning_object->type->id .".svg")}}">
 								</div> 
 								
 								{{ $learning_object->type->name }}
@@ -153,7 +153,7 @@
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="fechar" data-dismiss="modal" aria-label="Close">
-									<img src="{{ asset('icons/fechar.svg') }}">
+									<img src="{{ asset('icons-local/fechar.svg') }}">
 									</button> 
 
 									<img class="modal-image" src="/covers/_default.jpg" data-src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">

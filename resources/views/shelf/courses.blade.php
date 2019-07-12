@@ -28,7 +28,7 @@
         <div class="destaque-bloco">
           <div class="label label-default">
             <div class="icone-objeto">
-              <img alt="" src="{{asset('/icons/3.svg')}}">
+              <img alt="" src="{{asset('/icons-local/3.svg')}}">
             </div>
             Livro
           </div>
@@ -49,7 +49,7 @@
         <div class="destaque-bloco">
           <div class="label label-default">
             <div class="icone-objeto">
-              <img alt="" src="{{asset('/icons/3.svg')}}">
+              <img alt="" src="{{asset('/icons-local/3.svg')}}">
             </div>
             Livro
           </div>
@@ -70,7 +70,7 @@
         <div class="destaque-bloco">
           <div class="label label-default">
             <div class="icone-objeto">
-              <img alt="" src="{{asset('/icons/5.svg')}}">
+              <img alt="" src="{{asset('/icons-local/5.svg')}}">
             </div>
             Vídeo
           </div>
@@ -91,7 +91,7 @@
         <div class="destaque-bloco">
           <div class="label label-default">
             <div class="icone-objeto">
-              <img alt="" src="{{asset('/icons/2.svg')}}">
+              <img alt="" src="{{asset('/icons-local/2.svg')}}">
             </div>
             Objeto Interativo
           </div>

@@ -28,7 +28,7 @@
           <div class="row"> 
             <div class="miniatura">
 		          <div class="img" style="overflow:hidden">
-		            <img src="{{asset("/icons/". $object_type->id .".svg")}}">
+		            <img src="{{asset("/icons-local/". $object_type->id .".svg")}}">
                 <span> {{ $object_type->id }}.svg </span>
               </div>
             </div>

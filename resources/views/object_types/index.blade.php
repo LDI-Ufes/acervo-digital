@@ -40,7 +40,7 @@
                         <tbody>
                           @foreach( $all_object_types as $object_type)
 				  <tr>
-				    <td class="box-icone" title="{{ $object_type->name }}"><img src="{{asset("/icons/". $object_type->id .".svg")}}"></td>
+				    <td class="box-icone" title="{{ $object_type->name }}"><img src="{{asset("/icons-local/". $object_type->id .".svg")}}"></td>
 				    <td>{{ $object_type->name }}</td>
                     <td><a href="{{ route('object_types.show', $object_type->id) }}"><i class="fa fa-eye"></i></a></td>
 				    <td><a href="{{ route('object_types.edit', $object_type->id) }}"><i class="fa fa-edit"></i></a></td>

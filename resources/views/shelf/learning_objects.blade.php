@@ -123,7 +123,7 @@
 
               <span class="input-group-addon">
 
-                <img src="{{asset("/icons/buscar.svg")}}" alt="Ícone de Lupa">
+                <img src="{{asset("/icons-local/buscar.svg")}}" alt="Ícone de Lupa">
               </span>
               <input type="text" class="form-control search" placeholder="Busca">
 
@@ -200,7 +200,7 @@
         <a href="" title="" class="thumbnail no-shadow" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
           <div class="label label-default">
             <div class="icone-objeto">
-              <img alt="" src="{{asset("/icons/". $learning_object->type->id .".svg")}}">
+              <img alt="" src="{{asset("/icons-local/". $learning_object->type->id .".svg")}}">
             </div> 
 
             {{ $learning_object->type->name }}
@@ -243,7 +243,7 @@
                 </div>								
 
                 <button class="fechar" data-dismiss="modal" aria-label="Close">
-                  <img src="{{ asset('icons/fechar.svg') }}" alt="Fechar Modal">
+                  <img src="{{ asset('icons-local/fechar.svg') }}" alt="Fechar Modal">
                 </button> 
 
               </div>

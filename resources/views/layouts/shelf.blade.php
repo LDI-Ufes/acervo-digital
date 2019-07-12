@@ -83,9 +83,9 @@
 
             <div id="logo">
               @if ($current->course == 'Biologia')
-              <a href="/" title="Ir para Início"><img alt="Sead Ufes" src="{{ asset('/icons/sead-ufes-preto.svg') }}"></a>
+              <a href="/" title="Ir para Início"><img alt="Sead Ufes" src="{{ asset('/icons-local/sead-ufes-preto.svg') }}"></a>
               @else
-              <a href="/" title="Ir para Início"><img alt="Sead Ufes" src="{{ asset('/icons/sead-ufes.svg') }}"></a>
+              <a href="/" title="Ir para Início"><img alt="Sead Ufes" src="{{ asset('/icons-local/sead-ufes.svg') }}"></a>
               @endif
             </div>
 
@@ -113,10 +113,10 @@
       <div class="footer-main">
         <div class="container-fluid">
           <div class="logos-group">
-            <a href="http://ufes.br/" target="_blank" title="Abrir sítio da Ufes em nova aba"><img src="{{asset('/icons/logo-ufes.svg')}}" alt="Logo da Ufes"></a>
-            <a href="http://sead.ufes.br/" target="_blank" title="Abrir sítio da Sead em nova aba"><img src="{{asset('/icons/logo-sead.svg')}}" alt="Logo da Sead"></a>
-            <a href="http://uab.capes.gov.br" target="_blank" title="Abrir página da UAB em nova aba"><img src="{{asset('/icons/logo-uab.png')}}" style="max-width: 60px;" alt="Logo da UAB"></a>
-            <a href="http://capes.gov.br/" target="_blank" title="Abrir sítio da Capes em nova aba"><img src="{{asset('/icons/logo-capes.svg')}}" alt="Logo da CAPES"></a>
+            <a href="http://ufes.br/" target="_blank" title="Abrir sítio da Ufes em nova aba"><img src="{{asset('/icons-local/logo-ufes.svg')}}" alt="Logo da Ufes"></a>
+            <a href="http://sead.ufes.br/" target="_blank" title="Abrir sítio da Sead em nova aba"><img src="{{asset('/icons-local/logo-sead.svg')}}" alt="Logo da Sead"></a>
+            <a href="http://uab.capes.gov.br" target="_blank" title="Abrir página da UAB em nova aba"><img src="{{asset('/icons-local/logo-uab.png')}}" style="max-width: 60px;" alt="Logo da UAB"></a>
+            <a href="http://capes.gov.br/" target="_blank" title="Abrir sítio da Capes em nova aba"><img src="{{asset('/icons-local/logo-capes.svg')}}" alt="Logo da CAPES"></a>
           </div>
 
         </div>

@@ -111,7 +111,7 @@
 
 						<div class="input-group-btn">
 							<button type="submit">
-								<img src="{{asset("/icons/buscar.svg")}}">
+								<img src="{{asset("/icons-local/buscar.svg")}}">
 								<i class="fa fa-search" aria-hidden="true"></i>
 							</button>
 						</div>
@@ -128,7 +128,7 @@
 					<div class="thumbnail no-shadow" type="button" data-toggle="modal" data-target="#learning_object{{ $learning_object->id }}">
 						<span class="label label-default">
 							<div class="icon">
-								<img src="{{asset("/icons/". $learning_object->type->id .".svg")}}">
+								<img src="{{asset("/icons-local/". $learning_object->type->id .".svg")}}">
 							</div> 
 							
 							{{ $learning_object->type->name }}
@@ -151,7 +151,7 @@
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="fechar" data-dismiss="modal" aria-label="Close">
-									<img src="{{asset("icons/fechar.svg")}}">
+									<img src="{{asset("icons-local/fechar.svg")}}">
 									</button> 
 
 									<img class="modal-image" src="/covers/_default.jpg" data-src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
@@ -160,7 +160,7 @@
 										<p class="modal-author">{{ $learning_object->author }}</p>
 										<p class="modal-year">{{ $learning_object->year }}</p>
 										<a class="btn-download" href="{{ $learning_object->link }}" role="button">
-											<img src="{{asset("/icons/baixar.svg")}}">
+											<img src="{{asset("/icons-local/baixar.svg")}}">
 											Abrir
 										</a> 
 									</div>

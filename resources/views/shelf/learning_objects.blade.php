@@ -313,14 +313,36 @@ $('#select-year').on('change', function () {
 });
 
 // lazyloading
+async function imageExists(url){
+
+  let image
+
+  try {
+    image = await fetch(url, { method: 'HEAD' })
+  } catch (error) {
+    //meh
+  }
+
+  return !!image.ok
+/*
+    const http = new XMLHttpRequest();
+
+    http.open('HEAD', url, false);
+    await http.send();
+
+    return http.status != 404;
+*/
+}
+
 function runLoader() {
-  var defer = document.getElementsByTagName('img')
+  const defer = document.getElementsByTagName('img')
   Array.prototype.slice.call(defer).map(lazyLoad)
 }
 
-function lazyLoad(item) {
-  if (item.getAttribute('data-src'))
-    item.setAttribute('src', item.getAttribute('data-src'))
+async function lazyLoad(item) {
+  const imagePath = item.getAttribute('data-src') 
+  if (imagePath && await imageExists(imagePath))
+    item.setAttribute('src', imagePath)
 }
 
 runLoader();

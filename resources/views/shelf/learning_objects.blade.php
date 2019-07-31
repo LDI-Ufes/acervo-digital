@@ -320,18 +320,10 @@ async function imageExists(url){
   try {
     image = await fetch(url, { method: 'HEAD' })
   } catch (error) {
-    //meh
+    consle.log(`Imagem ${url} não foi encontrada.`)
   }
 
   return !!image.ok
-/*
-    const http = new XMLHttpRequest();
-
-    http.open('HEAD', url, false);
-    await http.send();
-
-    return http.status != 404;
-*/
 }
 
 function runLoader() {

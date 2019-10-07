@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="destaque-bloco">
-          <a href="https://acervodigital.eadufes.org/arquivos/historia-da-fisica.pdf" target="_blank" title="Abrir História da Física em nova aba">
+          <a href="{{ config('app.url') }}/arquivos/historia-da-fisica.pdf" target="_blank" title="Abrir História da Física em nova aba">
             <div class="destaque-titulo">
               <h1>Física</h1>
               <h2>História da Física</h2>
@@ -55,7 +55,7 @@
           </div>
         </div>
         <div class="destaque-bloco">
-          <a href="https://acervodigital.eadufes.org/arquivos/oficina-danca.pdf" target="_blank" title="Abrir Oficina de Docência em Dança em nova aba">
+          <a href="{{ config('app.url') }}/arquivos/oficina-danca.pdf" target="_blank" title="Abrir Oficina de Docência em Dança em nova aba">
           <div class="destaque-titulo">
             <h1>Educação Física</h1>
             <h2>Oficina de Docência em Dança</h2>
@@ -148,12 +148,12 @@
 					<li class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
 						{{-- <a href="/shelf/course/{{$course->id}}/module/0/type/0"> --}}
 						{{-- <a href="/shelf/course/{{$course->id}}/type/0/year/0">   --}}
-						<a href="/curso/{{ $course->slug }}">
+						<a href="{{ config('app.url') }}/curso/{{ $course->slug }}">
 							<div class="panel panel-default" style=" border-left: 7px solid {{ $course->bg_color }}; color: {{ $course->fg_color }}">
 								<div class="panel-body">
 									<p>{{$course->name}}</p>
 									{{--@if (Auth::check())
-										<a href="/courses/{{$course->id}}/edit">[editar]</a> --}}
+										<a href="{{ config('app.url') }}/courses/{{$course->id}}/edit">[editar]</a> --}}
 								</div>
 							</div>
 						</a>

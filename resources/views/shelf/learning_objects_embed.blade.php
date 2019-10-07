@@ -140,7 +140,7 @@
 								{{ $learning_object->type->name }}
 							</span>
 							<div class="wrap-image">
-								<img class="max-size" src="/covers/_default.jpg" data-src="/covers/{{ $learning_object->cover}}" alt="Image do objeto">
+								<img class="max-size" src="{{ config('app.url') }}/covers/_default.jpg" data-src="{{ config('app.url') }}/covers/{{ $learning_object->cover}}" alt="Image do objeto">
 							</div>
 							<div class="caption"> 
 								<h3>{{  str_limit($learning_object->title, 40) }}</h3>
@@ -156,7 +156,7 @@
 									<img src="{{ asset('icons-local/fechar.svg') }}">
 									</button> 
 
-									<img class="modal-image" src="/covers/_default.jpg" data-src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
+									<img class="modal-image" src="{{ config('app.url') }}/covers/_default.jpg" data-src="{{ config('app.url') }}/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
 									<div class="modal-caption">
 										<h3 class="modal-title">{{ $learning_object->title }}</h3>
 										<p class="modal-author">{{ $learning_object->author }}</p>
@@ -202,7 +202,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="/js/ldi.list.min.js"></script>
+<script src="{{config('app.url')}}/js/ldi.list.min.js"></script>
 
 <script>
 	// modais 

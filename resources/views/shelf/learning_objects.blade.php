@@ -206,7 +206,7 @@
             {{ $learning_object->type->name }}
           </div>
           <div class="wrap-image">
-            <img class="max-size" src="/covers/_default.jpg" data-src="/covers/{{ $learning_object->cover}}" alt="">
+            <img class="max-size" src="{{ config('app.url') }}/covers/_default.jpg" data-src="{{ config('app.url') }}/covers/{{ $learning_object->cover}}" alt="">
           </div>
           <div class="caption"> 
             <h3>{{  str_limit($learning_object->title, 60) }}</h3>
@@ -219,7 +219,7 @@
             <div class="modal-content">
               <div class="modal-header">
 
-                <img class="modal-image" src="/covers/_default.jpg" data-src="/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
+                <img class="modal-image" src="{{ config('app.url') }}/covers/_default.jpg" data-src="{{ config('app.url') }}/covers/{{ $learning_object->cover}}" alt="Imagem do objeto">
                 <div class="modal-caption">
                   <h3 class="modal-title" id="modal_{{ $learning_object->id }}" tabindex="0">{{ $learning_object->title }}</h3>
                   <p class="modal-author">{{ $learning_object->author }}</p>
@@ -269,10 +269,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="/js/ldi.list.min.js"></script>
+<script src="{{config('app.url')}}/js/ldi.list.min.js"></script>
 
 <script>
-// modais 
+// modais
+
+const app_url = new URL("{{config('app.url')}}")
+const pathname = app_url.pathname
+const folders = pathname.split('/').filter(x=>x!=="").length
+
 $('.modal').on('shown.bs.modal', function () {
   $('h3').focus();
 });
@@ -280,36 +285,36 @@ $('.modal').on('shown.bs.modal', function () {
 $('#select-course').on('change', function () {
   params = document.location.href.split('/');
 
-  if (typeof params[5] == 'undefined')
-    params[5] = 0;
-  if (typeof params[6] == 'undefined')
-    params[6] = 0;
+  if (typeof params[5+folders] == 'undefined')
+    params[5+folders] = 0;
+  if (typeof params[6+folders] == 'undefined')
+    params[6+folders] = 0;
 
-  document.location.href = '/curso/' + this.value + '/' + params[5] + '/' + params[6];
+  document.location.href =  pathname + '/curso/' + this.value + '/' + params[5+folders] + '/' + params[6+folders];
 });
 
 // menus 
 $('#select-type').on('change', function () {
   params = document.location.href.split('/');
 
-  if (typeof params[5] == 'undefined')
-    params[5] = 0;
-  if (typeof params[6] == 'undefined')
-    params[6] = 0;
+  if (typeof params[5+folders] == 'undefined')
+    params[5+folders] = 0;
+  if (typeof params[6+folders] == 'undefined')
+    params[6+folders] = 0;
 
-  document.location.href = '/curso/' + params[4] + '/' + this.value + '/' + params[6];
+  document.location.href = pathname + '/curso/' + params[4+folders] + '/' + this.value + '/' + params[6+folders];
 });
 
 
 $('#select-year').on('change', function () {
   params = document.location.href.split('/');
 
-  if (typeof params[5] == 'undefined')
-    params[5] = 0;
-  if (typeof params[6] == 'undefined')
-    params[6] = 0;
+  if (typeof params[5+folders] == 'undefined')
+    params[5+folders] = 0;
+  if (typeof params[6+folders] == 'undefined')
+    params[6+folders] = 0;
 
-  document.location.href = '/curso/' + params[4] + '/' + params[5] + '/' + this.value;
+  document.location.href = pathname + '/curso/' + params[4+folders] + '/' + params[5+folders] + '/' + this.value;
 });
 
 // lazyloading

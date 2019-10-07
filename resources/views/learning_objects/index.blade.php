@@ -71,7 +71,7 @@
 
 
 @section('scripts')
-    <script src="/js/ldi.list.min.js"></script>
+    <script src="{{config('app.url')}}/js/ldi.list.min.js"></script>
 
 	<script>
 		

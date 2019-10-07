@@ -38,7 +38,7 @@
           <div class="row">
             <div class="miniatura col-xs-12 col-md-6">
 		    <div class="img" style="overflow:hidden">
-		<img src="/covers/{{ $learning_object->cover }}">
+		<img src="{{ config('app.url') }}/covers/{{ $learning_object->cover }}">
                 <span>{{ $learning_object->cover }}</span>
               </div>
             </div>

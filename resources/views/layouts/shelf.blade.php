@@ -53,10 +53,10 @@
 
           <!--<div class="collapse navbar-collapse" id="menu-topo">-->
           <ul>
-            <li class="navbar-text"><a href="/" title="Ir para Início">
+            <li class="navbar-text"><a href="{{config('app.url')}}" title="Ir para Início">
                 <span class="fa fa-home" aria-hidden="true"></span> Início</a>
             </li>
-            <li class="navbar-text externo"><a href="http://www.eadufes.org/" title="Abrir sítio da Sead em nova aba" target="_blank">
+            <li class="navbar-text externo"><a href="{{config('app.url')}}" title="Abrir sítio da Sead em nova aba" target="_blank">
                 <span class="fa fa-info-circle" aria-hidden="true"></span> EAD na Ufes</a>
             </li>
             <li class="navbar-text externo"><a href="https://aluno.ufes.br/" title="Abrir Portal do Aluno em nova aba" target="_blank">
@@ -83,14 +83,14 @@
 
             <div id="logo">
               @if ($current->course == 'Biologia')
-              <a href="/" title="Ir para Início"><img alt="Sead Ufes" src="{{ asset('/icons-local/sead-ufes-preto.svg') }}"></a>
+              <a href="{{config('app.url')}}" title="Ir para Início"><img alt="Sead Ufes" src="{{ asset('/icons-local/sead-ufes-preto.svg') }}"></a>
               @else
-              <a href="/" title="Ir para Início"><img alt="Sead Ufes" src="{{ asset('/icons-local/sead-ufes.svg') }}"></a>
+              <a href="{{config('app.url')}}" title="Ir para Início"><img alt="Sead Ufes" src="{{ asset('/icons-local/sead-ufes.svg') }}"></a>
               @endif
             </div>
 
             <div class="rotulo">
-              <a href="/" title="Ir para Início"><h1>Acervo Digital</h1></a>
+              <a href="{{config('app.url')}}" title="Ir para Início"><h1>Acervo Digital</h1></a>
               <h2>{{ $current->course }}</h2>
             </div>
           </div>

@@ -73,12 +73,12 @@
           <div class="collapse navbar-collapse" id="menu-topo">-->
           <ul>
             <li class="navbar-text">
-              <a href="/" title="Ir para Início">
+              <a href="{{config('app.url')}}" title="Ir para Início">
                 <span class="fa fa-home" aria-hidden="true"></span> Início
               </a>
             </li>
             <li class="navbar-text externo">
-              <a href="http://www.eadufes.org/" title="Abrir sítio da Sead em nova aba" target="_blank">
+              <a href="{{config('app.url')}}" title="Abrir sítio da Sead em nova aba" target="_blank">
                 <span class="fa fa-info-circle" aria-hidden="true"></span> EAD na Ufes
               </a>
             </li>
@@ -114,7 +114,7 @@
               @if (Request::url() === 'http://acervodigital.eadufes.org')
               <img alt="Sead Ufes" src="{{asset('/icons-local/sead-ufes.svg')}}">
               @else
-              <a href="/" title="Ir para Início">  <!-- link para home  -->
+              <a href="{{config('app.url')}}" title="Ir para Início">  <!-- link para home  -->
                 <img alt="Sead Ufes" src="{{asset('/icons-local/sead-ufes.svg')}}">
               </a>
               @endif

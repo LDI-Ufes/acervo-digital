@@ -4,7 +4,7 @@
 
 	<div class="breadcrumbs">
 		<div class="container">
-			<small><a href="/">Acervo EAD</a> &raquo; Sobre </small>
+			<small><a href="{{config('app.url')}}">Acervo EAD</a> &raquo; Sobre </small>
 		</div>
 	</div>
 

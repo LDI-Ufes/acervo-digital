@@ -100,7 +100,7 @@
       <div class="breadcrumbs">
         <div class="container">
           <small>
-            <a href="/">Acervo EAD</a> &raquo; {{  str_limit($current->course, 20) }}
+            <a href="{{config('app.url')}}">Acervo EAD</a> &raquo; {{  str_limit($current->course, 20) }}
           </small>
         </div>
       </div>

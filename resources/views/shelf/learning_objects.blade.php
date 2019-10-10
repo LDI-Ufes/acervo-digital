@@ -275,7 +275,7 @@
 // modais
 
 const app_url = new URL("{{config('app.url')}}")
-const pathname = app_url.pathname
+const pathname = app_url.pathname !== "/" ? app_url.pathname : "" 
 const folders = pathname.split('/').filter(x=>x!=="").length
 
 $('.modal').on('shown.bs.modal', function () {

@@ -320,7 +320,7 @@ async function imageExists(url){
   try {
     image = await fetch(url, { method: 'HEAD' })
   } catch (error) {
-    consle.log(`Imagem ${url} não foi encontrada.`)
+    console.log(`Imagem ${url} não foi encontrada.`)
   }
 
   return !!image.ok

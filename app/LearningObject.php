@@ -10,7 +10,9 @@ class LearningObject extends Model
 
 	public function course()
 	{
-		return $this->belongsTo('App\Course');
+		return $this
+      ->belongsToMany('App\Course', 'courses_learning_objects')
+      ->withTimestamps();
 	}
 
 	public function type()

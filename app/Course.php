@@ -10,9 +10,14 @@ class Course extends Model
 	use Sluggable;
 	protected $table = "courses";
 
-	public function learning_objects()
+  // the use of a plural name here has to be thought about
+  // they mix plural and singular in the laracast course
+  // should i do the same? should i avoid it?
+	public function learning_objects() 
 	{
-		return $this->hasMany('App\LearningObject');
+		return $this
+      ->belongsToMany('App\LearningObject', 'courses_learning_objects')
+      ->withTimestamps();
 	}
 
 	public function type()

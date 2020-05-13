@@ -37,7 +37,7 @@
 <div class="form-group {{ $errors->has('bg_color') ? 'has-error' : ''}}">
 	<label for="bg_color" class="col-md-2 control-label">Cor de fundo</label>
 	<div class="col-md-10">
-		<input class="form-control" name="bg_color" type="text" id="bg_color" value="{{ old('bg_color', isset($course) ? $course->bg_color : null) }}" maxlength="7">
+		<input class="form-control" name="bg_color" type="text" id="bg_color" value="{{ old('bg_color', isset($course) ? $course->bg_color : '#2E2E2E') }}" maxlength="7">
 		{!! $errors->first('bg_color', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>
@@ -45,7 +45,7 @@
 <div class="form-group {{ $errors->has('fg_color') ? 'has-error' : ''}}">
 	<label for="fg_color" class="col-md-2 control-label">Cor da fonte</label>
 	<div class="col-md-10">
-		<input class="form-control" name="fg_color" type="text" id="fg_color" value="{{ old('fg_color', isset($course) ? $course->fg_color : null) }}" maxlength="7">
+		<input class="form-control" name="fg_color" type="text" id="fg_color" value="{{ old('fg_color', isset($course) ? $course->fg_color : '#333333') }}" maxlength="7">
 		{!! $errors->first('fg_color', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>
@@ -53,7 +53,7 @@
 <div class="form-group {{ $errors->has('aux_color') ? 'has-error' : ''}}">
 	<label for="aux_color" class="col-md-2 control-label">Cor auxiliar</label>
 	<div class="col-md-10">
-		<input class="form-control" name="aux_color" type="text" id="aux_color" value="{{ old('aux_color', isset($course) ? $course->aux_color : null) }}" maxlength="7">
+		<input class="form-control" name="aux_color" type="text" id="aux_color" value="{{ old('aux_color', isset($course) ? $course->aux_color : '#415F72') }}" maxlength="7">
 		{!! $errors->first('aux_color', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>

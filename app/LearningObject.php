@@ -8,7 +8,7 @@ class LearningObject extends Model
 {
 	protected $table = "learning_objects";
 
-	public function course()
+    public function course()
 	{
 		return $this
       ->belongsToMany('App\Course', 'courses_learning_objects')

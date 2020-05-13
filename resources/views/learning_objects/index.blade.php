@@ -43,17 +43,19 @@
                                 <th class="icone"></th>
                             </tr>
                         </thead>
-                        <tbody class="list">
-                          @foreach( $all_learning_objects as $learning_object)
-                          <tr>
-				            <td class="box-curso" style="background-color:{{ $learning_object->course->bg_color }}" title="{{ $learning_object->course->name }}">{{ $learning_object->course->short }}</td>
-                         	<td class="table-title"  >{{ $learning_object->title }}</td>
-	                        <td class="table-author" >{{ $learning_object->author }}</td>
-        	                <td><a href="{{ route('learning_objects.show', $learning_object->id) }}"><i class="fa fa-eye"></i></a></td>
-                 	        <td><a href="{{ route('learning_objects.edit', $learning_object->id) }}"><i class="fa fa-edit"></i></a></td>
-                          </tr>
-                          @endforeach
-                        </tbody>
+
+                          <tbody class="list">
+                            @foreach( $all_learning_objects as $learning_object)
+                              <tr>
+                                <td class="box-curso" style="color:black" title="cursos relacionados">{{ $learning_object->course->pluck('short')->implode('/') }}</td>
+                                
+                                <td class="table-title"  >{{ $learning_object->title }}</td>
+                                <td class="table-author" >{{ $learning_object->author }}</td>
+                                <td><a href="{{ route('learning_objects.show', $learning_object->id) }}"><i class="fa fa-eye"></i></a></td>
+                                <td><a href="{{ route('learning_objects.edit', $learning_object->id) }}"><i class="fa fa-edit"></i></a></td>
+                              </tr>
+                            @endforeach
+                          </tbody>
                     </table>
 
 			<div class="pagination-container">

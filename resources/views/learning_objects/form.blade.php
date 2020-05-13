@@ -79,8 +79,8 @@
 	<label for="course_id" class="col-md-2 control-label">Curso</label>
 	<div class="col-md-10">
 
-		<select class="form-control" name="course_id" id="course_id">
-			@foreach($courses  as $course)
+		<select class="form-control"  id="course_id" name="course_id[]" multiple>
+			@foreach($courses as $course)
 				@if (isset($learning_object) and ($learning_object->course_id == $course->id))
 					<option value="{{$course->id}}" data-module-number="{{$course->modules}}" selected>{{$course->name}} {{ $course->active ? "" : "(inativo)"}}</option>
 				@else

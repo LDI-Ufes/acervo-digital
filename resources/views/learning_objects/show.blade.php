@@ -19,16 +19,16 @@
 <section class="content visualizarLivro">
   <div class="row">
     <section class="col-xs-12">
-      <div class="box box-ldi" title="{{ $learning_object->course->name }}">
+      <div class="box box-ldi" title="{{ $learning_object->course->pluck('short')->implode(' ') }}">
         <div class="box-header">
-          <h3 class="box-title">Objeto de {{ $learning_object->course->name }}</h3>
+          <h3 class="box-title">Objeto de {{ $learning_object->course->pluck('short')->implode(' ') }}</h3>
         </div>
         <div class="box-body">
           <div class="row">
             <div class="col-md-12">
               <table>
                 <tr>
-                  <td class="box-curso" title="{{ $learning_object->course->name }}"></td>
+                  <td class="box-curso" title="{{ $learning_object->course->pluck('short')->implode(' ') }}"></td>
                   <td></td>
                   <td></td>
                 </tr>
@@ -44,7 +44,7 @@
             </div>
             <div class="ficha col-xs-12 col-md-6">
               <ul>
-                <li><b>Curso:</b> {{ $learning_object->course->name }}</li>
+                <li><b>Curso:</b> {{ $learning_object->course->pluck('short')->implode(' ') }}</li>
                 <!--<li><b>Módulo:</b> {{ $learning_object->module }}</li>-->
                 <li><b>Título:</b> {{ $learning_object->title }}</li>
                 <li><b>Autor:</b> {{ $learning_object->author }}</li>

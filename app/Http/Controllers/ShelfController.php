@@ -126,8 +126,7 @@ class ShelfController extends Controller
 
 		$current->course = $course_info->name;
 
-
-    $current->years_by_course = LearningObject::where('course_id', '=', $course_info->id)
+    $current->years_by_course = $course_info->learning_objects
       ->pluck('year')
       ->sort()
       ->unique()

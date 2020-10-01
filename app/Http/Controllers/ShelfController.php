@@ -192,6 +192,15 @@ class ShelfController extends Controller
 		return view('shelf.learning_objects_embed', compact('learning_objects', 'current', 'course_info'));	
 	}
 
+  public function objectDetails($id) {
+    try {
+      $learning_object = LearningObject::findOrFail($id);
+      return view('shelf.object_details', compact('learning_object'));
+    } catch (\Exception $e) {
+      return "Não encontrado.";
+    }
+  }
+
 	public function courses()
 	{
 		$courses = Course::where('active', '=', 1)->orderBy('name', 'asc')->get()->groupBy('type_id');

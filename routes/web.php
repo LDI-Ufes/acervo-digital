@@ -41,6 +41,9 @@ Route::get('/shelf/course/{course}/type/{type}/year/{year}', 'ShelfController@le
 //Route::get('/shelf/courses', 'ShelfController@courses');
 Route::get('/', 'ShelfController@courses');
 
+// TODO: localizar via SLUG (e criar isso no banco, controller, interface, etc, etc)
+Route::get('/materiais/{id}', 'ShelfController@objectDetails');
+
 Route::get('/sobre', 'ShelfController@about');
 
 Route::get('/about', function () {

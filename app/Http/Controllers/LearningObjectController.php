@@ -115,7 +115,7 @@ class LearningObjectController extends Controller
 
 		    $learning_object->cover = $file_name;
 	    } else {
-	    	$learning_object->cover = "default.jpg";
+	    	$learning_object->cover = "_default.jpg";
 	    }
 
 	    $learning_object->save();

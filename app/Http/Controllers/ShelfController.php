@@ -205,8 +205,9 @@ class ShelfController extends Controller
 	{
 		$courses = Course::where('active', '=', 1)->orderBy('name', 'asc')->get()->groupBy('type_id');
 		$inactive_courses =  Course::where('active', '=', 0)->orderBy('name', 'asc')->get();
+    $last_objects = LearningObject::orderBy('created_at', 'desc')->take(4)->get();
 		
-		return view('shelf.courses', compact('courses', 'inactive_courses'));
+		return view('shelf.courses', compact('courses', 'inactive_courses', 'last_objects'));
 	}
 
 	public function about()

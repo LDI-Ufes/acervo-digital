@@ -194,6 +194,31 @@
 			</div>
 		@endif -->
 
+    <section id="materiais-recentes">
+      <div class="container">
+        <h2>Materiais Recentes (exemplo, vindo do db)</h2>
+
+        <div>
+
+        @forelse($last_objects as $item)
+        <ul>
+          <li><b>Curso: </b> {{ $item->course->pluck('short')->implode(' ') }}</li>
+          <li><b>Título:</b> {{ $item->title }}</li>
+          <li><b>Autor:</b> {{ $item->author }}</li>
+          <li><b>Ano:</b> {{ $item->year }}</li>
+          <li><b>Endereço</b> {{ $item->link }}</li>
+          <li><img src="/covers/{{ $item->cover }}" style="width:15%;heigth:15%"></li>
+        </ul>
+
+        @empty
+        <div>Não há materiais cadastrados ainda.</div>
+        @endforelse
+        
+          
+        </div>
+      </div>
+    </section>
+
 
 	</div>
 

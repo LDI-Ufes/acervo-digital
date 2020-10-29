@@ -8,7 +8,7 @@ class LearningObject extends Model
 {
 	protected $table = "learning_objects";
 
-    public function course()
+  public function course()
 	{
 		return $this
       ->belongsToMany('App\Course', 'courses_learning_objects')
@@ -19,4 +19,11 @@ class LearningObject extends Model
 	{
 		return $this->belongsTo('App\ObjectType');
 	}
+
+  public function tags()
+  {
+    return $this
+      ->belongsToMany('App\Tag', 'learning_objects_tags')
+      ->withTimeStamps();
+  }
 }

@@ -88,27 +88,6 @@
 
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
-
-	      {{--
-
-              <li class="header">TIPOS DE CURSO</li>
-              <li><a href="{!! url('/course_types') !!}"><i class="fa fa-university"></i> Listagem de Tipos de Curso</a></li>
-              <li><a href="{!! url('/course_types/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar Tipo de Curso</a></li>
-	      
-	      <li class="header">TIPOS DE OBJETO</li>
-              <li><a href="{!! url('/object_types') !!}"><i class="fa fa-university"></i> Listagem de Tipo de Objetos</a></li>
-              <li><a href="{!! url('/object_types/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar Tipo de Objeto</a></li>
-
-	      <li class="header">CURSOS</li>
-              <li><a href="{!! url('/courses') !!}"><i class="fa fa-university"></i> Listagem de Cursos</a></li>
-              <li><a href="{!! url('/courses/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar Curso</a></li>
-
-	      <li class="header">OBJETOS DE APRENDIZAGEM</li>
-              <li><a href="{!! url('/learning_objects') !!}"><i class="fa fa-book"></i> Listagem de Objetos</a></li>
-              <li><a href="{!! url('/learning_objects/create') !!}"><i class="fa fa-plus-circle"></i> Cadastrar Objetos</a></li>
-
-	      --}}
-
               <li class="header">TIPOS DE CURSO</li>
               <li><a href="{{ action('CourseTypeController@index') }}"><i class="fa fa-university"></i> Listagem de Tipos de Curso</a></li>
               <li><a href="{{ action('CourseTypeController@create') }}"><i class="fa fa-plus-circle"></i> Cadastrar Tipo de Curso</a></li>
@@ -116,6 +95,11 @@
 	      <li class="header">TIPOS DE OBJETO</li>
               <li><a href="{{ action('ObjectTypeController@index') }}"><i class="fa fa-university"></i> Listagem de Tipo de Objetos</a></li>
               <li><a href="{{ action('ObjectTypeController@create') }}"><i class="fa fa-plus-circle"></i> Cadastrar Tipo de Objeto</a></li>
+
+
+	      <li class="header">TAGS</li>
+              <li><a href="{{ action('TagController@index') }}"><i class="fa fa-university"></i> Listagem de Tags</a></li>
+              <li><a href="{{ action('TagController@create') }}"><i class="fa fa-plus-circle"></i> Cadastrar Tags</a></li>
 
 	      <li class="header">CURSOS</li>
               <li><a href="{{ action('CourseController@index') }}"><i class="fa fa-university"></i> Listagem de Cursos</a></li>

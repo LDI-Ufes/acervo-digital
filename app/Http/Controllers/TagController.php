@@ -32,7 +32,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+      return view('tags.create');      
     }
 
     /**
@@ -43,7 +43,13 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $tag = new Tag;
+
+      $tag->name = $request->name;
+
+      $tag->save();
+
+      return redirect(route('tags.index'));
     }
 
     /**
@@ -56,7 +62,7 @@ class TagController extends Controller
     {
       $tag = Tag::findOrFail($id);
       
-      return view('tags.view', compact('tag'));
+      return view('tags.show', compact('tag'));
     }
 
     /**
@@ -65,9 +71,11 @@ class TagController extends Controller
      * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tag $tag)
+    public function edit($id)
     {
-        //
+      $tag = Tag::findOrFail($id);
+
+      return view('tags.edit', compact('tag'));
     }
 
     /**
@@ -77,9 +85,15 @@ class TagController extends Controller
      * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tag $tag)
+    public function update(Request $request, $id)
     {
-        //
+      $tag = Tag::findOrFail($id);
+
+      $tag->name = $request->name;
+
+      $tag->save();
+      
+      return redirect(route('tags.show', $id));
     }
 
     /**
@@ -88,8 +102,12 @@ class TagController extends Controller
      * @param  \App\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tag $tag)
+    public function destroy($id)
     {
-        //
+      $tag = Tag::findOrFail($id);
+
+      $tag->delete();
+
+      return redirect(route('tags.index'));
     }
 }

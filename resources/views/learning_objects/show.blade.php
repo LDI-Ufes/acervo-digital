@@ -54,6 +54,7 @@
                   <b>Resumo</b> <br>
                   {{ $learning_object->summary }}
                 </li>
+                <li><b>Tags:</b> {{ $learning_object->tags()->pluck('name')->implode(' / ') }} </li>
               </ul>
             </div>
           </div>

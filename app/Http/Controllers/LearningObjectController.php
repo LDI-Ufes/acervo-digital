@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Course;
 use App\ObjectType;
 use App\LearningObject;
+use App\Tag;
+
 use Intervention\Image\ImageManagerStatic as Image;
 
 
@@ -44,8 +46,9 @@ class LearningObjectController extends Controller
     {
 	    $courses = Course::orderBy('name', 'asc')->get();
 	    $all_types = ObjectType::orderBy('name', 'asc')->get();
+      $all_tags = Tag::orderBy('name', 'asc')->get();
 
-	    return view('learning_objects.create', compact('courses', 'all_types'));
+	    return view('learning_objects.create', compact('courses', 'all_types', 'all_tags'));
     }
 
     /**
@@ -122,6 +125,8 @@ class LearningObjectController extends Controller
 
       $learning_object->course()->attach($request->course_id);
 
+      $learning_object->tags()->attach($request->tag_id);
+
 	    return redirect(route('learning_objects.index'));
     }
 
@@ -149,8 +154,9 @@ class LearningObjectController extends Controller
 	    $learning_object = LearningObject::findOrFail($id);
 	    $courses = Course::orderBy('name', 'asc')->get();
 	    $all_types = ObjectType::orderBy('name', 'asc')->get();
+      $all_tags= Tag::orderBy('name', 'asc')->get();
 
-	    return view('learning_objects.edit', compact('learning_object', 'courses', 'all_types'));
+	    return view('learning_objects.edit', compact('learning_object', 'courses', 'all_types', 'all_tags'));
     }
 
     /**
@@ -222,6 +228,8 @@ class LearningObjectController extends Controller
 	    $learning_object->save();
 
       $learning_object->course()->sync($request->course_id);
+
+      $learning_object->tags()->sync($request->tag_id);
 
 	    return redirect(route('learning_objects.show', $id));
     }

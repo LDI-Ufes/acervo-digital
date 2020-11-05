@@ -91,6 +91,23 @@
 	</div>
 </div>
 
+<div class="form-group {{ $errors->has('tag_id') ? 'has-error' : ''}}">
+	<label for="tag_id" class="col-md-2 control-label">Tag</label>
+	<div class="col-md-10">
+
+		<select class="form-control"  id="tag_id" name="tag_id[]" multiple>
+			@foreach($all_tags as $tag)
+					<option value="{{$tag->id}}" 
+            {{ ( isset($learning_object) && $learning_object->tags->contains('id', $tag->id) ) ? "selected" : "" }}
+          > {{$tag->name}} </option>
+			@endforeach
+		</select>
+
+		{!! $errors->first('tag_id', '<p class="help-block">:message</p>') !!}
+	</div>
+</div>
+
+
 <div class="form-group {{ $errors->has('module') ? 'has-error' : ''}}">
 	<label for="module" class="col-md-2 control-label">Módulo</label>
 	<div class="col-md-10">

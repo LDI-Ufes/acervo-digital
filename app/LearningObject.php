@@ -2,10 +2,12 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
 class LearningObject extends Model
 {
+  use Sluggable;
 	protected $table = "learning_objects";
 
   public function course()
@@ -26,4 +28,14 @@ class LearningObject extends Model
       ->belongsToMany('App\Tag', 'learning_objects_tags')
       ->withTimeStamps();
   }
+
+  public function sluggable()
+  {
+    return [
+    'slug' => [
+      'source' => 'title'
+      ]
+    ];
+  }
+
 }

@@ -1,0 +1,223 @@
+.pagina-material {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+
+	.breadcrumb {
+		flex-basis: 100%;
+		line-height: 2em;
+	}
+
+	.conteudo-material {
+		order: 2;
+		margin-bottom: 72px;
+		max-width: 100%;
+
+		.tipo {
+			color: $azul-medio;
+			font-weight: 500;
+			margin: 0.5rem 0;
+			font-size: 1rem;
+
+			i {
+				margin-right: 6px;
+			}
+		}
+
+		h1 {
+			font-size: 24px;
+			color: $azul-principal;
+			line-height: 1.2em;
+			margin: 0.8rem 0 1.5rem;
+			font-weight: $semi-bold;
+		}
+
+		p {
+			font-weight: $light;
+			margin: 0.5rem 0;
+			line-height: 1.4;
+		}
+
+		.autor{
+			font-weight: $regular;
+			font-size: 1.15rem;
+		}
+
+		.acesso {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			margin: 4rem 0 2rem;
+
+			.btn-primario {
+				margin-bottom: 1.2rem;
+				margin-right: 1rem;
+
+
+				&:last-of-type {
+					margin-bottom: 0;
+					margin-right: 0;
+				}
+
+				i {
+					margin-right: 0.5rem;
+				}
+			}
+		}
+
+		h2 {
+			font-size: 1.1rem;
+			margin: 1rem 0;
+			color: $azul-medio;
+		}
+
+		.caixa-info {
+			min-height: 56px;
+			padding: 0 1.2rem;
+			background: $azul-extraclaro;
+			border-radius: 3px;
+			border: 1px solid rgba(0, 0, 0, 0.05);
+			box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+			margin: 2rem 0 3rem;
+
+			h2 {
+				text-transform: uppercase;
+				font-variant: small-caps;
+				font-size: 1rem;
+				color: $azul-principal;
+
+				i {
+					margin-right: 0.5rem;
+				}
+			}
+
+			p {
+				margin: 1.5rem 0;
+				font-size: 1rem;
+
+				a {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.tags {
+			margin: 2rem 0;
+			flex-wrap: wrap;
+			font-size: 14px;
+			display: flex;
+
+			> div {
+				margin: 0.5rem 0;
+				width: 100%;
+			}
+
+			.tag {
+				font-size: 12px;
+				margin-bottom: .5rem;
+				display: inline-block;
+			}
+		}
+
+		.creditos-licenca {
+			margin: 3rem 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			h2 {
+				margin-bottom: 1rem;
+				color: black;
+			}
+
+			img {
+				display: block;
+				height: 42px;
+				max-width: 156px;
+				margin-bottom: 1rem;
+			}
+
+			p {
+				width: 100%;
+
+				strong {
+					font-weight: 500;
+				}
+			}
+		}
+	}
+
+	.capa-material {
+		order: 1;
+		height: 140px;
+		width: 100%;
+		object-fit: cover;
+		object-position: center;
+		border-radius: 2px;
+		margin: 1.5rem 0;
+	}
+
+	@media only screen and (min-width: 562px) {
+		.conteudo-material {
+			h1 {
+				font-size: 2rem;
+			}
+
+			h2 {
+				font-size: 1.25rem;
+			}
+
+			.tags {
+				margin-bottom: 3rem;
+
+				> div {
+					width: 50%;
+				}
+
+				.tag {
+					font-size: 14px;
+				}
+			}
+		}
+
+		.capa-material {
+			height: 200px;
+			margin-bottom: 3rem;
+		}
+	}
+
+	@media only screen and (min-width: 864px) {
+		flex-direction: row;
+
+		.conteudo-material {
+			margin-bottom: 72px;
+			width: 60%;
+			max-width: 655px;
+			margin: 2rem 0 5rem;
+
+			p {
+				font-size: 1.15rem;
+			}
+
+			.autor{
+				font-size: 1.2rem;
+			}
+
+			h1 {
+				font-size: 3rem;
+			}
+
+			.creditos-licenca{
+				margin: 4rem 0;
+			}
+		}
+
+		.capa-material {
+			order: 2;
+			height: 680px;
+			width: 30%;
+			max-width: 360px;
+		}
+	}
+}

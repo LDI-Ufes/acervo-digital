@@ -1,0 +1,214 @@
+@font-face {
+	font-family: "Font Awesome 5 Free";
+	src: url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+
+%fontAwesome{
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 700;
+	font-style: normal ;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src: url('firasans-regular-webfont.woff2') format('woff2'),
+			 url('firasans-regular-webfont.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src: url('firasans-semibold-webfont.woff2') format('woff2'),
+			 url('firasans-semibold-webfont.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src: url('firasans-semibolditalic-webfont.woff2') format('woff2'),
+			 url('firasans-semibolditalic-webfont.woff') format('woff');
+	font-weight: 600;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src: url('firasans-bold-webfont.woff2') format('woff2'),
+			 url('firasans-bold-webfont.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src: url('firasans-light-webfont.woff2') format('woff2'),
+			 url('firasans-light-webfont.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src: url('firasans-medium-webfont.woff2') format('woff2'),
+			 url('firasans-medium-webfont.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+$sans: "Fira Sans", sans-serif;
+
+html {
+	font-size: 16px;
+}
+
+body {
+	overflow-x: hidden;
+	font-size: 1rem;
+}
+
+*{
+	font-family: $sans;
+}
+
+*:focus {
+	outline: none;
+}
+
+.focus-visible {
+	box-shadow: 0 0 0 2px lighten($laranja-medio, 20%);
+}
+
+.somente-leitura {
+	position: absolute;
+	left: -999rem;
+}
+
+.btn-drop .fas.expandido::before {
+	content: "\f077";
+}
+
+.container {
+	padding: 0 20px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+main {
+	min-height: calc(100vh - 107px - 240px);
+}
+
+h1,
+h2,
+h3 {
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.btn-primario {
+	display: block;
+	height: 42px;
+	text-align: center;
+	background: $laranja-medio;
+	color: $branco;
+	padding: 12px 20px;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 1rem;
+	border-radius: 2px;
+
+	&:hover {
+		background: $laranja-escuro;
+	}
+}
+
+a {
+	color: $laranja-medio;
+}
+
+.tag {
+	font-size: 10px;
+	font-weight: 600;
+	padding: 3px 8px;
+	background: $azul-claro;
+	color: $azul-principal;
+	margin-right: 6px;
+	border-radius: 2px;
+
+	@media only screen and (min-width: 562px) {
+		font-size: 12px;
+	}
+}
+
+@media only screen and (min-width: 760px) {
+	.container {
+		padding: 0 32px;
+	}
+}
+
+@media only screen and (min-width: 864px) {
+	.btn-drop .fas.expandido::before {
+		content: "\f078";
+	}
+}
+
+@media only screen and (min-width: 1140px) {
+	h1,
+	h2,
+	h3 {
+		font-size: 40px;
+		font-weight: 500;
+	}
+
+	.container {
+		max-width: 1140px;
+		padding: 0 20px;
+		margin: 0 auto;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.container {
+		padding: 0px;
+	}
+}
+
+.breadcrumb {
+	background: none;
+	padding: 0;
+	font-size: 0.8rem;
+	margin: 3rem 0 1.5rem;
+
+	a {
+		color: $azul-medio;
+		font-weight: 500;
+
+		&:hover {
+			border-bottom-color: $azul-medio;
+		}
+	}
+
+	i {
+		color: $laranja-principal;
+		font-weight: 700;
+		font-size: 0.6rem;
+		padding: 0.3rem 0.3rem 0;
+	}
+
+	span:first-of-type {
+		margin-right: 0.3rem;
+		width: 100%;
+
+		@media screen and (min-width: 400px) {
+			display: inline-block;
+			width: fit-content;
+		}
+	}
+
+	span:last-of-type {
+		color: $azul-principal;
+	}
+}

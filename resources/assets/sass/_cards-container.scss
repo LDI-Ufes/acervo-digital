@@ -1,0 +1,46 @@
+.container-cards {
+	margin-top: 24px;
+
+	.card-material {
+		margin: 24px 0;
+	}
+}
+
+@media only screen and (min-width: 562px) {
+	.container-cards {
+		margin-left: -12px;
+		margin-right: -12px;
+
+		&::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		.card-material {
+			float: left;
+			width: calc(50% - 24px);
+			margin: 12px 12px;
+		}
+	}
+}
+
+@media only screen and (min-width: 864px) {
+	.container-cards {
+		margin-top: 32px;
+
+		.card-material {
+			width: calc(33% - 24px);
+			margin: 12px 13.1px;
+		}
+	}
+}
+
+@media only screen and (min-width: 1140px) {
+	.container-cards {
+		.card-material {
+			width: calc(25% - 24px);
+			margin: 12px;
+		}
+	}
+}

@@ -2,47 +2,62 @@
 
 @section('content')
 
+
+<main class="pagina-material container">
+
   <section class="breadcrumb">
-    Você está em: <a href="#">???</a> <i class="fas fa-greater-than"></i><span>{{ $learning_object->title }}</span>
+    Você está em: 
+    <!-- Tentar reconhecer por onde o usuário -->
+    <!-- <a href="#">Filosofia e Psicanálise</a><i class="fas fa-greater-than"></i> -->
+    <span>O Desejo nos Pensamentos de Sartre e Lacan</span>
   </section>
 
   <div class="conteudo-material">
+
     <span class="tipo"> {{ $learning_object->type->name  }} </span>
+
+    <h1 class="titulo"> {{ $learning_object->title }} </h1>
+    <p class="autor"> {{ $learning_object->author }} </p>
+    <p class="edicao"> {{ $learning_object->year }} </p>
+
+    <!-- <p><strong>Resumo</strong><br>{{ $learning_object->summary }}</p> -->
+
+    <div class="acesso">
+      <a class="btn-primario" href="{{ $learning_object->link }}" target="_blank"><i class="fa fa-file-pdf"></i>PDF Interativo</a>
+    </div>
+
+    <blockquote class="caixa-info">
+      <h2><i class="fa fa-info-circle"></i>Instruções de acesso</h2>
+      <p>Para melhor visualização do PDF Interativo use o programa Adobe Acrobat (<a href="#">clique aqui para baixar</a>).</p>
+      <p>Acesse diretamente do navegador, com mais opções de interação e leia confortavelmente em qualquer dispositivo.</p>
+    </blockquote>
+
+    <div class="tags">
+        <div class="tags-curso">
+            <h2>Cursos associados</h3>
+            <span class="tag">{{ $learning_object->course->pluck('short')->implode(' ') }}</span>
+            <!-- <span class="tag">Filosofia</span> -->
+        </div>
+        <div class="tags-tipo">
+            <h2>Tags</h3>
+            <span class="tag">{{ $learning_object->tags->pluck('name')->implode(' / ') }}</span>
+            <span class="tag">PDF Interativo</span>
+        </div>
+    </div>
+  
+
+      <div class="creditos-licenca">
+          <h2>Licença CC-BY-NC-SA</h2>
+          <img src="img/cc.png" alt="">
+          <p><strong>Atribuição-NãoComercial-CompartilhaIgual</strong></p>
+          <p>Esta licença permite que outros remixem, adaptem e criem a partir do seu trabalho para fins não comerciais, desde que atribuam o devido crédito e que licenciem as novas criações sob termos idênticos.</p>
+      </div>
+
   </div>
 
-  <h1 class="titulo"> {{ $learning_object->title }} </h1>
-  <p class="autor"> {{ $learning_object->author }} </p>
-  <p class="edicao"> Edição ??? (não há no banco) </p>
+  <img src="/covers/{{ $learning_object->cover }}" alt="" class="capa-material">
 
-  <div class="acesso">
-    <a class="btn-primario" href="{{ $learning_object->link }}" target="_blank"><i class="fa fa-file-pdf"></i>PDF? Interativo? Livro?</a>
-  </div>
-
-  <blockquote class="caixa-info">
-    <h2>Inscruções de acesso</h2>
-    <p>As instruções de acesso vão aqui.</p>
-  </blockquote>
-
-
-  <hr />
-  <hr />
-
-  <div>
-    <!-- alguns exemplos de como pegar as informações do banco de dados -->
-    <ul>
-      <li><b>Curso:</b> {{ $learning_object->course->pluck('short')->implode(' ') }}</li>
-      <li><b>Título:</b> {{ $learning_object->title }}</li>
-      <li><b>Autor:</b> {{ $learning_object->author }}</li>
-      <li><b>Ano:</b> {{ $learning_object->year }}</li>
-      <li><b>Endereço:</b> {{ $learning_object->link }}</li>
-      <li><b>Tipo de Material:</b> {{ $learning_object->type->name  }} </li>
-      <li>
-        <b>Resumo</b> <br>
-        {{ $learning_object->summary }}
-      </li>
-      <li><b>Tags:</b> {{ $learning_object->tags->pluck('name')->implode(' / ') }}  </li>
-    </ul>
-  </div>
+</main>
 
 @endsection
 

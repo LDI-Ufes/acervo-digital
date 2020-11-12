@@ -15,39 +15,17 @@
     <title>{{ config('app.name', 'Estante Virtual') }}</title>
 
     <!-- Font PT Sans -->
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
-
-    <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap-theme.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
 
     <!-- Books CSS -->
     <link href="{{asset("css/shelf.css")}}" rel="stylesheet">
+    <link href="{{asset("css/slick.css")}}" rel="stylesheet">
+    <link href="{{asset("css/slick-theme.css")}}" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet">
-
-    <!-- Bootstrap Select -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 
     @yield('styles')
-
-    <style>
-      .header-top, .footer{
-        background-color: #193e70;
-      }
-
-      .header-top a:hover, .header-top a:focus{
-        background-color: #0e64ac;
-      }
-
-      .header-main, .footer-main{
-        background-color: #0e64ac;
-      }
-
-      footer{
-        background: #193e70;
-      }
-    </style>
 
     <!-- Scripts -->
     <script>
@@ -59,94 +37,88 @@
   </head>
 
   <body>
-    <header>
-      <div class="header-top">
-        <!--<nav class="navbar">-->
-        <div class="container">
-          <!--<div class="navbar-header">
+  <header>
 
-                <button type="button" class="navbar-toggle collapsed navbar-text" data-toggle="collapse" data-target="#menu-topo" aria-expanded="false">
-                      <span class="fa fa-bars" aria-hidden="true" alt="Menu expansível"></span>
-                </button>
-          </div>
-
-          <div class="collapse navbar-collapse" id="menu-topo">-->
-          <ul>
-            <li class="navbar-text">
-              <a href="/" title="Ir para Início">
-                <span class="fa fa-home" aria-hidden="true"></span> Início
-              </a>
+    <div class="ufes-navbar">
+      <div class="container">
+        <a href="http://www.ufes.br" class="nav-logo" title="Abrir Portal Ufes em nova aba">
+          <img src="img/marca-ufes.svg" alt="">
+          <span>Universidade Federal do Espírito Santo</span>
+        </a>
+        <button class="btn-menu btn-drop">Endereços úteis <i class="fas fa-chevron-down"></i></button>
+        <nav class="nav-menu" role="navigation">
+          <ul class="menu-lista">
+            <li><a href="http://www.sead.ufes.br/" target="_blank" title="Abrir Portal SEAD em nova aba">Portal SEAD <i class="fas fa-external-link-alt"></i></a></li>
+            <li><a href="http://www.ufes.br" target="_blank" title="Abrir Portal Ufes em nova aba">Portal Ufes <i class="fas fa-external-link-alt"></i></a></li>
+            <li class="tem-submenu">
+              <span class="btn-drop">AVA Moodle <i class="fas fa-chevron-down"></i></span>
+              <ul class="dropdown">
+                <li><a href="http://www.ead.ufes.br" target="_blank" title="Abrir o AVA Moodle de Graduação em nova aba"><span class="somente-leitura">AVA Moodle de</span> Graduação <i class="fas fa-external-link-alt"></i></a></li>
+                <li><a href="http://www.especializacao.aperfeicoamento.ufes.br" target="_blank" title="Abrir o AVA Moodle de Especialização e Aperfeiçamento em nova aba"><span class="somente-leitura">AVA Moodle de</span> Especialização e Aperfeiçoamento <i class="fas fa-external-link-alt"></i></a></li>
+              </ul>
             </li>
-            <li class="navbar-text externo">
-              <a href="http://www.eadufes.org/" title="Abrir sítio da Sead em nova aba" target="_blank">
-                <span class="fa fa-info-circle" aria-hidden="true"></span> EAD na Ufes
-              </a>
-            </li>
-            <li class="navbar-text externo">
-              <a href="https://aluno.ufes.br/" title="Abrir Portal do Aluno em nova aba" target="_blank">
-                <span class="fa fa-graduation-cap" aria-hidden="true"></span> Portal do Aluno
-              </a>
-            </li>
-            <li class="navbar-text externo">
-              <a href="http://www.bc.ufes.br/" title="Abrir Biblioteca Ufes em nova aba" target="_blank">
-                <span class="fa fa-book" aria-hidden="true"></span> Biblioteca Ufes
-              </a>
-            </li>
-            <li class="navbar-text externo">
-              <a href="https://www.youtube.com/user/ufesinstrucional" title="Abrir canal da Sead no YouTube em nova aba" target="_blank">
-                <span class="fa fa-youtube-play" aria-hidden="true"></span> Videoaulas Sead
-              </a>
-            </li>
-    <!--  <p class="navbar-text externo"><a href="http://www.especializacao.aperfeicoamento.ufes.br/">
-        <span class="fa fa-desktop"></span>
-      Moodle</a></p>  -->
           </ul>
-        </div>
-        <!--</div>
-        </nav>  -->
+        </nav>
       </div>
+    </div>
 
-      <div class="header-main">
-        <div class='container'>
-          <div class="tamanho">
-            <div id="logo">
-
-              @if (Request::url() === 'http://acervodigital.eadufes.org')
-              <img alt="Sead Ufes" src="{{asset('/icons-local/sead-ufes.svg')}}">
-              @else
-              <a href="/" title="Ir para Início">  <!-- link para home  -->
-                <img alt="Sead Ufes" src="{{asset('/icons-local/sead-ufes.svg')}}">
-              </a>
-              @endif
-
-            </div>
-            <div class="rotulo">
-              <h1 class="titulo-public">Acervo Digital</h1>
-            </div>
-          </div>
+    <div class="acervo-navbar">
+      <div class="container">
+        <div class="nav-titulo">
+          <a href="/">Acervo Digital</a>
+          <p>Materiais didáticos EaD</p>
+        </div>
+        <div class="nav-logo">
+          <a href="http://sead.ufes.br" target="_blank" title="Abrir site da Sead em nova aba">
+            <span>Sead</span>
+            <img src="svg/sead-ufes.svg" alt="">
+          </a>
         </div>
       </div>
-
-    </header>
+    </div>
+    
+  </header>
 
     @yield('content')
 
-    <footer id="footer">
-      <div class="footer-main">
-        <div class="container-fluid">
-          <div class="logos-group">
-            <a href="http://ufes.br/" target="_blank" title="Abrir sítio da Ufes em nova aba"><img src="{{asset('/icons-local/logo-ufes.svg')}}" alt="Logo da Ufes"></a>
-            <a href="http://sead.ufes.br/" target="_blank" title="Abrir sítio da Sead em nova aba"><img src="{{asset('/icons-local/logo-sead.svg')}}" alt="Logo da Sead"></a>
-            <a href="http://uab.capes.gov.br" target="_blank" title="Abrir página da UAB em nova aba"><img src="{{asset('/icons-local/logo-uab.png')}}" alt="Logo da UAB" style="max-width: 60px;"></a>
-            <a href="http://capes.gov.br/" target="_blank" title="Abrir sítio da Capes em nova aba"><img src="{{asset('/icons-local/logo-capes.svg')}}" alt="Logo da CAPES"></a>
-          </div>
-          
-        </div>
+  <footer>
+    <a title="Voltar ao topo" id="voltar-ao-topo" aria-hidden="true" style="display: inline;">
+    <i class="fas fa-arrow-up"></i>
+    </a>
+    <div class="container">
+      <div>
+        <h4>Ambiente EaD Ufes</h4>
+        <ul>
+          <li><a href="http://sead.ufes.br" target="_blank">Portal Sead</a></li>
+          <li><a href="http://www.ead.ufes.br/" target="_blank">AVA Graduação</a></li>
+          <li><a href="http://www.especializacao.aperfeicoamento.ufes.br/" target="_blank">AVA Especialização e Aperfeiçoamento</a></li>
+          <li><a href="https://www.youtube.com/user/ufesinstrucional" target="_blank">Canal no YouTube</a></li>
+          <li><a href="https://calendar.google.com/calendar/embed?src=webconf.ufes%40gmail.com&ctz=America/Sao_Paulo" target="_blank">Agenda de Webconferências</a></li>
+        </ul>
       </div>
-      <div class="creditos">
-        <a href="https://ldi.eadufes.org/" target="_blank" title="Abrir sítio do LDI em nova aba">Desenvolvido pelo Laboratório de Design Instrucional</a>
+
+      <div>
+        <h4>Fale conosco</h4>
+        <p>Telefone: (27) 4009-2208</p>
+        <p>E-mail: diretoria.sead@ufes.br</p>
+        <p>Av. Fernando Ferrari, 514, Vitória - ES <br/> Térreo do Teatro Universitário - Ufes Campus Goiabeiras</p>
+        <ul class="enderecoLink">
+          <li>
+            <img src="svg/google-maps.svg" alt="">
+            <a href="https://goo.gl/maps/fLngzGoNbzq" target="_blank" title="Abrir endereço no Google Maps em nova aba"><span>Abrir endereço no Google Maps</span></a>
+          </li>
+          <li>
+            <img src="svg/moovit.svg" alt="">
+            <a href="https://moovit.com/?to=Teatro%20Universitário&tll=-20.27756_-40.301771&metroId=4794&lang=pt-br" target="_blank" title="Ver rotas de ônibus no Moovit em nova aba"><span>Ver rotas de ônibus no Moovit</span></a>
+          </li>
+        </ul>
       </div>
-    </footer>
+    </div>
+
+    <div id="copyright">
+      <p>© 2020 Sead Ufes. Todos os direitos reservados | <a href="http://ldi.ufes.br" target="_blank" title="Visitar site do Laboratório">Desenvolvido por LDI</p> 
+    </div>
+  </footer>
 
     <!-- jQuery 2.1.3 -->
     <script src="{{ asset('assets/plugins/jQuery/jQuery-2.1.3.min.js') }}"></script>
@@ -158,7 +130,8 @@
     <script src="{{ asset('assets/theme/js/app.min.js') }}"></script>
 
     <!-- Personalizado -->
-    <script src="{{ asset('assets/dist/js/ldi.js') }}"></script>
+    <script src="{{ asset('assets/dist/js/main.js') }}"></script>
+    <script src="{{ asset('assets/dist/js/slick.min.js') }}"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-82472266-10"></script>

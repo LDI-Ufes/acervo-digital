@@ -133,6 +133,7 @@ class ShelfController extends Controller
       ->reverse();
 
 
+    /*
 		if(($type != 0) or ($year != 0)){
 			$query = LearningObject::where('course_id', $course_info->id)->orderBy('title', 'asc');
 
@@ -148,7 +149,12 @@ class ShelfController extends Controller
 			}
 
 			$learning_objects = $query->get();
-		}
+    }*/
+
+    if($year != 0) {
+      $current->year = $year;
+      $learning_objects = $course_info->learning_objects->where('year', $year);
+    }
 
 		return view('shelf.learning_objects', compact('learning_objects', 'current', 'course_info'));	
 	}

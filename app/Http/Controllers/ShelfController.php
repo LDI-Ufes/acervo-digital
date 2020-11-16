@@ -112,7 +112,7 @@ class ShelfController extends Controller
 	{
 		$course_info = Course::whereSlug($slug)->first();
 
-		$learning_objects = $course_info->learning_objects->sortBy('title');
+		$query = $course_info->learning_objects();
 		
 		$current = (object)Array(
 			'course' => "Todos os Cursos",
@@ -132,29 +132,18 @@ class ShelfController extends Controller
       ->unique()
       ->reverse();
 
-
-    /*
-		if(($type != 0) or ($year != 0)){
-			$query = LearningObject::where('course_id', $course_info->id)->orderBy('title', 'asc');
-
-			if ($type != 0){
-				$query->where('type_id', '=', $type);
-				$current->type = ObjectType::findOrFail($type)->name;
-				$current->type_id = $type;
-			}
-
-			if ($year != 0){
-				$query->where('year', '=', $year);
-				$current->year = $year;
-			}
-
-			$learning_objects = $query->get();
-    }*/
-
     if($year != 0) {
       $current->year = $year;
-      $learning_objects = $course_info->learning_objects->where('year', $year);
+      $query->where('year', $year);
     }
+
+    if($type !=0) {
+      $current->type = ObjectType::findOrFail($type)->name;    
+      $current->type_id = $type;
+      $query->where('type_id', $type);
+    }
+
+    $learning_objects = $query->get()->sortBy('title');
 
 		return view('shelf.learning_objects', compact('learning_objects', 'current', 'course_info'));	
 	}

@@ -187,9 +187,9 @@ class ShelfController extends Controller
 		return view('shelf.learning_objects_embed', compact('learning_objects', 'current', 'course_info'));	
 	}
 
-  public function objectDetails($id) {
+  public function objectDetails($slug) {
     try {
-      $learning_object = LearningObject::findOrFail($id);
+      $learning_object = LearningObject::whereSlug($slug)->first();
       return view('shelf.object_details', compact('learning_object'));
     } catch (\Exception $e) {
       return "Não encontrado.";

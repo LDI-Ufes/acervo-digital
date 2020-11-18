@@ -3,6 +3,7 @@
 
 @endsection
 @section('content')
+<img class="course-header" src="../img/default-curso.jpg">
 
 <main class="pagina-lista container">
 

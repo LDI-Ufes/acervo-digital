@@ -21,7 +21,7 @@
         <div class="card-footer">
         <a href="{{ $item->link }}" target="_blank" class="link"><i class="fas fa-file-pdf"></i>PDF</a>
         <a href="{{ $item->link }}" target="_blank" class="link"><i class="fas fa-external-link-alt"></i>Online</a>
-        <a href="/materiais/{{ $item->id }}" class="btn btn-terciario">Ver<i class="fas fa-chevron-right"></i></a>
+        <a href="/materiais/{{ $item->slug }}" class="btn btn-terciario">Ver<i class="fas fa-chevron-right"></i></a>
         </div>
     </div>
 </div>

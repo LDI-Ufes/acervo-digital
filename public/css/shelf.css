@@ -1356,14 +1356,14 @@ footer #copyright a:hover {
   }
 }
 
-@media only screen and (min-width: 864px) {
+@media only screen and (min-width: 1140px) {
   .pagina-material {
     flex-direction: row;
   }
   .pagina-material .conteudo-material {
     margin-bottom: 72px;
-    width: 60%;
-    max-width: 655px;
+    width: 50%;
+    max-width: 558px;
     margin: 2rem 0 5rem;
   }
   .pagina-material .conteudo-material p {
@@ -1380,10 +1380,16 @@ footer #copyright a:hover {
   }
   .pagina-material .capa-material {
     order: 2;
-    height: 680px;
-    width: 30%;
-    max-width: 360px;
+    height: 298px;
+    width: 40%;
+    max-width: 462px;
   }
+}
+
+.course-header {
+  max-height: 320px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .container-cards {

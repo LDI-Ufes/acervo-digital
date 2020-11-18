@@ -9,7 +9,7 @@
     Você está em: 
     <!-- Tentar reconhecer por onde o usuário -->
     <!-- <a href="#">Filosofia e Psicanálise</a><i class="fas fa-greater-than"></i> -->
-    <span>O Desejo nos Pensamentos de Sartre e Lacan</span>
+    <span>{{ $learning_object->type->name  }}</span>
   </section>
 
   <div class="conteudo-material">
@@ -20,7 +20,8 @@
     <p class="autor"> {{ $learning_object->author }} </p>
     <p class="edicao"> {{ $learning_object->year }} </p>
 
-    <!-- <p><strong>Resumo</strong><br>{{ $learning_object->summary }}</p> -->
+    <!-- it not empty -->
+    <p><strong>Resumo</strong><br>{{ $learning_object->summary }}</p>
 
     <div class="acesso">
       <a class="btn-primario" href="{{ $learning_object->link }}" target="_blank"><i class="fa fa-file-pdf"></i>PDF Interativo</a>
@@ -35,13 +36,13 @@
     <div class="tags">
         <div class="tags-curso">
             <h2>Cursos associados</h3>
-            <span class="tag">{{ $learning_object->course->pluck('short')->implode(' ') }}</span>
+            <span class="tag">{{ $learning_object->course->pluck('name')->implode(' ') }}</span>
             <!-- <span class="tag">Filosofia</span> -->
         </div>
         <div class="tags-tipo">
             <h2>Tags</h3>
             <span class="tag">{{ $learning_object->tags->pluck('name')->implode(' / ') }}</span>
-            <span class="tag">PDF Interativo</span>
+            <!-- <span class="tag">PDF Interativo</span> -->
         </div>
     </div>
   

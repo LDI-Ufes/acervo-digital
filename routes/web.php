@@ -33,18 +33,21 @@ Route::resource('/admin/tags', 'TagController');
 
 Route::get('/curso/{slug}/{type?}/{year?}', 'ShelfController@courseObjectsPage');
 
-Route::get('/embed/{slug}/{type?}/{year?}', 'ShelfController@courseObjectsIFrame');
-
-
+Route::get('/embed/{slug}/{type?}/{year?}', 'ShelfController@courseObjectsIFrame'); // TODO: remover rota/controler/blades
 
 // ROTA COM ANO
-Route::get('/shelf/course/{course}/type/{type}/year/{year}', 'ShelfController@learningObjects');
+Route::get('/shelf/course/{course}/type/{type}/year/{year}', 'ShelfController@learningObjects'); // TODO: remover rota/controller/blades
+
 
 //Route::get('/shelf/courses', 'ShelfController@courses');
 Route::get('/', 'ShelfController@courses');
 
-// TODO: localizar via SLUG (e criar isso no banco, controller, interface, etc, etc)
+// detalhes de material
 Route::get('/materiais/{slug}', 'ShelfController@objectDetails');
+
+// todos os materiais,listagem e pesquisa.
+Route::get('/catalogo/{query?}', 'ShelfController@catalogue');
+
 
 Route::get('/sobre', 'ShelfController@about');
 

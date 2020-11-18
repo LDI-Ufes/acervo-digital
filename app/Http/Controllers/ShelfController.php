@@ -196,6 +196,12 @@ class ShelfController extends Controller
     }
   }
 
+  public function catalogue($query = 0) {
+    $learning_objects = LearningObject::all()->sortBy('title');
+
+    return view('shelf.catalogue', compact('learning_objects'));
+  }
+
 	public function courses()
 	{
 		$courses = Course::where('active', '=', 1)->orderBy('name', 'asc')->get()->groupBy('type_id');

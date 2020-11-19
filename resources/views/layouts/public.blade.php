@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://cdn.eadufes.org/icone/sead.png">
-    <link rel="icon" type="image/svg+xml" href="https://cdn.eadufes.org/icone/sead.svg">
+    <link rel="icon" type="image/png" href="https://sead.ufes.br/wp-content/themes/sead-v2.1/favicon/sead.png">
+    <link rel="icon" type="image/svg+xml" href="https://sead.ufes.br/wp-content/themes/sead-v2.1/favicon/sead.svg">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -18,9 +18,9 @@
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
 
     <!-- Books CSS -->
-    <link href="{{asset("css/shelf.css")}}" rel="stylesheet">
-    <link href="{{asset("css/slick.css")}}" rel="stylesheet">
-    <link href="{{asset("css/slick-theme.css")}}" rel="stylesheet">
+    <link href="{{asset('css/shelf.css')}}" rel="stylesheet">
+    <link href="{{asset('css/slick.css')}}" rel="stylesheet">
+    <link href="{{asset('css/slick-theme.css')}}" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">

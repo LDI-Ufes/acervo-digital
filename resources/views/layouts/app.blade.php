@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://cdn.eadufes.org/icone/sead.png">
-    <link rel="icon" type="image/svg+xml" href="https://cdn.eadufes.org/icone/sead.svg">
+    <link rel="icon" type="image/png" href="https://sead.ufes.br/wp-content/themes/sead-v2.1/favicon/sead.png">
+    <link rel="icon" type="image/svg+xml" href="https://sead.ufes.br/wp-content/themes/sead-v2.1/favicon/sead.svg">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -120,7 +120,7 @@
                   <h3 style="margin:0;">LDI</h3>
                 </div>
                 <div class="small-box-footer" style="text-align:left; padding:3px 15px;">
-                  <a href="http://ldi.eadufes.org" target="_blank">ldi.eadufes.org</a>
+                  <a href="https://ldi.ufes.br/" target="_blank">ldi.ufes.br</a>
                 </div>
               </div>
             </div>

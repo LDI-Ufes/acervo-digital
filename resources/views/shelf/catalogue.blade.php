@@ -11,5 +11,10 @@
   @endforelse
 </main>
 
+
+<nav class="container">
+  {{ $learning_objects->links() }}
+</nav>
+
 @endsection
 

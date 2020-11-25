@@ -197,7 +197,7 @@ class ShelfController extends Controller
   }
 
   public function catalogue($query = 0) {
-    $learning_objects = LearningObject::all()->sortBy('title');
+    $learning_objects = LearningObject::orderBy('title')->paginate(4);
 
     return view('shelf.catalogue', compact('learning_objects'));
   }

@@ -54,18 +54,8 @@ class CourseController extends Controller
 
 	    $course->name = $request->name;
 	    $course->type_id = $request->type_id;
-	    $course->bg_color = $request->bg_color;
-	    $course->fg_color = $request->fg_color;
-	    $course->aux_color = $request->aux_color;
 	    $course->short = $request->short;
 	    $course->active = ($request->active == 'on');
-
-
-	    if (trim($request->modules)){
-		    $course->modules = $request->modules;
-	    } else {
-		    $course->modules = 0;
-	    }
 
 	    $course->save();
 
@@ -113,17 +103,8 @@ class CourseController extends Controller
 
 	    $course->name = $request->name;
 	    $course->type_id = $request->type_id;
-	    $course->bg_color = $request->bg_color;
-	    $course->fg_color = $request->fg_color;
-	    $course->aux_color = $request->aux_color;
 	    $course->short = $request->short;
 	    $course->active = ($request->active == 'on');
-
-	    if (trim($request->modules)){
-		    $course->modules = $request->modules;
-	    } else {
-		    $course->modules = 0;
-	    }
 
 	    $course->save();
 

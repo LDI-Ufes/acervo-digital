@@ -98,7 +98,7 @@
             @foreach($group as $course)
               <li>
                 <a class="card-curso" title="Ir para a página do curso" href="/curso/{{ $course->slug }}">
-                  <div class="card-capa"><div class="card-capa"><img src="img/{{ $course->slug }}.jpg"></div></div>
+                  <div class="card-capa"><div class="card-capa"><img src="/covers/{{ $course->cover }}"></div></div>
                   <h3 class="titulo">
                     {{$course->name}}
                     <!-- Cadastrar e puxar isso? -->

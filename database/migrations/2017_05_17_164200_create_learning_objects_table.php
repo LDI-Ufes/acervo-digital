@@ -28,8 +28,8 @@ class CreateLearningObjectsTable extends Migration
 			$table->string('title');
 			$table->string('author');		
 			$table->text('summary');
-			$table->string('cover')->default('default.jpg'); //criar essa default aqui
-			$table->string('link'); // vai ser só o link, uploado ou os dois??
+			$table->string('cover')->default('_default.jpg'); 
+			$table->string('link'); 
 
 			$table->timestamps();
 		});

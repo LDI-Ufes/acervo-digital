@@ -81,7 +81,7 @@
 
 		<select class="form-control"  id="course_id" name="course_id[]" multiple>
 			@foreach($courses as $course)
-					<option value="{{$course->id}}" data-module-number="{{$course->modules}}"
+					<option value="{{$course->id}}"
             {{ ( isset($learning_object) && $learning_object->course->contains('id', $course->id) ) ? "selected" : "" }}
           > {{$course->name}} {{ $course->active ? "" : "(inativo)"}}</option>
 			@endforeach
@@ -104,31 +104,6 @@
 		</select>
 
 		{!! $errors->first('tag_id', '<p class="help-block">:message</p>') !!}
-	</div>
-</div>
-
-
-<div class="form-group {{ $errors->has('module') ? 'has-error' : ''}}">
-	<label for="module" class="col-md-2 control-label">Módulo</label>
-	<div class="col-md-10">
-
-		<select class="form-control" name="module" id="module">
-			@if (isset($learning_object) and ($learning_object->module == 0))
-				<option value="0" selected>Sem módulo</option>
-			@else 
-				<option value="0">Sem módulo</option>
-			@endif
-
-			@for ($i = 1; $i <= $courses->max('modules'); $i++)
-				@if(isset($learning_object) and ($learning_object->module == $i))
-		          		<option value="{{ $i }}" selected>{{ $i }}</option>
-				@else
-		          		<option value="{{ $i }}">{{ $i }}</option>
-				@endif
-		      	@endfor 
-		</select>
-
-		{!! $errors->first('module', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>
 

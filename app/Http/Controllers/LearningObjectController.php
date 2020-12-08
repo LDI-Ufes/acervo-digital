@@ -94,11 +94,6 @@ class LearningObjectController extends Controller
 		    return back()->withErrors(['Erro', 'Forneça o link para o arquivo, ou escolha um arquivo para salvar']);
 	    }
 
-
-	    // checar se o módulo não é maior do que os que o curso oferece
-	    $learning_object->module = $request->module;
-
-
 	    //checar se a imagem tem o tamanho necessário (219x219) 
 	    //e dar resize se não tiver
 	    //
@@ -197,10 +192,6 @@ class LearningObjectController extends Controller
 	    } else {
 		    return back()->withErrors(['Erro', 'Forneça o link para o arquivo, ou escolha um arquivo para salvar']);
 	    }
-
-
-	    // checar se o módulo não é maior do que os que o curso oferece
-	    $learning_object->module = $request->module;
 
 	    // falta fazer o upload, checagem e resize do arquivo de capa...
 	    //$learning_object->cover = $request->cover 

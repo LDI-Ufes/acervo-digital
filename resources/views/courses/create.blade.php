@@ -16,7 +16,7 @@
 <!-- FIM CABEÇALHO -->
 
 
-<!-- ADICIONAR USUÁRIO -->
+<!-- ADICIONAR CURSO -->
 <section class="content">
   <div class="row">
     <section class="col-xs-12">
@@ -30,7 +30,7 @@
           </ul>
           @endif
 
-          <form method="POST" action="{{ route('courses.store') }}" accept-charset="UTF-8" class="form-horizontal">
+          <form method="POST" action="{{ route('courses.store') }}" accept-charset="UTF-8" enctype="multipart/form-data" class="form-horizontal">
             {{ csrf_field() }}
             @include ('courses/form')
           </form>

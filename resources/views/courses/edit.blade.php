@@ -29,7 +29,7 @@
           </ul>
           @endif
 
-          <form method="POST" action="{{ route('courses.update', $course->id) }}" accept-charset="UTF-8" class="form-horizontal">
+          <form method="POST" action="{{ route('courses.update', $course->id) }}" accept-charset="UTF-8" enctype="multipart/form-data" class="form-horizontal">
             {{ csrf_field() }}
             <input name="_method" type="hidden" value="PUT">
             @include ('courses/form', [

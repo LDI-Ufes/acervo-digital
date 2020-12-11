@@ -7,6 +7,21 @@
 	</div>
 </div>
 
+<div class="form-group {{ $errors->has('cover') ? 'has-error' : '' }}">
+  <label for="cover" class="col-xs-12 col-md-2 contro-label">Escolha uma Capa</label>
+  
+  <div class="col-xs-10">
+    <input class="btn btn-default btn-file" name="cover" type="file" id="cover" value"{{ old('cover', isset($course) ? $course->cover : null) }}">
+    {!! $errors->first('cover', '<p class="help-block">:message</p>') !!}
+  </div>
+
+  @if (isset($course->cover))
+  <div class="cols-xs-2 col-md-1 imagem-existente">
+    <img src="/covers/{{ $course->cover }}">
+  </div>
+  @endif
+</div>
+
 <div class="form-group {{ $errors->has('type_id') ? 'has-error' : ''}}">
 	<label for="type_id" class="col-md-2 control-label">Tipo de Curso</label>
 	<div class="col-md-10">
@@ -22,39 +37,6 @@
 		</select>
 
 		{!! $errors->first('type_id', '<p class="help-block">:message</p>') !!}
-	</div>
-</div>
-
-
-<!--<div class="form-group {{ $errors->has('modules') ? 'has-error' : ''}}">
-	<label for="modules" class="col-md-2 control-label">Módulos</label>
-	<div class="col-md-10">
-		<input class="form-control" name="modules" type="text" id="modules" value="{{ old('modules', isset($course) ? $course->modules : null) }}" maxlength="80">
-		{!! $errors->first('modules', '<p class="help-block">:message</p>') !!}
-	</div>
-</div>-->
-
-<div class="form-group {{ $errors->has('bg_color') ? 'has-error' : ''}}">
-	<label for="bg_color" class="col-md-2 control-label">Cor de fundo</label>
-	<div class="col-md-10">
-		<input class="form-control" name="bg_color" type="text" id="bg_color" value="{{ old('bg_color', isset($course) ? $course->bg_color : '#2E2E2E') }}" maxlength="7">
-		{!! $errors->first('bg_color', '<p class="help-block">:message</p>') !!}
-	</div>
-</div>
-
-<div class="form-group {{ $errors->has('fg_color') ? 'has-error' : ''}}">
-	<label for="fg_color" class="col-md-2 control-label">Cor da fonte</label>
-	<div class="col-md-10">
-		<input class="form-control" name="fg_color" type="text" id="fg_color" value="{{ old('fg_color', isset($course) ? $course->fg_color : '#333333') }}" maxlength="7">
-		{!! $errors->first('fg_color', '<p class="help-block">:message</p>') !!}
-	</div>
-</div>
-
-<div class="form-group {{ $errors->has('aux_color') ? 'has-error' : ''}}">
-	<label for="aux_color" class="col-md-2 control-label">Cor auxiliar</label>
-	<div class="col-md-10">
-		<input class="form-control" name="aux_color" type="text" id="aux_color" value="{{ old('aux_color', isset($course) ? $course->aux_color : '#415F72') }}" maxlength="7">
-		{!! $errors->first('aux_color', '<p class="help-block">:message</p>') !!}
 	</div>
 </div>
 

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Course;
 use App\CourseType;
 
+use Intervention\Image\ImageManagerStatic as Image;
+
 
 class CourseController extends Controller
 {
@@ -57,6 +59,25 @@ class CourseController extends Controller
 	    $course->short = $request->short;
 	    $course->active = ($request->active == 'on');
 
+      if($request->hasFile('cover')) {
+        $image = $request->file('cover');
+
+        $resizer = Image::make($image);
+        $file_name = time().'.'.$image->extension();
+
+        if(($resizer->width() != 735) or ($resizer->height() != 396)) {
+          $resizer->fit(735, 396, function ($constraint) {
+            $constraint->upsize();
+          });
+        }
+
+        $resizer->save(public_path('/covers') .'/'. $file_name);
+
+        $course->cover = $file_name;
+      } else {
+        $course->cover = '_default.jpg';
+      }
+
 	    $course->save();
 
 	    return redirect(route('courses.index'));
@@ -105,6 +126,23 @@ class CourseController extends Controller
 	    $course->type_id = $request->type_id;
 	    $course->short = $request->short;
 	    $course->active = ($request->active == 'on');
+
+      if ($request->hasFile('cover')) {
+        $image = $request->file('cover');
+
+        $resizer = Image::make($image);
+        $file_name = time() .'.'. $image->extension();
+
+        if (($resizer->width() != 735) or ($resizer->height() != 396)) {
+          $resizer->fit(735, 369, function ($constraint) {
+            $constraint->upsize();
+          });
+        }
+
+        $resizer->save(public_path('/covers') .'/'. $file_name);
+
+        $course->cover = $file_name;
+      }
 
 	    $course->save();
 

@@ -32,7 +32,7 @@
 </div>
 
 <div class="form-group {{ $errors->has('cover') ? 'has-error' : ''}}">
- 	<label for="cover" class="col-xs-12 col-md-2 control-label">Escolha Capa</label>
+ 	<label for="cover" class="col-xs-12 col-md-2 control-label">Escolha uma Capa</label>
 	
 	<div class="col-xs-10">
 		<input class="btn btn-default btn-file" name="cover" type="file" id="cover" value="{{ old('cover', isset($learning_object) ? $learning_object->cover : null) }}">

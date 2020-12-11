@@ -196,8 +196,31 @@ class ShelfController extends Controller
     }
   }
 
-  public function catalogue($query = 0) {
-    $learning_objects = LearningObject::orderBy('title')->paginate(4);
+  public function catalogue(Request $request) {
+    $query = LearningObject::query();
+
+    // TODO
+
+    // ver se pede uma tag específica
+    // curso específico 
+    
+    // ano específco
+    if ($request->has('ano')) {
+      $query->where('year', $request->ano);
+    }
+
+    // pesquida tipo de material 
+    if ($request->has('tipo')) {
+      $query->where('type_id', $request->tipo);
+    }
+
+    // pesquisa título e autor
+    if ($request->has('pesquisa')) {
+      $query->where('title', "like", "%{$request->pesquisa}%")
+        ->orWhere('author', "like", "%{$request->pesquisa}%");
+    } 
+
+    $learning_objects = $query->orderBy('title')->paginate(4);
 
     return view('shelf.catalogue', compact('learning_objects'));
   }

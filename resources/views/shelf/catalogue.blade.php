@@ -6,7 +6,7 @@
 
   
   <form class="container" role="search" method="get" action="">
-    <input type="search" placeholder="Pesquisa por texto..."></input>
+    <input type="search" name="pesquisa" placeholder="Pesquisa por texto..."></input>
     <button id="pesquisar">Pesquisar</button>
   </form>
 

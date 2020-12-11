@@ -43,31 +43,17 @@
 
 
 @section('scripts')
-	<script type="text/javascript">
-		 $('#course_id').on('change', function(e){
-			 $('#module').empty();
-			 $('#module').append($('<option/>', { 
-					'value': 0,
-					'text': 'Sem módulo' 
-				}));
-		 	 for (var i=0; i < this.options[this.selectedIndex].getAttribute('data-module-number'); i++){
-				$('#module').append($('<option/>', { 
-					'value': (i+1),
-					'text': (i+1) 
-				}));
-			 }
-		 });
-
-		$('.opcao-link').change(function(){
-			if(this.value == "usar_link"){
-				$('#link_input').removeAttr('disabled');
-				$('#upload_input').attr('disabled','disabled');
-				$('#upload_input').val("");
-			} else {
-				$('#upload_input').removeAttr('disabled');
-				$('#link_input').attr('disabled','disabled');
-				$('#link_input').val("");
-			}
-		  });
-	</script>
+<script type="text/javascript">
+$('.opcao-link').change(function(){
+  if(this.value == "usar_link"){
+    $('#link_input').removeAttr('disabled');
+    $('#upload_input').attr('disabled','disabled');
+    $('#upload_input').val("");
+  } else {
+    $('#upload_input').removeAttr('disabled');
+    $('#link_input').attr('disabled','disabled');
+    $('#link_input').val("");
+  }
+});
+</script>
 @endsection

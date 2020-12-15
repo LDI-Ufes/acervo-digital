@@ -5,6 +5,18 @@
 		width: 100%;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		position: absolute;
+		top: 0;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity .3s ease-out;
+
+		&.ativo{
+			position: relative;
+			opacity: 1;
+			visibility: visible;
+			transition: opacity .3s ease-in;
+		}
 
 		li {
 			position: relative;
@@ -73,6 +85,7 @@
 
 	@media only screen and (min-width: 562px) {
 		ul.lista-cursos {
+
 			li {
 				width: calc(50% - 12px);
 			}
@@ -90,13 +103,19 @@
 	// CARDS DESKTOP 1140px
 	@media only screen and (min-width: 1140px) {
 		ul.lista-cursos {
-			display: flex;
+			display: block;
 			width: 100%;
-			flex-wrap: wrap;
-			justify-content: space-between;
+
+			&::before, &::after{
+				content: '';
+				display: table;
+				clear: both;
+			}
 
 			li {
-				width: calc(25% - 12px);
+				width: calc(25% - 24px);
+				float: left;
+				margin: 0 12px;
 			}
 		}
 	}

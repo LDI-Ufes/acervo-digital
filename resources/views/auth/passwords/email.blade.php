@@ -12,20 +12,19 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/dist/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/dist/css/skin-ldi.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/theme/css/AdminLTE.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/dist/css/style.css') }}" rel="stylesheet">
 
+    <!-- Books CSS -->
+    <link href="{{asset("css/shelf.css")}}" rel="stylesheet">
     <!--Remoção de scripts - to-do-->  
 
   </head>
 
   <body class="login-page">
     <div class="login-box">
-      <div class="login-logo">
-        <h1 style="color:white;">Estante Virtual</h1>
-      </div><!-- /.login-logo -->
       <div class="login-box-body">
         @if (session('status'))
         <div class="alert alert-success">
@@ -35,35 +34,35 @@
 
         <form class="form-horizontal" role="form" method="POST" action="{{ route('password.email') }}">
           {{ csrf_field() }}
-
+          <img class="logo" src="/img/acervo-logo.svg" alt="Teste">
+          <h1>Redefinição </br>de Senha</h1>
           <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-            <label for="email" class="col-md-12 control-label">E-mail</label>
+            <label for="email" class="control-label">Seu E-mail</label>
 
-            <div class="col-md-12">
-              <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+              <input id="email" type="email" class="form-control" placeholder="seuemail@email.com" name="email" value="{{ old('email') }}" required>
 
               @if ($errors->has('email'))
               <span class="help-block">
                 <strong>{{ $errors->first('email') }}</strong>
               </span>
               @endif
-            </div>
           </div>
 
-          <div class="form-group" style="margin-bottom:0;">
-            <div class="col-md-12">
-              <button type="submit" class="btn btn-warning btn-block btn-flat">
+          <div class="form-group email" style="margin-bottom:0; margin-top:2rem;">
+              <button type="submit" class="btn-s -prim">
                 Solicitar alteração de senha
               </button>
-            </div>
           </div>
+
+          <p class="descricao">
+          Em instantes enviaremos a solicitação de redefinição de senha em sua caixa de e-mail. Verifique corretamente seu e-mail.
+        </p>
+
         </form>
 
-        <hr>
-
-        <div class="col-md-12" style="padding:0;">
+        <div style="padding:0; margin-top: 2rem;">
           <a href="/login">
-            <button class="btn btn-primary btn-block btn-flat">
+            <button class="btn-s -ter">
               « Retornar a tela de Acesso
             </button>
           </a>

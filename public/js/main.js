@@ -264,6 +264,35 @@ $('.btn-drop').click(function() {
   });
 
 
+// INDEX - CURSOS
+const navCursosBtn = document.querySelectorAll('#itens-abas li a');
+
+const navCursosListas = document.querySelectorAll('.lista-cursos');
+
+navCursosListas[0].classList.add('ativo');
+navCursosBtn[0].classList.add('current');
+
+navCursosBtn.forEach( (item, index) => {
+
+    item.addEventListener('click', function(event){
+
+      event.preventDefault();
+        
+      navCursosListas.forEach((item) => {
+        item.classList.remove('ativo');
+      });
+
+      navCursosBtn.forEach( (item) => {
+        item.classList.remove('current');
+      });
+
+        this.classList.add('current');
+        navCursosListas[index].classList.add('ativo');
+    });
+
+});
+
+
 
 const allWrapper = document.querySelectorAll('.wrapper');
 const quantItens = document.querySelectorAll('.wrapper span');
@@ -286,3 +315,5 @@ noneWrapper.forEach( (item) => {
   item.disabled = true;
   item.checked = false;
 });
+
+

@@ -89,13 +89,11 @@
           <li><a title="Listar cursos de aperfeiçoamento" href="#aperfeicoamento">Aperfeiçoamento</a></li>
         </ul>
 
-        @forelse($courses as $group)
-          <div id="{{$group->first()->type->name}}">
-            {{$group->first()->type->name}}
-          </div>
-
-          <ul class="lista-cursos">
-            @foreach($group as $course)
+        <!-- Para cada tipo de curso puxar -->
+        @forelse($courses as $group) 
+          <ul class="lista-cursos" id="{{$group->first()->type->name}}">
+          
+          @foreach($group as $course)
               <li>
                 <a class="card-curso" title="Ir para a página do curso" href="/curso/{{ $course->slug }}">
                   <div class="card-capa"><div class="card-capa"><img src="img/{{ $course->slug }}.jpg"></div></div>
@@ -107,14 +105,11 @@
                 </a>
               </li>
             @endforeach
-            <li class="placeholder" aria-hidden="true"></li>
-            <li class="placeholder" aria-hidden="true"></li>
-            <li class="placeholder" aria-hidden="true"></li>
-
           </ul>
-        @empty
+          @empty
           <div class="curso-vazio">Não há cursos cadastrados.</div>
-        @endforelse
+          @endforelse
+        
 
       </div>
         

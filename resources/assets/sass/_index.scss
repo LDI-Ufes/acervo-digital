@@ -223,7 +223,6 @@
 
 			#itens-abas {
 				display: flex !important;
-				border-bottom: 3px solid rgba($laranja-medio, 0.2);
 				width: 100%;
 				position: relative;
 				margin-bottom: 32px;
@@ -231,18 +230,31 @@
 				background: $branco;
 				box-shadow: none;
 
+				&::after{
+					content: '';
+					display: block;
+					position: absolute;
+					height: 3px;
+					width: 100%;
+					background: rgba($laranja-medio, 0.2);
+					bottom: 0;
+				}
+
 				li {
 					display: inline-block;
 					margin: 0;
-					margin-bottom: -3px;
 					width: 180px;
 					text-align: center;
+					
 
-					&.current a {
-						border-bottom: 3px solid $azul-principal;
+					 a.current {
+						border-color: $azul-principal;
+						color: $azul-principal;
+						transition: all .5s ease;
 
-						&:hover {
-							border-color: transparent;
+						&:hover{
+							color: $azul-principal;
+							border-color: $azul-principal;
 						}
 					}
 
@@ -252,9 +264,10 @@
 						font-weight: $medium;
 						padding: 10px 18px;
 						cursor: pointer;
+						border-bottom: 3px solid transparent;
 
 						&:hover {
-							border-bottom: 3px solid $laranja-medio;
+							border-color: $laranja-medio;
 						}
 					}
 				}
@@ -299,6 +312,7 @@
 
 			.cards-recentes {
 				margin-right: -1rem;
+				justify-content: flex-start;
 			}
 
 			.cta {

@@ -42,7 +42,7 @@
     <div class="ufes-navbar">
       <div class="container">
         <a href="http://www.ufes.br" class="nav-logo" title="Abrir Portal Ufes em nova aba">
-          <img src="img/marca-ufes.svg" alt="">
+          <img src="{{asset('img/marca-ufes.svg')}}" alt="">
           <span>Universidade Federal do Espírito Santo</span>
         </a>
         <button class="btn-menu btn-drop">Endereços úteis <i class="fas fa-chevron-down"></i></button>
@@ -130,8 +130,8 @@
     <script src="{{ asset('assets/theme/js/app.min.js') }}"></script>
 
     <!-- Personalizado -->
-    <script src="{{ asset('assets/dist/js/main.js') }}"></script>
-    <script src="{{ asset('assets/dist/js/slick.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-82472266-10"></script>

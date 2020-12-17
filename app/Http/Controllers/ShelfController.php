@@ -200,10 +200,7 @@ class ShelfController extends Controller
     $query = LearningObject::query();
 
     // TODO
-
-    // ver se pede uma tag específica
-    // curso específico 
-    
+   
     // ano específco
     if ($request->has('ano')) {
       $query->where('year', $request->ano);
@@ -220,6 +217,23 @@ class ShelfController extends Controller
         ->orWhere('author', "like", "%{$request->pesquisa}%");
     } 
 
+    // ver se pede uma tag específica
+    if ($request->has('tags')) {
+      // TODO: WHY SO FOCKING SLOW ALL OF A SUDDEN!?!?!
+      $query->whereHas('tags', function($q) use ($request) {
+        $q->where('tags.id', $request->tags);
+      });
+
+    }
+  
+    // curso específico 
+    if ($request->has('curso')) {
+      $query->whereHas('course', function($q) use ($request) {
+        $q->where('courses.slug', '=', $request->curso);
+      });
+    }
+
+    // ordenação e paginação 
     $learning_objects = $query->orderBy('title')->paginate(4);
 
     return view('shelf.catalogue', compact('learning_objects'));

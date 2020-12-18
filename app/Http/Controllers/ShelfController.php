@@ -212,18 +212,16 @@ class ShelfController extends Controller
     }
 
     // pesquisa título e autor
-    if ($request->has('pesquisa')) {
+    if ( $request->has('pesquisa')) {
       $query->where('title', "like", "%{$request->pesquisa}%")
         ->orWhere('author', "like", "%{$request->pesquisa}%");
     } 
 
     // ver se pede uma tag específica
     if ($request->has('tags')) {
-      // TODO: WHY SO FOCKING SLOW ALL OF A SUDDEN!?!?!
       $query->whereHas('tags', function($q) use ($request) {
         $q->where('tags.id', $request->tags);
       });
-
     }
   
     // curso específico 

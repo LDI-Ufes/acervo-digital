@@ -2,16 +2,14 @@
 
 @section('content')
 
-<main class="pagina-material container">
-
-  
-  <form class="container" role="search" method="get" action="">
-    <input type="search" name="pesquisa" placeholder="Pesquisa por texto..."></input>
-    <button id="pesquisar">Pesquisar</button>
+<div class="container">
+  <form class="form-pesquisa" action="/catalogo" method="GET">  
+    <input type="search" name="pesquisa" placeholder="Pesquisar no Acervo..." id="search-bar">
+    <button type="submit" class="btn-primario"><i class="fas fa-search"></i></button>     
   </form>
+</div>
 
-
-
+<main class="pagina-material container">
 
   @forelse($learning_objects as $item)
     @include('shelf/card')

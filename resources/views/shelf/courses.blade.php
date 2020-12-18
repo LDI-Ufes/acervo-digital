@@ -8,11 +8,11 @@
       <h1>Bem-vindo ao Acervo Digital da EaD na UFES</h1>
       <p>Busque por materiais, autores e cursos</p>
 
-      <div class="form-pesquisa">
-        <input type="search" placeholder="Pesquisar no Acervo..." id="search-bar">
+      <form class="form-pesquisa" action="/catalogo" method="GET">
+        <input type="search" name="pesquisa" placeholder="Pesquisar no Acervo..." id="search-bar">
 
         <div id="filtro-busca">
-          <button id="dropdown-filtro-busca">Geral<i class="fas fa-angle-down"></i></button>
+          <button id="dropdown-filtro-busca">Geral<i class="fas fa-angle-down"></i></button>        
 
           <!-- <ul id="itens-filtro-busca">
               <li><a title="Listar cursos de graduação" class="ativo">Geral</a></li>
@@ -20,10 +20,12 @@
               <li><a title="Pesquisar por autor">Autor</a></li>
               <li><a title="Pesquisar por curso">Curso</a></li>
           </ul> -->
+
         </div>
 
-        <button type="submit" for="search-bar" onclick="location.href='page-pesquisa.php'" class="btn-primario"><i class="fas fa-search"></i></button>
-      </div>
+        <button type="submit" class="btn-primario"><i class="fas fa-search"></i></button>
+      </form>
+
     </div>
   </section>
 
@@ -43,7 +45,7 @@
 
       </div>
 
-      <a href="/shelf/course/0/module/0/type/0" class="btn-primario">Listar todos os materiais</a>
+      <a href="/catalogo" class="btn-primario">Listar todos os materiais</a>
 
     </div>
  </section>

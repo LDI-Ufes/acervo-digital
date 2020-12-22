@@ -199,6 +199,13 @@ class ShelfController extends Controller
   public function catalogue(Request $request) {
     $query = LearningObject::query();
 
+		$current = (object)Array(
+			'course' => \App\Course::orderBy('name')->pluck('name', 'slug'), 
+      'tag' => \App\Tag::orderBy('name')->pluck('name', 'id'),
+			'year' => \App\LearningObject::orderBy('year', 'desc')->pluck('year')->unique(),
+			'type' => \App\ObjectType::orderBy('name')->pluck('name', 'id')
+		);
+
     // TODO
    
     // ano específco
@@ -234,7 +241,7 @@ class ShelfController extends Controller
     // ordenação e paginação 
     $learning_objects = $query->orderBy('title')->paginate(4);
 
-    return view('shelf.catalogue', compact('learning_objects'));
+    return view('shelf.catalogue', compact('learning_objects', 'current'));
   }
 
 	public function courses()

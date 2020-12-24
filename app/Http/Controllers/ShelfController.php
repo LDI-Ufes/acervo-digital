@@ -199,33 +199,42 @@ class ShelfController extends Controller
   public function catalogue(Request $request) {
     $query = LearningObject::query();
 
-		$current = (object)Array(
-			'course' => \App\Course::orderBy('name')->pluck('name', 'slug'), 
-      'tag' => \App\Tag::orderBy('name')->pluck('name', 'id'),
-			'year' => \App\LearningObject::orderBy('year', 'desc')->pluck('year')->unique(),
-			'type' => \App\ObjectType::orderBy('name')->pluck('name', 'id')
+    $current = (object)Array(
+      'year' => '',
+      'type_id' => '',
+      'search' => '',
+      'tags' => '',
+      'course' => '',
+			'course_list' => \App\Course::orderBy('name')->pluck('name', 'slug'), 
+      'tag_list' => \App\Tag::orderBy('name')->pluck('name', 'id'),
+			'year_list' => \App\LearningObject::orderBy('year', 'desc')->pluck('year')->unique(),
+			'type_list' => \App\ObjectType::orderBy('name')->pluck('name', 'id')
 		);
 
     // TODO
    
     // ano específco
     if ($request->has('ano')) {
+      $current->year = $request->ano;
       $query->where('year', $request->ano);
     }
 
     // pesquida tipo de material 
     if ($request->has('tipo')) {
+      $current->type_id = $request->tipo;
       $query->where('type_id', $request->tipo);
     }
 
     // pesquisa título e autor
     if ( $request->has('pesquisa')) {
+      $current->search = $request->pesquisa;
       $query->where('title', "like", "%{$request->pesquisa}%")
         ->orWhere('author', "like", "%{$request->pesquisa}%");
     } 
 
     // ver se pede uma tag específica
     if ($request->has('tags')) {
+      $current->tags = $request->tags;
       $query->whereHas('tags', function($q) use ($request) {
         $q->where('tags.id', $request->tags);
       });
@@ -233,6 +242,7 @@ class ShelfController extends Controller
   
     // curso específico 
     if ($request->has('curso')) {
+      $current->course = $request->curso;
       $query->whereHas('course', function($q) use ($request) {
         $q->where('courses.slug', '=', $request->curso);
       });

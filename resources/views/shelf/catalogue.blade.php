@@ -10,33 +10,34 @@
       placeholder="Pesquisar no Acervo..." 
       aria-label="Pesquisar materiais no acervo"
       minlength="4"
+      {{ $current->search != '' ? "value=$current->search" : '' }}
       id="search-bar">
 
     <select name="curso">
       <option value="">Curso</option>
-      @foreach ($current->course as $key => $name) 
-        <option value="{{ $key }}">{{ $name }}</option>
+      @foreach ($current->course_list as $key => $name) 
+        <option value="{{ $key }}" {{ $key == $current->course ? 'selected=selected' : '' }}>{{ $name }}</option>
       @endforeach
     </select>
 
     <select name="ano">
       <option value="">Ano</option>
-      @foreach ($current->year as $year)
-        <option value="{{ $year }}">{{ $year }}</option>
+      @foreach ($current->year_list as $year)
+        <option value="{{ $year }}" {{ $year == $current->year ? 'selected=selected' : '' }}>{{ $year }}</option>
       @endforeach
     </select>
 
     <select name="tipo">
       <option value="">Tipo de Material</option>
-      @foreach ($current->type as $key => $name)
-        <option value="{{ $key }}">{{ $name }}</option>
+      @foreach ($current->type_list as $key => $name)
+        <option value="{{ $key }}" {{ $key == $current->type_id ? 'selected=selected' : '' }}>{{ $name }}</option>
       @endforeach
     </select>
 
-    <select name="tag">
+    <select name="tags">
       <option value="">Tags</option>
-      @foreach ($current->tag as $key => $name)
-        <option value="{{ $key }}">{{ $name }}</option>
+      @foreach ($current->tag_list as $key => $name)
+        <option value="{{ $key }}" {{ $key == $current->tags ? 'selected=selected' : ''  }}>{{ $name }}</option>
       @endforeach
     </select>
 

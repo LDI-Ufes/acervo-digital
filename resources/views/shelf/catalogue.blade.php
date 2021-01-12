@@ -58,7 +58,7 @@
 
 
   <nav class="container">
-    {{ $learning_objects->links() }}
+    {{ $learning_objects->appends( request()->query() )->links() }}
   </nav>
 
 </main>

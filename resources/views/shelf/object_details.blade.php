@@ -9,7 +9,7 @@
     Você está em: 
     <!-- Tentar reconhecer por onde o usuário -->
     <!-- <a href="#">Filosofia e Psicanálise</a><i class="fas fa-greater-than"></i> -->
-    <span>{{ $learning_object->type->name  }}</span>
+    <span>{{ $learning_object->title  }}</span>
   </section>
 
   <div class="conteudo-material">
@@ -20,8 +20,7 @@
     <p class="autor"> {{ $learning_object->author }} </p>
     <p class="edicao"> {{ $learning_object->year }} </p>
 
-    <!-- it not empty -->
-    <p><strong>Resumo</strong><br>{{ $learning_object->summary }}</p>
+    <!-- <p><strong>Resumo</strong><br>{{ $learning_object->summary }}</p> -->
 
     <div class="acesso">
       <a class="btn-primario" href="{{ $learning_object->link }}" target="_blank"><i class="fa fa-file-pdf"></i>PDF Interativo</a>
@@ -32,17 +31,18 @@
       <p>Para melhor visualização do PDF Interativo use o programa Adobe Acrobat (<a href="#">clique aqui para baixar</a>).</p>
       <p>Acesse diretamente do navegador, com mais opções de interação e leia confortavelmente em qualquer dispositivo.</p>
     </blockquote>
+    
 
     <div class="tags">
         <div class="tags-curso">
             <h2>Cursos associados</h3>
+            <!-- Criar Loop junto c/ auxílio do BD gerando a opção de múltiplos cursos -->
             <span class="tag">{{ $learning_object->course->pluck('name')->implode(' ') }}</span>
-            <!-- <span class="tag">Filosofia</span> -->
         </div>
         <div class="tags-tipo">
             <h2>Tags</h3>
-            <span class="tag">{{ $learning_object->tags->pluck('name')->implode(' / ') }}</span>
-            <!-- <span class="tag">PDF Interativo</span> -->
+            <!-- Criar Loop junto c/ auxílio do BD gerando a opção de múltiplas tags -->
+            <span class="tag">{{ $learning_object->tags->pluck('name')->implode(' ') }}</span>
         </div>
     </div>
   

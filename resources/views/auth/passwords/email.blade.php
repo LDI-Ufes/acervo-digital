@@ -11,13 +11,14 @@
     <title>Alterar senha - Estante Virtual</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/dist/css/skin-ldi.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/theme/css/AdminLTE.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/dist/css/style.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+    <!-- <link href="{{ asset('assets/dist/css/skin-ldi.css') }}" rel="stylesheet"> -->
+    <!-- <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet"> -->
+    <!-- <link href="{{ asset('assets/theme/css/AdminLTE.css') }}" rel="stylesheet"> -->
+    <!-- <link href="{{ asset('assets/dist/css/style.css') }}" rel="stylesheet"> -->
 
     <!-- Books CSS -->
+    <link href="{{ asset('css/admin-painel.css')}}" rel="stylesheet">
     <link href="{{asset("css/shelf.css")}}" rel="stylesheet">
     <!--Remoção de scripts - to-do-->  
 
@@ -48,7 +49,7 @@
               @endif
           </div>
 
-          <div class="form-group email" style="margin-bottom:0; margin-top:2rem;">
+          <div class="form-group email" style="margin-top:1rem;">
               <button type="submit" class="btn-s -prim">
                 Solicitar alteração de senha
               </button>

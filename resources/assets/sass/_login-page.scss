@@ -2,6 +2,7 @@ body.login-page{
     background: $azul-principal;
 
     .login-box{
+        min-height: 736px;
         height: 100vh;
         background: white;
         width: 100%;

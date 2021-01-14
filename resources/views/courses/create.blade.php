@@ -2,7 +2,7 @@
 @section('content')
 
 <!-- CABEÇALHO -->
-<section class="content-header">
+<!-- <section class="content-header">
   <h1>
     Cursos
     <small>Cadastrar</small>
@@ -12,16 +12,21 @@
     <li><a href="{!! url('/admin/courses') !!}"><i class="fa fa-list"></i> Listagem</a></li>
     <li class="active"><i class="fa fa-plus-circle"></i> Cadastrar</li>
   </ol>
-</section>
+</section> -->
 <!-- FIM CABEÇALHO -->
 
 
 <!-- ADICIONAR CURSO -->
 <section class="content">
-  <div class="row">
-    <section class="col-xs-12">
+
+<div class="breadcrumb">
+    Você está em: Cursos <span class="greather-than">></span>Cadastrar
+</div>
       <div class="box box-ldi">
         <div class="box-body">
+        <div>
+          <h1 class="box-title">Cadastrar Curso</h1>
+        </div>
           @if ($errors->any())
           <ul class="alert alert-danger">
             @foreach ($errors->all() as $error)
@@ -36,8 +41,6 @@
           </form>
 
         </div>
-      </div>
-    </section>
   </div>
 </section>
 

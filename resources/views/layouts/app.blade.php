@@ -15,12 +15,15 @@
     <title>{{ config('app.name', 'Estante Virtual') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/theme/css/AdminLTE.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+    <!-- <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet"> -->
+    <!-- <link href="{{ asset('assets/theme/css/AdminLTE.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/dist/css/skin-ldi.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/dist/css/style.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('assets/dist/css/skin-ldi.css') }}" rel="stylesheet"> -->
+    <!-- <link href="{{ asset('assets/dist/css/style.css') }}" rel="stylesheet"> -->
+
+    <!-- Books CSS -->
+    <link href="{{asset('css/admin-painel.css')}}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -29,19 +32,21 @@
       ]) !!};
     </script>
   </head>
-  <body class="skin-ldi">
+  <body class="skin-ldi open">
     <div id="app">
       <!-- WRAPPER -->
       <div class="wrapper">
         <!-- HEADER -->
-        <header class="main-header">
+        <header class="cabecalho-principal">
           <!-- LOGO -->
-          <a href="/admin" class="logo">Acervo Digital EaD</a>
+          <a href="/admin" class="logo">
+            <img src="{{asset('img/acervo-logo-admin.svg')}}">
+          </a>
           <!-- NAVEGAÇÃO -->
-          <nav class="navbar navbar-static-top" role="navigation">
+          <nav class="navbar" role="navigation">
             <!-- BOTÃO DE NAVEGAÇÃO (ESQUERDA)-->
-            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-              <span class="sr-only">Toggle navigation</span>
+            <a href="#" class="sidebar-toggle open" data-toggle="offcanvas" role="button">
+              <span class="somente-leitura">Toggle navigation</span>
             </a>
             <!-- INFORMAÇÕES DO USUÁRIO (DIREITA) -->
             <div class="navbar-custom-menu">
@@ -49,24 +54,22 @@
                 <!-- MENU DO USUÁRIO -->
                 <li class="dropdown user user-menu">
                   <!-- BOTÃO -->
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <a href="#" class="dropdown" data-toggle="dropdown">
                     <!-- NOME -->
                     {{ Auth::user()->name }}
                   </a>
                   <!-- DROPDOWN -->
-                  <ul class="dropdown-menu" style="width:auto;right:0;">
+                  <ul class="dropdown-menu">
                     <!-- AVATAR, NOME E ATUAÇÃO -->
                     <li class="user-header" style="height:auto;">
                       <p>
-                        <a href="">{{ Auth::user()->name }}</a> <br>{{ Auth::user()->email }}
+                        <!-- <a href="">{{ Auth::user()->name }}</a> <br> -->
+                        {{ Auth::user()->email }}
                       </p>
                     </li>
                     <!-- ALTERAR DADOS E SAIR -->
                     <li class="user-footer" style="border-bottom-left-radius:4px;border-bottom-right-radius:4px;">
-                      <div class="pull-left">
-                        <a href="" class="btn btn-success btn-flat"> <i class="fa fa-fw fa-gear"></i> Alterar senha</a>
-                      </div>
-                      <div class="pull-right">
+                        <!-- <a href="" class="btn btn-success btn-flat"> <i class="fa fa-fw fa-gear"></i> Alterar senha</a> -->
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-danger btn-flat"> <i class="fa fa-fw fa-sign-out"></i> Sair</a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -83,47 +86,65 @@
         </header>
 
         <!-- Left side column. contains the logo and sidebar -->
-        <aside class="main-sidebar">
-          <section class="sidebar">
+        <aside class="menu-lateral">
+          <section class="lateral">
 
             <!-- Sidebar Menu -->
-            <ul class="sidebar-menu">
-              <li class="header">TIPOS DE CURSO</li>
-              <li><a href="{{ action('CourseTypeController@index') }}"><i class="fa fa-university"></i> Listagem de Tipos de Curso</a></li>
-              <li><a href="{{ action('CourseTypeController@create') }}"><i class="fa fa-plus-circle"></i> Cadastrar Tipo de Curso</a></li>
-	      
-	      <li class="header">TIPOS DE OBJETO</li>
-              <li><a href="{{ action('ObjectTypeController@index') }}"><i class="fa fa-university"></i> Listagem de Tipo de Objetos</a></li>
-              <li><a href="{{ action('ObjectTypeController@create') }}"><i class="fa fa-plus-circle"></i> Cadastrar Tipo de Objeto</a></li>
-
-
-	      <li class="header">TAGS</li>
-              <li><a href="{{ action('TagController@index') }}"><i class="fa fa-university"></i> Listagem de Tags</a></li>
-              <li><a href="{{ action('TagController@create') }}"><i class="fa fa-plus-circle"></i> Cadastrar Tags</a></li>
-
-	      <li class="header">CURSOS</li>
-              <li><a href="{{ action('CourseController@index') }}"><i class="fa fa-university"></i> Listagem de Cursos</a></li>
-              <li><a href="{{ action('CourseController@create') }}"><i class="fa fa-plus-circle"></i> Cadastrar Curso</a></li>
-
-	      <li class="header">OBJETOS DE APRENDIZAGEM</li>
-              <li><a href="{{ action('LearningObjectController@index') }}"><i class="fa fa-book"></i> Listagem de Objetos</a></li>
+        <ul class="menu">
+              
+          <li class="header">
+          <div class="item-dropdown">
+              <span><i class="fa fa-folder"></i>Cursos</span>
+              <span class="chevron"><i class="fa fa-chevron-down"></i></span>
+            </div>
+            <!-- <div class="item-dropdown">
+              <span><i class="fa fa-folder"></i>Tipos de Cursos</span>
+              <span class="chevron"><i class="fa fa-chevron-down"></i></span>
+            </div> -->
+            <ul>
+              <li><a href="{{ action('CourseTypeController@index') }}"><i class="fa fa-tag"></i>Tipos de Curso</a></li>
+              <li><a href="{{ action('CourseController@index') }}"><i class="fa fa-list-ul"></i>Listagem de Cursos</a></li>
+              <li><a href="{{ action('CourseController@create') }}"><i class="fa fa-plus-circle"></i>Cadastrar Curso</a></li>
+            </ul>
+        </li>
+	      <li class="header">
+          <div class="item-dropdown">
+            <span><i class="fa fa-file"></i>Materiais Didáticos</span>
+            <span class="chevron"><i class="fa fa-chevron-down"></i></span>
+          </div>
+            <ul>
+              <li><a href="{{ action('ObjectTypeController@index') }}"><i class="fa fa-tag"></i> Tipo de Materiais</a></li>
+              <li><a href="{{ action('LearningObjectController@index') }}"><i class="fa fa-list-ul"></i> Listagem de Materiais</a></li>
               <li><a href="{{ action('LearningObjectController@create') }}"><i class="fa fa-plus-circle"></i> Cadastrar Objetos</a></li>
+            </ul>
+        </li>
 
+	      <li class="header">
+          <div class="item-dropdown">
+            <span><i class="fa fa-tags"></i>Tags</span>
+            <span class="chevron"><i class="fa fa-chevron-down"></i></span>
+          </div>
+          
+            <ul>
+              <li><a href="{{ action('TagController@index') }}"><i class="fa fa-list-ul"></i> Listagem de Tags</a></li>
+              <li><a href="{{ action('TagController@create') }}"><i class="fa fa-plus-circle"></i> Cadastrar Tags</a></li>
+            </ul>
+        </li>
+
+	      <!-- <li class="header">
+          <div class="item-dropdown">
+            <span><i class="fa fa-file"></i>Obj. de Aprendizagem</span>
+            <span class="chevron"><i class="fa fa-chevron-down"></i></span>
+          </div>
+          
+          <ul>
+              <li><a href="{{ action('LearningObjectController@index') }}"><i class="fa fa-list-ul"></i> Listagem de Objetos</a></li>
+              <li><a href="{{ action('LearningObjectController@create') }}"><i class="fa fa-plus-circle"></i> Cadastrar Objetos</a></li>
+          </ul>
+        </li> -->
      
             </ul><!-- /.sidebar-menu -->
 
-            <!-- Horarios -->
-            <div class="small-box bg-ldi" style="margin-top:50px;color:white;">
-              <div class="small-box" style="text-align:left;">
-                <div class="inner">
-                  <p style="margin:0;">Desenvolvido por</p>
-                  <h3 style="margin:0;">LDI</h3>
-                </div>
-                <div class="small-box-footer" style="text-align:left; padding:3px 15px;">
-                  <a href="https://ldi.ufes.br/" target="_blank">ldi.ufes.br</a>
-                </div>
-              </div>
-            </div>
 
           </section>
           <!-- /.sidebar -->
@@ -143,6 +164,8 @@
 
     <!-- Bootstrap 3.3.2 JS -->
     <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
+
+    <script src="{{asset('/js/admin.js')}}" type="text/javascript">
 
     <!-- AdminLTE App -->
     <script src="{{ asset('assets/theme/js/app.min.js') }}" type="text/javascript"></script>

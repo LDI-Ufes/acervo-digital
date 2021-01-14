@@ -1,22 +1,15 @@
 @extends('layouts.app')
 @section('content')
 
-<!-- CABEÇALHO -->
-<section class="content-header">
-  <h1>
-    Objetos
-    <small>Cadastrar</small>
-  </h1>
-  <ol class="breadcrumb">
-    <li><i class="fa fa-book"></i> Objetos</li>
-    <li><a href="{{ route('learning_objects.index') }}"><i class="fa fa-list"></i> Listagem</a></li>
-    <li class="active"><i class="fa fa-plus-circle"></i> Cadastrar</li>
-  </ol>
-</section>
-<!-- FIM CABEÇALHO -->
+
 
 <!-- ADICIONAR LIVRO -->
 <section class="content">
+
+<div class="breadcrumb">
+    Você está em: Materiais Didáticos <span class="greather-than">></span>Cadastrar
+</div>
+
   <div class="row">
     <section class="col-xs-12">
       <div class="box box-ldi">

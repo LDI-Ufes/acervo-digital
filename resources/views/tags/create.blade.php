@@ -1,23 +1,11 @@
 @extends('layouts.app')
 @section('content')
 
-<!-- CABEÇALHO -->
-<section class="content-header">
-  <h1>
-    Tags
-    <small>Cadastrar</small>
-  </h1>
-  <ol class="breadcrumb">
-    <li><i class="fa fa-university"></i>Tags</li>
-    <li><a href="{!! url('/admin/tags') !!}"><i class="fa fa-list"></i> Listagem</a></li>
-    <li class="active"><i class="fa fa-plus-circle"></i> Cadastrar</li>
-  </ol>
-</section>
-<!-- FIM CABEÇALHO -->
-
-
 <!-- ADICIONAR USUÁRIO -->
 <section class="content">
+<div class="breadcrumb">
+    Você está em: Tags <span class="greather-than">></span>Cadastrar
+</div>
   <div class="row">
     <section class="col-xs-12">
       <div class="box box-ldi">

@@ -1,17 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="content-header"></section>
 
 <section class="content">
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="box box-ldi instrucoes-iniciais">
-        <div class="box-header">
-          <h3 class="box-title">Instruções</h3>
-          <hr style="margin-bottom:0;">
-        </div>
+        <h1 class="">Instruções Iniciais</h3>
 
         <div class="box-body">
   	       <p>Para excluir um objeto selecione a opção visualizar na lista de objetos cadastrados.</p>
@@ -23,7 +16,7 @@
            </ul>
         </div>
       </div>
-    </div>
+
   </div>
 </section>
 

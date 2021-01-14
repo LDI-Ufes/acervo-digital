@@ -15,14 +15,15 @@
     <title>Acesso - Estante Virtual</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/theme/css/AdminLTE.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+    <!-- <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet"> -->
+    <!-- <link href="{{ asset('assets/theme/css/AdminLTE.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('assets/font-awesome-4.3.0/css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/dist/css/skin-ldi.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/dist/css/style.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('assets/dist/css/skin-ldi.css') }}" rel="stylesheet"> -->
+    <!-- <link href="{{ asset('assets/dist/css/style.css') }}" rel="stylesheet"> -->
 
     <!-- Books CSS -->
+    <link href="{{ asset('css/admin-painel.css')}}" rel="stylesheet">
     <link href="{{ asset('css/shelf.css') }}" rel="stylesheet">
 
     <!-- Scripts -->

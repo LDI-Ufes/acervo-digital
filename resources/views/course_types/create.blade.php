@@ -2,7 +2,7 @@
 @section('content')
 
 <!-- CABEÇALHO -->
-<section class="content-header">
+<!-- <section class="content-header">
   <h1>
 	  Tipos de Curso    
     <small>Cadastrar</small>
@@ -12,14 +12,19 @@
     <li><a href="{!! url('/admin/course_types') !!}"><i class="fa fa-list"></i> Listagem</a></li>
     <li class="active"><i class="fa fa-plus-circle"></i> Cadastrar</li>
   </ol>
-</section>
+</section> -->
 <!-- FIM CABEÇALHO -->
 
 
 <!-- ADICIONAR USUÁRIO -->
 <section class="content">
-  <div class="row">
-    <section class="col-xs-12">
+
+  <div class="breadcrumb">
+      Você está em: Tipos de Curso <span class="greather-than">></span>Cadastrar
+  </div>
+
+  <h1 class="">Cadastrar Tipo de Curso<span>*</span></h1>
+  
       <div class="box box-ldi">
         <div class="box-body">
           @if ($errors->any())

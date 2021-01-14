@@ -1,21 +1,14 @@
 @extends('layouts.app')
 @section('content')
 
-<!-- CABEÇALHO -->
-<section class="content-header">
-  <h1>
-    Tipos de Objetos de Aprendizagem
-    <small>Listagem</small>
-  </h1>
-  <ol class="breadcrumb">
-    <li><i class="fa fa-university"></i> Tipos de Objetos de Aprendizagem</li>
-    <li class="active"><i class="fa fa-list"></i> Listagem</li>
-  </ol>
-</section>
-<!-- FIM CABEÇALHO -->
 
 <!-- TABELA - LISTA DE USUÁRIOS -->
 <section class="content">
+
+<div class="breadcrumb">
+    Você está em: Materiais Didáticos <span class="greather-than">></span>Tipos de Materiais
+</div>
+
     <div class="row">
         <section class="listaCursos col-md-12 connectedSortable ui-sortable">
             <div class="box box-ldi">

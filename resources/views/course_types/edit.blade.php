@@ -2,7 +2,7 @@
 @section('content')
 
 <!-- CABEÇALHO -->
-<section class="content-header">
+<!-- <section class="content-header">
   <h1>
     Tipos de Curso
     <small>Editar</small>
@@ -12,13 +12,16 @@
     <li><a href="{!! url('/admin/course_types') !!}"><i class="fa fa-list"></i> Listagem</a></li>
     <li class="active"><i class="fa fa-plus-circle"></i> Editar</li>
   </ol>
-</section>
+</section> -->
 <!-- FIM CABEÇALHO -->
 
 <!-- ADICIONAR USUÁRIO -->
 <section class="content">
-  <div class="row">
-    <section class="col-xs-12">
+
+<div class="breadcrumb">
+    Você está em: Tipos de Curso <span class="greather-than">></span>{{ $course_type->name }}<span class="greather-than"> > </span> Editar
+    </div>
+
       <div class="box box-ldi">
         <div class="box-body">
           @if ($errors->any())
@@ -33,14 +36,13 @@
             {{ csrf_field() }}
             <input name="_method" type="hidden" value="PUT">
             @include ('course_types/form', [
+            'editLabel' => 'Editar Tipo de Curso',
             'submitButtonLabel' => 'Atualizar',
             'course_type' => $course_type,				
             ])
           </form>
 
         </div>
-      </div>
-    </section>
   </div>
 </section>
 

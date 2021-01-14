@@ -1,35 +1,26 @@
 @extends('layouts.app')
 @section('content')
 
-<!-- CABEÇALHO -->
-<section class="content-header">
-    <h1>
-        Objetos
-        <small>Listagem</small>
-    </h1>
-    <ol class="breadcrumb">
-        <li><i class="fa fa-book"></i> Objetos</li>
-        <li class="active"><i class="fa fa-list"></i> Listagem</li>
-    </ol>
-</section>
-<!-- FIM CABEÇALHO -->
-
 <!-- TABELA - LISTA DE LIVROS -->
 <section class="content">
+
+<div class="breadcrumb">
+    Você está em: Materiais Didáticos <span class="greather-than">></span>Listagem
+</div>
+
     <div class="row">
         <section class="listaLivros col-md-12 connectedSortable ui-sortable">
             <div class="box box-ldi" id="object_list">
 
                 <div class="box-header">
                     <div>
-                        <h3 class="box-title">
-                            <i class="fa fa-book"></i> Objetos cadastrados
-                        </h3>
+                        <h1 class="box-title">
+                            Materiais Didáticos Cadastrados
+                        </h1>
                         <!-- CAMPO DE PESQUISA -->
 							<input type="text" class="search" placeholder="Busca">
 						<!-- ################# -->
                     </div>
-                    <hr style="margin-bottom:0;">
                 </div>
 
                 <div class="box-body table-responsive">

@@ -26,6 +26,8 @@ Route::resource('/admin/object_types', 'ObjectTypeController');
 
 Route::resource('/admin/tags', 'TagController');
 
+Route::resource('/admin/link_types', 'LinkTypeController');
+
 // Rotas Públicas (Acesso ao Acervo para alunos e etc)
 // ROTA COM MODULO
 //Route::get('/shelf/course/{course}/module/{module}/type/{type}', 'ShelfController@index');

@@ -131,6 +131,18 @@
             </ul>
         </li>
 
+        <li class="header">
+          <div class="item-dropdown">
+            <span><i class="fa fa-tags"></i>Tipos de Link</span>
+            <span class="chevron"><i class="fa fa-chevron-down"></i></span>
+          </div>
+          
+            <ul>
+              <li><a href="{{ action('LinkTypeController@index') }}"><i class="fa fa-list-ul"></i> Listagem de Tipos de Links</a></li>
+              <li><a href="{{ action('LinkTypeController@create') }}"><i class="fa fa-plus-circle"></i> Cadastrar Tipos de Links</a></li>
+            </ul>
+        </li>
+
 	      <!-- <li class="header">
           <div class="item-dropdown">
             <span><i class="fa fa-file"></i>Obj. de Aprendizagem</span>

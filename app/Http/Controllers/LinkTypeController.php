@@ -111,7 +111,7 @@ class LinkTypeController extends Controller
      */
     public function destroy($id)
     {
-      $link_type = LinkType::findOrFail($id)
+      $link_type = LinkType::findOrFail($id);
       $link_type->delete();
 
       return redirect(route('link_types.index'));

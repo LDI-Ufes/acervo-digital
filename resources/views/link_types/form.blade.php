@@ -33,41 +33,54 @@
     {{ isset($editLabel) ? $editLabel : "Escolher Ícone" }}<span> *</span>
   </label>
 
-  <ul class="form-control" id="icon" name="icon">
-    <li value="fa fa-address-book"> ? <i class="fa fa-address-book"></i> </li> abc
-    <li value="fa fa-address-card"> <i class="fa fa-address-card"></i> </li>
-    <li value="fa fa-adjust"> <i class="fa fa-adjust"></i> </li>
-    <li value="fa fa-adn"> <i class="fa fa-adn"></i> </li>
-    <li value="fa fa-adversal"> <i class="fa fa-adversal"></i> </li>
-    <li value="fa fa-affiliatetheme"> <i class="fa fa-affiliatetheme"></i> </li>
-    <li value="fa fa-air-freshener"> <i class="fa fa-air-freshener"></i> </li>
-    <li value="fa fa-airbnb"> <i class="fa fa-airbnb"></i> </li>
-    <li value="fa fa-algolia"> <i class="fa fa-algolia"></i> </li>
-    <li value="fa fa-align-center"> <i class="fa fa-align-center"></i> </li>
-    <li value="fa fa-align-justify"> <i class="fa fa-align-justify"></i> </li>
-    <li value="fa fa-align-left"> <i class="fa fa-align-left"></i> </li>
-    <li value="fa fa-align-right"> <i class="fa fa-align-right"></i> </li>
-    <li value="fa fa-alipay"> <i class="fa fa-alipay"></i> </li>
-    <li value="fa fa-allergies"> <i class="fa fa-allergies"></i> </li>
-    <li value="fa fa-amazon"> <i class="fa fa-amazon"></i> </li>
-    <li value="fa fa-ambulance"> <i class="fa fa-ambulance"></i> </li>
-    <li value="fa fa-american-sign-language-interpreting"> <i class="fa fa-american-sign-language-interpreting"></i> </li>
-    <li value="fa fa-anchor"> <i class="fa fa-anchor"></i> </li>
-    <li value="fa fa-android"> <i class="fa fa-android"></i> </li>
-    <li value="fa fa-angellist"> <i class="fa fa-angellist"></i> </li>
-    <li value="fa fa-angle-left"> <i class="fa fa-angle-left"></i> </li>
-    <li value="fa fa-angle-right"> <i class="fa fa-angle-right"></i> </li>
-    <li value="fa fa-angle-up"> <i class="fa fa-angle-up"></i> </li>
-    <li value="fa fa-angry"> <i class="fa fa-angry"></i> </li>
-    <li value="fa fa-angry"> <i class="fa fa-angry"></i> </li>
-    <li value="fa fa-angular"> <i class="fa fa-angular"></i> </li>
-  </ul>
-
   <input class="form-control" name="icon" type="text" id="icon" value="" maxlength="80">
     {!! $errors->first('icon', '<p class="help-block">:message</p>') !!}
+
+  <ul id="icon-select" style="display:block">
+
+    <li style="display:inline-block"> <i class="fa fa-glass"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-music"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-search"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-heart"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-star"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-user"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-film"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-th"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-check"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-remove"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-close"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-times"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-signal"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-gear"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-cog"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-home"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-road"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-download"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-inbox"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-repeat"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-refresh"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-lock"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-flag"></i> </li>
+    <li style="display:inline-block"> <i class="fa fa-headphones"></i> </li>
+
+  </ul>
+
 </div>
 
 <div class="form-group">
     <input class="btn btn-success" type="submit" value="{{ isset($submitButtonLabel) ? $submitButtonLabel : "Adicionar" }}">
 </div>
 
+<script>
+/* preenche caixa de texto "icon" com a classe do ícone escolhido */
+document
+  .querySelector('#icon-select')
+  .addEventListener('click', event => {
+    const iconInput = document.getElementById('icon')   
+    const { target } = event
+
+    if(target.tagName == 'I')
+      iconInput.value = target.className 
+  })  
+
+</script>

@@ -33,7 +33,13 @@
     {{ isset($editLabel) ? $editLabel : "Escolher Ícone" }}<span> *</span>
   </label>
 
-  <input class="form-control" name="icon" type="text" id="icon" value="" maxlength="80">
+  <input 
+    class="form-control" 
+    name="icon" 
+    type="text" 
+    id="icon" 
+    value="{{ old('icon', isset($link_type) ? $link_type->icon : null) }}" 
+    maxlength="80">
     {!! $errors->first('icon', '<p class="help-block">:message</p>') !!}
 
   <ul id="icon-select" style="display:block">

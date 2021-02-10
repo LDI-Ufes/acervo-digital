@@ -29,6 +29,11 @@ class LearningObject extends Model
       ->withTimeStamps();
   }
 
+  public function links()
+  {
+    return $this->hasMany('App\Link');
+  }
+
   public function sluggable()
   {
     return [

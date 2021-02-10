@@ -16,11 +16,15 @@ class CreateLinksTable extends Migration
         Schema::create('links', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('type_id')->unsigned();
-            $table->foreign('type_id')->reference('id')->on('link_types');
+            $table->integer('link_type_id')->unsigned();
+            $table->foreign('link_type_id')
+              ->references('id')
+              ->on('link_types');
 
             $table->integer('learning_object_id')->unsigned();
-            $table->foreign('learning_object_id')->references('id')->on('learning_objects');
+            $table->foreign('learning_object_id')
+              ->references('id')
+              ->on('learning_objects');
 
             $table->string('url');
 

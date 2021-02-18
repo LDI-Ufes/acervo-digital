@@ -122,7 +122,7 @@ class LearningObjectController extends Controller
 
       $learning_object->tags()->attach($request->tag_id);
 
-	    return redirect(route('learning_objects.index'));
+	    return redirect(route('learning_objects.show', ['id' => $learning_object->id]));
     }
 
     /**

@@ -79,6 +79,20 @@
       </div>
     </section>
   </div>
+
+  <!-- adicionar novos links ou arquivos ao material -->
+  <div>
+    <form 
+      method="POST" 
+      action="{{ route('learning_objects.store') }}" 
+      accept-charset="UTF-8" 
+      enctype="multipart/form-data" 
+      class="form-horizontal">
+      {{ csrf_field() }}
+      @include ('links/form')
+    </form>
+  </div>
+
 </section> <!-- FIM VISUALIZAR LIVRO -->
 
 @endsection

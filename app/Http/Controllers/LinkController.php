@@ -8,13 +8,27 @@ use Illuminate\Http\Request;
 class LinkController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __contruct()
+    {
+      $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+      // não há uma listagem de links
+      // links só são acessados pelos materiais
+      // aos quais pertencem.
+
+      return redirect(route('learning_objects.index'));
     }
 
     /**
@@ -24,7 +38,7 @@ class LinkController extends Controller
      */
     public function create()
     {
-        //
+      return redirect(route('learning_objects.index'));
     }
 
     /**
@@ -35,7 +49,17 @@ class LinkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $link = new Link;
+
+      // TODO: implementar upload de materiais
+      // TODO: depois remover esse processo de LearningObject
+
+      $link->url = $request->url;
+      $link->link_type_id = $request->link_type_id;
+      $link->learning_object_id = $request->learning_object_id;
+
+      // TODO: redirecionar para o material dono do link
+      return redirect(route('learning_objects.index'));
     }
 
     /**

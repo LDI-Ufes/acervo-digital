@@ -10,7 +10,7 @@ class Link extends Model
 
   public function type()
   {
-    return $this->belongsTo('App\LinkType');
+    return $this->belongsTo('App\LinkType', 'link_type_id', 'id');
   }
   
   public function learning_object() 

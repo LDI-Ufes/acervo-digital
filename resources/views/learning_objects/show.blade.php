@@ -80,16 +80,34 @@
     </section>
   </div>
 
+  <!-- links ligados a esse materials -->
+  
+  <div>
+    <ul>
+      @forelse( $learning_object->links as $link)
+        <li> url do link: {{ $link->url }} / tipo de link: {{ $link->type->name }} </li>
+      @empty
+        <li>Sem links/arquivos relacionados a esse material</li>
+      @endforelse
+    </ul>
+  </div>
+
   <!-- adicionar novos links ou arquivos ao material -->
   <div>
     <form 
       method="POST" 
-      action="{{ route('learning_objects.store') }}" 
+      action="{{ route('links.store') }}" 
       accept-charset="UTF-8" 
       enctype="multipart/form-data" 
       class="form-horizontal">
-      {{ csrf_field() }}
+
+      <input type="hidden" 
+        name="learning_object_id" 
+        value="{{ $learning_object->id }}" >
+
       @include ('links/form')
+
+      {{ csrf_field() }}
     </form>
   </div>
 

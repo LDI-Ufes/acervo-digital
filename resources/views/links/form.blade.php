@@ -27,9 +27,34 @@
 	</div>
 </div>
 
+<select class="form-control" name="link_type_id">
+  @forelse( \App\LinkType::all() as $linkType)
+    <option value="{{ $linkType->id }}">{{$linkType->name}}</option>
+  @empty
+    <option> Não há tipos de link cadastrados. </option>
+  @endforelse
+</select>
+
 <div class="form-group">
 	<div class="col-md-offset-2 col-md-10">
 		<input class="btn btn-success" type="submit" value="{{ isset($submitButtonLabel) ? $submitButtonLabel : "Adicionar" }}">
 	</div>
 </div>
+
+
+<script> 
+  document.addEventListener('DOMContentLoaded', function() {
+    $('.opcao-link').change(function() {
+      if(this.value == 'usar_link') {
+        $('#link_input').removeAttr('disabled')
+        $('#upload_input').attr('disabled', 'disabled')
+        $('#upload_input').val('')
+      } else {
+        $('#upload_input').removeAttr('disabled')
+        $('#link_input').attr('disabled', 'disabled')
+        $('#link_input').val('')
+      }
+    })
+  })
+</script>
 

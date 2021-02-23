@@ -54,12 +54,14 @@ class LinkController extends Controller
       // TODO: implementar upload de materiais
       // TODO: depois remover esse processo de LearningObject
 
-      $link->url = $request->url;
+      $link->url = $request->link_input;
       $link->link_type_id = $request->link_type_id;
       $link->learning_object_id = $request->learning_object_id;
 
+      $link->save();
+
       // TODO: redirecionar para o material dono do link
-      return redirect(route('learning_objects.index'));
+      return redirect(route('learning_objects.show', $request->learning_object_id));
     }
 
     /**
@@ -76,24 +78,37 @@ class LinkController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Link  $link
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Link $link)
+    public function edit($id)
     {
-        //
+      $link = Link::findOrFail($id);
+
+      return view('links.edit', compact('link'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Link  $link
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Link $link)
+    public function update(Request $request, $id)
     {
-        //
+      $link = Link::findOrFail($id);
+
+      $link->url = $request->link_input;
+
+      $link->save();
+      
+      // redirecionar para o material ao qual o link pertence
+      return redirect(route(
+        'learning_objects.show', 
+        $link->learning_object->id
+      ));
+
     }
 
     /**

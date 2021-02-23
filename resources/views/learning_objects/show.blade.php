@@ -82,10 +82,13 @@
 
   <!-- links ligados a esse materials -->
   
-  <div>
+  <div style="boder: 1px solid green">
     <ul>
       @forelse( $learning_object->links as $link)
-        <li> url do link: {{ $link->url }} / tipo de link: {{ $link->type->name }} </li>
+        <li> 
+            url do link: {{ $link->url }} / tipo de link: {{ $link->type->name }} 
+            <a href="{{ route('links.edit', $link->id) }}" title="Editar"> [editar] </a>
+        </li>
       @empty
         <li>Sem links/arquivos relacionados a esse material</li>
       @endforelse

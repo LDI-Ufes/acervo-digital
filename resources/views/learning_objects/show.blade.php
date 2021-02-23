@@ -87,7 +87,31 @@
       @forelse( $learning_object->links as $link)
         <li> 
             url do link: {{ $link->url }} / tipo de link: {{ $link->type->name }} 
-            <a href="{{ route('links.edit', $link->id) }}" title="Editar"> [editar] </a>
+            <a href="{{ route('links.edit', $link->id) }}" title="Editar">
+              <button class="btn btn-primary">Editar</button></span>
+            </a>
+            
+            <form 
+              method="POST" 
+              action="{!! route('links.destroy', $link->id) !!}" 
+              accept-charset="UTF-8" 
+              style="display: inline;"
+              novalidate="novalidate">
+              
+              <input 
+                name="_method" 
+                value="DELETE" 
+                type="hidden">
+              {{ csrf_field() }}
+
+              <button 
+                type="submit" 
+                class="btn btn-danger"
+                title="Deletar" 
+                onclick="return confirm('Tem certeza que quer apagar?')" >
+                  Deletar
+                </button>
+              </form>
         </li>
       @empty
         <li>Sem links/arquivos relacionados a esse material</li>

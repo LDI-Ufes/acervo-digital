@@ -114,11 +114,17 @@ class LinkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Link  $link
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Link $link)
+    public function destroy($id)
     {
-        //
+      $link = Link::findOrFail($id);
+      $link->delete();
+
+      return redirect(route(
+        'learning_objects.show', 
+        $link->learning_object->id
+      ));
     }
 }

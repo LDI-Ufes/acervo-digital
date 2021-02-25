@@ -72,29 +72,7 @@ class LearningObjectController extends Controller
 	    $learning_object->summary = $request->summary; 
 	    $learning_object->type_id = $request->type_id;
 
-	    if ($request->file_or_link == 'usar_link') {
-		    
-		    $learning_object->link = $request->link_input;
-
-	    } elseif ($request->file_or_link == 'usar_arquivo') {
-
-		    $file_ext = $request->file('upload_input')->getClientOriginalExtension();
-		 
-		    $file_name = basename($request->file('upload_input')->getClientOriginalName(), '.' . $file_ext);
-		    $file_name = iconv("UTF-8" , "ASCII//TRANSLIT//IGNORE", $file_name);
-		    $file_name = strtolower($file_name);
-		    $file_name = preg_replace( array('/[ ]/', '/[^A-Za-z0-9\-]/'), array('-', '-'), $file_name);
-
-		    $request->file('upload_input')->move(public_path('/arquivos'), $file_name . '.' . $file_ext);
-
-		    $learning_object->link = '/arquivos/' . $file_name . '.' . $file_ext;
-
-
-	    } else {
-		    return back()->withErrors(['Erro', 'Forneça o link para o arquivo, ou escolha um arquivo para salvar']);
-	    }
-
-	    //checar se a imagem tem o tamanho necessário (219x219) 
+      //checar se a imagem tem o tamanho necessário (219x219) 
 	    //e dar resize se não tiver
 	    //
 	    if ($request->hasFile('cover')) {
@@ -171,27 +149,6 @@ class LearningObjectController extends Controller
 	    $learning_object->year = $request->year;
 	    $learning_object->summary = $request->summary;
 	    $learning_object->type_id = $request->type_id;
-
-	    if ($request->file_or_link == 'usar_link') {
-		    
-		    $learning_object->link = $request->link_input;
-
-	    } elseif ($request->file_or_link == 'usar_arquivo') {
-
-		    $file_ext = $request->file('upload_input')->getClientOriginalExtension();
-		 
-		    $file_name = basename($request->file('upload_input')->getClientOriginalName(), '.' . $file_ext);
-		    $file_name = iconv("UTF-8" , "ASCII//TRANSLIT//IGNORE", $file_name);
-		    $file_name = strtolower($file_name);
-		    $file_name = preg_replace( array('/[ ]/', '/[^A-Za-z0-9\-]/'), array('-', '-'), $file_name);
-
-		    $request->file('upload_input')->move(public_path('/arquivos'), $file_name . '.' . $file_ext);
-
-		    $learning_object->link = '/files/' . $file_name . '.' . $file_ext;
-
-	    } else {
-		    return back()->withErrors(['Erro', 'Forneça o link para o arquivo, ou escolha um arquivo para salvar']);
-	    }
 
 	    // falta fazer o upload, checagem e resize do arquivo de capa...
 	    //$learning_object->cover = $request->cover 

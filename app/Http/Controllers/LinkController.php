@@ -58,6 +58,19 @@ class LinkController extends Controller
       $link->link_type_id = $request->link_type_id;
       $link->learning_object_id = $request->learning_object_id;
 
+      if ($request->file_or_link == 'usar_link') {
+        $link->url = $request->link_input;
+      } elseif ($request->file_or_link == 'usar_arquivo') {
+        $file_with_path = uploadFile($request);
+
+        $link->url = $file_with_path;
+      } else {
+        return back()->withErrors([
+          'Erro', 
+          'Forneça um link ou arquivo para o material.'
+        ]);
+      }
+
       $link->save();
 
       // TODO: redirecionar para o material dono do link
@@ -67,12 +80,14 @@ class LinkController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Link  $link
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Link $link)
+    public function show($id)
     {
-        //
+      $link = Link::findOrFail($id);
+
+      return view('links.edit', compact('link'));       
     }
 
     /**
@@ -99,7 +114,21 @@ class LinkController extends Controller
     {
       $link = Link::findOrFail($id);
 
-      $link->url = $request->link_input;
+      $link->link_type_id = $request->link_type_id;
+      
+      if ($request->file_or_link == 'usar_link') {
+        $link->url = $request->link_input;
+      } elseif ($request->file_or_link == 'usar_arquivo') {
+        $file_with_path = uploadFile($request);
+
+        $link->url = $file_with_path;
+      } else {
+        return back()->withErrors([
+          'Erro',
+          'Forneça um link ou arquivo para o material.'
+        ]);
+      }
+      
 
       $link->save();
       

@@ -22,8 +22,20 @@
 
     <!-- <p><strong>Resumo</strong><br>{{ $learning_object->summary }}</p> -->
 
+    <!--
     <div class="acesso">
-      <a class="btn-primario" href="{{ $learning_object->link }}" target="_blank"><i class="fa fa-file-pdf"></i>PDF Interativo</a>
+      <a class="btn-primario" href=" $learning_object->link " target="_blank"><i class="fa fa-file-pdf"></i>PDF Interativo</a>
+    </div>
+    -->
+
+    <div class="acesso">
+      <ul>
+        @forelse( $learning_object->links as $link)
+          <li><a class="btn-primario" href="{{ $link->url }}" target="_blank"><i class="{{ $link->type->icon }}"></i>{{ $link->type->name }}</a>
+        @empty
+          <li> não há links nesse material. </li>
+        @endforelse
+      </ul>
     </div>
 
     <blockquote class="caixa-info">

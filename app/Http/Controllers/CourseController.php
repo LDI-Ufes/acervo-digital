@@ -57,7 +57,7 @@ class CourseController extends Controller
 	    $course->name = $request->name;
 	    $course->type_id = $request->type_id;
 	    $course->short = $request->short;
-	    $course->active = ($request->active == 'on');
+	    $course->active = ($request->active === 'on');
 
       if($request->hasFile('cover')) {
         $image = $request->file('cover');
@@ -125,7 +125,7 @@ class CourseController extends Controller
 	    $course->name = $request->name;
 	    $course->type_id = $request->type_id;
 	    $course->short = $request->short;
-	    $course->active = ($request->active == 'on');
+	    $course->active = ($request->active === 'on');
 
       if ($request->hasFile('cover')) {
         $image = $request->file('cover');

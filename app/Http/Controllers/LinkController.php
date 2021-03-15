@@ -50,17 +50,13 @@ class LinkController extends Controller
     public function store(Request $request)
     {
       $link = new Link;
-
-      // TODO: implementar upload de materiais
-      // TODO: depois remover esse processo de LearningObject
-
       $link->url = $request->link_input;
       $link->link_type_id = $request->link_type_id;
       $link->learning_object_id = $request->learning_object_id;
 
-      if ($request->file_or_link == 'usar_link') {
+      if ($request->file_or_link === 'usar_link') {
         $link->url = $request->link_input;
-      } elseif ($request->file_or_link == 'usar_arquivo') {
+      } elseif ($request->file_or_link === 'usar_arquivo') {
         $file_with_path = uploadFile($request);
 
         $link->url = $file_with_path;
@@ -73,7 +69,6 @@ class LinkController extends Controller
 
       $link->save();
 
-      // TODO: redirecionar para o material dono do link
       return redirect(route('learning_objects.show', $request->learning_object_id));
     }
 
@@ -116,9 +111,9 @@ class LinkController extends Controller
 
       $link->link_type_id = $request->link_type_id;
       
-      if ($request->file_or_link == 'usar_link') {
+      if ($request->file_or_link === 'usar_link') {
         $link->url = $request->link_input;
-      } elseif ($request->file_or_link == 'usar_arquivo') {
+      } elseif ($request->file_or_link === 'usar_arquivo') {
         $file_with_path = uploadFile($request);
 
         $link->url = $file_with_path;

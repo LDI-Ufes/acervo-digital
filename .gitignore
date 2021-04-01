@@ -20,3 +20,5 @@ public/covers/
 
 desktop.ini
 nbproject/
+
+.prettierignore

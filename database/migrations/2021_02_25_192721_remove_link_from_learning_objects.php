@@ -6,27 +6,27 @@ use Illuminate\Database\Migrations\Migration;
 
 class RemoveLinkFromLearningObjects extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-      Schema::table('learning_objects', function(Blueprint $table) {
-        $table->dropColumn('link');
-      });
-    }
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
+  public function up()
+  {
+    Schema::table('learning_objects', function (Blueprint $table) {
+      $table->dropColumn('link');
+    });
+  }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-      Schema::table('learning_objects', function(Blueprint $table) {
-        $table->string('link');
-      });
-    }
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
+  public function down()
+  {
+    Schema::table('learning_objects', function (Blueprint $table) {
+      $table->string('link');
+    });
+  }
 }

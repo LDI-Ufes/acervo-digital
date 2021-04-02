@@ -14,7 +14,7 @@ class AddYearToLearningObjectsTable extends Migration
     public function up()
     {
         Schema::table('learning_objects', function (Blueprint $table) {
-        	$table->smallInteger('year')->nullable();
+            $table->smallInteger('year')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddYearToLearningObjectsTable extends Migration
     public function down()
     {
         Schema::table('learning_objects', function (Blueprint $table) {
-        	$table->dropColumn('year');
+            $table->dropColumn('year');
         });
     }
 }

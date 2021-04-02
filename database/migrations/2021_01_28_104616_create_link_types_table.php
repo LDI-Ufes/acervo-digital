@@ -14,7 +14,7 @@ class CreateLinkTypesTable extends Migration
     public function up()
     {
         Schema::create('link_types', function (Blueprint $table) {
-          $table->increments('id');
+            $table->increments('id');
 
             $table->string('name')->unique();
             $table->string('call_to_action');

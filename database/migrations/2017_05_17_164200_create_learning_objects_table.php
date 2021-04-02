@@ -13,27 +13,27 @@ class CreateLearningObjectsTable extends Migration
      */
     public function up()
     {
-    	if (!Schema::hasTable('learning_objects')) {
-		Schema::create('learning_objects', function(Blueprint $table){
-			$table->increments('id');
+        //if (!Schema::hasTable('learning_objects')) {
+        Schema::create('learning_objects', function (Blueprint $table) {
+            $table->increments('id');
 
-			$table->integer('course_id')->unsigned();
-			$table->foreign('course_id')->reference('id')->on('courses');
+            $table->integer('course_id')->unsigned();
+            $table->foreign('course_id')->references('id')->on('courses'); // Estava dando problema. Resolvido.
 
-			$table->integer('type_id')->unsigned();
-			$table->foreign('type_id')->reference('id')->on('object_types');
+            $table->integer('type_id')->unsigned();
+            $table->foreign('type_id')->references('id')->on('object_types'); // Estava dando problema. Resolvido.
 
-			$table->integer('module');
+            $table->integer('module');
 
-			$table->string('title');
-			$table->string('author');		
-			$table->text('summary');
-			$table->string('cover')->default('_default.jpg'); 
-			$table->string('link'); 
+            $table->string('title');
+            $table->string('author');
+            $table->text('summary');
+            $table->string('cover')->default('_default.jpg');
+            $table->string('link');
 
-			$table->timestamps();
-		});
-	}
+            $table->timestamps();
+        });
+        //}
     }
 
     /**

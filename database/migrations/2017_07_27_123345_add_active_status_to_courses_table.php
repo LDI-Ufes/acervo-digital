@@ -14,7 +14,7 @@ class AddActiveStatusToCoursesTable extends Migration
     public function up()
     {
         Schema::table('courses', function (Blueprint $table) {
-        	$table->boolean('active')->default(false); 
+            $table->boolean('active')->default(false);
         });
     }
 
@@ -26,7 +26,7 @@ class AddActiveStatusToCoursesTable extends Migration
     public function down()
     {
         Schema::table('courses', function (Blueprint $table) {
-        	$table->dropColumn('active');    
+            $table->dropColumn('active');
         });
     }
 }

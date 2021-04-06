@@ -13,23 +13,23 @@ class CreateCoursesTable extends Migration
      */
     public function up()
     {
-	if (!Schema::hasTable('courses')) {
-	        Schema::create('courses', function(Blueprint $table){
-			$table->increments('id');
-	
-			$table->integer('type_id')->unsigned();
-			$table->foreign('type_id')->references('id')->on('course_types');
-	
-			$table->string('name');
-			$table->integer('modules');
-			$table->string('bg_color');
-			$table->string('fg_color');
-			$table->string('aux_color');
-			$table->char('short', 3);
-	
-			$table->timestamps();
-		});
-	}
+        //if (!Schema::hasTable('courses')) {
+        Schema::create('courses', function (Blueprint $table) {
+            $table->increments('id');
+
+            $table->integer('type_id')->unsigned();
+            $table->foreign('type_id')->references('id')->on('course_types');
+
+            $table->string('name');
+            $table->integer('modules');
+            $table->string('bg_color');
+            $table->string('fg_color');
+            $table->string('aux_color');
+            $table->char('short', 3);
+
+            $table->timestamps();
+        });
+        //}
     }
 
     /**

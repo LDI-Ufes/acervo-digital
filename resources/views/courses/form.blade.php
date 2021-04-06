@@ -11,7 +11,7 @@
   <label for="cover" class="col-xs-12 col-md-2 contro-label">Escolha uma Capa</label>
   
   <div class="col-xs-10">
-    <input class="btn btn-default btn-file" name="cover" type="file" id="cover" value"{{ old('cover', isset($course) ? $course->cover : null) }}">
+    <input class="btn btn-default btn-file" name="cover" type="file" id="cover" value="{{ old('cover', isset($course) ? $course->cover : null) }}">
     {!! $errors->first('cover', '<p class="help-block">:message</p>') !!}
   </div>
 

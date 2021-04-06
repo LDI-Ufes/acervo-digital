@@ -13,9 +13,9 @@ class MakeFieldSummaryNullable extends Migration
      */
     public function up()
     {
-	    Schema::table('learning_objects', function (Blueprint $table) {
-		    $table->text('summary')->nullable()->change();
-	    });
+        Schema::table('learning_objects', function (Blueprint $table) {
+            $table->text('summary')->nullable()->change();
+        });
     }
 
     /**
@@ -25,8 +25,8 @@ class MakeFieldSummaryNullable extends Migration
      */
     public function down()
     {
-	    Schema::table('learning_objects', function (Blueprint $table) {
-		$table->string('summary')->nullable(false)->change();
+        Schema::table('learning_objects', function (Blueprint $table) {
+            $table->string('summary')->nullable(false)->change();
         });
     }
 }

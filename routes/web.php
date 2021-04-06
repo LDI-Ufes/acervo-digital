@@ -37,12 +37,6 @@ Route::resource('/admin/links', 'LinkController');
 
 Route::get('/curso/{slug}/{type?}/{year?}', 'ShelfController@courseObjectsPage');
 
-Route::get('/embed/{slug}/{type?}/{year?}', 'ShelfController@courseObjectsIFrame'); // TODO: remover rota/controler/blades
-
-// ROTA COM ANO
-Route::get('/shelf/course/{course}/type/{type}/year/{year}', 'ShelfController@learningObjects'); // TODO: remover rota/controller/blades
-
-
 //Route::get('/shelf/courses', 'ShelfController@courses');
 Route::get('/', 'ShelfController@courses');
 
